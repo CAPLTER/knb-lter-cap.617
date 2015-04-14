@@ -1,0 +1,98 @@
+for (i in 1:length(filesNames)) { filesNames[[i]] <- sub("\\.[[:alnum:]]+$", "", filesNames[[i]]) } # remove '.csv'
+
+fileNames <- list.files(path=".", pattern="*.csv", full.names=F, recursive=FALSE)
+rmxlsx <- function(file) { sub(".xlsx", "", file) }
+alpha <- llply(fileNames, rmxlsx)
+
+names(data)<-alpha
+
+
+for (i in 1:length(data)) {if ("Month" %in% names(data[[i]])) data[[i]]$Month<- as.POSIXct(data[[i]]$Month, format="%Y/%M/%s")}
+
+
+for (i in 1:length(data)) {if ("end" %in% names(data[[i]])) data[[i]]$end <- as.POSIXct(data[[i]]$end, format="%b %e, %Y %I:%M:%S %p")}
+for (i in 1:length(data)) {if ("today" %in% names(data[[i]])) data[[i]]$today <- as.POSIXct(data[[i]]$today, format="%b %e, %Y")}
+for (i in 1:length(data)) {if ("se_samp_date" %in% names(data[[i]])) data[[i]]$se_samp_date <- as.POSIXct(data[[i]]$se_samp_date, format="%b %e, %Y")}
+
+month <- function(file) { as.POSIXct(file['[[', 'Month'], format="%Y/%M/%d") }
+alpha <- llply(data, month)
+llply(as.POSIXct(data, "[[", 'Month', format="%Y/%M/%s"))
+
+
+month <- function(list, field) llply(list, '[[', field) { as.POSIXct(field, format="%Y/%M/%s") }
+
+head(data[['algae.csv']]['Month'])
+head(data[])
+
+
+llply
+
+as.POSIXct(llply(data, "[[", 'Month'), format="%Y/%M/%d")
+
+%c%` <- function(x, n)sapply(x, `[[`, n)
+
+month <- function(x) { x <- as.POSIXct(x, format="%Y/%m/%d") 
+                       return(x) }
+llply(data, '[[', 'Month')
+
+names(data)
+data[['algae.csv']]$Month
+
+head(data[['algae.csv']][['Month']])
+as.POSIXct(llply(data, "[[", 'Month'), format="%Y/%m/%d")
+head(llply(data, "[[", 'Month'))
+
+my.list<-llply(.data=data,
+               function(x) { x$Month <- as.POSIXct(x$Month, format="%Y/%m/%d")
+                             return(x)
+               })
+
+head(data['algae.csv'], '[[', 'Month')
+
+# did not work
+for (i in 1:length(data)) { data[[i]]$Month <- as.POSIXct(data[[i]]$Month, format="%Y/%m/%d") }
+
+# worked
+for (i in 1:length(data)) {if ("Month" %in% names(data[[i]])) data[[i]]$Month<- as.POSIXct(data[[i]]$Month, format="%Y/%m/%d")}
+
+as.POSIXct('1999/08/01', format="%Y/%m/%d")
+jm$Month <- as.POSIXct(jm$Month, format="%Y/%m/%d")
+
+lapply(data, FUN=head)
+
+
+str(data[['algae.csv']][['Month']])
+data <- data.bak
+
+lapply(data, FUN=as.POSIXct(Month, format="%Y/%m/%d"))
+
+month <- function(x) { x <- as.POSIXct(x, format="%Y/%m/%d") }
+alpha <- lapply(data, '[[', 'Month', FUN =  month())
+lapply(data, '[[', 'Month')
+
+alpha <- as.POSIXct(lapply(data, '[[', 'Month'), format="%Y/%m/%d")
+
+alpha <- lapply(.data=data, function(x) {  x$Month <- as.POSIXct(x$Month, format="%Y/%m/%d") 
+                                    return(x)
+               })
+lapply(data$Month, FUN = head)
+
+
+alpha <- lapply(.data=(data, '[[', 'Month'), FUN = as.POSIXct(x, format="%Y/%m/%d") 
+                                           return(x)
+})
+
+dates <- function(df) {
+  if ("Month" %in% names(df)) {df$Month <- as.POSIXct(df$Month, format="%Y/%m/%d") 
+  df$Month <- format(df$Month, format="%m")
+  }                               
+  if ("Date" %in% names(df)) {df$Date <- as.POSIXct(df$Date, format="%Y/%m/%d") 
+  }
+  if ("Sample_Date" %in% names(df)) {df$Sample_Date <- as.POSIXct(df$Sample_Date, format="%Y/%m/%d") 
+  }
+  return(df)
+}
+
+mydat3 <- lapply(data, dates) 
+
+dataframe$rundate <- format(dataframe$rundate, format="%m/%d/%Y %H:%M:%S")
