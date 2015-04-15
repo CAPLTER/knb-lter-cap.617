@@ -8,6 +8,7 @@ names(data)<-alpha
 
 
 for (i in 1:length(data)) {if ("Month" %in% names(data[[i]])) data[[i]]$Month<- as.POSIXct(data[[i]]$Month, format="%Y/%M/%s")}
+n
 
 
 for (i in 1:length(data)) {if ("end" %in% names(data[[i]])) data[[i]]$end <- as.POSIXct(data[[i]]$end, format="%b %e, %Y %I:%M:%S %p")}
@@ -96,3 +97,64 @@ dates <- function(df) {
 mydat3 <- lapply(data, dates) 
 
 dataframe$rundate <- format(dataframe$rundate, format="%m/%d/%Y %H:%M:%S")
+
+
+
+
+names(frame) <- c(
+  'ID',
+  'Site_Number',
+  'Month',
+  'Exc_A',
+  'Em_A',
+  'Fl_A',
+  'Exc_B',
+  'Em_B',
+  'Fl_B')
+
+bak <- frame
+frame$Month <- as.POSIXct(frame$Month, format="%Y/%m/%d")
+frame$Month <- format(frame$Month, format="%m")
+                       
+col.defs <- c(
+  'Record number',
+  'Site number or name',
+  'Month sample was collected',
+  'Excitation A wavelength',
+  'Emission A wavelength',
+  'Fluorescence A',
+  'Excitation B wavelength',
+  'Emission B wavelength',
+  'Fluorescence B')
+
+col.defs <- c(
+  'ID' = 'Record number',
+  'Site_Number' = 'Site number or name',
+  'Month' = 'Month sample was collected',
+  'Exc_A' = 'Excitation A wavelength',
+  'Em_A' = 'Emission A wavelength',
+  'Fl_A' = 'Fluorescence A',
+  'Exc_B' = 'Excitation B wavelength',
+  'Em_B' = 'Emission B wavelength',
+  'Fl_B' = 'Fluorescence B')
+
+unit.defs <- c(
+  'ID' = "number",
+  'Site_Number' = "'a' designates the epilimnion",
+  'Month' = 'nominalDay',
+  'Exc_A' = 'nanometer',
+  'Em_A' = 'nanometer',
+  'Fl_A' = 'dimensionless',
+  'Exc_B' = 'nanometer',
+  'Em_B' = 'nanometer',
+  'Fl_B' = 'dimensionless')
+
+
+new_type <- c(eml_define_unitType("otherUnitType"))
+new_units <- c(eml_define_unit("nominalMonth", unitType = "otherUnitType"))
+
+eml_write(frame, 
+          col.defs = col.defs, 
+          unit.defs = unit.defs, 
+          creator = "Stevan Earl <me@asu.edu", 
+          file = "~/Desktop/frame.xml")

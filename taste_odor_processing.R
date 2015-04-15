@@ -51,7 +51,7 @@ names(data[['3D_Fluorescence.csv']]) <- c(
   'Em_B',
   'Fl_B')
 
-# Algae.csv
+# algae.csv
 names(data[['algae.csv']]) <- c(
   'ID',
   'SiteNumber',
@@ -73,6 +73,7 @@ names(data[['algae.csv']]) <- c(
 
 # Arsenic.csv
 names(data[['Arsenic.csv']])<-c(
+  'ID',
   'SiteNumber',
   'SiteLocation',
   'Cluster',
@@ -81,8 +82,8 @@ names(data[['Arsenic.csv']])<-c(
   'Arsenic',
   'Perchlorate')
 
-# Brushexp.csv
-names(data[['Brushexp.csv']])<-c(
+# brushexp.csv
+names(data[['brushexp.csv']])<-c(
   'SiteNumber',
   'SiteLocation',
   'Date',
@@ -103,8 +104,8 @@ names(data[['Brushexp.csv']])<-c(
   'Chl_c_area',
   'DWT')
 
-# Canal_data.csv
-names(data[['Canal_data.csv']])<-c(
+# canal_data.csv
+names(data[['canal_data.csv']])<-c(
   'SiteNumber',
   'SiteLocation',
   'ClusterName',
@@ -119,8 +120,8 @@ names(data[['Canal_data.csv']])<-c(
   'MatColor_deep',
   'CanalNotes')
 
-# DOC_month.csv
-names(data[['DOC_month.csv']])<-c(
+# doc_month.csv
+names(data[['doc_month.csv']])<-c(
   'SiteNumber',
   'SiteLocation',
   'ClusterName',
@@ -139,8 +140,8 @@ names(data[['DOC_month.csv']])<-c(
   'Intat500',
   'Fl')
 
-# DOC_quarter.csv
-names(data[['DOC_quarter.csv']])<-c(
+# doc_quarter.csv
+names(data[['doc_quarter.csv']])<-c(
   'SiteNumber',
   'SiteLocation',
   'ClusterName',
@@ -168,7 +169,7 @@ names(data[['DOC_quarter.csv']])<-c(
   'TBAA',
   'DiHAA',
   '%DBA_Recovery',
-  'THAA9(ug/L)',
+  'THAA9',
   'MCAA_COP',
   'MBAA_COP',
   'DCAA_COP',
@@ -183,6 +184,51 @@ names(data[['DOC_quarter.csv']])<-c(
   '%DBA_COP',
   'SampleType',
   'DocqComments')
+
+# field_measurements.csv
+names(data[['field_measurements.csv']])<-c(
+  'ID',
+  'SiteNumber',
+  'SiteLocation',
+  'ClusterName',
+  'SiteAcronym',
+  'Date',
+  'Month',
+  'Depth',
+  'Temperature',
+  'DO',
+  'pH',
+  'SecchiDisk',
+  'SamplesCollected',
+  'SampleType',
+  'Comments')
+
+# gpscoord.csv
+names(data[['gpscoord.csv']])<-c(
+  'ID',
+  'SiteNumber',
+  'ClusterName',
+  'SiteAcronym',
+  'Date',
+  'Longitude',
+  'Latitude',
+  'Altitude')
+
+# Intensive_Lake_Sampling.csv
+names(data[['Intensive_Lake_Sampling.csv']])<-c(
+  'ID',
+  'SiteNumber',
+  'Depth',
+  'Depth',
+  'Lake',
+  'Month',
+  'MIB',
+  'Geosmin',
+  'T',
+  'DO_conc',
+  'DO_percent',
+  'AlgaeCount',
+  'Comments')
 
 
 # provide field descriptions according to metadata ----
@@ -215,6 +261,19 @@ fields.algae <- c(
   'Chlorophyta count',
   'Cyanophyta count',
   'Bacillariophyta count')
+
+# format data frames ----
+# format dates ----
+dates <- function(df) {
+  if ("Month" %in% names(df)) {df$Month <- as.POSIXct(df$Month, format="%Y/%m/%d") 
+                               df$Month <- format(df$Month, format="%m")
+  }                               
+  if ("Date" %in% names(df)) {df$Date <- as.POSIXct(df$Date, format="%Y/%m/%d") 
+  }
+  if ("Sample_Date" %in% names(df)) {df$Sample_Date <- as.POSIXct(df$Sample_Date, format="%Y/%m/%d") 
+  }
+  return(df)
+}
 
 
 
