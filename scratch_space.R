@@ -94,14 +94,16 @@ dates <- function(df) {
   return(df)
 }
 
-mydat3 <- lapply(data, dates) 
+data <- lapply(data, dates) 
 
 dataframe$rundate <- format(dataframe$rundate, format="%m/%d/%Y %H:%M:%S")
 
 
+########### single dataframe ##########
 
+fluor <- as.data.frame(data[1])
 
-names(frame) <- c(
+names(fluor) <- c(
   'ID',
   'Site_Number',
   'Month',
@@ -112,10 +114,11 @@ names(frame) <- c(
   'Em_B',
   'Fl_B')
 
-bak <- frame
-frame$Month <- as.POSIXct(frame$Month, format="%Y/%m/%d")
-frame$Month <- format(frame$Month, format="%m")
-                       
+# not necessary if dates function already run
+# frame$Month <- as.POSIXct(frame$Month, format="%Y/%m/%d")
+# frame$Month <- format(frame$Month, format="%m")
+
+# column defs for 3D fluoresence (aka fluor in dataframe)
 col.defs <- c(
   'Record number',
   'Site number or name',
@@ -127,6 +130,8 @@ col.defs <- c(
   'Emission B wavelength',
   'Fluorescence B')
 
+# column defs for 3D fluoresence (aka fluor in dataframe)
+# with specific col assignment
 col.defs <- c(
   'ID' = 'Record number',
   'Site_Number' = 'Site number or name',
@@ -141,7 +146,7 @@ col.defs <- c(
 unit.defs <- c(
   'ID' = "number",
   'Site_Number' = "'a' designates the epilimnion",
-  'Month' = 'nominalDay',
+  'Month' = 'nominalMonth',
   'Exc_A' = 'nanometer',
   'Em_A' = 'nanometer',
   'Fl_A' = 'dimensionless',
@@ -149,12 +154,18 @@ unit.defs <- c(
   'Em_B' = 'nanometer',
   'Fl_B' = 'dimensionless')
 
+unit <- eml_define_unit(id = "nominalMonth",
+                        parentSI = "dimensionless",
+                        unitType = "dimensionless",
+                        multiplierToSI = "NA",
+                        description = "Calculated value for use in comparison")
+# this works but not sure about the multiplierToSI, set to NA (text, not object) as the package requires that input but it it not clear that will be valid
+# note that you can create a list of multiple custom units and call them in eml_write
 
-new_type <- c(eml_define_unitType("otherUnitType"))
-new_units <- c(eml_define_unit("nominalMonth", unitType = "otherUnitType"))
-
-eml_write(frame, 
+eml_write(fluor, 
           col.defs = col.defs, 
           unit.defs = unit.defs, 
-          creator = "Stevan Earl <me@asu.edu", 
-          file = "~/Desktop/frame.xml")
+          custom_units = c(unit),
+          file = "~/Desktop/fluor2.xml", 
+          contact = "Carl Boettiger <cboettig@ropensci.org>")
+
