@@ -32,7 +32,7 @@ as.POSIXct(llply(data, "[[", 'Month'), format="%Y/%M/%d")
 
 %c%` <- function(x, n)sapply(x, `[[`, n)
 
-month <- function(x) { x <- as.POSIXct(x, format="%Y/%m/%d") 
+month <- function(x) { x <- as.POSIXct(x, format="%Y/%m/%d")
                        return(x) }
 llply(data, '[[', 'Month')
 
@@ -73,28 +73,28 @@ lapply(data, '[[', 'Month')
 
 alpha <- as.POSIXct(lapply(data, '[[', 'Month'), format="%Y/%m/%d")
 
-alpha <- lapply(.data=data, function(x) {  x$Month <- as.POSIXct(x$Month, format="%Y/%m/%d") 
+alpha <- lapply(.data=data, function(x) {  x$Month <- as.POSIXct(x$Month, format="%Y/%m/%d")
                                     return(x)
                })
 lapply(data$Month, FUN = head)
 
 
-alpha <- lapply(.data=(data, '[[', 'Month'), FUN = as.POSIXct(x, format="%Y/%m/%d") 
+alpha <- lapply(.data=(data, '[[', 'Month'), FUN = as.POSIXct(x, format="%Y/%m/%d")
                                            return(x)
 })
 
 dates <- function(df) {
-  if ("Month" %in% names(df)) {df$Month <- as.POSIXct(df$Month, format="%Y/%m/%d") 
+  if ("Month" %in% names(df)) {df$Month <- as.POSIXct(df$Month, format="%Y/%m/%d")
   df$Month <- format(df$Month, format="%m")
-  }                               
-  if ("Date" %in% names(df)) {df$Date <- as.POSIXct(df$Date, format="%Y/%m/%d") 
   }
-  if ("Sample_Date" %in% names(df)) {df$Sample_Date <- as.POSIXct(df$Sample_Date, format="%Y/%m/%d") 
+  if ("Date" %in% names(df)) {df$Date <- as.POSIXct(df$Date, format="%Y/%m/%d")
+  }
+  if ("Sample_Date" %in% names(df)) {df$Sample_Date <- as.POSIXct(df$Sample_Date, format="%Y/%m/%d")
   }
   return(df)
 }
 
-data <- lapply(data, dates) 
+data <- lapply(data, dates)
 
 dataframe$rundate <- format(dataframe$rundate, format="%m/%d/%Y %H:%M:%S")
 
@@ -162,10 +162,10 @@ unit <- eml_define_unit(id = "nominalMonth",
 # this works but not sure about the multiplierToSI, set to NA (text, not object) as the package requires that input but it it not clear that will be valid
 # note that you can create a list of multiple custom units and call them in eml_write
 
-eml_write(fluor, 
-          col.defs = col.defs, 
-          unit.defs = unit.defs, 
+eml_write(fluor,
+          col.defs = col.defs,
+          unit.defs = unit.defs,
           custom_units = c(unit),
-          file = "~/Desktop/fluor2.xml", 
+          file = "~/Desktop/fluor2.xml",
           contact = "Carl Boettiger <cboettig@ropensci.org>")
 
