@@ -1,4 +1,5 @@
 <!-- xmlFile = xmlParse('~/Desktop/fluor.xml') # access document -->
+<!-- BUT switch to Tree parse with internal nodes so that we can use xpath -->
 <!-- xmlTop = xmlRoot(xmlFile) # gives content of root -->
 
 <eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" xmlns:ds="eml://ecoinformatics.org/dataset-2.1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml_1.1" packageId="c40ea034-9d11-43b6-ae2d-eb04e1c2c796" system="uuid" scope="system">
@@ -77,12 +78,12 @@
       </physical>
 
 <!-- ADD additionalInfo (mostly any data processing done by the data mgr) -->
-
-<!-- LEFT OFF HERE -->
+<!-- how did REML generate this id??? -->
 
       <attributeList id="c95542fa-5eca-45e1-bf41-351946721a99">
         <attribute>
           <attributeName>ID</attributeName>
+<!-- attribute label included in ours but I think that is optional -->
           <attributeDefinition>Record number</attributeDefinition>
           <measurementScale>
             <ratio>
@@ -206,13 +207,16 @@
           </measurementScale>
         </attribute>
       </attributeList>
+<!-- case sensitive is no in Davies 616 -->
       <caseSensitive>yes</caseSensitive>
       <numberOfRecords>50</numberOfRecords>
     </dataTable>
   </dataset>
   <additionalMetadata>
+<!-- how did REML generate this id? -->
     <describes>2f13036f-e50c-458a-aee6-51f55026d587</describes>
     <metadata>
+<!-- stmml (e.g., <stmml:unitList>) might be required here sensu Dave and EML best practices but not sure-->
       <unitList>
         <unit id="nominalMonth" unitType="dimensionless" parentSI="dimensionless" multiplierToSI="NA" name="nominalMonth">
           <description>Calculated value for use in comparison</description>

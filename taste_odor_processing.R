@@ -37,12 +37,15 @@ data <- lapply(data, function(x) {
 })
 
 # method two
-tona <- function(x) { x[x==''] <- NA 
+tona <- function(x) { x[x==''] <- NA
                       return(x)}
 data <- lapply(data, tona)
 
 
 # name fields according to metadata ----
+# this step is necessary here owing to the non-standardized naming conventions
+# in the future, we would give instruction to the investigator for proper naming
+
 # 3D_Fluorescence.csv
 names(data[['3D_Fluorescence.csv']]) <- c(
   'ID',
@@ -234,6 +237,203 @@ names(data[['Intensive_Lake_Sampling.csv']])<-c(
   'AlgaeCount',
   'Comments')
 
+# IntensiveSampling.csv
+names(data[['IntensiveSampling.csv']])<-c(
+  'ID',
+  'Miles_from_Granite_Reef_Dam',
+  'Miles_from_24th_St',
+  'Site_Number',
+  'Location',
+  'Date',
+  'MIB',
+  'Chlor_A',
+  'Total_Nitrogen',
+  'Dissolved_Nitrogen',
+  'Total_Phosphate',
+  'Dissolved_Phosphate',
+  'Geosmin')
+
+# mib_and_geosmin.csv
+names(data[['mib_and_geosmin.csv']])<-c(
+  'ID',
+  'Site_Number',
+  'Site_Location',
+  'Cluster_Name',
+  'Site_Acronym',
+  'Date',
+  'Month',
+  'Sample_Type',
+  'MIB',
+  'Geosmin',
+  'Beta_Cyclocitral',
+  'IPMP_Recovery',
+  'MIB_Phoenix',
+  'Geosmin_Phoenix',
+  'Comments')
+
+# nutrients.csv
+names(data[['nutrients.csv']])<-c(
+  'ID',
+  'Site_Number',
+  'Site_Location',
+  'Cluster_Name',
+  'Site_Acronym',
+  'Date',
+  'Month',
+  'Sample_Type',
+  'Tot_N',
+  'Diss_N',
+  'Tot_P',
+  'Diss_P',
+  'NO3-N',
+  'NH4-N',
+  'DON',
+  'Nutrient_comments')
+
+# quality.csv
+names(data[['quality.csv']])<-c(
+  'ID',
+  'Sample_date',
+  'Analyses_type',
+  'Samples_Analyzed',
+  'Calibration_slope',
+  'Calibration_Intercept',
+  'Correlation_Coefficient',
+  'Measure_units',
+  'MDL',
+  'Standard_range_low',
+  'Standard_range_high',
+  'External_theoretical',
+  'External_measured',
+  'Bias',
+  'Digestion_theoretical',
+  'Digestion_measured',
+  'Digestion_recovery',
+  'Sample_spiked',
+  'Sample_value',
+  'Spike_amount',
+  'Spike_theoretical',
+  'Spike_measured',
+  'Spike_recovery',
+  'QC_comment')
+
+# Quarterly_Lake_Sampling.csv
+names(data[['Quarterly_Lake_Sampling.csv']])<-c(
+  'ID',
+  'Site_Name',
+  'Site_Location',
+  'Cluster_Name',
+  'Site_Acronym',
+  'Date',
+  'MIB',
+  'Geosmin',
+  'Cyclocitral',
+  'Conductance',
+  'TP',
+  'TDN',
+  'DOC',
+  'UVA',
+  'SUVA')
+
+# Quarterly_Metals.csv
+names(data[['Quarterly_Metals.csv']])<-c(
+  'ID',
+  'Site_Name',
+  'Site_Location',
+  'Cluster_Name',
+  'Site_Acronym',
+  'Date',
+  'Units',
+  '7Li',
+  '9Be',
+  '23Na',
+  '24Mg',
+  '27Al',
+  '39K',
+  '44Ca',
+  '51V',
+  '52Cr',
+  '55Mn',
+  '56Fe',
+  '59Co',
+  '60Ni',
+  '65Cu',
+  '66Zn',
+  '75As',
+  '82Se',
+  '88Sr',
+  '95Mo',
+  '107Ag',
+  '111Cd',
+  '115In',
+  '121Sb',
+  '138Ba',
+  '202Hg',
+  '207Pb',
+  '232Th',
+  '238U')
+
+# Sample_Names.csv
+names(data[['Sample_Names.csv']])<-c(
+  'Site_ID',
+  'Site_Number',
+  'Site_Location',
+  'Cluster_Name',
+  'Site_Acronym')
+
+# sample_summary.csv
+names(data[['sample_summary.csv']])<-c(
+  'Site_ID',
+  'Site_Number',
+  'Site_Location',
+  'Cluster_Name',
+  'Site_Acronym',
+  'Date',
+  'Time',
+  'Personnel',
+  'Weather',
+  'Water_Appearance',
+  'Water_Odor_Strength',
+  'Phytoplankton_Color',
+  'Phytoplankton_clumps',
+  'Comments')
+
+# Sucralose.csv
+names(data[['Sucralose.csv']])<-c(
+  'ID',
+  'Site_Name',
+  'Site_Location',
+  'Cluster_Name',
+  'Site_Acronym',
+  'Date',
+  'Sucralose')
+
+# wtp_data.csv
+names(data[['wtp_data.csv']])<-c(
+  'ID',
+  'Site_Name',
+  'Site_Location',
+  'Cluster_Name',
+  'Site_Acronym',
+  'Date',
+  'Sample_at_lab?',
+  'Pre_chlorination',
+  'Conc_CL2',
+  'Duration_CL2',
+  'Add_CuSO4',
+  'Conc_CuSO4',
+  'Duration_CuSO4',
+  'Alum_in_pre-sed?',
+  'Conc_Alum',
+  'Duration_Alum',
+  'Alum_dose_floc',
+  'pH_in_floc',
+  'pH_adjuster?',
+  'PAC_added?',
+  'Conc_PAC',
+  'Duration_PAC',
+  'WTP_comments')
+
 
 # provide field descriptions according to metadata ----
 # 3D_Fluorescence.csv
@@ -269,15 +469,15 @@ fields.algae <- c(
 # format data frames ----
 # format dates ----
 dates <- function(df) {
-  if ("Month" %in% names(df)) {df$Month <- as.POSIXct(df$Month, format="%Y/%m/%d") 
+  if ("Month" %in% names(df)) {df$Month <- as.POSIXct(df$Month, format="%Y/%m/%d")
                                df$Month <- format(df$Month, format="%m")
-  }                               
-  if ("Date" %in% names(df)) {df$Date <- as.POSIXct(df$Date, format="%Y/%m/%d") 
   }
-  if ("Sample_Date" %in% names(df)) {df$Sample_Date <- as.POSIXct(df$Sample_Date, format="%Y/%m/%d") 
+  if ("Date" %in% names(df)) {df$Date <- as.POSIXct(df$Date, format="%Y/%m/%d")
+  }
+  if ("Sample_Date" %in% names(df)) {df$Sample_Date <- as.POSIXct(df$Sample_Date, format="%Y/%m/%d")
   }
   return(df)
 }
 
-data <- lapply(data, dates) 
+data <- lapply(data, dates)
 
