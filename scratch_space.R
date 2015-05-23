@@ -1,3 +1,21 @@
+dates <- function(df) {
+  if ("Month" %in% names(df)) {df$Month <- as.POSIXct(df$Month, format="%Y/%m/%d")
+  df$Month <- format(df$Month, format="%m")
+  }
+  if ("Date" %in% names(df)) {df$Date <- as.POSIXct(df$Date, format="%Y/%m/%d")
+  }
+  if ("Sample_Date" %in% names(df)) {df$Sample_Date <- as.POSIXct(df$Sample_Date, format="%Y/%m/%d")
+  }
+  return(df)
+}
+
+
+if ("Date" %in% names(df)) {df$Date <- as.POSIXct(df$Date, format="%Y/%m/%d")
+
+names(data[['algae']])
+
+
+
 for (i in 1:length(filesNames)) { filesNames[[i]] <- sub("\\.[[:alnum:]]+$", "", filesNames[[i]]) } # remove '.csv'
 
 fileNames <- list.files(path=".", pattern="*.csv", full.names=F, recursive=FALSE)
@@ -101,7 +119,7 @@ dataframe$rundate <- format(dataframe$rundate, format="%m/%d/%Y %H:%M:%S")
 
 ########### single dataframe ##########
 
-fluor <- as.data.frame(data[1])
+fluor <- data.frame(data[['3D_Fluorescence']])
 
 names(fluor) <- c(
   'ID',
@@ -166,6 +184,6 @@ eml_write(fluor,
           col.defs = col.defs,
           unit.defs = unit.defs,
           custom_units = c(unit),
-          file = "~/Desktop/fluor2.xml",
+          file = "~/Desktop/fluor3.xml",
           contact = "Carl Boettiger <cboettig@ropensci.org>")
 
