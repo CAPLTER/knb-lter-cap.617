@@ -455,18 +455,6 @@ dates <- function(df) {
   return(df)
 }
 
-# OE before adding time, delete the below if the above works....
-# dates <- function(df) {
-#   if ("Month" %in% names(df)) {df$Month <- as.POSIXct(df$Month, format="%Y/%m/%d")
-#   df$Month <- format(df$Month, format="%m")
-#   }
-#   if ("Date" %in% names(df)) {df$Date <- as.POSIXct(df$Date, format="%Y/%m/%d")
-#   }
-#   if ("Sample_Date" %in% names(df)) {df$Sample_Date <- as.POSIXct(df$Sample_Date, format="%Y/%m/%d")
-#   }
-#   return(df)
-# }
-
 data <- lapply(data, dates)
 
 ####
@@ -672,7 +660,7 @@ unit.defs.doc_month <-c(
   'UVA' = 'dimensionless',
   'SUVA' = 'SUVA_254nm',
   'PeakInt' = 'dimensionless',
-  'PeakIntWL' = 'nanometers',
+  'PeakIntWL' = 'nanometer',
   'Intat450' = 'dimensionless',
   'Intat460' = 'dimensionless',
   'Intat500' = 'dimensionless',
@@ -1247,15 +1235,16 @@ unit.defs.wtp_data <-c(
 
 # custom units ----
 # note that you can create a list of multiple custom units and call them in eml_write
+# able to generate these in an eml doc as additional metadata, but they are not being called by eml_dataTable
+# that is a big problem as all custom unit field are going to bring up the dialog boxes every single time
+# however anything can be entered for those values a these values overwrite the stmml in additional metadata
 
-# this works but not sure about the multiplierToSI, set to NA (text, not object) as the package requires that input but it it not clear that will be valid, subsequently changed to 1 based on
 nominalMonth <- eml_define_unit(id = "nominalMonth",
                                 parentSI = "unknown month",
                                 unitType = "date",
-                                multiplierToSI = "1",
+                                multiplierToSI = "1", # not sure about this
                                 description = "month in which sample was collected")
 
-# hung up
 microsiemensPerCentimeter <- eml_define_unit(id = "microsiemensPerCentimeter",
                                              parentSI = "siemen",
                                              unitType = "conductance",
@@ -1275,6 +1264,7 @@ microgramPerCentimeterCubed <- eml_define_unit(id = "microgramPerCentimeterCubed
                                                description = "Smicrograms per cubic centimeter")
 
 # generate datatables ----
+
 Fluorescence.DT <- eml_dataTable(Fluorescence,
                                  col.defs = col.defs.Fluorescence,
                                  unit.defs = unit.defs.Fluorescence,
@@ -1397,3 +1387,9 @@ wtp_data.DT <- eml_dataTable(wtp_data,
 
 # generate dataset ----
 
+# all possible dataset slotNames
+[1] "alternateIdentifier" "shortName"           "title"               "creator"             "metadataProvider"    "associatedParty"
+[7] "pubDate"             "language"            "series"              "abstract"            "keywordSet"          "additionalInfo"
+[13] "intellectualRights"  "distribution"        "coverage"            "purpose"             "contact"             "publisher"
+[19] "methods"             "dataTable"           "otherEntity"         "id"                  "system"              "scope"
+[25] "references"
