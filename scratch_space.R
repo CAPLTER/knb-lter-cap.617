@@ -187,3 +187,64 @@ eml_write(fluor,
           file = "~/Desktop/fluor3.xml",
           contact = "Carl Boettiger <cboettig@ropensci.org>")
 
+[1] "3D_Fluorescence"         "algae"                   "Arsenic"                 "brushexp"                "canal_data"
+[6] "doc_month"               "doc_quarter"             "field_measurements"      "gpscoord"                "Intensive_Lake_Sampling"
+[11] "IntensiveSampling"       "mib_and_geosmin"         "nutrients"               "quality"                 "Quarterly_Lake_Sampling"
+[16] "Quarterly_Metals.csv"    "Quarterly_Metals"        "Sample_Names"            "sample_summary"          "Sucralose"
+[21] "wtp_data"
+
+Fluorescence <- data.frame(data[['3D_Fluorescence']])
+algae <- data.frame(data[['algae']])
+doc_month <- data.frame(data[['doc_month']])
+
+# create two data tables
+Fluorescence.DT <- eml_dataTable(Fluorescence,
+                                 col.defs = col.defs.Fluorescence,
+                                 unit.defs = unit.defs.Fluorescence,
+                                 description = "metadata documentation for Fluorescence",
+                                 filename = "alpha")
+
+algae.DT <- eml_dataTable(algae,
+                          col.defs = col.defs.algae,
+                          unit.defs = unit.defs.algae,
+                          description = "metadata documentation for algae")
+
+
+# create a data set of the two tables
+testSet <- new("dataset",
+               title = "tryingMultTables",
+               dataTable = c(Fluorescence.DT,
+                             algae.DT))
+
+# create a new eml object then generate xml from it
+testEML <- new("eml",
+               dataset = testSet)
+eml_write(testEML, file = '~/Desktop/testEML.xml')
+
+# this one did not work, generated a file but just header info
+testEML_2 <- eml(dataset = testSet,
+                 title = "titleFromEng")
+eml_write(testEML_2, file = "~/Desktop/testEML_2.xml")
+
+# AWESOME !!!
+# extracting from other xml
+extract <- eml_read('../Davies_616')
+rights <- extract@dataset@intellectualRights
+
+charlie <- new('dataset',
+               title = 'testWithAlgae2',
+               #creator = 'Duke',
+               #contact = 'theDuke',
+               intellectualRights = rights,
+               dataTable = c(algae.DT))
+
+frank <- new('eml',
+             dataset = charlie)
+
+eml_write(frank, file = "~/Desktop/frank.xml")
+
+charlie <- new('dataset',
+               title = 'testWithAlgae2',
+               intellectualRights = rights,
+               dataTable = c(algae.DT))
+
