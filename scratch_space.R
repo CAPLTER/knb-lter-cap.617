@@ -188,11 +188,11 @@ algae <- data.frame(data[['algae']])
 doc_month <- data.frame(data[['doc_month']])
 
 # create two data tables
-Fluorescence.DT <- eml_dataTable(Fluorescence,
+Fluorescence.DT <- eml_dataTable(data.frame(data[['Fluorescence']]),
                                  col.defs = col.defs.Fluorescence,
                                  unit.defs = unit.defs.Fluorescence,
                                  description = "metadata documentation for Fluorescence",
-                                 filename = uuid::UUIDgenerate())
+                                 filename = 'Flourescence.csv')
 
 algae.DT <- eml_dataTable(algae,
                           col.defs = col.defs.algae,
@@ -222,22 +222,55 @@ eml_write(testEML, file = '~/Desktop/testEML.xml')
 #                  title = "titleFromEng")
 # eml_write(testEML_2, file = "~/Desktop/testEML_2.xml")
 
+# generate dataset ----
+
 # AWESOME !!!
 # extracting from other xml
 davies <- eml_read('../Davies_616')
 scope <- davies@scope
 system <- davies@system
 contact <- davies@dataset@contact
-creator <- davies@dataset@creator
+creator <- c(paulwesterhoff, miltsommmerfeld)
 keywordSet <- davies@dataset@keywordSet
-pubDate <- davies@dataset@pubDate
+pubDate <- '2015-06-01'
 publisher <- davies@dataset@publisher
 rights <- davies@dataset@intellectualRights
-title <- davies@dataset@title
+title <- 'Reducing Taste and Odor and Other Algae-Related Problems for Surface Water Supplies in Arid Environments'
+metadataProvider <- davies@dataset@metadataProvider
+additionalInfo <- davies@dataset@dataTable@additionalInfo@section
+
+paulwesterhoff <- person(given = 'Paul', family = 'Westerhoff', email = 'p.westerhoff@asu.edu')
+paul <- as.person('Paul Westerhoff <p.westerhoff@asu.edu>')
+miltsommerfeld <- person(given = 'Milton', family = 'Sommerfeld', email = 'Milton.Sommerfeld@asu.edu')
+milton <- as.person('Milton Sommerfeld <Milton.Sommerfeld@asu.edu>')
+marisamasles <- person(given = 'Marisa', family = 'Masles', email = 'Marisa.Masles@asu.edu')
+marisa <- as.person('Marisa Masles <Marisa.Masles@asu.edu>')
+metadataProvider <- c(as('marisa', 'metadataProvider'))
+metadataProvider <- c(marisamasles)
+
+creator <- c(as('Paul Westerhoff', 'creator'),
+             as('Milton Sommerfeld', 'creator'))
+
+ssebe <- new('address',
+             deliveryPoint = 'School of Sustainable Engineering and the Built Environment',
+             city = 'Tempe',
+             administrativeArea = 'AZ',
+             postalCode = '85287',
+             country = 'USA')
+
+methods <- new('methods', methodStep = c(new('methodStep', description = 'Perform field measurements for dissolved oxygen, pH, temperature, conductance, and Secchi disk.  Collect algae for chlorophyll measurement, identification and enumeration.  Collect and analyze water samples for total phosphorus, total nitrogen, DOC, SUVA, THM, MIB and Geosmin, and metals measurements.')))
+
+abstract <- 'Develop a comprehensive management strategy to reduce algae-related water quality problems for drinking water supplies in arid environments.'
+
+coverage <- eml_coverage(dates = c('1999-08-17', '2015-06-01'),
+                         geographic_description = 'Canals, Water Treatment Plants, and Reservoirs in Phoenix and surrounding areas',
+                         NSEWbox = c(34.4900, 33.2917, -111.1235, -112.1250))
+
 
 # build order
 - dataset
 - creator
+- metadataProvider
 - contact
 - publisher
 - title
@@ -252,71 +285,123 @@ title <- davies@dataset@title
 - attributeList
 - additionalMetadata
 
-# works but cannot get custom units in there
-# sometimes these are writing the data files sometimes not, at a loss
-charlie <- new('dataset',
+# working eml write but without custom_units integration ----
+delta <- new('dataset',
                scope = scope, # not sure the order of this one
                system = system, # not sure the order of this one
                creator = creator,
+               metadataProvider = metadataProvider,
                contact = contact,
                publisher = publisher,
                title = title,
                pubDate = pubDate,
                keywordSet = keywordSet,
+               abstract = abstract,
                intellectualRights = rights,
-               dataTable = c(Fluorescence.DT,
-                             algae.DT,
-                             doc_month.DT))
+               methods = methods,
+               coverage = coverage,
+               dataTable = c(algae.DT,
+                             Arsenic.DT,
+                             brushexp.DT,
+                             canal_data.DT,
+                             doc_month.DT,
+                             doc_quarter.DT,
+                             field_measurements.DT,
+                             Fluorescence.DT,
+                             gpscoord.DT,
+                             Intensive_Lake_Sampling.DT,
+                             IntensiveSampling.DT,
+                             mib_and_geosmin.DT,
+                             nutrients.DT,
+                             quality.DT,
+                             Quarterly_Lake_Sampling.DT,
+                             Quarterly_Metals.DT,
+                             Sample_Names.DT))
 
-golf <- new('eml',
-            dataset = charlie)
+frank <- new('eml',
+            dataset = delta)
 
-eml_write(golf,
-          file = "~/Desktop/nov.xml")
+eml_write(frank,
+          file = "./outFile.xml")
 
 # did not work at all (well, produced xml file with header and additional metadata and that was all)
-testhelper <- eml(dataset = c(Fluorescence.DT,
-                              algae.DT,
-                              doc_month.DT),
+testhelper <- eml(dataset = c(algae.DT,
+                              Arsenic.DT,
+                              brushexp.DT,
+                              canal_data.DT,
+                              doc_month.DT,
+                              doc_quarter.DT,
+                              field_measurements.DT,
+                              Fluorescence.DT,
+                              gpscoord.DT,
+                              Intensive_Lake_Sampling.DT,
+                              IntensiveSampling.DT,
+                              mib_and_geosmin.DT,
+                              nutrients.DT,
+                              quality.DT,
+                              Quarterly_Lake_Sampling.DT,
+                              Quarterly_Metals.DT,
+                              Sample_Names.DT),
                   scope = scope, # not sure the order of this one
                   system = system, # not sure the order of this one
                   creator = creator,
+                  metadataProvider = metadataProvider,
                   contact = contact,
                   publisher = publisher,
                   title = title,
                   pubDate = pubDate,
                   keywordSet = keywordSet,
+                  abstract = abstract,
                   intellectualRights = rights,
+                  methods = methods,
+                  coverage = coverage,
                   custom_units = c(microgramPerCentimeterCubed,
                                    SUVA_254nm,
                                    microsiemensPerCentimeter,
                                    nominalMonth))
 
-eml_write(testhelper, file = "~/Desktop/indiaB.xml")
+eml_write(testhelper, file = "./indiaB.xml")
 
-# produced beautiful xml (except stmml as additional metadata) but did not generate data files
-# well, worked once (sans data files), now nothing
+# worked beautifully one time, now only the produces an xml with the stmml
 hotel <- new('dataset',
-               dataTable = c(Fluorescence.DT,
-                             algae.DT,
-                             doc_month.DT))
+               dataTable = c(algae.DT,
+                             Arsenic.DT,
+                             brushexp.DT,
+                             canal_data.DT,
+                             doc_month.DT,
+                             doc_quarter.DT,
+                             field_measurements.DT,
+                             Fluorescence.DT,
+                             gpscoord.DT,
+                             Intensive_Lake_Sampling.DT,
+                             IntensiveSampling.DT,
+                             mib_and_geosmin.DT,
+                             nutrients.DT,
+                             quality.DT,
+                             Quarterly_Lake_Sampling.DT,
+                             Quarterly_Metals.DT,
+                             Sample_Names.DT))
 
 oscar <- eml(dataset = hotel,
-               scope = scope, # not sure the order of this one
-               system = system, # not sure the order of this one
-               creator = creator,
-               contact = contact,
-               publisher = publisher,
-               title = title,
-               pubDate = pubDate,
-               keywordSet = keywordSet,
-               intellectualRights = rights,
-               custom_units = c(microgramPerCentimeterCubed,
-                                SUVA_254nm,
-                                microsiemensPerCentimeter,
-                                nominalMonth))
+             scope = scope, # not sure the order of this one
+             system = system, # not sure the order of this one
+             creator = creator,
+             metadataProvider = metadataProvider,
+             contact = contact,
+             publisher = publisher,
+             title = title,
+             pubDate = pubDate,
+             keywordSet = keywordSet,
+             abstract = abstract,
+             intellectualRights = rights,
+             methods = methods,
+             coverage = coverage,
+             custom_units = c(microgramPerCentimeterCubed,
+                              SUVA_254nm,
+                              microsiemensPerCentimeter,
+                              nominalMonth))
 
-eml_write(oscar, file = "~/Desktop/oscar.xml")
+eml_write(oscar, file = "./oscar.xml")
 
 # separate eml write just for the custom units, really hope it does not come to this
 onlycustom <- eml(custom_units = c(microgramPerCentimeterCubed,
@@ -327,21 +412,22 @@ onlycustom <- eml(custom_units = c(microgramPerCentimeterCubed,
 # actually do not even need the eml construciton, this can be done directly in eml_write
 eml_write(onlycustom,
           custom_units = c(microgramPerCentimeterCubed,
-                                SUVA_254nm,
-                                microsiemensPerCentimeter,
-                                nominalMonth),
+                           SUVA_254nm,
+                           microsiemensPerCentimeter,
+                           nominalMonth),
           file = "~/Desktop/onlycustomA.xml")
 
-eml_write(fluor,
-          col.defs = col.defs,
-          unit.defs = unit.defs,
-          custom_units = c(unit),
-          file = "~/Desktop/fluor3.xml",
-          contact = "Carl Boettiger <cboettig@ropensci.org>")
-
-doc_month <- data.frame(data[['doc_month']])
-
-# for (i in 1:length(filesNames)) { filesNames[[i]] <- sub("\\.[[:alnum:]]+$", "", filesNames[[i]]) } # remove '.csv'
-# for (i in 1:length(data)) { names(data[i]) <- data.frame(data[i]) }
 # check out list2env() for converting list dfs to dfs
 
+Fluorescence.DT <- eml_dataTable(data.frame(data[['Fluorescence']]),
+                                 col.defs = col.defs.Fluorescence,
+                                 unit.defs = unit.defs.Fluorescence,
+                                 description = "metadata documentation for Fluorescence",
+                                 additionalInfo = additionalInfo,
+                                 filename = ref_id)
+
+eml_write(custom_units = c(microgramPerCentimeterCubed,
+                           SUVA_254nm,
+                           microsiemensPerCentimeter,
+                           nominalMonth),
+          file = "./units.xml")

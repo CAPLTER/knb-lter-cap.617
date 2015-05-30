@@ -99,9 +99,9 @@ names(data[['brushexp']])<-c(
   'DissP',
   'MIB',
   'Geosmin',
-  '664nm',
-  '647nm',
-  '630nm',
+  'uvvis664nm',
+  'uvvis647nm',
+  'uvvis630nm',
   'Chl_a_vol',
   'Chl_b_vol',
   'Chl_c_vol',
@@ -161,8 +161,8 @@ names(data[['doc_quarter']])<-c(
   'UVAf_Alsorp',
   'DOCf_Alsorp',
   'SUVAf',
-  '%_UVA_Rem',
-  '%_DOC_Rem',
+  'UVA_Rem',
+  'DOC_Rem',
   'CHCl3',
   'CHBrCl2',
   'CHClBr2',
@@ -178,7 +178,7 @@ names(data[['doc_quarter']])<-c(
   'CDBAA',
   'TBAA',
   'DiHAA',
-  '%DBA_Recovery',
+  'DBA_Recovery',
   'THAA9',
   'MCAA_COP',
   'MBAA_COP',
@@ -191,7 +191,7 @@ names(data[['doc_quarter']])<-c(
   'TAA_COP',
   'DiHAA_COP',
   'THAA9_COP',
-  '%DBA_COP',
+  'DBA_Recovery_COP',
   'SampleType',
   'DocqComments')
 
@@ -526,7 +526,7 @@ unit.defs.algae <- list(
   'AlgaeComments' = 'e.g. “musty odor”, “turbid”, “algal growth”, “dry canal”, etc.')
 
 # Arsenic
-col.defs.arsenic <-c(
+col.defs.Arsenic <-c(
   'ID' = 'Record number',
   'SiteNumber' = 'Site number or name',
   'SiteLocation' = 'Description of where site is located',
@@ -536,7 +536,7 @@ col.defs.arsenic <-c(
   'Arsenic' = 'Arsenic measurement; measurement by graphite furnace',
   'Perchlorate' = 'Perchlorate measurement; measurement by ion chromatography')
 
-unit.defs.arsenic <-c(
+unit.defs.Arsenic <-c(
   'ID' = 'number',
   'SiteNumber' = '‘A’ designates epilimnion, ‘B’ hypolimnion',
   'SiteLocation' = 'METADATA_NOT_PROVIDED',
@@ -558,9 +558,9 @@ col.defs.brushexp <-c(
   'DissP' = 'Dissolved phosphorus measurement; no data indicates measurement was below the MDL',
   'MIB' = '2-methylisoborneol measurement; no data indicates measurement was below the MDL',
   'Geosmin' = 'Geosmin measurement; no data indicates measurement was below the MDL',
-  '664nm' = 'UV-Vis measurement at a particular wavelength',
-  '647nm' = 'UV-Vis measurement at a particular wavelength',
-  '630nm' = 'UV-Vis measurement at a particular wavelength',
+  'uvvis664nm' = 'UV-Vis measurement at a particular wavelength',
+  'uvvis647nm' = 'UV-Vis measurement at a particular wavelength',
+  'uvvis630nm' = 'UV-Vis measurement at a particular wavelength',
   'Chl_a_vol' = 'Chlorophyll a measurement',
   'Chl_b_vol' = 'Chlorophyll b measurement',
   'Chl_c_vol' = 'Chlorophyll c measurement',
@@ -580,9 +580,9 @@ unit.defs.brushexp <-c(
   'DissP' = 'microgramsPerLiter',
   'MIB' = 'milligramsPerCubicMeter',
   'Geosmin' = 'milligramsPerCubicMeter',
-  '664nm' = 'dimensionless',
-  '647nm' = 'dimensionless',
-  '630nm' = 'dimensionless',
+  'uvvis664nm' = 'dimensionless',
+  'uvvis647nm' = 'dimensionless',
+  'uvvis630nm' = 'dimensionless',
   'Chl_a_vol' = 'microgramsPerLiter',
   'Chl_b_vol' = 'microgramsPerLiter',
   'Chl_c_vol' = 'microgramsPerLiter',
@@ -679,8 +679,8 @@ col.defs.doc_quarter <-c(
   'UVAf_Alsorp' = 'METADATA_NOT_PROVIDED',
   'DOCf_Alsorp' = 'METADATA_NOT_PROVIDED',
   'SUVAf' = 'METADATA_NOT_PROVIDED',
-  '%_UVA_Rem' = 'Percentage of UVA removed',
-  '%_DOC_Rem' = 'Percentage of DOC removed',
+  'UVA_Rem' = 'Percentage of UVA removed',
+  'DOC_Rem' = 'Percentage of DOC removed',
   'CHCl3' = 'Chloroform measurement',
   'CHBrCl2' = 'Dichloromethane measurement',
   'CHClBr2' = 'Dibromochloromethane measurement',
@@ -696,20 +696,20 @@ col.defs.doc_quarter <-c(
   'CDBAA' = 'Chlorodibromoacetic acid measurement',
   'TBAA' = 'Tribromoacetic acid measurement',
   'DiHAA' = 'di-haloacetic acids measurement',
-  '%DBA_Recovery' = 'Percent recovery of Dibromopropionic Acid',
+  'DBA_Recovery' = 'Percent recovery of Dibromopropionic Acid',
   'THAA9' = 'Sum measurement of Haloacetic acids',
-  'MCAA_COP' = 'METADATA_NOT_PROVIDED',
-  'MBAA_COP' = 'METADATA_NOT_PROVIDED',
-  'DCAA_COP' = 'METADATA_NOT_PROVIDED',
-  'TCAA_COP' = 'METADATA_NOT_PROVIDED',
-  'BCAA_COP' = 'METADATA_NOT_PROVIDED',
-  'DBAA_COP' = 'METADATA_NOT_PROVIDED',
-  'BDCAA_COP' = 'METADATA_NOT_PROVIDED',
-  'CDBAA_COP' = 'METADATA_NOT_PROVIDED',
-  'TAA_COP' = 'METADATA_NOT_PROVIDED',
-  'DiHAA_COP' = 'METADATA_NOT_PROVIDED',
-  'THAA9_COP' = 'METADATA_NOT_PROVIDED',
-  '%DBA_COP' = 'METADATA_NOT_PROVIDED',
+  'MCAA_COP' = 'Monochloroacetic acid measurement as reported by the City of Phoenix',
+  'MBAA_COP' = 'Monobromoacetic acid measurement as reported by the City of Phoenix',
+  'DCAA_COP' = 'Dichloroacetic acid measurement as reported by the City of Phoenix',
+  'TCAA_COP' = 'Trichloroacetic acid measurement as reported by the City of Phoenix',
+  'BCAA_COP' = 'Bromochloroacetic acid measurement as reported by the City of Phoenix',
+  'DBAA_COP' = 'Dibromoacetic acid measurement as reported by the City of Phoenix',
+  'BDCAA_COP' = 'Bromodichloroacetic acid measurement as reported by the City of Phoenix',
+  'CDBAA_COP' = 'Chlorodibromoacetic acid measurement as reported by the City of Phoenix',
+  'TBAA_COP' = 'Tribromoacetic acid measurement as reported by the City of Phoenix',
+  'DiHAA_COP' = 'di-haloacetic acids measurement as reported by the City of Phoenix',
+  'THAA9_COP' = 'Sum measurement of Haloacetic acids as reported by the City of Phoenix',
+  'DBA_Recovery_COP' = 'Percent recovery of Dibromopropionic Acid as reported by the City of Phoenix',
   'SampleType' = 'Type of water sample collected',
   'DocqComments' = 'Sampling comments about canal, lake or water treatment plant')
 
@@ -724,8 +724,8 @@ unit.defs.doc_quarter <-c(
   'UVAf_Alsorp' = 'METADATA_NOT_PROVIDED',
   'DOCf_Alsorp' = 'METADATA_NOT_PROVIDED',
   'SUVAf' = 'METADATA_NOT_PROVIDED',
-  '%_UVA_Rem' = 'dimensionless',
-  '%_DOC_Rem' = 'dimensionless',
+  'UVA_Rem' = 'dimensionless',
+  'DOC_Rem' = 'dimensionless',
   'CHCl3' = 'microgramsPerLiter',
   'CHBrCl2' = 'microgramsPerLiter',
   'CHClBr2' = 'microgramsPerLiter',
@@ -741,20 +741,20 @@ unit.defs.doc_quarter <-c(
   'CDBAA' = 'microgramsPerLiter',
   'TBAA' = 'microgramsPerLiter',
   'DiHAA' = 'microgramsPerLiter',
-  '%DBA_Recovery' = 'dimensionless',
+  'DBA_Recovery' = 'dimensionless',
   'THAA9' = 'microgramsPerLiter',
-  'MCAA_COP' = 'METADATA_NOT_PROVIDED',
-  'MBAA_COP' = 'METADATA_NOT_PROVIDED',
-  'DCAA_COP' = 'METADATA_NOT_PROVIDED',
-  'TCAA_COP' = 'METADATA_NOT_PROVIDED',
-  'BCAA_COP' = 'METADATA_NOT_PROVIDED',
-  'DBAA_COP' = 'METADATA_NOT_PROVIDED',
-  'BDCAA_COP' = 'METADATA_NOT_PROVIDED',
-  'CDBAA_COP' = 'METADATA_NOT_PROVIDED',
-  'TAA_COP' = 'METADATA_NOT_PROVIDED',
-  'DiHAA_COP' = 'METADATA_NOT_PROVIDED',
-  'THAA9_COP' = 'METADATA_NOT_PROVIDED',
-  '%DBA_COP' = 'METADATA_NOT_PROVIDED',
+  'MCAA_COP' = 'microgramsPerLiter',
+  'MBAA_COP' = 'microgramsPerLiter',
+  'DCAA_COP' = 'microgramsPerLiter',
+  'TCAA_COP' = 'microgramsPerLiter',
+  'BCAA_COP' = 'microgramsPerLiter',
+  'DBAA_COP' = 'microgramsPerLiter',
+  'BDCAA_COP' = 'microgramsPerLiter',
+  'CDBAA_COP' = 'microgramsPerLiter',
+  'TAA_COP' = 'microgramsPerLiter',
+  'DiHAA_COP' = 'microgramsPerLiter',
+  'THAA9_COP' = 'microgramsPerLiter',
+  'DBA_Recovery_COP' = 'dimensionless',
   'SampleType' = 'either “field blank”, “lab blank”, or “duplicate”; "grab" if not noted',
   'DocqComments' = 'e.g. “musty odor”, “turbid”, “algal growth”, “dry canal”, etc.')
 
@@ -812,9 +812,9 @@ unit.defs.gpscoord <-c(
   'ClusterName' = 'either “Verde”,” Salt”, “CAP”, “SRP",  or “Tempe”',
   'SiteAcronym' = 'METADATA_NOT_PROVIDED',
   'Date' = c(format = 'YYYY-MM-DD'),
-  'Longitude' = 'dimensionless',
-  'Latitude' = 'dimensionless',
-  'Altitude' = 'METADATA_NOT_PROVIDED')
+  'Longitude' = 'W deg min.sec',
+  'Latitude' = 'N deg min.sec',
+  'Altitude' = 'foot')
 
 # Intensive_Lake_Sampling
 col.defs.Intensive_Lake_Sampling <-c(
@@ -1122,8 +1122,8 @@ col.defs.Sample_Names <-c(
   'Site_Acronym' = 'Abbreviation of site location')
 
 unit.defs.Sample_Names <-c(
-  'Site_ID' = 'METADATA_NOT_PROVIDED',
-  'Site_Number' = '“A” denotes epilimnion, “B” denotes hypolimnion',
+  'Site_ID' = '“A” denotes epilimnion, “B” denotes hypolimnion',
+  'Site_Number' = 'number',
   'Site_Location' = 'METADATA_NOT_PROVIDED',
   'Cluster_Name' = 'either “Verde”,” Salt”, “CAP”, “SRP",  or “Tempe”',
   'Site_Acronym' = '“epi”= epilimnion, “hypo”= hypolimnion,  “dup”= duplicate, “x con”= cross connect')
@@ -1261,135 +1261,250 @@ microgramPerCentimeterCubed <- eml_define_unit(id = "microgramPerCentimeterCubed
                                                parentSI = "kilogramsPerCubicMeter",
                                                unitType = "massDensity",
                                                multiplierToSI = "1000000",
-                                               description = "Smicrograms per cubic centimeter")
+                                               description = "micrograms per cubic centimeter")
 
 # generate datatables ----
 
-Fluorescence.DT <- eml_dataTable(Fluorescence,
+Fluorescence.DT <- eml_dataTable(data.frame(data[['Fluorescence']]),
                                  col.defs = col.defs.Fluorescence,
                                  unit.defs = unit.defs.Fluorescence,
                                  description = "metadata documentation for Fluorescence",
-                                 filename = "Fluorescence.csv")
+                                 filename = uuid::UUIDgenerate())
 
-algae.DT <- eml_dataTable(algae,
+algae.DT <- eml_dataTable(data.frame(data[['algae']]),
                           col.defs = col.defs.algae,
                           unit.defs = unit.defs.algae,
                           description = "metadata documentation for algae",
-                          filename = algae.csv)
+                          filename = 'algae.csv')
 
-Arsenic.DT <- eml_dataTable(Arsenic,
+Arsenic.DT <- eml_dataTable(data.frame(data[['Arsenic']]),
                             col.defs = col.defs.Arsenic,
                             unit.defs = unit.defs.Arsenic,
                             description = "metadata documentation for Arsenic",
-                            filename = Arsenic.csv)
+                            filename = 'Arsenic.csv')
 
-brushexp.DT <- eml_dataTable(brushexp,
+brushexp.DT <- eml_dataTable(data.frame(data[['brushexp']]),
                              col.defs = col.defs.brushexp,
                              unit.defs = unit.defs.brushexp,
                              description = "metadata documentation for brushexp",
-                             filename = brushexp.csv)
+                             filename = 'brushexp.csv')
 
-canal_data.DT <- eml_dataTable(canal_data,
+canal_data.DT <- eml_dataTable(data.frame(data[['canal_data']]),
                                col.defs = col.defs.canal_data,
                                unit.defs = unit.defs.canal_data,
                                description = "metadata documentation for canal_data",
-                               filename = canal_data.csv)
+                               filename = 'canal_data.csv')
 
-doc_month.DT <- eml_dataTable(doc_month,
+doc_month.DT <- eml_dataTable(data.frame(data[['doc_month']]),
                               col.defs = col.defs.doc_month,
                               unit.defs = unit.defs.doc_month,
                               description = "metadata documentation for doc_month",
-                              filename = doc_month.csv)
+                              filename = 'doc_month.csv')
 
-doc_quarter.DT <- eml_dataTable(doc_quarter,
+doc_quarter.DT <- eml_dataTable(data.frame(data[['doc_quarter']]),
                                 col.defs = col.defs.doc_quarter,
                                 unit.defs = unit.defs.doc_quarter,
                                 description = "metadata documentation for doc_quarter",
-                                filename = doc_quarter.csv)
+                                filename = 'doc_quarter.csv')
 
-field_measurements.DT <- eml_dataTable(field_measurements,
+field_measurements.DT <- eml_dataTable(data.frame(data[['field_measurements']]),
                                        col.defs = col.defs.field_measurements,
                                        unit.defs = unit.defs.field_measurements,
                                        description = "metadata documentation for field_measurements",
-                                       filename = field_measurements.csv)
+                                       filename = 'field_measurements.csv')
 
-gpscoord.DT <- eml_dataTable(gpscoord,
+gpscoord.DT <- eml_dataTable(data.frame(data[['gpscoord']]),
                              col.defs = col.defs.gpscoord,
                              unit.defs = unit.defs.gpscoord,
                              description = "metadata documentation for gpscoord",
-                             filename = gpscoord.csv)
+                             filename = 'gpscoord.csv')
 
-Intensive_Lake_Sampling.DT <- eml_dataTable(Intensive_Lake_Sampling,
+Intensive_Lake_Sampling.DT <- eml_dataTable(data.frame(data[['Intensive_Lake_Sampling']]),
                                             col.defs = col.defs.Intensive_Lake_Sampling,
                                             unit.defs = unit.defs.Intensive_Lake_Sampling,
                                             description = "metadata documentation for Intensive_Lake_Sampling",
-                                            filename = Intensive_Lake_Sampling.csv)
+                                            filename = 'Intensive_Lake_Sampling.csv')
 
-IntensiveSampling.DT <- eml_dataTable(IntensiveSampling,
+IntensiveSampling.DT <- eml_dataTable(data.frame(data[['IntensiveSampling']]),
                                       col.defs = col.defs.IntensiveSampling,
                                       unit.defs = unit.defs.IntensiveSampling,
                                       description = "metadata documentation for IntensiveSampling",
-                                      filename = IntensiveSampling.csv)
+                                      filename = 'IntensiveSampling.csv')
 
-mib_and_geosmin.DT <- eml_dataTable(mib_and_geosmin,
+mib_and_geosmin.DT <- eml_dataTable(data.frame(data[['mib_and_geosmin']]),
                                     col.defs = col.defs.mib_and_geosmin,
                                     unit.defs = unit.defs.mib_and_geosmin,
                                     description = "metadata documentation for mib_and_geosmin",
-                                    filename = mib_and_geosmin.csv)
+                                    filename = 'mib_and_geosmin.csv')
 
-nutrients.DT <- eml_dataTable(nutrients,
+nutrients.DT <- eml_dataTable(data.frame(data[['nutrients']]),
                               col.defs = col.defs.nutrients,
                               unit.defs = unit.defs.nutrients,
                               description = "metadata documentation for nutrients",
-                              filename = nutrients.csv)
+                              filename = 'nutrients.csv')
 
-quality.DT <- eml_dataTable(quality,
+quality.DT <- eml_dataTable(data.frame(data[['quality']]),
                             col.defs = col.defs.quality,
                             unit.defs = unit.defs.quality,
                             description = "metadata documentation for quality",
-                            filename = quality.csv)
+                            filename = 'quality.csv')
 
-Quarterly_Lake_Sampling.DT <- eml_dataTable(Quarterly_Lake_Sampling,
+Quarterly_Lake_Sampling.DT <- eml_dataTable(data.frame(data[['Quarterly_Lake_Sampling']]),
                                             col.defs = col.defs.Quarterly_Lake_Sampling,
                                             unit.defs = unit.defs.Quarterly_Lake_Sampling,
                                             description = "metadata documentation for Quarterly_Lake_Sampling",
-                                            filename = Quarterly_Lake_Sampling.csv)
+                                            filename = 'Quarterly_Lake_Sampling.csv')
 
-Quarterly_Metals.DT <- eml_dataTable(Quarterly_Metals,
+Quarterly_Metals.DT <- eml_dataTable(data.frame(data[['Quarterly_Metals']]),
                                      col.defs = col.defs.Quarterly_Metals,
                                      unit.defs = unit.defs.Quarterly_Metals,
                                      description = "metadata documentation for Quarterly_Metals",
-                                     filename = Quarterly_Metals.csv)
+                                     filename = 'Quarterly_Metals.csv')
 
-Sample_Names.DT <- eml_dataTable(Sample_Names,
+Sample_Names.DT <- eml_dataTable(data.frame(data[['Sample_Names']]),
                                  col.defs = col.defs.Sample_Names,
                                  unit.defs = unit.defs.Sample_Names,
                                  description = "metadata documentation for Sample_Names",
-                                 filename = Sample_Names.csv)
+                                 filename = 'Sample_Names.csv')
 
-sample_summary.DT <- eml_dataTable(sample_summary,
+sample_summary.DT <- eml_dataTable(data.frame(data[['sample_summary']]),
                                    col.defs = col.defs.sample_summary,
                                    unit.defs = unit.defs.sample_summary,
                                    description = "metadata documentation for sample_summary",
-                                   filename = sample_summary.csv)
+                                   filename = 'sample_summary.csv')
 
-Sucralose.DT <- eml_dataTable(Sucralose,
+Sucralose.DT <- eml_dataTable(data.frame(data[['Sucralose']]),
                               col.defs = col.defs.Sucralose,
                               unit.defs = unit.defs.Sucralose,
                               description = "metadata documentation for Sucralose",
-                              filename = Sucralose.csv)
+                              filename = 'Sucralose.csv')
 
-wtp_data.DT <- eml_dataTable(wtp_data,
+wtp_data.DT <- eml_dataTable(data.frame(data[['wtp_data']]),
                              col.defs = col.defs.wtp_data,
                              unit.defs = unit.defs.wtp_data,
                              description = "metadata documentation for wtp_data",
-                             filename = wtp_data.csv)
+                             filename = 'wtp_data.csv')
 
 # generate dataset ----
 
-# all possible dataset slotNames
+# dataset slotNames
 [1] "alternateIdentifier" "shortName"           "title"               "creator"             "metadataProvider"    "associatedParty"
 [7] "pubDate"             "language"            "series"              "abstract"            "keywordSet"          "additionalInfo"
 [13] "intellectualRights"  "distribution"        "coverage"            "purpose"             "contact"             "publisher"
 [19] "methods"             "dataTable"           "otherEntity"         "id"                  "system"              "scope"
 [25] "references"
+
+# pull relevant info from an existing EML
+ddavies <- eml_read('../Davies_616')
+scope <- davies@scope
+system <- davies@system
+contact <- davies@dataset@contact
+keywordSet <- davies@dataset@keywordSet
+publisher <- davies@dataset@publisher
+rights <- davies@dataset@intellectualRights
+metadataProvider <- davies@dataset@metadataProvider
+additionalInfo <- davies@dataset@dataTable@additionalInfo@section
+
+# text based entities
+pubDate <- '2015-06-01'
+title <- 'Reducing Taste and Odor and Other Algae-Related Problems for Surface Water Supplies in Arid Environments'
+abstract <- 'Develop a comprehensive management strategy to reduce algae-related water quality problems for drinking water supplies in arid environments.'
+
+# person details but none used in this example
+# I could not get metadataProvider to work here, so pulled it from Davies_616 after adding those data to the file
+paulwesterhoff <- person(given = 'Paul', family = 'Westerhoff', email = 'p.westerhoff@asu.edu')
+paul <- as.person('Paul Westerhoff <p.westerhoff@asu.edu>')
+
+miltsommerfeld <- person(given = 'Milton', family = 'Sommerfeld', email = 'Milton.Sommerfeld@asu.edu')
+milton <- as.person('Milton Sommerfeld <Milton.Sommerfeld@asu.edu>')
+
+marisamasles <- person(given = 'Marisa', family = 'Masles', email = 'Marisa.Masles@asu.edu')
+marisa <- as.person('Marisa Masles <Marisa.Masles@asu.edu>')
+metadataProvider <- c(as('marisa', 'metadataProvider'))
+metadataProvider <- c(marisamasles)
+
+# not used here
+ssebe <- new('address',
+             deliveryPoint = 'School of Sustainable Engineering and the Built Environment',
+             city = 'Tempe',
+             administrativeArea = 'AZ',
+             postalCode = '85287',
+             country = 'USA')
+
+# creator
+creator <- c(as('Paul Westerhoff', 'creator'),
+             as('Milton Sommerfeld', 'creator'))
+
+# methods: will need to develop this, esp. project methods versus dataTable methods
+methods <- new('methods', methodStep = c(new('methodStep', description = 'Perform field measurements for dissolved oxygen, pH, temperature, conductance, and Secchi disk.  Collect algae for chlorophyll measurement, identification and enumeration.  Collect and analyze water samples for total phosphorus, total nitrogen, DOC, SUVA, THM, MIB and Geosmin, and metals measurements.')))
+
+# coverage
+# note that end date for this on-going study is arbitrarily defined
+coverage <- eml_coverage(dates = c('1999-08-17', '2015-06-01'),
+                         geographic_description = 'Canals, Water Treatment Plants, and Reservoirs in Phoenix and surrounding areas',
+                         NSEWbox = c(34.4900, 33.2917, -111.1235, -112.1250))
+
+
+# build order per REML
+- dataset
+- creator
+- metadataProvider
+- contact
+- publisher
+- title
+- pubDate
+- keywords
+- abstract
+- intellectualRights
+- methods
+- coverage
+- dataTable
+- physical
+- attributeList
+- additionalMetadata
+
+# works but cannot incorporate custom_units
+delta <- new('dataset',
+               scope = scope, # not sure the order of this one
+               system = system, # not sure the order of this one
+               creator = creator,
+               metadataProvider = metadataProvider,
+               contact = contact,
+               publisher = publisher,
+               title = title,
+               pubDate = pubDate,
+               keywordSet = keywordSet,
+               abstract = abstract,
+               intellectualRights = rights,
+               methods = methods,
+               coverage = coverage,
+               dataTable = c(algae.DT,
+                             Arsenic.DT,
+                             brushexp.DT,
+                             canal_data.DT,
+                             doc_month.DT,
+                             doc_quarter.DT,
+                             field_measurements.DT,
+                             Fluorescence.DT,
+                             gpscoord.DT,
+                             Intensive_Lake_Sampling.DT,
+                             IntensiveSampling.DT,
+                             mib_and_geosmin.DT,
+                             nutrients.DT,
+                             quality.DT,
+                             Quarterly_Lake_Sampling.DT,
+                             Quarterly_Metals.DT,
+                             Sample_Names.DT))
+
+frank <- new('eml',
+            dataset = delta)
+
+eml_write(frank,
+          file = "./outFile.xml")
+
+# custom_units > eml
+eml_write(custom_units = c(microgramPerCentimeterCubed,
+                           SUVA_254nm,
+                           microsiemensPerCentimeter,
+                           nominalMonth),
+          file = "./units.xml")
