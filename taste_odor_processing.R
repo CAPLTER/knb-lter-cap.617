@@ -348,34 +348,34 @@ names(data[['Quarterly_Metals']])<-c(
   'Site_Acronym',
   'Date',
   'Units',
-  '7Li',
-  '9Be',
-  '23Na',
-  '24Mg',
-  '27Al',
-  '39K',
-  '44Ca',
-  '51V',
-  '52Cr',
-  '55Mn',
-  '56Fe',
-  '59Co',
-  '60Ni',
-  '65Cu',
-  '66Zn',
-  '75As',
-  '82Se',
-  '88Sr',
-  '95Mo',
-  '107Ag',
-  '111Cd',
-  '115In',
-  '121Sb',
-  '138Ba',
-  '202Hg',
-  '207Pb',
-  '232Th',
-  '238U')
+  'Li7',
+  'Be9',
+  'Na23',
+  'Mg24',
+  'Al27',
+  'K39',
+  'Ca44',
+  'V51',
+  'Cr52',
+  'Mn55',
+  'Fe56',
+  'Co59',
+  'Ni60',
+  'Cu65',
+  'Zn66',
+  'As75',
+  'Se82',
+  'Sr88',
+  'Mo95',
+  'Ag107',
+  'Cd111',
+  'In115',
+  'Sb121',
+  'Ba138',
+  'Hg202',
+  'Pb207',
+  'Th232',
+  'U238')
 
 # Sample_Names
 names(data[['Sample_Names']])<-c(
@@ -1047,34 +1047,34 @@ col.defs.Quarterly_Metals <-c(
   'Site_Acronym' = 'Abbreviation of site location',
   'Date' = 'Date sample was collected',
   'Units' = 'Measurement units',
-  '7Li' = 'Lithium measurement by ICP-MS',
-  '9Be' = 'Beryllium measurement by ICP-MS',
-  '23Na' = 'Sodium measurement by ICP-MS',
-  '24Mg' = 'Magnesium measurement by ICP-MS',
-  '27Al' = 'Aluminum measurement by ICP-MS',
-  '39K' = 'Potassium measurement by ICP-MS',
-  '44Ca' = 'Calcium measurement by ICP-MS',
-  '51V' = 'Vanadium measurement by ICP-MS',
-  '52Cr' = 'Chromium measurement by ICP-MS',
-  '55Mn' = 'Manganese measurement by ICP-MS',
-  '56Fe' = 'Iron measurement by ICP-MS',
-  '59Co' = 'Cobalt measurement by ICP-MS',
-  '60Ni' = 'Nickle measurement by ICP-MS',
-  '65Cu' = 'Copper measurement by ICP-MS',
-  '66Zn' = 'Zinc measurement by ICP-MS',
-  '75As' = 'Arsenic measurement by ICP-MS',
-  '82Se' = 'Selenium measurement by ICP-MS',
-  '88Sr' = 'Strontium measurement by ICP-MS',
-  '95Mo' = 'Molybdenum measurement by ICP-MS',
-  '107Ag' = 'Silver measurement by ICP-MS',
-  '111Cd' = 'Cadmium measurement by ICP-MS',
-  '115In' = 'Indium measurement by ICP-MS',
-  '121Sb' = 'Antimony measurement by ICP-MS',
-  '138Ba' = 'Barium measurement by ICP-MS',
-  '202Hg' = 'Mercury measurement by ICP-MS',
-  '207Pb' = 'Lead measurement by ICP-MS',
-  '232Th' = 'Thorium measurement by ICP-MS',
-  '238U' = 'Uranium measurement by ICP-MS')
+  'Li7' = 'Lithium measurement by ICP-MS',
+  'Be9' = 'Beryllium measurement by ICP-MS',
+  'Na23' = 'Sodium measurement by ICP-MS',
+  'Mg24' = 'Magnesium measurement by ICP-MS',
+  'Al27' = 'Aluminum measurement by ICP-MS',
+  'K39' = 'Potassium measurement by ICP-MS',
+  'Ca44' = 'Calcium measurement by ICP-MS',
+  'V51' = 'Vanadium measurement by ICP-MS',
+  'Cr52' = 'Chromium measurement by ICP-MS',
+  'Mn55' = 'Manganese measurement by ICP-MS',
+  'Fe56' = 'Iron measurement by ICP-MS',
+  'Co59' = 'Cobalt measurement by ICP-MS',
+  'Ni60' = 'Nickle measurement by ICP-MS',
+  'Cu65' = 'Copper measurement by ICP-MS',
+  'Zn66' = 'Zinc measurement by ICP-MS',
+  'As75' = 'Arsenic measurement by ICP-MS',
+  'Se82' = 'Selenium measurement by ICP-MS',
+  'Sr88' = 'Strontium measurement by ICP-MS',
+  'Mo95' = 'Molybdenum measurement by ICP-MS',
+  'Ag107' = 'Silver measurement by ICP-MS',
+  'Cd111' = 'Cadmium measurement by ICP-MS',
+  'In115' = 'Indium measurement by ICP-MS',
+  'Sb121' = 'Antimony measurement by ICP-MS',
+  'Ba138' = 'Barium measurement by ICP-MS',
+  'Hg202' = 'Mercury measurement by ICP-MS',
+  'Pb207' = 'Lead measurement by ICP-MS',
+  'Th232' = 'Thorium measurement by ICP-MS',
+  'U238' = 'Uranium measurement by ICP-MS')
 
 unit.defs.Quarterly_Metals <-c(
   'ID' = 'number',
@@ -1084,34 +1084,34 @@ unit.defs.Quarterly_Metals <-c(
   'Site_Acronym' = '“epi” = epilimnion, “hypo” = hypolimnion',
   'Date' = c(format = 'YYYY-MM-DD'),
   'Units' = 'micrograms per liter',
-  '7Li' = 'microgramsPerLiter',
-  '9Be' = 'microgramsPerLiter',
-  '23Na' = 'microgramsPerLiter',
-  '24Mg' = 'microgramsPerLiter',
-  '27Al' = 'microgramsPerLiter',
-  '39K' = 'microgramsPerLiter',
-  '44Ca' = 'microgramsPerLiter',
-  '51V' = 'microgramsPerLiter',
-  '52Cr' = 'microgramsPerLiter',
-  '55Mn' = 'microgramsPerLiter',
-  '56Fe' = 'microgramsPerLiter',
-  '59Co' = 'microgramsPerLiter',
-  '60Ni' = 'microgramsPerLiter',
-  '65Cu' = 'microgramsPerLiter',
-  '66Zn' = 'microgramsPerLiter',
-  '75As' = 'microgramsPerLiter',
-  '82Se' = 'microgramsPerLiter',
-  '88Sr' = 'microgramsPerLiter',
-  '95Mo' = 'microgramsPerLiter',
-  '107Ag' = 'microgramsPerLiter',
-  '111Cd' = 'microgramsPerLiter',
-  '115In' = 'microgramsPerLiter',
-  '121Sb' = 'microgramsPerLiter',
-  '138Ba' = 'microgramsPerLiter',
-  '202Hg' = 'microgramsPerLiter',
-  '207Pb' = 'microgramsPerLiter',
-  '232Th' = 'microgramsPerLiter',
-  '238U' = 'microgramsPerLiter')
+  'Li7' = 'microgramsPerLiter',
+  'Be9' = 'microgramsPerLiter',
+  'Na23' = 'microgramsPerLiter',
+  'Mg24' = 'microgramsPerLiter',
+  'Al27' = 'microgramsPerLiter',
+  'K39' = 'microgramsPerLiter',
+  'Ca44' = 'microgramsPerLiter',
+  'V51' = 'microgramsPerLiter',
+  'Cr52' = 'microgramsPerLiter',
+  'Mn55' = 'microgramsPerLiter',
+  'Fe56' = 'microgramsPerLiter',
+  'Co59' = 'microgramsPerLiter',
+  'Ni60' = 'microgramsPerLiter',
+  'Cu65' = 'microgramsPerLiter',
+  'Zn66' = 'microgramsPerLiter',
+  'As75' = 'microgramsPerLiter',
+  'Se82' = 'microgramsPerLiter',
+  'Sr88' = 'microgramsPerLiter',
+  'Mo95' = 'microgramsPerLiter',
+  'Ag107' = 'microgramsPerLiter',
+  'Cd111' = 'microgramsPerLiter',
+  'In115' = 'microgramsPerLiter',
+  'Sb121' = 'microgramsPerLiter',
+  'Ba138' = 'microgramsPerLiter',
+  'Hg202' = 'microgramsPerLiter',
+  'Pb207' = 'microgramsPerLiter',
+  'Th232' = 'microgramsPerLiter',
+  'U238' = 'microgramsPerLiter')
 
 # Sample_Names
 col.defs.Sample_Names <-c(
@@ -1264,36 +1264,14 @@ microgramPerCentimeterCubed <- eml_define_unit(id = "microgramPerCentimeterCubed
                                                description = "micrograms per cubic centimeter")
 
 # generate datatables ----
-
-Fluorescence.DT <- eml_dataTable(data.frame(data[['Fluorescence']]),
-                                 col.defs = col.defs.Fluorescence,
-                                 unit.defs = unit.defs.Fluorescence,
-                                 description = "metadata documentation for Fluorescence",
-                                 filename = uuid::UUIDgenerate())
-
+# do this set one-by-one
 algae.DT <- eml_dataTable(data.frame(data[['algae']]),
                           col.defs = col.defs.algae,
                           unit.defs = unit.defs.algae,
                           description = "metadata documentation for algae",
                           filename = 'algae.csv')
 
-Arsenic.DT <- eml_dataTable(data.frame(data[['Arsenic']]),
-                            col.defs = col.defs.Arsenic,
-                            unit.defs = unit.defs.Arsenic,
-                            description = "metadata documentation for Arsenic",
-                            filename = 'Arsenic.csv')
 
-brushexp.DT <- eml_dataTable(data.frame(data[['brushexp']]),
-                             col.defs = col.defs.brushexp,
-                             unit.defs = unit.defs.brushexp,
-                             description = "metadata documentation for brushexp",
-                             filename = 'brushexp.csv')
-
-canal_data.DT <- eml_dataTable(data.frame(data[['canal_data']]),
-                               col.defs = col.defs.canal_data,
-                               unit.defs = unit.defs.canal_data,
-                               description = "metadata documentation for canal_data",
-                               filename = 'canal_data.csv')
 
 doc_month.DT <- eml_dataTable(data.frame(data[['doc_month']]),
                               col.defs = col.defs.doc_month,
@@ -1306,6 +1284,49 @@ doc_quarter.DT <- eml_dataTable(data.frame(data[['doc_quarter']]),
                                 unit.defs = unit.defs.doc_quarter,
                                 description = "metadata documentation for doc_quarter",
                                 filename = 'doc_quarter.csv')
+
+IntensiveSampling.DT <- eml_dataTable(data.frame(data[['IntensiveSampling']]),
+                                      col.defs = col.defs.IntensiveSampling,
+                                      unit.defs = unit.defs.IntensiveSampling,
+                                      description = "metadata documentation for IntensiveSampling",
+                                      filename = 'IntensiveSampling.csv')
+
+quality.DT <- eml_dataTable(data.frame(data[['quality']]),
+                            col.defs = col.defs.quality,
+                            unit.defs = unit.defs.quality,
+                            description = "metadata documentation for quality",
+                            filename = 'quality.csv')
+
+Quarterly_Lake_Sampling.DT <- eml_dataTable(data.frame(data[['Quarterly_Lake_Sampling']]),
+                                            col.defs = col.defs.Quarterly_Lake_Sampling,
+                                            unit.defs = unit.defs.Quarterly_Lake_Sampling,
+                                            description = "metadata documentation for Quarterly_Lake_Sampling",
+                                            filename = 'Quarterly_Lake_Sampling.csv')
+
+# okay to highlight all and run
+Arsenic.DT <- eml_dataTable(data.frame(data[['Arsenic']]),
+                            col.defs = col.defs.Arsenic,
+                            unit.defs = unit.defs.Arsenic,
+                            description = "metadata documentation for Arsenic",
+                            filename = 'Arsenic.csv')
+
+Fluorescence.DT <- eml_dataTable(data.frame(data[['Fluorescence']]),
+                                 col.defs = col.defs.Fluorescence,
+                                 unit.defs = unit.defs.Fluorescence,
+                                 description = "metadata documentation for Fluorescence",
+                                 filename = 'Fluorescence.csv')
+
+brushexp.DT <- eml_dataTable(data.frame(data[['brushexp']]),
+                             col.defs = col.defs.brushexp,
+                             unit.defs = unit.defs.brushexp,
+                             description = "metadata documentation for brushexp",
+                             filename = 'brushexp.csv')
+
+canal_data.DT <- eml_dataTable(data.frame(data[['canal_data']]),
+                               col.defs = col.defs.canal_data,
+                               unit.defs = unit.defs.canal_data,
+                               description = "metadata documentation for canal_data",
+                               filename = 'canal_data.csv')
 
 field_measurements.DT <- eml_dataTable(data.frame(data[['field_measurements']]),
                                        col.defs = col.defs.field_measurements,
@@ -1325,12 +1346,6 @@ Intensive_Lake_Sampling.DT <- eml_dataTable(data.frame(data[['Intensive_Lake_Sam
                                             description = "metadata documentation for Intensive_Lake_Sampling",
                                             filename = 'Intensive_Lake_Sampling.csv')
 
-IntensiveSampling.DT <- eml_dataTable(data.frame(data[['IntensiveSampling']]),
-                                      col.defs = col.defs.IntensiveSampling,
-                                      unit.defs = unit.defs.IntensiveSampling,
-                                      description = "metadata documentation for IntensiveSampling",
-                                      filename = 'IntensiveSampling.csv')
-
 mib_and_geosmin.DT <- eml_dataTable(data.frame(data[['mib_and_geosmin']]),
                                     col.defs = col.defs.mib_and_geosmin,
                                     unit.defs = unit.defs.mib_and_geosmin,
@@ -1342,18 +1357,6 @@ nutrients.DT <- eml_dataTable(data.frame(data[['nutrients']]),
                               unit.defs = unit.defs.nutrients,
                               description = "metadata documentation for nutrients",
                               filename = 'nutrients.csv')
-
-quality.DT <- eml_dataTable(data.frame(data[['quality']]),
-                            col.defs = col.defs.quality,
-                            unit.defs = unit.defs.quality,
-                            description = "metadata documentation for quality",
-                            filename = 'quality.csv')
-
-Quarterly_Lake_Sampling.DT <- eml_dataTable(data.frame(data[['Quarterly_Lake_Sampling']]),
-                                            col.defs = col.defs.Quarterly_Lake_Sampling,
-                                            unit.defs = unit.defs.Quarterly_Lake_Sampling,
-                                            description = "metadata documentation for Quarterly_Lake_Sampling",
-                                            filename = 'Quarterly_Lake_Sampling.csv')
 
 Quarterly_Metals.DT <- eml_dataTable(data.frame(data[['Quarterly_Metals']]),
                                      col.defs = col.defs.Quarterly_Metals,
@@ -1388,6 +1391,7 @@ wtp_data.DT <- eml_dataTable(data.frame(data[['wtp_data']]),
 # generate dataset ----
 
 # dataset slotNames
+# slotNames(new('dataset'))
 [1] "alternateIdentifier" "shortName"           "title"               "creator"             "metadataProvider"    "associatedParty"
 [7] "pubDate"             "language"            "series"              "abstract"            "keywordSet"          "additionalInfo"
 [13] "intellectualRights"  "distribution"        "coverage"            "purpose"             "contact"             "publisher"
@@ -1395,15 +1399,18 @@ wtp_data.DT <- eml_dataTable(data.frame(data[['wtp_data']]),
 [25] "references"
 
 # pull relevant info from an existing EML
-ddavies <- eml_read('../Davies_616')
+davies <- eml_read('../Davies_616')
 scope <- davies@scope
 system <- davies@system
+language <- davies@dataset@language
+distribution <- davies@dataset@distribution
+alternateIdentifier <- davies@dataset@alternateIdentifier
 contact <- davies@dataset@contact
 keywordSet <- davies@dataset@keywordSet
 publisher <- davies@dataset@publisher
 rights <- davies@dataset@intellectualRights
 metadataProvider <- davies@dataset@metadataProvider
-additionalInfo <- davies@dataset@dataTable@additionalInfo@section
+# additionalInfo <- davies@dataset@dataTable@additionalInfo@section
 
 # text based entities
 pubDate <- '2015-06-01'
@@ -1412,24 +1419,24 @@ abstract <- 'Develop a comprehensive management strategy to reduce algae-related
 
 # person details but none used in this example
 # I could not get metadataProvider to work here, so pulled it from Davies_616 after adding those data to the file
-paulwesterhoff <- person(given = 'Paul', family = 'Westerhoff', email = 'p.westerhoff@asu.edu')
-paul <- as.person('Paul Westerhoff <p.westerhoff@asu.edu>')
-
-miltsommerfeld <- person(given = 'Milton', family = 'Sommerfeld', email = 'Milton.Sommerfeld@asu.edu')
-milton <- as.person('Milton Sommerfeld <Milton.Sommerfeld@asu.edu>')
-
-marisamasles <- person(given = 'Marisa', family = 'Masles', email = 'Marisa.Masles@asu.edu')
-marisa <- as.person('Marisa Masles <Marisa.Masles@asu.edu>')
-metadataProvider <- c(as('marisa', 'metadataProvider'))
-metadataProvider <- c(marisamasles)
+# paulwesterhoff <- person(given = 'Paul', family = 'Westerhoff', email = 'p.westerhoff@asu.edu')
+# paul <- as.person('Paul Westerhoff <p.westerhoff@asu.edu>')
+#
+# miltsommerfeld <- person(given = 'Milton', family = 'Sommerfeld', email = 'Milton.Sommerfeld@asu.edu')
+# milton <- as.person('Milton Sommerfeld <Milton.Sommerfeld@asu.edu>')
+#
+# marisamasles <- person(given = 'Marisa', family = 'Masles', email = 'Marisa.Masles@asu.edu')
+# marisa <- as.person('Marisa Masles <Marisa.Masles@asu.edu>')
+# metadataProvider <- c(as('marisa', 'metadataProvider'))
+# metadataProvider <- c(marisamasles)
 
 # not used here
-ssebe <- new('address',
-             deliveryPoint = 'School of Sustainable Engineering and the Built Environment',
-             city = 'Tempe',
-             administrativeArea = 'AZ',
-             postalCode = '85287',
-             country = 'USA')
+# ssebe <- new('address',
+#              deliveryPoint = 'School of Sustainable Engineering and the Built Environment',
+#              city = 'Tempe',
+#              administrativeArea = 'AZ',
+#              postalCode = '85287',
+#              country = 'USA')
 
 # creator
 creator <- c(as('Paul Westerhoff', 'creator'),
@@ -1467,9 +1474,12 @@ coverage <- eml_coverage(dates = c('1999-08-17', '2015-06-01'),
 delta <- new('dataset',
                scope = scope, # not sure the order of this one
                system = system, # not sure the order of this one
+               alternateIdentifier = alternateIdentifier,
+               language = language,
                creator = creator,
                metadataProvider = metadataProvider,
                contact = contact,
+               distribution = distribution,
                publisher = publisher,
                title = title,
                pubDate = pubDate,
