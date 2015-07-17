@@ -20,12 +20,10 @@ data <- lapply(files, BatchLoad)
 fileNames <- list.files(path=".", pattern="*.csv", full.names=F, recursive=FALSE)
 
 # modify and assign filenames
-rmxlsx <- function(file) { sub(".xlsx.csv", "", file) } # function to remove xlsx.csv file extension(s)
+# be sure to change '3D_Fluorescence' to 'Fluorescence' - done manually outside of R in this case
 rmspac <- function(file) { gsub(" ", "_", file) } # function to change spaces to underscores
 fileNames <- lapply(fileNames, rmspac) # apply function rmspac to all filenames
-fileNames <- lapply(fileNames, rmxlsx) # apply function rmxlsx to all filenames
 names(data) <- fileNames # assign file names to list of datasets
-# be sure to change '3D_Fluorescence' to 'Fluorescence' - done manually outside of R in this case
 
 # convert empty values to NAs ----
 # method one
@@ -35,26 +33,9 @@ data <- lapply(data, function(x) {
   return(x)
 })
 
-# method two
-# tona <- function(x) { x[x==''] <- NA
-#                      return(x)}
-# data <- lapply(data, tona)
-
 # NAME fields according to metadata ----
 # this step is necessary here owing to the non-standardized naming conventions
 # in the future, we would give instruction to the investigator for proper naming
-
-# Fluorescence
-names(data[['Fluorescence']]) <- c(
-  'ID',
-  'Site_Number',
-  'Month',
-  'Exc_A',
-  'Em_A',
-  'Fl_A',
-  'Exc_B',
-  'Em_B',
-  'Fl_B')
 
 # algae
 names(data[['algae']]) <- c(
@@ -87,46 +68,6 @@ names(data[['Arsenic']])<-c(
   'Arsenic',
   'Perchlorate')
 
-# brushexp
-names(data[['brushexp']])<-c(
-  'ID',
-  'SiteNumber',
-  'SiteLocation',
-  'Date',
-  'TotN',
-  'DissN',
-  'TotP',
-  'DissP',
-  'MIB',
-  'Geosmin',
-  'uvvis664nm',
-  'uvvis647nm',
-  'uvvis630nm',
-  'Chl_a_vol',
-  'Chl_b_vol',
-  'Chl_c_vol',
-  'Chl_a_area',
-  'Chl_b_area',
-  'Chl_c_area',
-  'DWT')
-
-# canal_data
-names(data[['canal_data']])<-c(
-  'ID',
-  'SiteNumber',
-  'SiteLocation',
-  'ClusterName',
-  'SiteAcronym',
-  'Date',
-  'PeriphytonDescription',
-  'Thickness_shallow',
-  'MatColor_shallow',
-  'Thickness_mid',
-  'MatColor_mid',
-  'Thickness_deep',
-  'MatColor_deep',
-  'CanalNotes')
-
 # doc_month
 names(data[['doc_month']])<-c(
   'ID',
@@ -148,52 +89,6 @@ names(data[['doc_month']])<-c(
   'Intat500',
   'Fl',
   'docm_comments')
-
-# doc_quarter
-names(data[['doc_quarter']])<-c(
-  'ID',
-  'SiteNumber',
-  'SiteLocation',
-  'ClusterName',
-  'SiteAcronym',
-  'Date',
-  'Month',
-  'UVAf_Alsorp',
-  'DOCf_Alsorp',
-  'SUVAf',
-  'UVA_Rem',
-  'DOC_Rem',
-  'CHCl3',
-  'CHBrCl2',
-  'CHClBr2',
-  'CHBr3',
-  'TTHM',
-  'MCAA',
-  'MBAA',
-  'DCAA',
-  'TCAA',
-  'BCAA',
-  'DBAA',
-  'BDCAA',
-  'CDBAA',
-  'TBAA',
-  'DiHAA',
-  'DBA_Recovery',
-  'THAA9',
-  'MCAA_COP',
-  'MBAA_COP',
-  'DCAA_COP',
-  'TCAA_COP',
-  'BCAA_COP',
-  'DBAA_COP',
-  'BDCAA_COP',
-  'CDBAA_COP',
-  'TAA_COP',
-  'DiHAA_COP',
-  'THAA9_COP',
-  'DBA_Recovery_COP',
-  'SampleType',
-  'DocqComments')
 
 # field_measurements
 names(data[['field_measurements']])<-c(
@@ -224,38 +119,6 @@ names(data[['gpscoord']])<-c(
   'Longitude',
   'Latitude',
   'Altitude')
-
-# Intensive_Lake_Sampling
-names(data[['Intensive_Lake_Sampling']])<-c(
-  'ID',
-  'SiteNumber',
-  'Depth_ft',
-  'Depth_m',
-  'Lake',
-  'Month',
-  'MIB',
-  'Geosmin',
-  'T',
-  'DO_conc',
-  'DO_percent',
-  'AlgaeCount',
-  'Comments')
-
-# IntensiveSampling
-names(data[['IntensiveSampling']])<-c(
-  'ID',
-  'Miles_from_Granite_Reef_Dam',
-  'Miles_from_24th_St',
-  'Site_Number',
-  'Location',
-  'Date',
-  'MIB',
-  'Chlor_A',
-  'Total_Nitrogen',
-  'Dissolved_Nitrogen',
-  'Total_Phosphate',
-  'Dissolved_Phosphate',
-  'Geosmin')
 
 # mib_and_geosmin
 names(data[['mib_and_geosmin']])<-c(
@@ -293,33 +156,6 @@ names(data[['nutrients']])<-c(
   'NH4_N',
   'DON',
   'Nutrient_comments')
-
-# quality
-names(data[['quality']])<-c(
-  'ID',
-  'Sample_date',
-  'Analyses_type',
-  'Samples_Analyzed',
-  'Calibration_slope',
-  'Calibration_Intercept',
-  'Correlation_Coefficient',
-  'Measure_units',
-  'MDL',
-  'Standard_range_low',
-  'Standard_range_high',
-  'External_theoretical',
-  'External_measured',
-  'Bias',
-  'Digestion_theoretical',
-  'Digestion_measured',
-  'Digestion_recovery',
-  'Sample_spiked',
-  'Sample_value',
-  'Spike_amount',
-  'Spike_theoretical',
-  'Spike_measured',
-  'Spike_recovery',
-  'QC_comment')
 
 # Quarterly_Lake_Sampling
 names(data[['Quarterly_Lake_Sampling']])<-c(
@@ -385,24 +221,6 @@ names(data[['Sample_Names']])<-c(
   'Cluster_Name',
   'Site_Acronym')
 
-# sample_summary
-names(data[['sample_summary']])<-c(
-  'ID',
-  'Site_Number',
-  'Site_Location',
-  'Cluster_Name',
-  'Site_Acronym',
-  'Date',
-  'Time',
-  'Personnel',
-  'Weather',
-  'Water_Appearance',
-  'Water_Odor_Strength',
-  'Water_Odor',
-  'Phytoplankton_Color',
-  'Phytoplankton_clumps',
-  'Comments')
-
 # Sucralose
 names(data[['Sucralose']])<-c(
   'ID',
@@ -413,31 +231,18 @@ names(data[['Sucralose']])<-c(
   'Date',
   'Sucralose')
 
-# wtp_data
-names(data[['wtp_data']])<-c(
+# microbial
+names(data[['microbial']])<-c(
   'ID',
   'Site_Name',
   'Site_Location',
   'Cluster_Name',
   'Site_Acronym',
   'Date',
-  'Sample_at_lab?',
-  'Pre_chlorination',
-  'Conc_CL2',
-  'Duration_CL2',
-  'Add_CuSO4',
-  'Conc_CuSO4',
-  'Duration_CuSO4',
-  'Alum_in_pre-sed?',
-  'Conc_Alum',
-  'Duration_Alum',
-  'Alum_dose_floc',
-  'pH_in_floc',
-  'pH_adjuster?',
-  'PAC_added?',
-  'Conc_PAC',
-  'Duration_PAC',
-  'WTP_comments')
+  'E_coli',
+  'Coliform',
+  'Mycobacterium',
+  'Comments')
 
 # format dates and time ----
 
@@ -457,34 +262,10 @@ dates <- function(df) {
 
 data <- lapply(data, dates)
 
-####
 # be sure to modify format of time field in sample_summary table
 # 'Time' = c(format = '%H:%M'),
 
 # provide col.defs (field descriptions) and unit.defs according to metadata ----
-
-# Fluorescence
-col.defs.Fluorescence <- c(
-  'ID' = 'Record number',
-  'Site_Number' = 'Site number or name',
-  'Month' = 'Month sample was collected',
-  'Exc_A' = 'Excitation A wavelength',
-  'Em_A' = 'Emission A wavelength',
-  'Fl_A' = 'Fluorescence A',
-  'Exc_B' = 'Excitation B wavelength',
-  'Em_B' = 'Emission B wavelength',
-  'Fl_B' = 'Fluorescence B')
-
-unit.defs.Fluorescence <- c(
-  'ID' = 'number',
-  'Site_Number' = "'a' designates the epilimnion",
-  'Month' = 'nominalMonth',
-  'Exc_A' = 'nanometer',
-  'Em_A' = 'nanometer',
-  'Fl_A' = 'dimensionless',
-  'Exc_B' = 'nanometer',
-  'Em_B' = 'nanometer',
-  'Fl_B' = 'dimensionless')
 
 # algae
 col.defs.algae <- c(
@@ -546,84 +327,6 @@ unit.defs.Arsenic <-c(
   'Arsenic' = 'microgramsPerLiter',
   'Perchlorate' = 'microgramsPerLiter')
 
-# brushexp
-col.defs.brushexp <-c(
-  'ID' = 'Record number',
-  'SiteNumber' = 'Site number or name',
-  'SiteLocation' = 'Description of where site is located',
-  'Date' = 'Date sample was collected',
-  'TotN' = 'Total nitrogen measurement; no data indicates measurement was below the MDL',
-  'DissN' = 'Dissolved nitrogen measurement; no data indicates measurement was below the MDL',
-  'TotP' = 'Total phosphorus measurement; no data indicates measurement was below the MDL',
-  'DissP' = 'Dissolved phosphorus measurement; no data indicates measurement was below the MDL',
-  'MIB' = '2-methylisoborneol measurement; no data indicates measurement was below the MDL',
-  'Geosmin' = 'Geosmin measurement; no data indicates measurement was below the MDL',
-  'uvvis664nm' = 'UV-Vis measurement at a particular wavelength',
-  'uvvis647nm' = 'UV-Vis measurement at a particular wavelength',
-  'uvvis630nm' = 'UV-Vis measurement at a particular wavelength',
-  'Chl_a_vol' = 'Chlorophyll a measurement',
-  'Chl_b_vol' = 'Chlorophyll b measurement',
-  'Chl_c_vol' = 'Chlorophyll c measurement',
-  'Chl_a_area' = 'Chlorophyll a measurement',
-  'Chl_b_area' = 'Chlorophyll b measurement',
-  'Chl_c_area' = 'Chlorophyll c measurement',
-  'DWT' = 'Dry weight of biomass')
-
-unit.defs.brushexp <-c(
-  'ID' = 'number',
-  'SiteNumber' = 'METADATA_NOT_PROVIDED',
-  'SiteLocation' = 'METADATA_NOT_PROVIDED',
-  'Date' = c(format = 'YYYY-MM-DD'),
-  'TotN' = 'milligramsPerLiter',
-  'DissN' = 'milligramsPerLiter',
-  'TotP' = 'microgramsPerLiter',
-  'DissP' = 'microgramsPerLiter',
-  'MIB' = 'milligramsPerCubicMeter',
-  'Geosmin' = 'milligramsPerCubicMeter',
-  'uvvis664nm' = 'dimensionless',
-  'uvvis647nm' = 'dimensionless',
-  'uvvis630nm' = 'dimensionless',
-  'Chl_a_vol' = 'microgramsPerLiter',
-  'Chl_b_vol' = 'microgramsPerLiter',
-  'Chl_c_vol' = 'microgramsPerLiter',
-  'Chl_a_area' = 'milligramsPerSquareMeter',
-  'Chl_b_area' = 'milligramsPerSquareMeter',
-  'Chl_c_area' = 'milligramsPerSquareMeter',
-  'DWT' = 'milligramsPerSquareMeter')
-
-# canal_data
-col.defs.canal_data <-c(
-  'ID' = 'Record number',
-  'SiteNumber' = 'Site number or name',
-  'SiteLocation' = 'Description of where site is located',
-  'ClusterName' = 'Source water',
-  'SiteAcronym' = 'Abbreviation of site location',
-  'Date' = 'Date sample was collected',
-  'PeriphytonDescription' = 'Color and thickness of mat, if present',
-  'Thickness_shallow' = 'Thickness of Periphyton mat(s) less than 6 inches deep',
-  'MatColor_shallow' = 'Color of Periphyton mat(s) less than 6 inches deep',
-  'Thickness_mid' = 'Thickness of Periphyton mat(s) between 6 and 12 inches deep',
-  'MatColor_mid' = 'Color of Periphyton mat(s) between 6 and 12 inches deep',
-  'Thickness_deep' = 'Thickness of Periphyton mat(s) greater than 12 inches deep',
-  'MatColor_deep' = 'Color of Periphyton mat(s) greater than 12 inches deep',
-  'CanalNotes' = 'Description of canal odor, turbidity, algal growth, etc.')
-
-unit.defs.canal_data <-c(
-  'ID' = 'number',
-  'SiteNumber' = 'METADATA_NOT_PROVIDED',
-  'SiteLocation' = 'METADATA_NOT_PROVIDED',
-  'ClusterName' = 'either “Verde”,” Salt”, “CAP”, “SRP",  or “Tempe”',
-  'SiteAcronym' = 'METADATA_NOT_PROVIDED',
-  'Date' = c(format = 'YYYY-MM-DD'),
-  'PeriphytonDescription' = 'e.g.  “green”, “brown”, “blue-green”, “thick”, “thin”',
-  'Thickness_shallow' = 'inch',
-  'MatColor_shallow' = 'e.g. “green”,” brown”, “gold”, “blue-green”',
-  'Thickness_mid' = 'inch',
-  'MatColor_mid' = 'e.g. “green”,” brown”, “gold”, “blue-green”',
-  'Thickness_deep' = 'inch',
-  'MatColor_deep' = 'e.g. “green”,” brown”, “gold”, “blue-green”',
-  'CanalNotes' = 'METADATA_NOT_PROVIDED')
-
 # doc_month
 col.defs.doc_month <-c(
   'ID' = 'Record number',
@@ -666,97 +369,6 @@ unit.defs.doc_month <-c(
   'Intat500' = 'dimensionless',
   'Fl' = 'dimensionless',
   'docm_comments' = 'METADATA_NOT_PROVIDED')
-
-# doc_quarter
-col.defs.doc_quarter <-c(
-  'ID' = 'Record number',
-  'SiteNumber' = 'Site number or name',
-  'SiteLocation' = 'Description of where site is located',
-  'ClusterName' = 'Source water',
-  'SiteAcronym' = 'Abbreviation of site location',
-  'Date' = 'Date sample was collected',
-  'Month' = 'Month sample was collected',
-  'UVAf_Alsorp' = 'METADATA_NOT_PROVIDED',
-  'DOCf_Alsorp' = 'METADATA_NOT_PROVIDED',
-  'SUVAf' = 'METADATA_NOT_PROVIDED',
-  'UVA_Rem' = 'Percentage of UVA removed',
-  'DOC_Rem' = 'Percentage of DOC removed',
-  'CHCl3' = 'Chloroform measurement',
-  'CHBrCl2' = 'Dichloromethane measurement',
-  'CHClBr2' = 'Dibromochloromethane measurement',
-  'CHBr3' = 'Bromoform measurement',
-  'TTHM' = 'Trihalomethanes measurement',
-  'MCAA' = 'Monochloroacetic acid measurement',
-  'MBAA' = 'Monobromoacetic acid measurement',
-  'DCAA' = 'Dichloroacetic acid measurement',
-  'TCAA' = 'Trichloroacetic acid measurement',
-  'BCAA' = 'Bromochloroacetic acid measurement',
-  'DBAA' = 'Dibromoacetic acid measurement',
-  'BDCAA' = 'Bromodichloroacetic acid measurement',
-  'CDBAA' = 'Chlorodibromoacetic acid measurement',
-  'TBAA' = 'Tribromoacetic acid measurement',
-  'DiHAA' = 'di-haloacetic acids measurement',
-  'DBA_Recovery' = 'Percent recovery of Dibromopropionic Acid',
-  'THAA9' = 'Sum measurement of Haloacetic acids',
-  'MCAA_COP' = 'Monochloroacetic acid measurement as reported by the City of Phoenix',
-  'MBAA_COP' = 'Monobromoacetic acid measurement as reported by the City of Phoenix',
-  'DCAA_COP' = 'Dichloroacetic acid measurement as reported by the City of Phoenix',
-  'TCAA_COP' = 'Trichloroacetic acid measurement as reported by the City of Phoenix',
-  'BCAA_COP' = 'Bromochloroacetic acid measurement as reported by the City of Phoenix',
-  'DBAA_COP' = 'Dibromoacetic acid measurement as reported by the City of Phoenix',
-  'BDCAA_COP' = 'Bromodichloroacetic acid measurement as reported by the City of Phoenix',
-  'CDBAA_COP' = 'Chlorodibromoacetic acid measurement as reported by the City of Phoenix',
-  'TBAA_COP' = 'Tribromoacetic acid measurement as reported by the City of Phoenix',
-  'DiHAA_COP' = 'di-haloacetic acids measurement as reported by the City of Phoenix',
-  'THAA9_COP' = 'Sum measurement of Haloacetic acids as reported by the City of Phoenix',
-  'DBA_Recovery_COP' = 'Percent recovery of Dibromopropionic Acid as reported by the City of Phoenix',
-  'SampleType' = 'Type of water sample collected',
-  'DocqComments' = 'Sampling comments about canal, lake or water treatment plant')
-
-unit.defs.doc_quarter <-c(
-  'ID' = 'number',
-  'SiteNumber' = 'METADATA_NOT_PROVIDED',
-  'SiteLocation' = 'METADATA_NOT_PROVIDED',
-  'ClusterName' = 'either “Verde”,” Salt”, “CAP”, “SRP",  or “Tempe”',
-  'SiteAcronym' = 'METADATA_NOT_PROVIDED',
-  'Date' = c(format = 'YYYY-MM-DD'),
-  'Month' = 'nominalMonth',
-  'UVAf_Alsorp' = 'METADATA_NOT_PROVIDED',
-  'DOCf_Alsorp' = 'METADATA_NOT_PROVIDED',
-  'SUVAf' = 'METADATA_NOT_PROVIDED',
-  'UVA_Rem' = 'dimensionless',
-  'DOC_Rem' = 'dimensionless',
-  'CHCl3' = 'microgramsPerLiter',
-  'CHBrCl2' = 'microgramsPerLiter',
-  'CHClBr2' = 'microgramsPerLiter',
-  'CHBr3' = 'microgramsPerLiter',
-  'TTHM' = 'microgramsPerLiter',
-  'MCAA' = 'microgramsPerLiter',
-  'MBAA' = 'microgramsPerLiter',
-  'DCAA' = 'microgramsPerLiter',
-  'TCAA' = 'microgramsPerLiter',
-  'BCAA' = 'microgramsPerLiter',
-  'DBAA' = 'microgramsPerLiter',
-  'BDCAA' = 'microgramsPerLiter',
-  'CDBAA' = 'microgramsPerLiter',
-  'TBAA' = 'microgramsPerLiter',
-  'DiHAA' = 'microgramsPerLiter',
-  'DBA_Recovery' = 'dimensionless',
-  'THAA9' = 'microgramsPerLiter',
-  'MCAA_COP' = 'microgramsPerLiter',
-  'MBAA_COP' = 'microgramsPerLiter',
-  'DCAA_COP' = 'microgramsPerLiter',
-  'TCAA_COP' = 'microgramsPerLiter',
-  'BCAA_COP' = 'microgramsPerLiter',
-  'DBAA_COP' = 'microgramsPerLiter',
-  'BDCAA_COP' = 'microgramsPerLiter',
-  'CDBAA_COP' = 'microgramsPerLiter',
-  'TAA_COP' = 'microgramsPerLiter',
-  'DiHAA_COP' = 'microgramsPerLiter',
-  'THAA9_COP' = 'microgramsPerLiter',
-  'DBA_Recovery_COP' = 'dimensionless',
-  'SampleType' = 'either “field blank”, “lab blank”, or “duplicate”; "grab" if not noted',
-  'DocqComments' = 'e.g. “musty odor”, “turbid”, “algal growth”, “dry canal”, etc.')
 
 # field_measurements
 col.defs.field_measurements <-c(
@@ -815,68 +427,6 @@ unit.defs.gpscoord <-c(
   'Longitude' = 'W deg min.sec',
   'Latitude' = 'N deg min.sec',
   'Altitude' = 'foot')
-
-# Intensive_Lake_Sampling
-col.defs.Intensive_Lake_Sampling <-c(
-  'ID' = 'Record number',
-  'SiteNumber' = 'Site number or name',
-  'Depth_ft' = 'Sampling depth below water surface',
-  'Depth_m' = 'Sampling depth below water surface',
-  'Lake' = 'Lake sample was collected at',
-  'Month' = 'Month sample was collected',
-  'MIB' = 'MIB measurement',
-  'Geosmin' = 'Geosmin measurement',
-  'T' = 'Temperature measurement',
-  'DO_conc' = 'Dissolved oxygen',
-  'DO_percent' = 'Dissolved oxygen percent saturation',
-  'AlgaeCount' = 'Number of algae counted',
-  'Comments' = 'Sampling comments about canal, lake or water treatment plant')
-
-unit.defs.Intensive_Lake_Sampling <-c(
-  'ID' = 'number',
-  'SiteNumber' = 'METADATA_NOT_PROVIDED',
-  'Depth_ft' = 'foot',
-  'Depth_m' = 'meter',
-  'Lake' = 'either “Saguaro”, “Bartlett”, or “Pleasant”',
-  'Month' = 'nominalMonth',
-  'MIB' = 'milligramsPerCubicMeter',
-  'Geosmin' = 'milligramsPerCubicMeter',
-  'T' = 'celsius',
-  'DO_conc' = 'milligramsPerLiter',
-  'DO_percent' = 'dimensionless',
-  'AlgaeCount' = 'number',
-  'Comments' = 'e.g. “musty odor”, “turbid”, “algal growth”, “dry canal”, etc.')
-
-# IntensiveSampling
-col.defs.IntensiveSampling <-c(
-  'ID' = 'Record number',
-  'Miles_from_Granite_Reef_Dam' = 'Location of sampling site relative to Granite Reef Dam',
-  'Miles_from_24th_St' = 'Location of sampling site relative to 24th St.',
-  'Site_Number' = 'Site number or name',
-  'Location' = 'Description of where site is located',
-  'Date' = 'Date sample was collected',
-  'MIB' = 'MIB measurement',
-  'Chlor_A' = 'Chlorophyll a measurement',
-  'Total_Nitrogen' = 'Total nitrogen measurement',
-  'Dissolved_Nitrogen' = 'Dissolved nitrogen',
-  'Total_Phosphate' = 'Total phosphorus measurement',
-  'Dissolved_Phosphate' = 'Total phosphorus measurement',
-  'Geosmin' = 'Geosmin measurement')
-
-unit.defs.IntensiveSampling <-c(
-  'ID' = 'number',
-  'Miles_from_Granite_Reef_Dam' = 'mile',
-  'Miles_from_24th_St' = 'mile',
-  'Site_Number' = 'METADATA_NOT_PROVIDED',
-  'Location' = 'METADATA_NOT_PROVIDED',
-  'Date' = c(format = 'YYYY-MM-DD'),
-  'MIB' = 'milligramsPerCubicMeter',
-  'Chlor_A' = 'microgramPerCentimeterCubed',
-  'Total_Nitrogen' = 'microgramsPerLiter',
-  'Dissolved_Nitrogen' = 'microgramsPerLiter',
-  'Total_Phosphate' = 'microgramsPerLiter',
-  'Dissolved_Phosphate' = 'microgramsPerLiter',
-  'Geosmin' = 'milligramsPerCubicMeter')
 
 # mib_and_geosmin
 col.defs.mib_and_geosmin <-c(
@@ -949,59 +499,6 @@ unit.defs.nutrients <-c(
   'NH4_N' = 'milligramsPerLiter',
   'DON' = 'milligramsPerLiter',
   'Nutrient_comments' = 'e.g. “musty odor”, “turbid”, “algal growth”, “dry canal”, etc.')
-
-# quality
-col.defs.quality <-c(
-  'ID' = 'Record number',
-  'Sample_date' = 'Date sample was collected',
-  'Analyses_type' = 'Type of analyses done',
-  'Samples_Analyzed' = 'Name of sample analyzed',
-  'Calibration_slope' = 'Slope of linear equation',
-  'Calibration_Intercept' = 'Calibration intercept',
-  'Correlation_Coefficient' = 'Measure of the linear correlation',
-  'Measure_units' = 'Units of measurement',
-  'MDL' = 'Method detection limit',
-  'Standard_range_low' = 'Concentration of lowest standard',
-  'Standard_range_high' = 'Concentration of highest standards',
-  'External_theoretical' = 'Known concentration of externally measured quality control standard',
-  'External_measured' = 'Observed concentration of externally measured quality control standard',
-  'Bias' = 'Difference between external theoretical and measured concentrations',
-  'Digestion_theoretical' = 'Expected concentration after digestion of analyte',
-  'Digestion_measured' = 'Measured concentration after digestion of analyte',
-  'Digestion_recovery' = 'Percent recovery of analyte after digestion',
-  'Sample_spiked' = 'Name of sample a spike was added to',
-  'Sample_value' = 'Concentration of MIB or Geosmin',
-  'Spike_amount' = 'Amount of MIB or Geosmin added to sample',
-  'Spike_theoretical' = 'Total MIB or Geosmin measured in sample  plus theoretical spike concentration',
-  'Spike_measured' = 'Measured total MIB or Geosmin in sample including spike',
-  'Spike_recovery' = '“Spike measured” divided by “spike theoretical”',
-  'QC_comment' = 'Quality control comment')
-
-unit.defs.quality <-c(
-  'ID' = 'number',
-  'Sample_date' = c(format = 'YYYY-MM-DD'),
-  'Analyses_type' = 'either nitrogen, phosphorus, MIB, Geosmin, DOC,  or conductance',
-  'Samples_Analyzed' = 'METADATA_NOT_PROVIDED',
-  'Calibration_slope' = 'dimensionless',
-  'Calibration_Intercept' = 'dimensionless',
-  'Correlation_Coefficient' = 'dimensionless',
-  'Measure_units' = 'depending on the parameter measured',
-  'MDL' = 'lowest limit of detection for given method',
-  'Standard_range_low' = 'low  calibration standard',
-  'Standard_range_high' = 'high calibration standard',
-  'External_theoretical' = 'varies depending on parameter measured',
-  'External_measured' = 'varies depending on parameter measured',
-  'Bias' = 'METADATA_NOT_PROVIDED',
-  'Digestion_theoretical' = 'either “1” for Nitrogen or “100” for phosphorus',
-  'Digestion_measured' = 'either “1” for Nitrogen or “100” for phosphorus',
-  'Digestion_recovery' = 'dimensionless',
-  'Sample_spiked' = 'METADATA_NOT_PROVIDED',
-  'Sample_value' = 'milligramsPerCubicMeter',
-  'Spike_amount' = 'milligramsPerCubicMeter',
-  'Spike_theoretical' = 'milligramsPerCubicMeter',
-  'Spike_measured' = 'milligramsPerCubicMeter',
-  'Spike_recovery' = 'dimensionless',
-  'QC_comment' = 'METADATA_NOT_PROVIDED')
 
 # Quarterly_Lake_Sampling
 col.defs.Quarterly_Lake_Sampling <-c(
@@ -1128,41 +625,6 @@ unit.defs.Sample_Names <-c(
   'Cluster_Name' = 'either “Verde”,” Salt”, “CAP”, “SRP",  or “Tempe”',
   'Site_Acronym' = '“epi”= epilimnion, “hypo”= hypolimnion,  “dup”= duplicate, “x con”= cross connect')
 
-# sample_summary
-col.defs.sample_summary <-c(
-  'ID' = 'Record number',
-  'Site_Number' = 'Name of sampling site',
-  'Site_Location' = 'Description of where site is located',
-  'Cluster_Name' = 'Source water',
-  'Site_Acronym' = 'Abbreviation of site location',
-  'Date' = 'Date sample was collected',
-  'Time' = 'Time sample was collected',
-  'Personnel' = 'Initials of people who went sampling',
-  'Weather' = 'Weather during sampling',
-  'Water_Appearance' = 'Color and degree of turbidity of water in lake, canal or water treatment plant',
-  'Water_Odor_Strength' = 'Degree of odor from water in lake, canal or water treatment plant',
-  'Water_Odor' = 'METADATA_NOT_PROVIDED',
-  'Phytoplankton_Color' = 'Color of phytoplankton, if present',
-  'Phytoplankton_clumps' = 'Presence or absence of phytoplankton and description',
-  'Comments' = 'Additional notes on water description')
-
-unit.defs.sample_summary <-c(
-  'ID' = 'number',
-  'Site_Number' = '“A” denotes epilimnion, “B” denotes hypolimnion',
-  'Site_Location' = 'METADATA_NOT_PROVIDED',
-  'Cluster_Name' = 'either “Verde”,” Salt”, “CAP”, “SRP",  or “Tempe”',
-  'Site_Acronym' = '“epi”= epilimnion, “hypo”= hypolimnion,  “dup”= duplicate, “x con”= cross connect',
-  'Date' = c(format = 'YYYY-MM-DD'),
-  'Time' = c(format = '%H:%M'),
-  'Personnel' = 'METADATA_NOT_PROVIDED',
-  'Weather' = 'e.g. “clear”, “partly cloudy”, “sunny”, “rain”',
-  'Water_Appearance' = 'e.g. “clear”,” turbid”, “stagnant”,” green”, “brown”',
-  'Water_Odor_Strength' = 'e.g. “absent”,” weak”,” medium”, “strong”',
-  'Water_Odor' = 'Metadata not provided',
-  'Phytoplankton_Color' = 'e.g. “green”,” yellow”,” blue-green”,”brown”',
-  'Phytoplankton_clumps' = 'either “no” or “yes”, with description',
-  'Comments' = 'METADATA_NOT_PROVIDED')
-
 # Sucralose
 col.defs.Sucralose <-c(
   'ID' = 'Record number',
@@ -1182,56 +644,30 @@ unit.defs.Sucralose <-c(
   'Date' = c(format = 'YYYY-MM-DD'),
   'Sucralose' = 'microgramsPerLiter')
 
-# wtp_data
-col.defs.wtp_data <-c(
+# microbial
+col.defs.microbial <-c(
   'ID' = 'Record number',
   'Site_Name' = 'Name of sampling site',
-  'Site_Location' = 'Description of where site is located',
+  'Site Location' = 'Description of where site is located',
   'Cluster_Name' = 'Source water',
   'Site_Acronym' = 'Abbreviation of site location',
   'Date' = 'Date sample was collected',
-  'Sample_at_lab?' = 'Was sample collected from lab at the water treatment plant?',
-  'Pre_chlorination' = 'Was sample pre-chlorinated?',
-  'Conc_CL2' = 'Chlorine concentration in milligrams per liter',
-  'Duration_CL2' = 'Period when chlorine was added',
-  'Add_CuSO4' = 'Was copper sulphate added?',
-  'Conc_CuSO4' = 'Concentration of copper sulphate added',
-  'Duration_CuSO4' = 'Period when copper sulfate was added',
-  'Alum_in_pre-sed?' = 'Was alum in the pre-sedimentation basin',
-  'Conc_Alum' = 'Concentration of alum in pre-sedimentation basin',
-  'Duration_Alum' = 'Period when alum was added',
-  'Alum_dose_floc' = 'Alum dose added to floc',
-  'pH_in_floc' = 'pH of the floc',
-  'pH_adjuster?' = 'Note on whether the pH was adjusted and acid used',
-  'PAC_added?' = 'Note on whether powder activated carbon was added',
-  'Conc_PAC' = 'Concentration of powder activated carbon added',
-  'Duration_PAC' = 'Period when powder activated carbon was added',
-  'WTP_comments' = 'Sampling conditions noted at the water treatment plant')
+  'E. coli' = 'Number of colonies per 100mL of sample',
+  'Coliform' = 'Number of colonies per 100mL of sample',
+  'Mycobacterium' = 'Number of colonies per 100mL of sample',
+  'Comments' = 'comments regarding microbial sample')
 
-unit.defs.wtp_data <-c(
+unit.defs.microbial <-c(
   'ID' = 'number',
-  'Site_Name' = '“A” denotes epilimnion',
+  'Site_Name' = 'METADATA_NOT_PROVIDED',
   'Site_Location' = 'METADATA_NOT_PROVIDED',
-  'Cluster_Name' = 'either “Verde”,” Salt”, “CAP”, “SRP",  or “Tempe”',
-  'Site_Acronym' = '“epi” = epilimnion',
+  'Cluster_Name' = 'either “Verde”, “CAP”, “SRP",  or “Tempe”',
+  'Site_Acronym' = 'METADATA_NOT_PROVIDED',
   'Date' = c(format = 'YYYY-MM-DD'),
-  'Sample_at_lab?' = 'either “yes” or “no”, if “no” where from',
-  'Pre_chlorination' = 'either “yes” or “no”',
-  'Conc_CL2' = 'milligramsPerLiter',
-  'Duration_CL2' = 'e.g. “starting”',
-  'Add_CuSO4' = 'either “yes” or “no”',
-  'Conc_CuSO4' = 'milligramsPerLiter',
-  'Duration_CuSO4' = 'METADATA_NOT_PROVIDED',
-  'Alum_in_pre-sed?' = 'either “yes” or “no”',
-  'Conc_Alum' = 'milligramsPerLiter',
-  'Duration_Alum' = 'METADATA_NOT_PROVIDED',
-  'Alum_dose_floc' = 'milligramsPerLiter',
-  'pH_in_floc' = 'dimensionless',
-  'pH_adjuster?' = 'either “yes”, “sulfuric” or “no”',
-  'PAC_added?' = 'either “yes” or “no”',
-  'Conc_PAC' = 'milligramsPerLiter',
-  'Duration_PAC' = 'METADATA_NOT_PROVIDED',
-  'WTP_comments' = 'e.g. “water treatment plant off-line”, “canal shutdown”')
+  'E. coli' = 'Colonies per 100mL',
+  'Coliform' = 'Colonies per 100mL',
+  'Mycobacterium' = 'Colonies per 100mL',
+  'Comments' = '“TNTC” = Too Numerous To Count; “NCDC” = Not Countable Due to Contamination')
 
 # custom units ----
 # note that you can create a list of multiple custom units and call them in eml_write
@@ -1264,6 +700,12 @@ microgramPerCentimeterCubed <- eml_define_unit(id = "microgramPerCentimeterCubed
                                                description = "micrograms per cubic centimeter")
 
 # generate datatables ----
+# dataTable slotnames
+# slotNames(new('dataTable'))
+[1] "entityName"          "entityDescription"   "alternateIdentifier" "physical"            "coverage"            "methods"
+[7] "additionalInfo"      "attributeList"       "caseSensitive"       "numberOfRecords"     "id"                  "system"
+[13] "scope"
+
 # do this set one-by-one
 algae.DT <- eml_dataTable(data.frame(data[['algae']]),
                           col.defs = col.defs.algae,
@@ -1271,31 +713,11 @@ algae.DT <- eml_dataTable(data.frame(data[['algae']]),
                           description = "metadata documentation for algae",
                           filename = 'algae.csv')
 
-
-
 doc_month.DT <- eml_dataTable(data.frame(data[['doc_month']]),
                               col.defs = col.defs.doc_month,
                               unit.defs = unit.defs.doc_month,
                               description = "metadata documentation for doc_month",
                               filename = 'doc_month.csv')
-
-doc_quarter.DT <- eml_dataTable(data.frame(data[['doc_quarter']]),
-                                col.defs = col.defs.doc_quarter,
-                                unit.defs = unit.defs.doc_quarter,
-                                description = "metadata documentation for doc_quarter",
-                                filename = 'doc_quarter.csv')
-
-IntensiveSampling.DT <- eml_dataTable(data.frame(data[['IntensiveSampling']]),
-                                      col.defs = col.defs.IntensiveSampling,
-                                      unit.defs = unit.defs.IntensiveSampling,
-                                      description = "metadata documentation for IntensiveSampling",
-                                      filename = 'IntensiveSampling.csv')
-
-quality.DT <- eml_dataTable(data.frame(data[['quality']]),
-                            col.defs = col.defs.quality,
-                            unit.defs = unit.defs.quality,
-                            description = "metadata documentation for quality",
-                            filename = 'quality.csv')
 
 Quarterly_Lake_Sampling.DT <- eml_dataTable(data.frame(data[['Quarterly_Lake_Sampling']]),
                                             col.defs = col.defs.Quarterly_Lake_Sampling,
@@ -1310,24 +732,6 @@ Arsenic.DT <- eml_dataTable(data.frame(data[['Arsenic']]),
                             description = "metadata documentation for Arsenic",
                             filename = 'Arsenic.csv')
 
-Fluorescence.DT <- eml_dataTable(data.frame(data[['Fluorescence']]),
-                                 col.defs = col.defs.Fluorescence,
-                                 unit.defs = unit.defs.Fluorescence,
-                                 description = "metadata documentation for Fluorescence",
-                                 filename = 'Fluorescence.csv')
-
-brushexp.DT <- eml_dataTable(data.frame(data[['brushexp']]),
-                             col.defs = col.defs.brushexp,
-                             unit.defs = unit.defs.brushexp,
-                             description = "metadata documentation for brushexp",
-                             filename = 'brushexp.csv')
-
-canal_data.DT <- eml_dataTable(data.frame(data[['canal_data']]),
-                               col.defs = col.defs.canal_data,
-                               unit.defs = unit.defs.canal_data,
-                               description = "metadata documentation for canal_data",
-                               filename = 'canal_data.csv')
-
 field_measurements.DT <- eml_dataTable(data.frame(data[['field_measurements']]),
                                        col.defs = col.defs.field_measurements,
                                        unit.defs = unit.defs.field_measurements,
@@ -1339,12 +743,6 @@ gpscoord.DT <- eml_dataTable(data.frame(data[['gpscoord']]),
                              unit.defs = unit.defs.gpscoord,
                              description = "metadata documentation for gpscoord",
                              filename = 'gpscoord.csv')
-
-Intensive_Lake_Sampling.DT <- eml_dataTable(data.frame(data[['Intensive_Lake_Sampling']]),
-                                            col.defs = col.defs.Intensive_Lake_Sampling,
-                                            unit.defs = unit.defs.Intensive_Lake_Sampling,
-                                            description = "metadata documentation for Intensive_Lake_Sampling",
-                                            filename = 'Intensive_Lake_Sampling.csv')
 
 mib_and_geosmin.DT <- eml_dataTable(data.frame(data[['mib_and_geosmin']]),
                                     col.defs = col.defs.mib_and_geosmin,
@@ -1370,23 +768,11 @@ Sample_Names.DT <- eml_dataTable(data.frame(data[['Sample_Names']]),
                                  description = "metadata documentation for Sample_Names",
                                  filename = 'Sample_Names.csv')
 
-sample_summary.DT <- eml_dataTable(data.frame(data[['sample_summary']]),
-                                   col.defs = col.defs.sample_summary,
-                                   unit.defs = unit.defs.sample_summary,
-                                   description = "metadata documentation for sample_summary",
-                                   filename = 'sample_summary.csv')
-
 Sucralose.DT <- eml_dataTable(data.frame(data[['Sucralose']]),
                               col.defs = col.defs.Sucralose,
                               unit.defs = unit.defs.Sucralose,
                               description = "metadata documentation for Sucralose",
                               filename = 'Sucralose.csv')
-
-wtp_data.DT <- eml_dataTable(data.frame(data[['wtp_data']]),
-                             col.defs = col.defs.wtp_data,
-                             unit.defs = unit.defs.wtp_data,
-                             description = "metadata documentation for wtp_data",
-                             filename = 'wtp_data.csv')
 
 # generate dataset ----
 
@@ -1414,8 +800,8 @@ metadataProvider <- davies@dataset@metadataProvider
 
 # text based entities
 pubDate <- '2015-06-01'
-title <- 'Reducing Taste and Odor and Other Algae-Related Problems for Surface Water Supplies in Arid Environments'
-abstract <- 'Develop a comprehensive management strategy to reduce algae-related water quality problems for drinking water supplies in arid environments.'
+title <- 'Regional Drinking Water Quality Monitoring Program'
+abstract <- 'ASU has been working with regional water providers (SRP, CAP) and metropolitan Phoenix cities since 1998 on algae-related issues affecting drinking water supplies, treatment, and distribution.  The results have improved the understanding of taste and odor (T&O) occurrence, control, and treatment, improved the understanding of dissolved organic and algae dynamics, and initiated a forum to discuss and address regional water quality issues.  The monitoring benefits local WTPs  by optimizing ongoing operations (i.e., reducing operating costs), improving the quality of municipal water for consumers, facilitating long-term water quality planning, and providing information on potentially future-regulated compounds. ASU has been monitoring water quality in terminal reservoirs (Lake Pleasant, Saguaro Lake, and Bartlett Lake) continuously from 1998 to the present for algae-related constituents (taste and odors, and more recently cyanotoxins), nutrients, and disinfection by-product precursors (i.e., total and dissolved organic carbon and organic nitrogen). Additional monitoring has been conducted in the SRP and CAP canal systems and in water treatment plants in Phoenix, Tempe and Peoria. During this work the Valley has been in a prolonged drought and recently one above average wet year, and this data provides important baseline data for development of new or expanded WTPs and management of existing WTPs in the future.  The current work has improved the understanding of T&O sources and treatment, but additional research and monitoring into the future is necessary.'
 
 # person details but none used in this example
 # I could not get metadataProvider to work here, so pulled it from Davies_616 after adding those data to the file
@@ -1443,7 +829,9 @@ creator <- c(as('Paul Westerhoff', 'creator'),
              as('Milton Sommerfeld', 'creator'))
 
 # methods: will need to develop this, esp. project methods versus dataTable methods
-methods <- new('methods', methodStep = c(new('methodStep', description = 'Perform field measurements for dissolved oxygen, pH, temperature, conductance, and Secchi disk.  Collect algae for chlorophyll measurement, identification and enumeration.  Collect and analyze water samples for total phosphorus, total nitrogen, DOC, SUVA, THM, MIB and Geosmin, and metals measurements.')))
+methods <- new('methods', methodStep = c(new('methodStep', description = 'Grab water samples were collected for analysis from canals and water treatment plants in headspace-free, amber glass containers.  Water samples for metals analysis were collected in centrifuge tubes and acidified with nitric acid for stability.  Lake samples were obtained from the epilimnion and hypolimnion by way of a Kemmerer sampler.  All samples were kept on ice in the field and stored at 4 degrees Celsius until analyzed.  Nutrient samples that couldn’t be analyzed within 24 hours were frozen.
+
+Field measurements for dissolved oxygen, pH, and temperature were made using a portable meter.  Water clarity for lake samples was measured using a Secchi Disk.  Taste and odor compounds were measured using solid phase micro extraction and injected onto a GC-MS/MS.  Total nutrients were obtained by way of persulfate digestion and then analysis on a continuous flow colorimetric analyzer.  Metals data was obtained by ICP-MS.')))
 
 # coverage
 # note that end date for this on-going study is arbitrarily defined
@@ -1490,18 +878,11 @@ delta <- new('dataset',
                coverage = coverage,
                dataTable = c(algae.DT,
                              Arsenic.DT,
-                             brushexp.DT,
-                             canal_data.DT,
                              doc_month.DT,
-                             doc_quarter.DT,
                              field_measurements.DT,
-                             Fluorescence.DT,
                              gpscoord.DT,
-                             Intensive_Lake_Sampling.DT,
-                             IntensiveSampling.DT,
                              mib_and_geosmin.DT,
                              nutrients.DT,
-                             quality.DT,
                              Quarterly_Lake_Sampling.DT,
                              Quarterly_Metals.DT,
                              Sample_Names.DT))
