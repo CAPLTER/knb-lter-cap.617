@@ -5,10 +5,13 @@ date: "04/10/2015"
 output: html_document
 ---
 
+library("devtools")
+Library("EML")
+
 # file processing ----
 
 # identify directory with files (not full.names=T)
-files <- list.files(path=".", pattern="*.csv", full.names=T, recursive=FALSE)
+files <- list.files(path=".", pattern="*.txt", full.names=T, recursive=FALSE)
 
 # function to bring files into R
 BatchLoad <- function(file) {data <- read.csv(file, header=T, stringsAsFactors=F) }
@@ -17,12 +20,14 @@ BatchLoad <- function(file) {data <- read.csv(file, header=T, stringsAsFactors=F
 data <- lapply(files, BatchLoad)
 
 # get filenames of list items from directory (note full.names=F); change to lower case on import
-fileNames <- list.files(path=".", pattern="*.csv", full.names=F, recursive=FALSE)
+fileNames <- list.files(path=".", pattern="*.txt", full.names=F, recursive=FALSE)
 
 # modify and assign filenames
 # be sure to change '3D_Fluorescence' to 'Fluorescence' - done manually outside of R in this case
 rmspac <- function(file) { gsub(" ", "_", file) } # function to change spaces to underscores
+rmxlsx <- function(file) { sub(".txt", "", file) }
 fileNames <- lapply(fileNames, rmspac) # apply function rmspac to all filenames
+fileNames <- lapply(fileNames, rmxlsx) # apply function rmspac to all filenames
 names(data) <- fileNames # assign file names to list of datasets
 
 # convert empty values to NAs ----
@@ -232,7 +237,7 @@ names(data[['Sucralose']])<-c(
   'Sucralose')
 
 # microbial
-names(data[['microbial']])<-c(
+names(data[['Microbial']])<-c(
   'ID',
   'Site_Name',
   'Site_Location',
@@ -261,9 +266,6 @@ dates <- function(df) {
 }
 
 data <- lapply(data, dates)
-
-# be sure to modify format of time field in sample_summary table
-# 'Time' = c(format = '%H:%M'),
 
 # provide col.defs (field descriptions) and unit.defs according to metadata ----
 
@@ -652,7 +654,7 @@ col.defs.microbial <-c(
   'Cluster_Name' = 'Source water',
   'Site_Acronym' = 'Abbreviation of site location',
   'Date' = 'Date sample was collected',
-  'E. coli' = 'Number of colonies per 100mL of sample',
+  'E_coli' = 'Number of colonies per 100mL of sample',
   'Coliform' = 'Number of colonies per 100mL of sample',
   'Mycobacterium' = 'Number of colonies per 100mL of sample',
   'Comments' = 'comments regarding microbial sample')
@@ -661,12 +663,12 @@ unit.defs.microbial <-c(
   'ID' = 'number',
   'Site_Name' = 'METADATA_NOT_PROVIDED',
   'Site_Location' = 'METADATA_NOT_PROVIDED',
-  'Cluster_Name' = 'either “Verde”, “CAP”, “SRP",  or “Tempe”',
+  'Cluster_Name' = 'either “Verde”, “CAP”, “SRP", or “Tempe”',
   'Site_Acronym' = 'METADATA_NOT_PROVIDED',
   'Date' = c(format = 'YYYY-MM-DD'),
-  'E. coli' = 'Colonies per 100mL',
-  'Coliform' = 'Colonies per 100mL',
-  'Mycobacterium' = 'Colonies per 100mL',
+  'E_coli' = 'coloniesPer100milliliter',
+  'Coliform' = 'coloniesPer100milliliter',
+  'Mycobacterium' = 'coloniesPer100milliliter',
   'Comments' = '“TNTC” = Too Numerous To Count; “NCDC” = Not Countable Due to Contamination')
 
 # custom units ----
@@ -699,6 +701,11 @@ microgramPerCentimeterCubed <- eml_define_unit(id = "microgramPerCentimeterCubed
                                                multiplierToSI = "1000000",
                                                description = "micrograms per cubic centimeter")
 
+coloniesPer100milliliter <- eml_define_unit(id = "coloniesPer100milliliter ",
+                                               parentSI = "unknown",
+                                               unitType = "concentration",
+                                               multiplierToSI = "1",
+                                               description = "Number of colonies per 100mL of sample")
 # generate datatables ----
 # dataTable slotnames
 # slotNames(new('dataTable'))
@@ -706,7 +713,7 @@ microgramPerCentimeterCubed <- eml_define_unit(id = "microgramPerCentimeterCubed
 [7] "additionalInfo"      "attributeList"       "caseSensitive"       "numberOfRecords"     "id"                  "system"
 [13] "scope"
 
-# do this set one-by-one
+# do this set one-by-one owing to custom units
 algae.DT <- eml_dataTable(data.frame(data[['algae']]),
                           col.defs = col.defs.algae,
                           unit.defs = unit.defs.algae,
@@ -724,6 +731,12 @@ Quarterly_Lake_Sampling.DT <- eml_dataTable(data.frame(data[['Quarterly_Lake_Sam
                                             unit.defs = unit.defs.Quarterly_Lake_Sampling,
                                             description = "metadata documentation for Quarterly_Lake_Sampling",
                                             filename = 'Quarterly_Lake_Sampling.csv')
+
+Microbial.DT <- eml_dataTable(data.frame(data[['Microbial']]),
+                                            col.defs = col.defs.microbial,
+                                            unit.defs = unit.defs.microbial,
+                                            description = "metadata documentation for microbial",
+                                            filename = 'Microbial.csv')
 
 # okay to highlight all and run
 Arsenic.DT <- eml_dataTable(data.frame(data[['Arsenic']]),
@@ -799,7 +812,7 @@ metadataProvider <- davies@dataset@metadataProvider
 # additionalInfo <- davies@dataset@dataTable@additionalInfo@section
 
 # text based entities
-pubDate <- '2015-06-01'
+pubDate <- '2015-07-17'
 title <- 'Regional Drinking Water Quality Monitoring Program'
 abstract <- 'ASU has been working with regional water providers (SRP, CAP) and metropolitan Phoenix cities since 1998 on algae-related issues affecting drinking water supplies, treatment, and distribution.  The results have improved the understanding of taste and odor (T&O) occurrence, control, and treatment, improved the understanding of dissolved organic and algae dynamics, and initiated a forum to discuss and address regional water quality issues.  The monitoring benefits local WTPs  by optimizing ongoing operations (i.e., reducing operating costs), improving the quality of municipal water for consumers, facilitating long-term water quality planning, and providing information on potentially future-regulated compounds. ASU has been monitoring water quality in terminal reservoirs (Lake Pleasant, Saguaro Lake, and Bartlett Lake) continuously from 1998 to the present for algae-related constituents (taste and odors, and more recently cyanotoxins), nutrients, and disinfection by-product precursors (i.e., total and dissolved organic carbon and organic nitrogen). Additional monitoring has been conducted in the SRP and CAP canal systems and in water treatment plants in Phoenix, Tempe and Peoria. During this work the Valley has been in a prolonged drought and recently one above average wet year, and this data provides important baseline data for development of new or expanded WTPs and management of existing WTPs in the future.  The current work has improved the understanding of T&O sources and treatment, but additional research and monitoring into the future is necessary.'
 
@@ -835,7 +848,7 @@ Field measurements for dissolved oxygen, pH, and temperature were made using a p
 
 # coverage
 # note that end date for this on-going study is arbitrarily defined
-coverage <- eml_coverage(dates = c('1999-08-17', '2015-06-01'),
+coverage <- eml_coverage(dates = c('1999-08-17', '2015-06-02'),
                          geographic_description = 'Canals, Water Treatment Plants, and Reservoirs in Phoenix and surrounding areas',
                          NSEWbox = c(34.4900, 33.2917, -111.1235, -112.1250))
 
@@ -882,10 +895,12 @@ delta <- new('dataset',
                              field_measurements.DT,
                              gpscoord.DT,
                              mib_and_geosmin.DT,
+                             Microbial.DT,
                              nutrients.DT,
                              Quarterly_Lake_Sampling.DT,
                              Quarterly_Metals.DT,
-                             Sample_Names.DT))
+                             Sample_Names.DT,
+                             Sucralose.DT))
 
 frank <- new('eml',
             dataset = delta)
