@@ -6,7 +6,8 @@ output: html_document
 ---
 
 library("devtools")
-Library("EML")
+library("EML")
+library("rapport")
 
 # file processing ----
 
@@ -23,11 +24,12 @@ data <- lapply(files, BatchLoad)
 fileNames <- list.files(path=".", pattern="*.txt", full.names=F, recursive=FALSE)
 
 # modify and assign filenames
-# be sure to change '3D_Fluorescence' to 'Fluorescence' - done manually outside of R in this case
-rmspac <- function(file) { gsub(" ", "_", file) } # function to change spaces to underscores
-rmxlsx <- function(file) { sub(".txt", "", file) }
-fileNames <- lapply(fileNames, rmspac) # apply function rmspac to all filenames
-fileNames <- lapply(fileNames, rmxlsx) # apply function rmspac to all filenames
+# rmspac <- function(file) { gsub(" ", "_", file) } # function to change spaces to underscores
+# fileNames <- lapply(fileNames, rmspac) # apply function rmspac to all filenames
+rmtxt <- function(file) { sub(".txt", "", file) } # function to remove txt file extension
+fileNames <- lapply(fileNames, rmtxt) # apply function rmtxt to all filenames
+fileNames <- lapply(fileNames, tolower)
+fileNames <- lapply(fileNames, tocamel)
 names(data) <- fileNames # assign file names to list of datasets
 
 # convert empty values to NAs ----
@@ -37,6 +39,9 @@ data <- lapply(data, function(x) {
   x[x=='']<-NA
   return(x)
 })
+
+# omit empty columns from quarterlyMetals
+data[['quarterlyMetals']] <- data[['quarterlyMetals']][,c(1:34)]
 
 # NAME fields according to metadata ----
 # this step is necessary here owing to the non-standardized naming conventions
@@ -62,8 +67,8 @@ names(data[['algae']]) <- c(
   'Total',
   'AlgaeComments')
 
-# Arsenic
-names(data[['Arsenic']])<-c(
+# arsenic
+names(data[['arsenic']])<-c(
   'ID',
   'SiteNumber',
   'SiteLocation',
@@ -73,8 +78,8 @@ names(data[['Arsenic']])<-c(
   'Arsenic',
   'Perchlorate')
 
-# doc_month
-names(data[['doc_month']])<-c(
+# docMonth
+names(data[['docMonth']])<-c(
   'ID',
   'SiteNumber',
   'SiteLocation',
@@ -95,8 +100,8 @@ names(data[['doc_month']])<-c(
   'Fl',
   'docm_comments')
 
-# field_measurements
-names(data[['field_measurements']])<-c(
+# fieldMeasurements
+names(data[['fieldMeasurements']])<-c(
   'ID',
   'SiteNumber',
   'SiteLocation',
@@ -125,8 +130,8 @@ names(data[['gpscoord']])<-c(
   'Latitude',
   'Altitude')
 
-# mib_and_geosmin
-names(data[['mib_and_geosmin']])<-c(
+# mibAndGeosmin
+names(data[['mibAndGeosmin']])<-c(
   'ID',
   'Site_Number',
   'Site_Location',
@@ -162,8 +167,8 @@ names(data[['nutrients']])<-c(
   'DON',
   'Nutrient_comments')
 
-# Quarterly_Lake_Sampling
-names(data[['Quarterly_Lake_Sampling']])<-c(
+# quarterlyLakeSampling
+names(data[['quarterlyLakeSampling']])<-c(
   'ID',
   'Site_Name',
   'Site_Location',
@@ -173,21 +178,21 @@ names(data[['Quarterly_Lake_Sampling']])<-c(
   'MIB',
   'Geosmin',
   'Cyclocitral',
-  'Conductance',
   'TP',
-  'TDN',
   'DOC',
   'UVA',
-  'SUVA')
+  'SUVA',
+  'Conductance',
+  'TDN')
 
-# Quarterly_Metals
-names(data[['Quarterly_Metals']])<-c(
+# quarterlyMetals
+names(data[['quarterlyMetals']])<-c(
   'ID',
   'Site_Name',
   'Site_Location',
   'Cluster_Name',
   'Site_Acronym',
-  'Date',
+  'Sample_Date',
   'Units',
   'Li7',
   'Be9',
@@ -215,19 +220,19 @@ names(data[['Quarterly_Metals']])<-c(
   'Ba138',
   'Hg202',
   'Pb207',
-  'Th232',
+  #'Th232',
   'U238')
 
-# Sample_Names
-names(data[['Sample_Names']])<-c(
+# sampleNames
+names(data[['sampleNames']])<-c(
   'Site_ID',
   'Site_Number',
   'Site_Location',
   'Cluster_Name',
   'Site_Acronym')
 
-# Sucralose
-names(data[['Sucralose']])<-c(
+# sucralose
+names(data[['sucralose']])<-c(
   'ID',
   'Site_Name',
   'Site_Location',
@@ -237,7 +242,7 @@ names(data[['Sucralose']])<-c(
   'Sucralose')
 
 # microbial
-names(data[['Microbial']])<-c(
+names(data[['microbial']])<-c(
   'ID',
   'Site_Name',
   'Site_Location',
@@ -252,15 +257,15 @@ names(data[['Microbial']])<-c(
 # format dates and time ----
 
 dates <- function(df) {
-  if ("Month" %in% names(df)) {df$Month <- as.POSIXct(df$Month, format="%Y/%m/%d")
+  if ("Month" %in% names(df)) {df$Month <- as.POSIXct(df$Month, format="%m/%d/%Y %H:%M:%S")
                                df$Month <- format(df$Month, format="%m")
   }
   if ("Time" %in% names(df)) {df$Time <- as.POSIXct(df$Time, format="%Y/%m/%d %H:%M:%S")
   df$Time <- format(df$Time, format="%H:%M")
   }
-  if ("Date" %in% names(df)) {df$Date <- as.POSIXct(df$Date, format="%Y/%m/%d")
+  if ("Date" %in% names(df)) {df$Date <- as.POSIXct(df$Date, format="%m/%d/%Y %H:%M:%S")
   }
-  if ("Sample_Date" %in% names(df)) {df$Sample_Date <- as.POSIXct(df$Sample_Date, format="%Y/%m/%d")
+  if ("Sample_Date" %in% names(df)) {df$Sample_Date <- as.POSIXct(df$Sample_Date, format="%m/%d/%Y") # name and this if tailored specifically for quarterly metals
   }
   return(df)
 }
@@ -308,8 +313,8 @@ unit.defs.algae <- list(
   'Total' = 'numberPerMilliliter',
   'AlgaeComments' = 'e.g. “musty odor”, “turbid”, “algal growth”, “dry canal”, etc.')
 
-# Arsenic
-col.defs.Arsenic <-c(
+# arsenic
+col.defs.arsenic <-c(
   'ID' = 'Record number',
   'SiteNumber' = 'Site number or name',
   'SiteLocation' = 'Description of where site is located',
@@ -319,7 +324,7 @@ col.defs.Arsenic <-c(
   'Arsenic' = 'Arsenic measurement; measurement by graphite furnace',
   'Perchlorate' = 'Perchlorate measurement; measurement by ion chromatography')
 
-unit.defs.Arsenic <-c(
+unit.defs.arsenic <-c(
   'ID' = 'number',
   'SiteNumber' = '‘A’ designates epilimnion, ‘B’ hypolimnion',
   'SiteLocation' = 'METADATA_NOT_PROVIDED',
@@ -329,8 +334,8 @@ unit.defs.Arsenic <-c(
   'Arsenic' = 'microgramsPerLiter',
   'Perchlorate' = 'microgramsPerLiter')
 
-# doc_month
-col.defs.doc_month <-c(
+# docMonth
+col.defs.docMonth <-c(
   'ID' = 'Record number',
   'SiteNumber' = 'Site number or name',
   'SiteLocation' = 'Description of where site is located',
@@ -351,7 +356,7 @@ col.defs.doc_month <-c(
   'Fl' = 'Fluorescence ratio of 450/500',
   'docm_comments' = 'No metadata provided')
 
-unit.defs.doc_month <-c(
+unit.defs.docMonth <-c(
   'ID' = 'number',
   'SiteNumber' = 'METADATA_NOT_PROVIDED',
   'SiteLocation' = 'METADATA_NOT_PROVIDED',
@@ -372,8 +377,8 @@ unit.defs.doc_month <-c(
   'Fl' = 'dimensionless',
   'docm_comments' = 'METADATA_NOT_PROVIDED')
 
-# field_measurements
-col.defs.field_measurements <-c(
+# fieldMeasurements
+col.defs.fieldMeasurements <-c(
   'ID' = 'Record number',
   'SiteNumber' = 'Site number or name',
   'SiteLocation' = 'Description of where site is located',
@@ -390,7 +395,7 @@ col.defs.field_measurements <-c(
   'SampleType' = 'Type of water sample collected',
   'Comments' = 'Sampling comments about canal, lake or water treatment plant')
 
-unit.defs.field_measurements <-c(
+unit.defs.fieldMeasurements <-c(
   'ID' = 'number',
   'SiteNumber' = 'METADATA_NOT_PROVIDED',
   'SiteLocation' = 'METADATA_NOT_PROVIDED',
@@ -430,8 +435,8 @@ unit.defs.gpscoord <-c(
   'Latitude' = 'N deg min.sec',
   'Altitude' = 'foot')
 
-# mib_and_geosmin
-col.defs.mib_and_geosmin <-c(
+# mibAndGeosmin
+col.defs.mibAndGeosmin <-c(
   'ID' = 'Record number',
   'Site_Number' = 'Site number or name',
   'Site_Location' = 'Description of where site is located',
@@ -448,7 +453,7 @@ col.defs.mib_and_geosmin <-c(
   'Geosmin_Phoenix' = 'Geosmin comparison with Phoenix (?)',
   'Comments' = 'Sampling comments about canal, lake or water treatment plant')
 
-unit.defs.mib_and_geosmin <-c(
+unit.defs.mibAndGeosmin <-c(
   'ID' = 'number',
   'Site_Number' = 'METADATA_NOT_PROVIDED',
   'Site_Location' = 'METADATA_NOT_PROVIDED',
@@ -502,8 +507,8 @@ unit.defs.nutrients <-c(
   'DON' = 'milligramsPerLiter',
   'Nutrient_comments' = 'e.g. “musty odor”, “turbid”, “algal growth”, “dry canal”, etc.')
 
-# Quarterly_Lake_Sampling
-col.defs.Quarterly_Lake_Sampling <-c(
+# quarterlyLakeSampling
+col.defs.quarterlyLakeSampling <-c(
   'ID' = 'Record number',
   'Site_Name' = 'Name of sampling site',
   'Site_Location' = 'Description of where site is located',
@@ -520,7 +525,7 @@ col.defs.Quarterly_Lake_Sampling <-c(
   'UVA' = 'UV absorbance measurement',
   'SUVA' = 'SUVA calculation')
 
-unit.defs.Quarterly_Lake_Sampling <-c(
+unit.defs.quarterlyLakeSampling <-c(
   'ID' = 'number',
   'Site_Name' = '“A” denotes epilimnion, “B” denotes hypolimnion',
   'Site_Location' = '“upper” denotes upstream lake location, “lower” denotes downstream',
@@ -537,8 +542,8 @@ unit.defs.Quarterly_Lake_Sampling <-c(
   'UVA' = 'dimensionless',
   'SUVA' = 'SUVA_254nm')
 
-# Quarterly_Metals
-col.defs.Quarterly_Metals <-c(
+# quarterlyMetals
+col.defs.quarterlyMetals <-c(
   'ID' = 'Record number',
   'Site_Name' = 'Name of sampling site',
   'Site_Location' = 'Description of where site is located',
@@ -572,10 +577,10 @@ col.defs.Quarterly_Metals <-c(
   'Ba138' = 'Barium measurement by ICP-MS',
   'Hg202' = 'Mercury measurement by ICP-MS',
   'Pb207' = 'Lead measurement by ICP-MS',
-  'Th232' = 'Thorium measurement by ICP-MS',
+  #'Th232' = 'Thorium measurement by ICP-MS',
   'U238' = 'Uranium measurement by ICP-MS')
 
-unit.defs.Quarterly_Metals <-c(
+unit.defs.quarterlyMetals <-c(
   'ID' = 'number',
   'Site_Name' = '“A” denotes epilimnion, “B” denotes hypolimnion',
   'Site_Location' = '“upper” denotes upstream lake location, “lower” denotes downstream',
@@ -609,26 +614,26 @@ unit.defs.Quarterly_Metals <-c(
   'Ba138' = 'microgramsPerLiter',
   'Hg202' = 'microgramsPerLiter',
   'Pb207' = 'microgramsPerLiter',
-  'Th232' = 'microgramsPerLiter',
+  #'Th232' = 'microgramsPerLiter',
   'U238' = 'microgramsPerLiter')
 
-# Sample_Names
-col.defs.Sample_Names <-c(
+# sampleNames
+col.defs.sampleNames <-c(
   'Site_ID' = 'Record number',
   'Site_Number' = 'Name of sampling site',
   'Site_Location' = 'Description of where site is located',
   'Cluster_Name' = 'Source water',
   'Site_Acronym' = 'Abbreviation of site location')
 
-unit.defs.Sample_Names <-c(
+unit.defs.sampleNames <-c(
   'Site_ID' = '“A” denotes epilimnion, “B” denotes hypolimnion',
   'Site_Number' = 'number',
   'Site_Location' = 'METADATA_NOT_PROVIDED',
   'Cluster_Name' = 'either “Verde”,” Salt”, “CAP”, “SRP",  or “Tempe”',
   'Site_Acronym' = '“epi”= epilimnion, “hypo”= hypolimnion,  “dup”= duplicate, “x con”= cross connect')
 
-# Sucralose
-col.defs.Sucralose <-c(
+# sucralose
+col.defs.sucralose <-c(
   'ID' = 'Record number',
   'Site_Name' = 'Name of sampling site',
   'Site_Location' = 'Description of where site is located',
@@ -637,7 +642,7 @@ col.defs.Sucralose <-c(
   'Date' = 'Date sample was collected',
   'Sucralose' = 'Sucralose measurement by LC-MS; Samples concentrated first by SPE')
 
-unit.defs.Sucralose <-c(
+unit.defs.sucralose <-c(
   'ID' = 'number',
   'Site_Name' = '“A” denotes epilimnion',
   'Site_Location' = 'METADATA_NOT_PROVIDED',
@@ -693,7 +698,7 @@ SUVA_254nm <- eml_define_unit(id = "SUVA_254nm",
                               parentSI = "unknown (SUVA[254nm] literPerMilligramPerMeter)",
                               unitType = "specific ultra violet  absorbance",
                               multiplierToSI = "1",
-                              description = "Specific Ultra Violet  Absorbance (liter per milligram per meter)")
+                              description = "Specific Ultra Violet Absorbance (liter per milligram per meter)")
 
 microgramPerCentimeterCubed <- eml_define_unit(id = "microgramPerCentimeterCubed",
                                                parentSI = "kilogramsPerCubicMeter",
@@ -706,6 +711,7 @@ coloniesPer100milliliter <- eml_define_unit(id = "coloniesPer100milliliter ",
                                                unitType = "concentration",
                                                multiplierToSI = "1",
                                                description = "Number of colonies per 100mL of sample")
+
 # generate datatables ----
 # dataTable slotnames
 # slotNames(new('dataTable'))
@@ -720,36 +726,36 @@ algae.DT <- eml_dataTable(data.frame(data[['algae']]),
                           description = "metadata documentation for algae",
                           filename = 'algae.csv')
 
-doc_month.DT <- eml_dataTable(data.frame(data[['doc_month']]),
-                              col.defs = col.defs.doc_month,
-                              unit.defs = unit.defs.doc_month,
-                              description = "metadata documentation for doc_month",
-                              filename = 'doc_month.csv')
+docMonth.DT <- eml_dataTable(data.frame(data[['docMonth']]),
+                              col.defs = col.defs.docMonth,
+                              unit.defs = unit.defs.docMonth,
+                              description = "metadata documentation for docMonth",
+                              filename = 'docMonth.csv')
 
-Quarterly_Lake_Sampling.DT <- eml_dataTable(data.frame(data[['Quarterly_Lake_Sampling']]),
-                                            col.defs = col.defs.Quarterly_Lake_Sampling,
-                                            unit.defs = unit.defs.Quarterly_Lake_Sampling,
-                                            description = "metadata documentation for Quarterly_Lake_Sampling",
-                                            filename = 'Quarterly_Lake_Sampling.csv')
+quarterlyLakeSampling.DT <- eml_dataTable(data.frame(data[['quarterlyLakeSampling']]),
+                                            col.defs = col.defs.quarterlyLakeSampling,
+                                            unit.defs = unit.defs.quarterlyLakeSampling,
+                                            description = "metadata documentation for quarterlyLakeSampling",
+                                            filename = 'quarterlyLakeSampling.csv')
 
-Microbial.DT <- eml_dataTable(data.frame(data[['Microbial']]),
+microbial.DT <- eml_dataTable(data.frame(data[['microbial']]),
                                             col.defs = col.defs.microbial,
                                             unit.defs = unit.defs.microbial,
                                             description = "metadata documentation for microbial",
-                                            filename = 'Microbial.csv')
+                                            filename = 'microbial.csv')
 
 # okay to highlight all and run
-Arsenic.DT <- eml_dataTable(data.frame(data[['Arsenic']]),
-                            col.defs = col.defs.Arsenic,
-                            unit.defs = unit.defs.Arsenic,
-                            description = "metadata documentation for Arsenic",
-                            filename = 'Arsenic.csv')
+arsenic.DT <- eml_dataTable(data.frame(data[['arsenic']]),
+                            col.defs = col.defs.arsenic,
+                            unit.defs = unit.defs.arsenic,
+                            description = "metadata documentation for arsenic",
+                            filename = 'arsenic.csv')
 
-field_measurements.DT <- eml_dataTable(data.frame(data[['field_measurements']]),
-                                       col.defs = col.defs.field_measurements,
-                                       unit.defs = unit.defs.field_measurements,
-                                       description = "metadata documentation for field_measurements",
-                                       filename = 'field_measurements.csv')
+fieldMeasurements.DT <- eml_dataTable(data.frame(data[['fieldMeasurements']]),
+                                       col.defs = col.defs.fieldMeasurements,
+                                       unit.defs = unit.defs.fieldMeasurements,
+                                       description = "metadata documentation for fieldMeasurements",
+                                       filename = 'fieldMeasurements.csv')
 
 gpscoord.DT <- eml_dataTable(data.frame(data[['gpscoord']]),
                              col.defs = col.defs.gpscoord,
@@ -757,11 +763,11 @@ gpscoord.DT <- eml_dataTable(data.frame(data[['gpscoord']]),
                              description = "metadata documentation for gpscoord",
                              filename = 'gpscoord.csv')
 
-mib_and_geosmin.DT <- eml_dataTable(data.frame(data[['mib_and_geosmin']]),
-                                    col.defs = col.defs.mib_and_geosmin,
-                                    unit.defs = unit.defs.mib_and_geosmin,
-                                    description = "metadata documentation for mib_and_geosmin",
-                                    filename = 'mib_and_geosmin.csv')
+mibAndGeosmin.DT <- eml_dataTable(data.frame(data[['mibAndGeosmin']]),
+                                    col.defs = col.defs.mibAndGeosmin,
+                                    unit.defs = unit.defs.mibAndGeosmin,
+                                    description = "metadata documentation for mibAndGeosmin",
+                                    filename = 'mibAndGeosmin.csv')
 
 nutrients.DT <- eml_dataTable(data.frame(data[['nutrients']]),
                               col.defs = col.defs.nutrients,
@@ -769,23 +775,23 @@ nutrients.DT <- eml_dataTable(data.frame(data[['nutrients']]),
                               description = "metadata documentation for nutrients",
                               filename = 'nutrients.csv')
 
-Quarterly_Metals.DT <- eml_dataTable(data.frame(data[['Quarterly_Metals']]),
-                                     col.defs = col.defs.Quarterly_Metals,
-                                     unit.defs = unit.defs.Quarterly_Metals,
-                                     description = "metadata documentation for Quarterly_Metals",
-                                     filename = 'Quarterly_Metals.csv')
+quarterlyMetals.DT <- eml_dataTable(data.frame(data[['quarterlyMetals']]),
+                                     col.defs = col.defs.quarterlyMetals,
+                                     unit.defs = unit.defs.quarterlyMetals,
+                                     description = "metadata documentation for quarterlyMetals",
+                                     filename = 'quarterlyMetals.csv')
 
-Sample_Names.DT <- eml_dataTable(data.frame(data[['Sample_Names']]),
-                                 col.defs = col.defs.Sample_Names,
-                                 unit.defs = unit.defs.Sample_Names,
-                                 description = "metadata documentation for Sample_Names",
-                                 filename = 'Sample_Names.csv')
+sampleNames.DT <- eml_dataTable(data.frame(data[['sampleNames']]),
+                                 col.defs = col.defs.sampleNames,
+                                 unit.defs = unit.defs.sampleNames,
+                                 description = "metadata documentation for sampleNames",
+                                 filename = 'sampleNames.csv')
 
-Sucralose.DT <- eml_dataTable(data.frame(data[['Sucralose']]),
-                              col.defs = col.defs.Sucralose,
-                              unit.defs = unit.defs.Sucralose,
-                              description = "metadata documentation for Sucralose",
-                              filename = 'Sucralose.csv')
+sucralose.DT <- eml_dataTable(data.frame(data[['sucralose']]),
+                              col.defs = col.defs.sucralose,
+                              unit.defs = unit.defs.sucralose,
+                              description = "metadata documentation for sucralose",
+                              filename = 'sucralose.csv')
 
 # generate dataset ----
 
@@ -842,9 +848,7 @@ creator <- c(as('Paul Westerhoff', 'creator'),
              as('Milton Sommerfeld', 'creator'))
 
 # methods: will need to develop this, esp. project methods versus dataTable methods
-methods <- new('methods', methodStep = c(new('methodStep', description = 'Grab water samples were collected for analysis from canals and water treatment plants in headspace-free, amber glass containers.  Water samples for metals analysis were collected in centrifuge tubes and acidified with nitric acid for stability.  Lake samples were obtained from the epilimnion and hypolimnion by way of a Kemmerer sampler.  All samples were kept on ice in the field and stored at 4 degrees Celsius until analyzed.  Nutrient samples that couldn’t be analyzed within 24 hours were frozen.
-
-Field measurements for dissolved oxygen, pH, and temperature were made using a portable meter.  Water clarity for lake samples was measured using a Secchi Disk.  Taste and odor compounds were measured using solid phase micro extraction and injected onto a GC-MS/MS.  Total nutrients were obtained by way of persulfate digestion and then analysis on a continuous flow colorimetric analyzer.  Metals data was obtained by ICP-MS.')))
+methods <- new('methods', methodStep = c(new('methodStep', description = 'Grab water samples were collected for analysis from canals and water treatment plants in headspace-free, amber glass containers.  Water samples for metals analysis were collected in centrifuge tubes and acidified with nitric acid for stability.  Lake samples were obtained from the epilimnion and hypolimnion by way of a Kemmerer sampler.  All samples were kept on ice in the field and stored at 4 degrees Celsius until analyzed.  Nutrient samples that could not be analyzed within 24 hours were frozen. Field measurements for dissolved oxygen, pH, and temperature were made using a portable meter.  Water clarity for lake samples was measured using a Secchi Disk. Taste and odor compounds were measured using solid phase micro extraction and injected onto a GC-MS/MS.  Total nutrients were obtained by way of persulfate digestion and then analysis on a continuous flow colorimetric analyzer.  Metals data were obtained by ICP-MS.')))
 
 # coverage
 # note that end date for this on-going study is arbitrarily defined
@@ -873,37 +877,37 @@ coverage <- eml_coverage(dates = c('1999-08-17', '2015-06-02'),
 
 # works but cannot incorporate custom_units
 delta <- new('dataset',
-               scope = scope, # not sure the order of this one
-               system = system, # not sure the order of this one
-               alternateIdentifier = alternateIdentifier,
-               language = language,
-               creator = creator,
-               metadataProvider = metadataProvider,
-               contact = contact,
-               distribution = distribution,
-               publisher = publisher,
-               title = title,
-               pubDate = pubDate,
-               keywordSet = keywordSet,
-               abstract = abstract,
-               intellectualRights = rights,
-               methods = methods,
-               coverage = coverage,
-               dataTable = c(algae.DT,
-                             Arsenic.DT,
-                             doc_month.DT,
-                             field_measurements.DT,
-                             gpscoord.DT,
-                             mib_and_geosmin.DT,
-                             Microbial.DT,
-                             nutrients.DT,
-                             Quarterly_Lake_Sampling.DT,
-                             Quarterly_Metals.DT,
-                             Sample_Names.DT,
-                             Sucralose.DT))
+             scope = scope, # not sure the order of this one
+             system = system, # not sure the order of this one
+             alternateIdentifier = alternateIdentifier,
+             language = language,
+             creator = creator,
+             metadataProvider = metadataProvider,
+             contact = contact,
+             distribution = distribution,
+             publisher = publisher,
+             title = title,
+             pubDate = pubDate,
+             keywordSet = keywordSet,
+             abstract = abstract,
+             intellectualRights = rights,
+             methods = methods,
+             coverage = coverage,
+             dataTable = c(algae.DT,
+                           arsenic.DT,
+                           docMonth.DT,
+                           fieldMeasurements.DT,
+                           gpscoord.DT,
+                           mibAndGeosmin.DT,
+                           microbial.DT,
+                           nutrients.DT,
+                           quarterlyLakeSampling.DT,
+                           quarterlyMetals.DT,
+                           sampleNames.DT,
+                           sucralose.DT))
 
 frank <- new('eml',
-            dataset = delta)
+             dataset = delta)
 
 eml_write(frank,
           file = "./outFile.xml")
@@ -912,5 +916,6 @@ eml_write(frank,
 eml_write(custom_units = c(microgramPerCentimeterCubed,
                            SUVA_254nm,
                            microsiemensPerCentimeter,
-                           nominalMonth),
+                           nominalMonth,
+                           coloniesPer100milliliter),
           file = "./units.xml")
