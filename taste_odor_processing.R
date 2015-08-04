@@ -258,7 +258,8 @@ names(data[['microbial']])<-c(
 
 dates <- function(df) {
   if ("Month" %in% names(df)) {df$Month <- as.POSIXct(df$Month, format="%m/%d/%Y %H:%M:%S")
-                               df$Month <- format(df$Month, format="%m")
+                               df$Month <- as.numeric(format(df$Month, format="%m"))
+                               # added as numeric here to change it from text to int; as text it will be treated as nominal
   }
   if ("Time" %in% names(df)) {df$Time <- as.POSIXct(df$Time, format="%Y/%m/%d %H:%M:%S")
   df$Time <- format(df$Time, format="%H:%M")
