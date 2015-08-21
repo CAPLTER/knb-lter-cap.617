@@ -5,6 +5,9 @@ date: "04/10/2015"
 output: html_document
 ---
 
+#### incorporate separate table writing
+sapply(names(data), function (x) write.table(data[[x]], file=paste(x, "csv", sep="."), sep = "," ) )#### need to convert record numbers to strings and rebuild the whole darn thing
+
 library("devtools")
 library("EML")
 library("rapport")

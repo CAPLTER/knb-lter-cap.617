@@ -1,3 +1,6 @@
+sapply(names(data), function (x) write.table(data[[x]], file=paste(x, "csv", sep="."), sep = "," ) )
+
+
 # early stuff ----
 
 dates <- function(df) {
