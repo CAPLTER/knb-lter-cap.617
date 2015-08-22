@@ -5,8 +5,6 @@ date: "04/10/2015"
 output: html_document
 ---
 
-#### incorporate separate table writing
-sapply(names(data), function (x) write.table(data[[x]], file=paste(x, "csv", sep="."), sep = "," ) )#### need to convert record numbers to strings and rebuild the whole darn thing
 
 library("devtools")
 library("EML")
@@ -257,7 +255,7 @@ names(data[['microbial']])<-c(
   'Mycobacterium',
   'Comments')
 
-# format dates and time ----
+# format dates, time, and ID (row count, basically) ----
 
 dates <- function(df) {
   if ("Month" %in% names(df)) {df$Month <- as.POSIXct(df$Month, format="%m/%d/%Y %H:%M:%S")
@@ -271,10 +269,15 @@ dates <- function(df) {
   }
   if ("Sample_Date" %in% names(df)) {df$Sample_Date <- as.POSIXct(df$Sample_Date, format="%m/%d/%Y") # name and this if tailored specifically for quarterly metals
   }
+  if ("ID" %in% names(df)) {df$ID <- as.character(df$ID) # these are arbitrary numerical values that need to be converted to nominal
+  }
   return(df)
 }
 
 data <- lapply(data, dates)
+
+# convert lone numeric -> nominal column not addressed by "ID" in the dates function
+data[["sampleNames"]]$Site_Number <- as.character(data[["sampleNames"]]$Site_Number) # meaningless numeric -> nominal
 
 # provide col.defs (field descriptions) and unit.defs according to metadata ----
 
@@ -299,7 +302,7 @@ col.defs.algae <- c(
   'AlgaeComments' = 'Sampling comments about canal, lake or water treatment plant')
 
 unit.defs.algae <- list(
-  'ID' = 'number',
+  'ID' = 'Record number',
   'SiteNumber' = '‘A’ designates epilimnion, ‘B’ hypolimnion',
   'SiteLocation' = 'METADATA_NOT_PROVIDED',
   'ClusterName' = 'either Verde, Salt, CAP, SRP, Tempe',
@@ -329,7 +332,7 @@ col.defs.arsenic <-c(
   'Perchlorate' = 'Perchlorate measurement; measurement by ion chromatography')
 
 unit.defs.arsenic <-c(
-  'ID' = 'number',
+  'ID' = 'Record number',
   'SiteNumber' = '‘A’ designates epilimnion, ‘B’ hypolimnion',
   'SiteLocation' = 'METADATA_NOT_PROVIDED',
   'Cluster' = 'either “Verde”,” Salt”, “CAP”, “SRP",  or “Tempe”',
@@ -361,7 +364,7 @@ col.defs.docMonth <-c(
   'docm_comments' = 'No metadata provided')
 
 unit.defs.docMonth <-c(
-  'ID' = 'number',
+  'ID' = 'Record number',
   'SiteNumber' = 'METADATA_NOT_PROVIDED',
   'SiteLocation' = 'METADATA_NOT_PROVIDED',
   'ClusterName' = 'either “Verde”,” Salt”, “CAP”, “SRP",  or “Tempe”',
@@ -400,7 +403,7 @@ col.defs.fieldMeasurements <-c(
   'Comments' = 'Sampling comments about canal, lake or water treatment plant')
 
 unit.defs.fieldMeasurements <-c(
-  'ID' = 'number',
+  'ID' = 'Record number',
   'SiteNumber' = 'METADATA_NOT_PROVIDED',
   'SiteLocation' = 'METADATA_NOT_PROVIDED',
   'ClusterName' = 'either “Verde”,” Salt”, “CAP”, “SRP",  or “Tempe”',
@@ -429,7 +432,7 @@ col.defs.gpscoord <-c(
   'Altitude' = 'Elevation above sea level')
 
 unit.defs.gpscoord <-c(
-  'ID' = 'number',
+  'ID' = 'Record number',
   'SiteNumber' = 'METADATA_NOT_PROVIDED',
   'SiteLocation' = 'METADATA_NOT_PROVIDED',
   'ClusterName' = 'either “Verde”,” Salt”, “CAP”, “SRP",  or “Tempe”',
@@ -458,7 +461,7 @@ col.defs.mibAndGeosmin <-c(
   'Comments' = 'Sampling comments about canal, lake or water treatment plant')
 
 unit.defs.mibAndGeosmin <-c(
-  'ID' = 'number',
+  'ID' = 'Record number',
   'Site_Number' = 'METADATA_NOT_PROVIDED',
   'Site_Location' = 'METADATA_NOT_PROVIDED',
   'Cluster_Name' = 'either “Verde”,” Salt”, “CAP”, “SRP",  or “Tempe”',
@@ -494,7 +497,7 @@ col.defs.nutrients <-c(
   'Nutrient_comments' = 'Sampling comments about canal, lake or water treatment plant')
 
 unit.defs.nutrients <-c(
-  'ID' = 'number',
+  'ID' = 'Record number',
   'Site_Number' = 'METADATA_NOT_PROVIDED',
   'Site_Location' = 'METADATA_NOT_PROVIDED',
   'Cluster_Name' = 'either “Verde”,” Salt”, “CAP”, “SRP",  or “Tempe”',
@@ -530,7 +533,7 @@ col.defs.quarterlyLakeSampling <-c(
   'SUVA' = 'SUVA calculation')
 
 unit.defs.quarterlyLakeSampling <-c(
-  'ID' = 'number',
+  'ID' = 'Record number',
   'Site_Name' = '“A” denotes epilimnion, “B” denotes hypolimnion',
   'Site_Location' = '“upper” denotes upstream lake location, “lower” denotes downstream',
   'Cluster_Name' = '“Salt River”',
@@ -585,7 +588,7 @@ col.defs.quarterlyMetals <-c(
   'U238' = 'Uranium measurement by ICP-MS')
 
 unit.defs.quarterlyMetals <-c(
-  'ID' = 'number',
+  'ID' = 'Record number',
   'Site_Name' = '“A” denotes epilimnion, “B” denotes hypolimnion',
   'Site_Location' = '“upper” denotes upstream lake location, “lower” denotes downstream',
   'Cluster_Name' = 'either “Salt River”,” Cap”, or “Verde”',
@@ -748,6 +751,12 @@ microbial.DT <- eml_dataTable(data.frame(data[['microbial']]),
                                             description = "metadata documentation for microbial",
                                             filename = 'microbial.csv')
 
+nutrients.DT <- eml_dataTable(data.frame(data[['nutrients']]),
+                              col.defs = col.defs.nutrients,
+                              unit.defs = unit.defs.nutrients,
+                              description = "metadata documentation for nutrients",
+                              filename = 'nutrients.csv')
+
 # okay to highlight all and run
 arsenic.DT <- eml_dataTable(data.frame(data[['arsenic']]),
                             col.defs = col.defs.arsenic,
@@ -772,12 +781,6 @@ mibAndGeosmin.DT <- eml_dataTable(data.frame(data[['mibAndGeosmin']]),
                                     unit.defs = unit.defs.mibAndGeosmin,
                                     description = "metadata documentation for mibAndGeosmin",
                                     filename = 'mibAndGeosmin.csv')
-
-nutrients.DT <- eml_dataTable(data.frame(data[['nutrients']]),
-                              col.defs = col.defs.nutrients,
-                              unit.defs = unit.defs.nutrients,
-                              description = "metadata documentation for nutrients",
-                              filename = 'nutrients.csv')
 
 quarterlyMetals.DT <- eml_dataTable(data.frame(data[['quarterlyMetals']]),
                                      col.defs = col.defs.quarterlyMetals,
@@ -923,3 +926,6 @@ eml_write(custom_units = c(microgramPerCentimeterCubed,
                            nominalMonth,
                            coloniesPer100milliliter),
           file = "./units.xml")
+
+#### incorporate separate table writing
+sapply(names(data), function (x) write.table(data[[x]], file=paste(x, "csv", sep="."), sep = "," ) )
