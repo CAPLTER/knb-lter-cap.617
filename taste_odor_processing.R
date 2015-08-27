@@ -5,7 +5,6 @@ date: "04/10/2015"
 output: html_document
 ---
 
-
 library("devtools")
 library("EML")
 library("rapport")
@@ -249,7 +248,7 @@ names(data[['microbial']])<-c(
   'Site_Location',
   'Cluster_Name',
   'Site_Acronym',
-  'Date',
+  'Sample_Date',
   'E_coli',
   'Coliform',
   'Mycobacterium',
@@ -267,7 +266,7 @@ dates <- function(df) {
   }
   if ("Date" %in% names(df)) {df$Date <- as.POSIXct(df$Date, format="%m/%d/%Y %H:%M:%S")
   }
-  if ("Sample_Date" %in% names(df)) {df$Sample_Date <- as.POSIXct(df$Sample_Date, format="%m/%d/%Y") # name and this if tailored specifically for quarterly metals
+  if ("Sample_Date" %in% names(df)) {df$Sample_Date <- as.POSIXct(df$Sample_Date, format="%m/%d/%Y") # name and this if tailored specifically for quarterly metals and microbial
   }
   if ("ID" %in% names(df)) {df$ID <- as.character(df$ID) # these are arbitrary numerical values that need to be converted to nominal
   }
@@ -278,6 +277,16 @@ data <- lapply(data, dates)
 
 # convert lone numeric -> nominal column not addressed by "ID" in the dates function
 data[["sampleNames"]]$Site_Number <- as.character(data[["sampleNames"]]$Site_Number) # meaningless numeric -> nominal
+
+# convert microbial counts to text. E_coli does not contain text, but Coliform & Myco do.
+# The result of this was that E_coli was numeric, whereas Coliform & Myco were nominal.
+# This created a problem as I was applying the same custom unit to these even though they were different types.
+# This was a problem for pasta. The result here is to change all three to text, and remove the custom unit.
+data[['microbial']]$E_coli <- as.character(data[['microbial']]$E_coli)
+data[['microbial']]$Coliform <- as.character(data[['microbial']]$Coliform)
+data[['microbial']]$Mycobacterium <- as.character(data[['microbial']]$Mycobacterium )
+
+# done after the fact but c/should be done here, there are commas in several fields of the quarterlyMetals and quarterlyLakeSampling tables - convert those to ';' or they will be split into separate columns
 
 # provide col.defs (field descriptions) and unit.defs according to metadata ----
 
@@ -713,11 +722,11 @@ microgramPerCentimeterCubed <- eml_define_unit(id = "microgramPerCentimeterCubed
                                                multiplierToSI = "1000000",
                                                description = "micrograms per cubic centimeter")
 
-coloniesPer100milliliter <- eml_define_unit(id = "coloniesPer100milliliter ",
-                                               parentSI = "unknown",
-                                               unitType = "concentration",
-                                               multiplierToSI = "1",
-                                               description = "Number of colonies per 100mL of sample")
+# coloniesPer100milliliter <- eml_define_unit(id = "coloniesPer100milliliter ",
+#                                                parentSI = "unknown",
+#                                                unitType = "concentration",
+#                                                multiplierToSI = "1",
+#                                                description = "Number of colonies per 100mL of sample")
 
 # generate datatables ----
 # dataTable slotnames
@@ -725,6 +734,8 @@ coloniesPer100milliliter <- eml_define_unit(id = "coloniesPer100milliliter ",
 [1] "entityName"          "entityDescription"   "alternateIdentifier" "physical"            "coverage"            "methods"
 [7] "additionalInfo"      "attributeList"       "caseSensitive"       "numberOfRecords"     "id"                  "system"
 [13] "scope"
+
+# done after the fact in vim, but try to add additionalInfo (i.e., Informatics processing steps) in R
 
 # do this set one-by-one owing to custom units
 algae.DT <- eml_dataTable(data.frame(data[['algae']]),
@@ -927,5 +938,5 @@ eml_write(custom_units = c(microgramPerCentimeterCubed,
                            coloniesPer100milliliter),
           file = "./units.xml")
 
-#### incorporate separate table writing
-sapply(names(data), function (x) write.table(data[[x]], file=paste(x, "csv", sep="."), sep = "," ) )
+# I simply could not get the dates to resolve properly with eml_dataTable() in these tables, no matter the steps taken and how they looked in R, the output of eml_dataTable() was incorrect. As a result, these tables are being written indenpently of REML
+sapply(names(data), function (x) write.table(data[[x]], file=paste(x, "csv", sep="."), sep = ",", row.names = F ) )
