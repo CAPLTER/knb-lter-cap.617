@@ -1,17 +1,15 @@
-remove attributeList attributes
-%s/attributeList[^*]*"/attributeList/gc
 
-dataTable: remove attributes, replace attributes with schema.org type dataset, itemscope without a subsequent '=' threw an error, itemtype not allowed
-%s/dataTable[^*]*"/dataTable/gc
-%s/dataTable[^*]*"/dataTable itemscope itemtype="http:\/\/schema.org\/Dataset"/gc
-%s/dataTable[^*]*"/dataTable itemtype="http:\/\/schema.org\/Dataset"/gc
+# update header info - copy from another file
+# add urls for each data table
 
-add theme to keyword
-%s/<keyword>/<keyword keywordType="theme">/gc
+        <distribution>
+          <online>
+            <onlineDescription>CAPLTER Data Portal URL</onlineDescription>
+            <url>http://data.gios.asu.edu/datasets/cap/617_sucralose_50cd2b98307b64a712c348e5ce693376d4aa40fc.csv</url>
+          </online>
+        </distribution>
 
-add byte to size
-%s/<size>/<size unit="byte">/gc
-
+# add attitionalInfo (i.e., informatics did these processing steps) to each data table. I did this by use the :read function in vim and referencing a file with the text belwo, but see if you can get REML to do this
 
       <additionalInfo>
         <section>
@@ -27,17 +25,28 @@ add byte to size
         </section>
       </additionalInfo>
 
+# add base name of data table to entity name
+# add prodURL to distribution 
 prodURL:  http://data.gios.asu.edu/cap/HarvestListFileShow.php?id=617
+
+# use devURL for previewing datasets once pulled to dev
 devURL:   https://caplter.wp.dev.gios.asu.edu/data/data-catalog/?id=617&preview=true
 
-        <distribution>
-          <online>
-            <onlineDescription>CAPLTER Data Portal URL</onlineDescription>
-            <url>http://data.gios.asu.edu/datasets/cap/617_sucralose_50cd2b98307b64a712c348e5ce693376d4aa40fc.csv</url>
-          </online>
-        </distribution>
+#the following was included in a separate file that was called within vim
 
+"remove attributeList attributes
+%s/attributeList[^*]*"/attributeList/g
 
+"dataTable: remove attributes, replace attributes with schema.org type dataset, itemscope without a subsequent '=' threw an error, itemtype not allowed
+%s/dataTable[^*]*"/dataTable/g
+
+"add theme to keyword
+%s/<keyword>/<keyword keywordType="theme">/g
+
+"add byte to size
+%s/<size>/<size unit="byte">/g
+
+"change reference file names as appropriate
 %s/algae.csv/617_algae_52169aa4ea278b8519473f72af04bce284b01dc4.csv/g
 %s/microbial.csv/617_microbial_c0c09c7e4597c8bb4bee28ff839e829b8322ce67.csv/g
 %s/arsenic.csv/617_arsenic_73f7ce7ac1fc93dfc815be4d5d21c7f3804b038a.csv/g            
