@@ -1,7 +1,7 @@
 
 # update header info - copy from another file
-# add urls for each data table
 
+# add urls for each data table
         <distribution>
           <online>
             <onlineDescription>CAPLTER Data Portal URL</onlineDescription>
@@ -10,7 +10,6 @@
         </distribution>
 
 # add attitionalInfo (i.e., informatics did these processing steps) to each data table. I did this by use the :read function in vim and referencing a file with the text belwo, but see if you can get REML to do this
-
       <additionalInfo>
         <section>
           <title>Julie Ann Wrigley Global Institute of Sustainability Informatics processed this data object with the following actions:</title>
@@ -26,11 +25,14 @@
       </additionalInfo>
 
 # add base name of data table to entity name
+
 # add prodURL to distribution 
 prodURL:  http://data.gios.asu.edu/cap/HarvestListFileShow.php?id=617
 
 # use devURL for previewing datasets once pulled to dev
-devURL:   https://caplter.wp.dev.gios.asu.edu/data/data-catalog/?id=617&preview=true
+devURL: https://caplter.wp.dev.gios.asu.edu/data/data-catalog/?id=617&preview=true
+
+# for these taste&odor data, I had to set the fileformat to dos
 
 #the following was included in a separate file that was called within vim
 
