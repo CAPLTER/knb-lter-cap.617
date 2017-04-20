@@ -1,2 +1,2 @@
 # knb-lter-cap.617
-long term taste and odor
+dataset publishing: taste and odor
