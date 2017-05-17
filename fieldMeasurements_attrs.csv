@@ -1,0 +1,13 @@
+attributeName,formatString,unit,numberType,definition,attributeDefinition,columnClasses,minimum,maximum
+site number,,,,"site number or name (A designates epilimnion, B hypolimnion)","site number or name (A designates epilimnion, B hypolimnion)",character,,
+site location,,,,site location description,site location description,character,,
+Cluster,,,,,source water,factor,,
+site acronym,,,,site number or name,site number or name,character,,
+date,YYYY-MM-DD,,,,sample collection date,Date,,
+depth (m),,meter,real,,water depth where measurement was taken (0 designates just below surface),numeric,,
+T (C),,celsius,real,,water temperature,numeric,,
+DO (mg/l),,milligramsPerLiter,real,,dissolved oxygen,numeric,,
+pH,,dimensionless,real,,pH,numeric,,
+Secchi Disk (m),,meter,real,,water transparency measurement as measured from side of boat,numeric,,
+samples collected,,,,types of analyses for which samples were collected,types of analyses for which samples were collected,character,,
+comments,,,,comment(s) about site conditions or sampling details,comment(s) about site conditions or sampling details,character,,
