@@ -75,6 +75,30 @@ algae_DT <- create_dataTable(dfname = algae,
 
 ```
 
+```{r arsenic, eval=TRUE}
+
+# tabularDataEntity <- import / generate...process...
+
+arsenic <- read_csv("data/Arsenic.csv") %>%
+  mutate(Cluster = tolower(Cluster)) %>% 
+  mutate(Cluster = as.factor(Cluster)) %>% 
+  mutate(`Arsenic (ug/L)` = as.numeric(`Arsenic (ug/L)`)) %>% 
+  mutate(date = format(as.POSIXct(`month/date`, format = "%m/%d/%y"), "%Y-%m-%d")) %>% 
+  mutate(date = as.Date(date)) %>%
+  select(-ID, -`month/date`) %>%
+  arrange(date, `Site Number`) %>% 
+  filter(!is.na(date))
+
+write_attributes(arsenic)
+write_factors(arsenic)
+
+tabularDataEntity_desc <- "desc"
+
+tabularDataEntity_DT <- create_dataTable(dfname = tabularDataEntity,
+                                              description = tabularDataEntity_desc)
+
+```
+
 ```{r compiled_data, eval=TRUE}
 
 # tabularDataEntity <- import / generate...process...

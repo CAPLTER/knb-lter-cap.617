@@ -1,0 +1,79 @@
+attributeName,code,definition
+Site Number,Glen In,metadata_not_provided
+Site Number,Glen Out,metadata_not_provided
+Site Number,Green In,metadata_not_provided
+Site Number,Green Out,metadata_not_provided
+Site Number,Havasu 1,metadata_not_provided
+Site Number,Havasu 2,metadata_not_provided
+Site Number,HTC,metadata_not_provided
+Site Number,Hwy 87,metadata_not_provided
+Site Number,NP In,metadata_not_provided
+Site Number,NP Out,metadata_not_provided
+Site Number,Pima,metadata_not_provided
+Site Number,R10,metadata_not_provided
+Site Number,R11,metadata_not_provided
+Site Number,R12,metadata_not_provided
+Site Number,R13,metadata_not_provided
+Site Number,R14,metadata_not_provided
+Site Number,R15,metadata_not_provided
+Site Number,R16,metadata_not_provided
+Site Number,R17,metadata_not_provided
+Site Number,R18,metadata_not_provided
+Site Number,R19,metadata_not_provided
+Site Number,R20,metadata_not_provided
+Site Number,R21,metadata_not_provided
+Site Number,R22,metadata_not_provided
+Site Number,R25,metadata_not_provided
+Site Number,R2A,metadata_not_provided
+Site Number,R2B,metadata_not_provided
+Site Number,R3,metadata_not_provided
+Site Number,R6A,metadata_not_provided
+Site Number,R6B,metadata_not_provided
+Site Number,R9A,metadata_not_provided
+Site Number,R9A-Dup,metadata_not_provided
+Site Number,R9B,metadata_not_provided
+Site Number,SOCA,metadata_not_provided
+Site Number,SPT In,metadata_not_provided
+Site Number,SPT Out,metadata_not_provided
+Site Number,UH In,metadata_not_provided
+Site Number,UH Out,metadata_not_provided
+Site location,AZ Canal - 56th St. (Alma School Road),metadata_not_provided
+Site location,AZ Canal - Inlet to Deer Valley WTP,metadata_not_provided
+Site location,AZ Canal - Inlet to Squaw Peak WTP,metadata_not_provided
+Site location,AZ Canal above CAP Cross-connect,metadata_not_provided
+Site location,AZ Canal at Central Av.,metadata_not_provided
+Site location,AZ Canal at Highway 87,metadata_not_provided
+Site location,AZ Canal at Pima Rd.,metadata_not_provided
+Site location,AZ Canal below CAP Cross-connect,metadata_not_provided
+Site location,Bartlett Reservoir near outlet,metadata_not_provided
+Site location,CAP Canal at Cross-connect,metadata_not_provided
+Site location,Cross-Cut Canal - Inlet to Tempe's North Plant,metadata_not_provided
+Site location,Deer Valley WTP treated water,metadata_not_provided
+Site location,Glen In,metadata_not_provided
+Site location,Glendale WTP Inlet,metadata_not_provided
+Site location,Glendale WTP Outlet,metadata_not_provided
+Site location,Greenway WTP Inlet,metadata_not_provided
+Site location,Greenway WTP Outlet,metadata_not_provided
+Site location,Havasu lake Sample,metadata_not_provided
+Site location,Head of the Tempe Canal,metadata_not_provided
+Site location,Lake Pleasant integrated sample,metadata_not_provided
+Site location,Saguaro Lake near inlet,metadata_not_provided
+Site location,Salt River below Saguaro (Blue Point Bridge),metadata_not_provided
+Site location,South Canal at Val Vista WTP,metadata_not_provided
+Site location,South Canal below CAP Cross-conect,metadata_not_provided
+Site location,Squaw Peak WTP treated water,metadata_not_provided
+Site location,Tempe's North Plant treated water,metadata_not_provided
+Site location,Tempe's South Plant treated water,metadata_not_provided
+Site location,Tempe Canal - Inlet to Tempe's South Plant,metadata_not_provided
+Site location,Union Hills Inlet,metadata_not_provided
+Site location,Union Hills Treated Water,metadata_not_provided
+Site location,Val Vista WTP treated water,metadata_not_provided
+Site location,Val Vista WTP treated water-West,metadata_not_provided
+Site location,verde river at beeline highway,metadata_not_provided
+Site location,Verde River at Tangle,metadata_not_provided
+Site location,Waddell Canal,metadata_not_provided
+Cluster,cap,metadata_not_provided
+Cluster,salt,metadata_not_provided
+Cluster,srp,metadata_not_provided
+Cluster,tempe,metadata_not_provided
+Cluster,verde,metadata_not_provided
