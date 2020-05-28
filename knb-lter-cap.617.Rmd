@@ -51,11 +51,11 @@ mysql_prod <- mysql_prod_connect()
 ```{r algae, eval=TRUE}
 
 algae <- read_csv("data/Conductivity.csv") %>% 
-  rename(Cluster = `cluster name`) %>% 
+  rename(cluster = `cluster name`) %>% 
   mutate(
     `site number` = as.factor(`site number`),
-    Cluster = tolower(Cluster),
-    Cluster = as.factor(Cluster),
+    cluster = tolower(cluster),
+    cluster = as.factor(cluster),
     `site acronym` = as.factor(`site acronym`),
     `sample type` = as.factor(`sample type`),
     date = format(as.POSIXct(date, format = "%m/%d/%y %H:%M:%S"), "%Y-%m-%d"),
@@ -79,23 +79,34 @@ algae_DT <- create_dataTable(dfname = algae,
 
 # tabularDataEntity <- import / generate...process...
 
-arsenic <- read_csv("data/Arsenic.csv") %>%
-  mutate(Cluster = tolower(Cluster)) %>% 
-  mutate(Cluster = as.factor(Cluster)) %>% 
-  mutate(`Arsenic (ug/L)` = as.numeric(`Arsenic (ug/L)`)) %>% 
-  mutate(date = format(as.POSIXct(`month/date`, format = "%m/%d/%y"), "%Y-%m-%d")) %>% 
-  mutate(date = as.Date(date)) %>%
-  select(-ID, -`month/date`) %>%
-  arrange(date, `Site Number`) %>% 
+arsenic <- read_csv("data/Arsenic.csv", col_types = list(col_double(), col_character(), col_character(), col_character(), col_character(), col_character(), col_character(), col_double()  )) %>%
+  rename(`cluster` = `Cluster`, 
+         `site number` = `Site Number`,
+         `site location` = `Site location`,
+         `site acronym` = `Site Acronym`,
+         `arsenic (ug/L)`= `Arsenic (ug/L)`,
+         `perchlorate (ug/L)` = `Perchlorate (ug/L)`) %>%
+  mutate(cluster = tolower(cluster),
+         cluster = as.factor(cluster),
+         `site number` = as.factor(`site number`), 
+         `site acronym` = as.factor(`site acronym`), 
+         date = format(as.POSIXct(`month/date`, format = "%m/%d/%y"), "%Y-%m-%d"),
+         date = as.Date(date)  ) %>%
+  mutate(BDL = case_when(
+         grepl('<2.0', `arsenic (ug/L)`, ignore.case = T) ~ 1), # close case_when
+         BDL = as.factor(BDL)) %>% # close mutate BDL
+  mutate(`arsenic (ug/L)` = as.numeric(`arsenic (ug/L)`)) %>% 
+  select(-`ID`, -`month/date`) %>%
+  arrange(date, `site number`) %>% 
   filter(!is.na(date))
 
 write_attributes(arsenic)
 write_factors(arsenic)
 
-tabularDataEntity_desc <- "desc"
+arsenic_desc <- "arsenic and perchlorate concentrations in canals and reservoirs"
 
-tabularDataEntity_DT <- create_dataTable(dfname = tabularDataEntity,
-                                              description = tabularDataEntity_desc)
+arsenic_DT <- create_dataTable(dfname = arsenic,
+                               description = arsenic_desc)
 
 ```
 
