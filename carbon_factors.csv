@@ -1,0 +1,184 @@
+attributeName,code,definition
+site number,16th St.,metadata_not_provided
+site number,19th Av.,metadata_not_provided
+site number,An in,metadata_not_provided
+site number,AN in,metadata_not_provided
+site number,AN IN,metadata_not_provided
+site number,An out,metadata_not_provided
+site number,AN out,metadata_not_provided
+site number,AN OUT,metadata_not_provided
+site number,Ch in,metadata_not_provided
+site number,CH in,metadata_not_provided
+site number,CH IN,metadata_not_provided
+site number,Ch out,metadata_not_provided
+site number,CH out,metadata_not_provided
+site number,CH OUT,metadata_not_provided
+site number,Cons,metadata_not_provided
+site number,field_blank,metadata_not_provided
+site number,Gila Salt,metadata_not_provided
+site number,GL IN,metadata_not_provided
+site number,GL OUT,metadata_not_provided
+site number,Glen In,metadata_not_provided
+site number,Glen Out,metadata_not_provided
+site number,GR IN,metadata_not_provided
+site number,GR OUT,metadata_not_provided
+site number,Green In,metadata_not_provided
+site number,Green Out,metadata_not_provided
+site number,HAV,metadata_not_provided
+site number,Havasu 1,metadata_not_provided
+site number,Havasu 2,metadata_not_provided
+site number,HOC,metadata_not_provided
+site number,HTC,metadata_not_provided
+site number,Hwy 87,metadata_not_provided
+site number,HWY 87,metadata_not_provided
+site number,lab_blank,metadata_not_provided
+site number,Mesa,metadata_not_provided
+site number,Mesa Turnout,metadata_not_provided
+site number,MOC,metadata_not_provided
+site number,MTO,metadata_not_provided
+site number,NP In,metadata_not_provided
+site number,NP IN,metadata_not_provided
+site number,NP Out,metadata_not_provided
+site number,NP OUT,metadata_not_provided
+site number,Pima,metadata_not_provided
+site number,PIMA,metadata_not_provided
+site number,R1,metadata_not_provided
+site number,R10,metadata_not_provided
+site number,R11,metadata_not_provided
+site number,R12,metadata_not_provided
+site number,R13,metadata_not_provided
+site number,R14,metadata_not_provided
+site number,R15,metadata_not_provided
+site number,R16,metadata_not_provided
+site number,R17,metadata_not_provided
+site number,R18,metadata_not_provided
+site number,R19,metadata_not_provided
+site number,R20,metadata_not_provided
+site number,R20ex,metadata_not_provided
+site number,R21,metadata_not_provided
+site number,R22,metadata_not_provided
+site number,R25,metadata_not_provided
+site number,R26,metadata_not_provided
+site number,R2A,metadata_not_provided
+site number,R2B,metadata_not_provided
+site number,R3,metadata_not_provided
+site number,R4,metadata_not_provided
+site number,R4-Dup,metadata_not_provided
+site number,R5,metadata_not_provided
+site number,R5ex,metadata_not_provided
+site number,R6A,metadata_not_provided
+site number,R6B,metadata_not_provided
+site number,R6C,metadata_not_provided
+site number,R7,metadata_not_provided
+site number,R7ex,metadata_not_provided
+site number,R8,metadata_not_provided
+site number,R9A,metadata_not_provided
+site number,R9A-Dup,metadata_not_provided
+site number,R9A-DUP,metadata_not_provided
+site number,R9B,metadata_not_provided
+site number,R9C,metadata_not_provided
+site number,Roos In,metadata_not_provided
+site number,Roosvelt,metadata_not_provided
+site number,Salt Gila,metadata_not_provided
+site number,Scotts,metadata_not_provided
+site number,SGPS,metadata_not_provided
+site number,SOCA,metadata_not_provided
+site number,SPT In,metadata_not_provided
+site number,SPT IN,metadata_not_provided
+site number,SPT Out,metadata_not_provided
+site number,SPT OUT,metadata_not_provided
+site number,SRNR,metadata_not_provided
+site number,UH In,metadata_not_provided
+site number,UH IN,metadata_not_provided
+site number,UH Out,metadata_not_provided
+site number,UH OUT,metadata_not_provided
+site number,VV West,metadata_not_provided
+cluster,az canal,metadata_not_provided
+cluster,cap,metadata_not_provided
+cluster,chandler,metadata_not_provided
+cluster,mesa turnout,metadata_not_provided
+cluster,salt,metadata_not_provided
+cluster,srp,metadata_not_provided
+cluster,tempe,metadata_not_provided
+cluster,verde,metadata_not_provided
+site acronym,24th In,metadata_not_provided
+site acronym,24th Out,metadata_not_provided
+site acronym,24th St -treated,metadata_not_provided
+site acronym,Above Roosevelt,metadata_not_provided
+site acronym,anthem,metadata_not_provided
+site acronym,anthem inlet,metadata_not_provided
+site acronym,anthem treated,metadata_not_provided
+site acronym,az canal @ 16th st.,metadata_not_provided
+site acronym,az canal @ 19 ave.,metadata_not_provided
+site acronym,az canal @ 19th av.,metadata_not_provided
+site acronym,az canal @ 24th St,metadata_not_provided
+site acronym,az canal @ 56th st.,metadata_not_provided
+site acronym,az canal @ central ave.,metadata_not_provided
+site acronym,az canal @ deer valley,metadata_not_provided
+site acronym,az canal @ hwy 87,metadata_not_provided
+site acronym,az canal @ Mesa,metadata_not_provided
+site acronym,az canal @ pima,metadata_not_provided
+site acronym,az canal @ scotts.,metadata_not_provided
+site acronym,az canal @ squaw peak,metadata_not_provided
+site acronym,az canal blw cap,metadata_not_provided
+site acronym,az canal inflow,metadata_not_provided
+site acronym,bartlett-dock,metadata_not_provided
+site acronym,bartlett-epi,metadata_not_provided
+site acronym,bartlett-hypo,metadata_not_provided
+site acronym,cap-siphon,metadata_not_provided
+site acronym,cap @ 7th st,metadata_not_provided
+site acronym,cap @ 7th st dup,metadata_not_provided
+site acronym,cap @ x con,metadata_not_provided
+site acronym,chandler,metadata_not_provided
+site acronym,chandler inlet,metadata_not_provided
+site acronym,chandler treated,metadata_not_provided
+site acronym,deer valley-treated,metadata_not_provided
+site acronym,field,metadata_not_provided
+site acronym,Glen In,metadata_not_provided
+site acronym,Glen Out,metadata_not_provided
+site acronym,Green In,metadata_not_provided
+site acronym,Green Out,metadata_not_provided
+site acronym,Havasu,metadata_not_provided
+site acronym,Havasu 1,metadata_not_provided
+site acronym,Havasu 2,metadata_not_provided
+site acronym,head of tempe canal,metadata_not_provided
+site acronym,head of the consolidated canal,metadata_not_provided
+site acronym,lab,metadata_not_provided
+site acronym,Mesa Turnout,metadata_not_provided
+site acronym,middle of the consolidated canal,metadata_not_provided
+site acronym,North plant inlet,metadata_not_provided
+site acronym,north plant outlet,metadata_not_provided
+site acronym,pleasant-epi,metadata_not_provided
+site acronym,pleasant-hypo,metadata_not_provided
+site acronym,Roos In,metadata_not_provided
+site acronym,s canal @ val vista,metadata_not_provided
+site acronym,saguaro-epi,metadata_not_provided
+site acronym,saguaro-epi dup,metadata_not_provided
+site acronym,saguaro-hypo,metadata_not_provided
+site acronym,salt abv saguaro,metadata_not_provided
+site acronym,salt blw saguaro,metadata_not_provided
+site acronym,Salt Gila,metadata_not_provided
+site acronym,saugaro-dock,metadata_not_provided
+site acronym,South canal below CAP,metadata_not_provided
+site acronym,squaw peak-treated,metadata_not_provided
+site acronym,SRNR,metadata_not_provided
+site acronym,STP In,metadata_not_provided
+site acronym,STP Out,metadata_not_provided
+site acronym,Union Hills Inlet,metadata_not_provided
+site acronym,Union Hills Outlet,metadata_not_provided
+site acronym,val vista-treated,metadata_not_provided
+site acronym,val vista west-treated,metadata_not_provided
+site acronym,verde @ beeline,metadata_not_provided
+site acronym,verde abv bartlett,metadata_not_provided
+site acronym,verde abv horseshoe,metadata_not_provided
+site acronym,verde blw barlett,metadata_not_provided
+site acronym,waddell canal,metadata_not_provided
+sample type,-,metadata_not_provided
+sample type,extra sample,metadata_not_provided
+sample type,field blank,metadata_not_provided
+sample type,field duplicate,metadata_not_provided
+sample type,lab blank,metadata_not_provided
+sample type,no water,metadata_not_provided
+sample type,not available,metadata_not_provided
+sample type,offline,metadata_not_provided
+sample type,Rain event,metadata_not_provided

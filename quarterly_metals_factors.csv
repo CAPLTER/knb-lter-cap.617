@@ -1,0 +1,39 @@
+attributeName,code,definition
+site number,APA1A,metadata_not_provided
+site number,APA1B,metadata_not_provided
+site number,APA2A,metadata_not_provided
+site number,APA2B,metadata_not_provided
+site number,Can1A,metadata_not_provided
+site number,Can1B,metadata_not_provided
+site number,Can2A,metadata_not_provided
+site number,Can2B,metadata_not_provided
+site number,Hav,metadata_not_provided
+site number,R10,metadata_not_provided
+site number,R25,metadata_not_provided
+site number,R2A,metadata_not_provided
+site number,R3,metadata_not_provided
+site number,Roos1A,metadata_not_provided
+site number,Roos1B,metadata_not_provided
+site number,Roos2A,metadata_not_provided
+site number,Roos2B,metadata_not_provided
+cluster,cap,metadata_not_provided
+cluster,salt,metadata_not_provided
+cluster,srp,metadata_not_provided
+cluster,verde,metadata_not_provided
+site acronym,"Apache, eppi, lower",metadata_not_provided
+site acronym,"Apache, eppi, upper",metadata_not_provided
+site acronym,"Apache, hypo, lower",metadata_not_provided
+site acronym,"Apache, hypo, upper",metadata_not_provided
+site acronym,"Canyon, eppi, lower",metadata_not_provided
+site acronym,"Canyon, eppi, upper",metadata_not_provided
+site acronym,"Canyon, hypo, lower",metadata_not_provided
+site acronym,"Canyon, hypo, upper",metadata_not_provided
+site acronym,Havasu,metadata_not_provided
+site acronym,pleasant-epi,metadata_not_provided
+site acronym,"Roosevelt, eppi, lower",metadata_not_provided
+site acronym,"Roosevelt, eppi, upper",metadata_not_provided
+site acronym,"Roosevelt, hypo, lower",metadata_not_provided
+site acronym,"Roosevelt, hypo, upper",metadata_not_provided
+site acronym,salt blw saguaro,metadata_not_provided
+site acronym,verde @ beeline,metadata_not_provided
+site acronym,waddell canal,metadata_not_provided

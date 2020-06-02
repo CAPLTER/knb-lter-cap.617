@@ -1,0 +1,268 @@
+attributeName,code,definition
+site number,16th St.,metadata_not_provided
+site number,19th Av.,metadata_not_provided
+site number,Apa-0,metadata_not_provided
+site number,Apa-10,metadata_not_provided
+site number,Apa-15,metadata_not_provided
+site number,Apa-20,metadata_not_provided
+site number,Apa-25,metadata_not_provided
+site number,Apa-30,metadata_not_provided
+site number,Apa-35,metadata_not_provided
+site number,Apa-40,metadata_not_provided
+site number,Apa-45,metadata_not_provided
+site number,Apa-5,metadata_not_provided
+site number,Apa-50,metadata_not_provided
+site number,Apa-55,metadata_not_provided
+site number,Can-0,metadata_not_provided
+site number,Can-10,metadata_not_provided
+site number,Can-15,metadata_not_provided
+site number,Can-20,metadata_not_provided
+site number,Can-25,metadata_not_provided
+site number,Can-30,metadata_not_provided
+site number,Can-35,metadata_not_provided
+site number,Can-40,metadata_not_provided
+site number,Can-45,metadata_not_provided
+site number,Can-5,metadata_not_provided
+site number,Can-50,metadata_not_provided
+site number,Cons,metadata_not_provided
+site number,Glen In,metadata_not_provided
+site number,Glen Out,metadata_not_provided
+site number,Green In,metadata_not_provided
+site number,Green Out,metadata_not_provided
+site number,Havasu 1,metadata_not_provided
+site number,Havasu 2,metadata_not_provided
+site number,HTC,metadata_not_provided
+site number,Hwy 87,metadata_not_provided
+site number,Mesa,metadata_not_provided
+site number,NP In,metadata_not_provided
+site number,NP Out,metadata_not_provided
+site number,Pima,metadata_not_provided
+site number,R1,metadata_not_provided
+site number,R10,metadata_not_provided
+site number,R11,metadata_not_provided
+site number,R12,metadata_not_provided
+site number,R13,metadata_not_provided
+site number,R14,metadata_not_provided
+site number,R15,metadata_not_provided
+site number,R16,metadata_not_provided
+site number,R17,metadata_not_provided
+site number,R18,metadata_not_provided
+site number,R19,metadata_not_provided
+site number,R2,metadata_not_provided
+site number,R2-10,metadata_not_provided
+site number,R2-15,metadata_not_provided
+site number,R2-20,metadata_not_provided
+site number,R2-25,metadata_not_provided
+site number,R2-30,metadata_not_provided
+site number,R2-35,metadata_not_provided
+site number,R2-40,metadata_not_provided
+site number,R2-45,metadata_not_provided
+site number,R2-5,metadata_not_provided
+site number,R2-50,metadata_not_provided
+site number,R2-55,metadata_not_provided
+site number,R20,metadata_not_provided
+site number,R21,metadata_not_provided
+site number,R22,metadata_not_provided
+site number,R25,metadata_not_provided
+site number,R26,metadata_not_provided
+site number,R2A,metadata_not_provided
+site number,R3,metadata_not_provided
+site number,R4,metadata_not_provided
+site number,R4-Dup,metadata_not_provided
+site number,R5,metadata_not_provided
+site number,R6-10,metadata_not_provided
+site number,R6-15,metadata_not_provided
+site number,R6-20,metadata_not_provided
+site number,R6-25,metadata_not_provided
+site number,R6-30,metadata_not_provided
+site number,R6-35,metadata_not_provided
+site number,R6-40,metadata_not_provided
+site number,R6-45,metadata_not_provided
+site number,R6-5,metadata_not_provided
+site number,R6-50,metadata_not_provided
+site number,R6-55,metadata_not_provided
+site number,R6A,metadata_not_provided
+site number,R7,metadata_not_provided
+site number,R8,metadata_not_provided
+site number,R9-10,metadata_not_provided
+site number,R9-15,metadata_not_provided
+site number,R9-20,metadata_not_provided
+site number,R9-25,metadata_not_provided
+site number,R9-30,metadata_not_provided
+site number,R9-35,metadata_not_provided
+site number,R9-40,metadata_not_provided
+site number,R9-45,metadata_not_provided
+site number,R9-5,metadata_not_provided
+site number,R9-50,metadata_not_provided
+site number,R9-55,metadata_not_provided
+site number,R9A,metadata_not_provided
+site number,Roos-0,metadata_not_provided
+site number,Roos-10,metadata_not_provided
+site number,Roos-15,metadata_not_provided
+site number,Roos-20,metadata_not_provided
+site number,Roos-25,metadata_not_provided
+site number,Roos-30,metadata_not_provided
+site number,Roos-35,metadata_not_provided
+site number,Roos-40,metadata_not_provided
+site number,Roos-45,metadata_not_provided
+site number,Roos-5,metadata_not_provided
+site number,Roos-50,metadata_not_provided
+site number,Roosvelt,metadata_not_provided
+site number,Scotts,metadata_not_provided
+site number,SOCA,metadata_not_provided
+site number,SPT In,metadata_not_provided
+site number,SPT Out,metadata_not_provided
+site number,UH In,metadata_not_provided
+site number,UH Out,metadata_not_provided
+cluster,cap,metadata_not_provided
+cluster,salt,metadata_not_provided
+cluster,srp,metadata_not_provided
+cluster,tempe,metadata_not_provided
+cluster,verde,metadata_not_provided
+site acronym,Above Roosevelt,metadata_not_provided
+site acronym,Apa-0m,metadata_not_provided
+site acronym,Apa-10m,metadata_not_provided
+site acronym,Apa-15m,metadata_not_provided
+site acronym,Apa-20m,metadata_not_provided
+site acronym,Apa-25m,metadata_not_provided
+site acronym,Apa-30m,metadata_not_provided
+site acronym,Apa-35m,metadata_not_provided
+site acronym,Apa-40m,metadata_not_provided
+site acronym,Apa-45m,metadata_not_provided
+site acronym,Apa-50m,metadata_not_provided
+site acronym,Apa-55m,metadata_not_provided
+site acronym,Apa-5m,metadata_not_provided
+site acronym,Apache-0m,metadata_not_provided
+site acronym,Apache-10m,metadata_not_provided
+site acronym,Apache-15m,metadata_not_provided
+site acronym,Apache-20m,metadata_not_provided
+site acronym,Apache-25m,metadata_not_provided
+site acronym,Apache-30m,metadata_not_provided
+site acronym,Apache-35m,metadata_not_provided
+site acronym,Apache-40m,metadata_not_provided
+site acronym,Apache-45m,metadata_not_provided
+site acronym,Apache-50m,metadata_not_provided
+site acronym,Apache-5m,metadata_not_provided
+site acronym,az canal @ 16th st.,metadata_not_provided
+site acronym,az canal @ 19 ave.,metadata_not_provided
+site acronym,az canal @ 19th av.,metadata_not_provided
+site acronym,az canal @ 56th st.,metadata_not_provided
+site acronym,az canal @ central ave.,metadata_not_provided
+site acronym,az canal @ deer valley,metadata_not_provided
+site acronym,az canal @ hwy 87,metadata_not_provided
+site acronym,az canal @ Mesa,metadata_not_provided
+site acronym,az canal @ pima,metadata_not_provided
+site acronym,az canal @ scotts.,metadata_not_provided
+site acronym,az canal @ squaw peak,metadata_not_provided
+site acronym,az canal blw cap,metadata_not_provided
+site acronym,az canal inflow,metadata_not_provided
+site acronym,bartlett-0m,metadata_not_provided
+site acronym,bartlett-10m,metadata_not_provided
+site acronym,bartlett-15m,metadata_not_provided
+site acronym,bartlett-20m,metadata_not_provided
+site acronym,bartlett-25m,metadata_not_provided
+site acronym,bartlett-30m,metadata_not_provided
+site acronym,bartlett-35m,metadata_not_provided
+site acronym,bartlett-40m,metadata_not_provided
+site acronym,bartlett-45m,metadata_not_provided
+site acronym,bartlett-50m,metadata_not_provided
+site acronym,bartlett-55m,metadata_not_provided
+site acronym,bartlett-5m,metadata_not_provided
+site acronym,Can-0m,metadata_not_provided
+site acronym,Can-10m,metadata_not_provided
+site acronym,Can-15m,metadata_not_provided
+site acronym,Can-20m,metadata_not_provided
+site acronym,Can-25m,metadata_not_provided
+site acronym,Can-30m,metadata_not_provided
+site acronym,Can-35m,metadata_not_provided
+site acronym,Can-40m,metadata_not_provided
+site acronym,Can-45m,metadata_not_provided
+site acronym,Can-50m,metadata_not_provided
+site acronym,Can-5m,metadata_not_provided
+site acronym,Canyon-0m,metadata_not_provided
+site acronym,Canyon-10m,metadata_not_provided
+site acronym,Canyon-15m,metadata_not_provided
+site acronym,Canyon-20m,metadata_not_provided
+site acronym,Canyon-25m,metadata_not_provided
+site acronym,Canyon-30m,metadata_not_provided
+site acronym,Canyon-35m,metadata_not_provided
+site acronym,Canyon-40m,metadata_not_provided
+site acronym,Canyon-45m,metadata_not_provided
+site acronym,Canyon-50m,metadata_not_provided
+site acronym,Canyon-5m,metadata_not_provided
+site acronym,cap-siphon,metadata_not_provided
+site acronym,cap @ 7th st,metadata_not_provided
+site acronym,cap @ 7th st dup,metadata_not_provided
+site acronym,cap @ x con,metadata_not_provided
+site acronym,deer valley-treated,metadata_not_provided
+site acronym,Glen In,metadata_not_provided
+site acronym,Glen Out,metadata_not_provided
+site acronym,Green In,metadata_not_provided
+site acronym,Green Out,metadata_not_provided
+site acronym,Havasu 1,metadata_not_provided
+site acronym,Havasu 2,metadata_not_provided
+site acronym,head of tempe canal,metadata_not_provided
+site acronym,North plant inlet,metadata_not_provided
+site acronym,north plant outlet,metadata_not_provided
+site acronym,pleasant,metadata_not_provided
+site acronym,pleasant-0m,metadata_not_provided
+site acronym,pleasant-10m,metadata_not_provided
+site acronym,pleasant-15m,metadata_not_provided
+site acronym,pleasant-20m,metadata_not_provided
+site acronym,pleasant-25m,metadata_not_provided
+site acronym,pleasant-30m,metadata_not_provided
+site acronym,pleasant-35m,metadata_not_provided
+site acronym,pleasant-40m,metadata_not_provided
+site acronym,pleasant-45m,metadata_not_provided
+site acronym,pleasant-50m,metadata_not_provided
+site acronym,pleasant-55m,metadata_not_provided
+site acronym,pleasant-5m,metadata_not_provided
+site acronym,Roos-0m,metadata_not_provided
+site acronym,Roos-10m,metadata_not_provided
+site acronym,Roos-15m,metadata_not_provided
+site acronym,Roos-20m,metadata_not_provided
+site acronym,Roos-25m,metadata_not_provided
+site acronym,Roos-30m,metadata_not_provided
+site acronym,Roos-35m,metadata_not_provided
+site acronym,Roos-40m,metadata_not_provided
+site acronym,Roos-45m,metadata_not_provided
+site acronym,Roos-50m,metadata_not_provided
+site acronym,Roos-5m,metadata_not_provided
+site acronym,Roosevelt-0m,metadata_not_provided
+site acronym,Roosevelt-10m,metadata_not_provided
+site acronym,Roosevelt-15m,metadata_not_provided
+site acronym,Roosevelt-20m,metadata_not_provided
+site acronym,Roosevelt-25m,metadata_not_provided
+site acronym,Roosevelt-30m,metadata_not_provided
+site acronym,Roosevelt-35m,metadata_not_provided
+site acronym,Roosevelt-40m,metadata_not_provided
+site acronym,Roosevelt-45m,metadata_not_provided
+site acronym,Roosevelt-50m,metadata_not_provided
+site acronym,Roosevelt-5m,metadata_not_provided
+site acronym,s canal @ val vista,metadata_not_provided
+site acronym,saguaro-0m,metadata_not_provided
+site acronym,saguaro-10m,metadata_not_provided
+site acronym,saguaro-15m,metadata_not_provided
+site acronym,saguaro-20m,metadata_not_provided
+site acronym,saguaro-25m,metadata_not_provided
+site acronym,saguaro-30m,metadata_not_provided
+site acronym,saguaro-35m,metadata_not_provided
+site acronym,saguaro-40m,metadata_not_provided
+site acronym,saguaro-45m,metadata_not_provided
+site acronym,saguaro-50m,metadata_not_provided
+site acronym,saguaro-55m,metadata_not_provided
+site acronym,saguaro-5m,metadata_not_provided
+site acronym,salt abv saguaro,metadata_not_provided
+site acronym,salt blw saguaro,metadata_not_provided
+site acronym,South canal below CAP,metadata_not_provided
+site acronym,squaw peak-treated,metadata_not_provided
+site acronym,STP In,metadata_not_provided
+site acronym,STP Out,metadata_not_provided
+site acronym,Union Hills Inlet,metadata_not_provided
+site acronym,Union Hills Outlet,metadata_not_provided
+site acronym,val vista-treated,metadata_not_provided
+site acronym,verde @ beeline,metadata_not_provided
+site acronym,verde abv bartlett,metadata_not_provided
+site acronym,verde abv horseshoe,metadata_not_provided
+site acronym,verde blw barlett,metadata_not_provided
+site acronym,waddell canal,metadata_not_provided

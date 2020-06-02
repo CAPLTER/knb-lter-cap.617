@@ -75,6 +75,36 @@ algae_DT <- create_dataTable(dfname = algae,
 
 ```
 
+```{r algal_byproducts, eval=TRUE}
+
+# tabularDataEntity <- import / generate...process...
+
+algal_byproducts <- read_csv("data/AlgalByproducts_mib_geosmin.csv") %>%
+  rename(`cluster` = `cluster name`, 
+         `geosmin (ng/L) ASU`= `Geosmin  (ng/L) ASU`,
+         `beta-cyclocitral (ng/L)` = `Beta-cyclocitral (ng/L)`,
+         `IPMP recovery (%)` = `IPMP Recovery (%)`,
+         `geosmin (ng/L) Phoenix` = `Geosmin  (ng/L) Phoenix`) %>%
+  mutate(cluster = tolower(cluster),
+         cluster = as.factor(cluster),
+         `site number` = as.factor(`site number`), 
+         `site acronym` = as.factor(`site acronym`), 
+         date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
+         date = as.Date(date)  ) %>%
+  select(-`ID`, -`month`) %>%
+  arrange(date, `site number`) %>% 
+  filter(!is.na(date))
+
+write_attributes(algal_byproducts)
+write_factors(algal_byproducts)
+
+algal_byproducts_desc <- "concentration of algal by-products in canals and reservoirs"
+
+algal_byproducts_DT <- create_dataTable(dfname = algal_byproducts,
+                               description = algal_byproducts_desc)
+
+```
+
 ```{r arsenic, eval=TRUE}
 
 # tabularDataEntity <- import / generate...process...
@@ -107,6 +137,183 @@ arsenic_desc <- "arsenic and perchlorate concentrations in canals and reservoirs
 
 arsenic_DT <- create_dataTable(dfname = arsenic,
                                description = arsenic_desc)
+
+```
+
+```{r carbon, eval=TRUE}
+
+# tabularDataEntity <- import / generate...process...
+
+carbon <- read_csv("data/Carbon_doc_month.csv") %>%
+  rename(`cluster` = `cluster name`) %>%
+  mutate(cluster = tolower(cluster),
+         cluster = as.factor(cluster),
+         `site number` = as.factor(`site number`), 
+         `site acronym` = as.factor(`site acronym`),
+         `sample type` = as.factor(`sample type`),
+         date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
+         date = as.Date(date)  ) %>%
+  select(-`ID`, -`month`) %>%
+  arrange(date, `site number`) %>% 
+  filter(!is.na(date))
+
+write_attributes(carbon)
+write_factors(carbon)
+
+carbon_desc <- "approximately monthly water carbon data in canals and reservoirs"
+
+carbon_DT <- create_dataTable(dfname = carbon,
+                               description = carbon_desc)
+
+```
+
+```{r field_measurements, eval=TRUE}
+
+# tabularDataEntity <- import / generate...process...
+
+field_measurements <- read_csv("data/field_measurements.csv") %>%
+  rename(`cluster` = `cluster name`,
+         `Secchi disk (m)` = `Secchi Disk, m`) %>%
+  mutate(cluster = tolower(cluster),
+         cluster = as.factor(cluster),
+         `site number` = as.factor(`site number`), 
+         `site acronym` = as.factor(`site acronym`),
+         `sample type` = as.factor(`sample type`),
+         date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
+         date = as.Date(date)  ) %>%
+  select(-`ID`, -`month`) %>%
+  arrange(date, `site number`) %>% 
+  filter(!is.na(date))
+
+write_attributes(field_measurements)
+write_factors(field_measurements)
+
+field_measurements_desc <- "water quality parameters as measured in the field in canals and reservoirs"
+
+field_measurements_DT <- create_dataTable(dfname = field_measurements,
+                               description = field_measurements_desc)
+
+```
+
+```{r microbial, eval=TRUE}
+
+# tabularDataEntity <- import / generate...process...
+
+microbial <- read_csv("data/Microbial.csv") %>%
+  rename(`site number` = `Site Number`,
+         `site location` = `Site Location`,
+         `cluster` = `Cluster Name`,
+         `site acronym` = `Site Acronym`,
+         `date` = `Date`) %>%
+  mutate(cluster = tolower(cluster),
+         cluster = as.factor(cluster),
+         `site number` = as.factor(`site number`), 
+         `site acronym` = as.factor(`site acronym`),
+         date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
+         date = as.Date(date)  ) %>%
+  select(-`ID`) %>%
+  arrange(date, `site number`) %>% 
+  filter(!is.na(date))
+
+write_attributes(microbial)
+write_factors(microbial)
+
+microbial_desc <- "water quality parameters as measured in the field in canals and reservoirs"
+
+microbial_DT <- create_dataTable(dfname = microbial,
+                               description = microbial_DT)
+
+```
+
+```{r nutrients, eval=TRUE}
+
+# tabularDataEntity <- import / generate...process...
+
+nutrients <- read_csv("data/nutrients.csv", col_types = list(col_double(), col_character(), col_character(), col_character(), col_character(), col_character(), col_character(), col_character(), col_double(), col_double(), col_double(), col_double(), col_double(), col_double(), col_double(), col_character()  )) %>%
+  rename(`cluster` = `cluster name`) %>%
+  mutate(cluster = tolower(cluster),
+         cluster = as.factor(cluster),
+         `site number` = as.factor(`site number`), 
+         `site acronym` = as.factor(`site acronym`),
+         date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
+         date = as.Date(date)  ) %>%
+  select(-`ID`, -`month`) %>%
+  arrange(date, `site number`) %>% 
+  filter(!is.na(date))
+
+write_attributes(nutrients)
+write_factors(nutrients)
+
+nutrients_desc <- "water quality parameters as measured in the field in canals and reservoirs"
+
+nutrients_DT <- create_dataTable(dfname = nutrients,
+                               description = nutrients_desc)
+
+```
+
+```{r quarterly_lake_sampling, eval=TRUE}
+
+# tabularDataEntity <- import / generate...process...
+
+quarterly_lake_sampling <- read_csv("data/Quarterly Lake Sampling.csv") %>%
+  rename(`cluster` = `Cluster Name`,
+         `site number` = `Site Name`,
+         `site location` = `Site Location`,
+         `site acronym` = `Site Acronym`,
+         `date` = `Date`,
+         `MIB (ng/L)` = `Mib(ng/L)`,
+         `geosmin (ng/L)` = `Geosmin(ng/L)`,
+         `UVA (cm-1)` = `UVA(cm-1)`,
+         `Suva(L/mg-m)` = `Suva(L/mg-m)`,
+         `Conductance (us/cm)` = `Conductance(us/cm)`) %>%
+  mutate(cluster = tolower(cluster),
+         cluster = as.factor(cluster),
+         `site number` = as.factor(`site number`), 
+         `site acronym` = as.factor(`site acronym`),
+         date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
+         date = as.Date(date)  ) %>%
+  select(-`ID`) %>%
+  arrange(date, `site number`) %>% 
+  filter(!is.na(date))
+
+write_attributes(quarterly_lake_sampling)
+write_factors(quarterly_lake_sampling)
+
+quarterly_lake_sampling_desc <- "concentration of nutrients and algal by-products, and other water quality parameters measured in central-Arizona area lakes"
+
+quarterly_lake_sampling_DT <- create_dataTable(dfname = quarterly_lake_sampling,
+                               description = quarterly_lake_sampling_desc)
+
+```
+
+```{r quarterly_metals, eval=TRUE}
+
+# tabularDataEntity <- import / generate...process...
+
+quarterly_metals <- read_csv("data/Quarterly Metals.csv") %>%
+  rename(`cluster` = `Cluster Name`,
+         `site number` = `Site Name`,
+         `site location` = `Site Location`,
+         `site acronym` = `Site Acronym`,
+         `date` = `Date`,
+         `units` = `Units`) %>%
+  mutate(cluster = tolower(cluster),
+         cluster = as.factor(cluster),
+         `site number` = as.factor(`site number`), 
+         `site acronym` = as.factor(`site acronym`),
+         date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
+         date = as.Date(date)  ) %>%
+  select(-`ID`) %>%
+  arrange(date, `site number`) %>% 
+  filter(!is.na(date))
+
+write_attributes(quarterly_metals)
+write_factors(quarterly_metals)
+
+quarterly_metals_desc <- "concentration of nutrients and algal by-products, and other water quality parameters measured in central-Arizona area lakes"
+
+quarterly_metals_DT <- create_dataTable(dfname = quarterly_metals,
+                               description = quarterly_metals_desc)
 
 ```
 
