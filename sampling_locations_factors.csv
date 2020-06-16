@@ -1,0 +1,72 @@
+attributeName,code,definition
+site number,Hav,metadata_not_provided
+site number,HOC,metadata_not_provided
+site number,HTC,metadata_not_provided
+site number,MOC,metadata_not_provided
+site number,Pima,metadata_not_provided
+site number,R1,metadata_not_provided
+site number,R10,metadata_not_provided
+site number,R11,metadata_not_provided
+site number,R12,metadata_not_provided
+site number,R13,metadata_not_provided
+site number,R14,metadata_not_provided
+site number,R15,metadata_not_provided
+site number,R16,metadata_not_provided
+site number,R17,metadata_not_provided
+site number,R18,metadata_not_provided
+site number,R19,metadata_not_provided
+site number,R20,metadata_not_provided
+site number,R21,metadata_not_provided
+site number,R22,metadata_not_provided
+site number,R25,metadata_not_provided
+site number,R2A,metadata_not_provided
+site number,R2B,metadata_not_provided
+site number,R3,metadata_not_provided
+site number,R4,metadata_not_provided
+site number,R5,metadata_not_provided
+site number,R6A,metadata_not_provided
+site number,R6B,metadata_not_provided
+site number,R7,metadata_not_provided
+site number,R8,metadata_not_provided
+site number,R9A,metadata_not_provided
+site number,R9B,metadata_not_provided
+site number,SOCA,metadata_not_provided
+cluster,az canal,metadata_not_provided
+cluster,cap,metadata_not_provided
+cluster,reservoir,metadata_not_provided
+cluster,salt,metadata_not_provided
+cluster,srp,metadata_not_provided
+cluster,tempe,metadata_not_provided
+cluster,verde,metadata_not_provided
+site acronym,az canal- head of the consolidated canal,metadata_not_provided
+site acronym,az canal - 56th st,metadata_not_provided
+site acronym,az canal - cent,metadata_not_provided
+site acronym,az canal - middle of the consolidated canal,metadata_not_provided
+site acronym,az canal - pima,metadata_not_provided
+site acronym,az canal - verde river @ beeline,metadata_not_provided
+site acronym,az canal @ deer valley,metadata_not_provided
+site acronym,az canal @ squaw peak,metadata_not_provided
+site acronym,az canal blw cap,metadata_not_provided
+site acronym,az canal inflow,metadata_not_provided
+site acronym,bartlett-epi,metadata_not_provided
+site acronym,bartlett-hypo,metadata_not_provided
+site acronym,cap-siphon,metadata_not_provided
+site acronym,cap @ 7th st,metadata_not_provided
+site acronym,cap @ x con,metadata_not_provided
+site acronym,deer valley-treated,metadata_not_provided
+site acronym,lake havasu,metadata_not_provided
+site acronym,pleasant-epi,metadata_not_provided
+site acronym,pleasant-hypo,metadata_not_provided
+site acronym,s canal @ val vista,metadata_not_provided
+site acronym,saguaro-epi,metadata_not_provided
+site acronym,saguaro-hypo,metadata_not_provided
+site acronym,salt abv saguaro,metadata_not_provided
+site acronym,salt blw saguaro,metadata_not_provided
+site acronym,south tempe canals - below CAP Cross-connect,metadata_not_provided
+site acronym,south tempe canals - head of the tempe canal,metadata_not_provided
+site acronym,squaw peak-treated,metadata_not_provided
+site acronym,val vista-treated,metadata_not_provided
+site acronym,verde abv bartlett,metadata_not_provided
+site acronym,verde abv horseshoe,metadata_not_provided
+site acronym,verde blw barlett,metadata_not_provided
+site acronym,waddell canal,metadata_not_provided

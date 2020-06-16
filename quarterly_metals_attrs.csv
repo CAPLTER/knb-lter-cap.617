@@ -1,42 +1,42 @@
-"attributeName","formatString","unit","numberType","definition","attributeDefinition","columnClasses","minimum","maximum"
-"site number","","","","","","factor","",""
-"site location","","","","","","character","",""
-"cluster","","","","","","factor","",""
-"site acronym","","","","","","factor","",""
-"date","","","","","","Date","",""
-"units","","","","","","character","",""
-"7Li","","","real","","","numeric","9.909000","196.800000"
-"9Be","","","real","","","numeric","-0.051000","0.398000"
-"23Na","","","natural","","","numeric","12440.000000","278900.000000"
-"24Mg","","","natural","","","numeric","8994.000000","29900.000000"
-"27Al","","","real","","","numeric","-3.141000","1385.000000"
-"39K","","","natural","","","numeric","1811.000000","14420.000000"
-"44Ca","","","natural","","","numeric","21180.000000","104600.000000"
-"51V","","","real","","","numeric","1.091000","8.879000"
-"52Cr","","","real","","","numeric","-0.214000","5.566000"
-"55Mn","","","real","","","numeric","0.013000","443.100000"
-"56Fe","","","real","","","numeric","-1.916000","1217.000000"
-"59Co","","","real","","","numeric","-0.059000","1.068000"
-"60Ni","","","real","","","numeric","-9.656000","3.676000"
-"65Cu","","","real","","","numeric","-2.519000","84.520000"
-"66Zn","","","real","","","numeric","-545.400000","83.330000"
-"75As","","","real","","","numeric","1.930000","18.350000"
-"82Se","","","real","","","numeric","-2.522000","178.600000"
-"88Sr","","","real","","","numeric","293.700000","1428.000000"
-"95Mo","","","real","","","numeric","0.648000","8.292000"
-"107Ag","","","real","","","numeric","-0.088000","2.709000"
-"111Cd","","","real","","","numeric","-0.029000","2.597000"
-"121Sb","","","real","","","numeric","0.034000","1.564000"
-"138Ba","","","real","","","numeric","32.440000","296.600000"
-"202Hg","","","real","","","numeric","-0.045000","3.431000"
-"208Pb","","","real","","","numeric","-0.793000","2.073000"
-"238U","","","real","","","numeric","0.218000","5.798000"
-"Field37","","","","","","logical","",""
-"Field38","","","","","","logical","",""
-"Field39","","","","","","logical","",""
-"Field40","","","","","","logical","",""
-"Field41","","","","","","logical","",""
-"Field42","","","","","","logical","",""
-"Field43","","","","","","logical","",""
-"Field44","","","","","","logical","",""
-"F43","","","","","","logical","",""
+attributeName,formatString,unit,numberType,definition,attributeDefinition,columnClasses,minimum,maximum
+site number,,,,"site number or name (A designates epilimnion, B hypolimnion)","site number or name (A designates epilimnion, B hypolimnion)",factor,,
+site location,,,,site location description,site location description,character,,
+cluster,,,,,source water,factor,,
+site acronym,,,,,site number or name,factor,,
+date,YYYY-MM-DD,,,,sample collection date,Date,,
+units,,,,,,character,,
+7Li,,microgramsPerLiter,real,,Lithium measurement by ICP-MS,numeric,9.909,196.8
+9Be,,microgramsPerLiter,real,,Beryllium measurement by ICP-MS,numeric,-0.051,0.398
+23Na,,microgramsPerLiter,natural,,Sodium measurement by ICP-MS,numeric,12440,278900
+24Mg,,microgramsPerLiter,natural,,Magnesium measurement by ICP-MS,numeric,8994,29900
+27Al,,microgramsPerLiter,real,,Aluminum measurement by ICP-MS,numeric,-3.141,1385
+39K,,microgramsPerLiter,natural,,Potassium measurement by ICP-MS,numeric,1811,14420
+44Ca,,microgramsPerLiter,natural,,Calcium measurement by ICP-MS,numeric,21180,104600
+51V,,microgramsPerLiter,real,,Vanadium measurement by ICP-MS,numeric,1.091,8.879
+52Cr,,microgramsPerLiter,real,,Chromium measurement by ICP-MS,numeric,-0.214,5.566
+55Mn,,microgramsPerLiter,real,,Manganese measurement by ICP-MS,numeric,0.013,443.1
+56Fe,,microgramsPerLiter,real,,Iron measurement by ICP-MS,numeric,-1.916,1217
+59Co,,microgramsPerLiter,real,,Cobalt measurement by ICP-MS,numeric,-0.059,1.068
+60Ni,,microgramsPerLiter,real,,Nickel measurement by ICP-MS,numeric,-9.656,3.676
+65Cu,,microgramsPerLiter,real,,Copper measurement by ICP-MS,numeric,-2.519,84.52
+66Zn,,microgramsPerLiter,real,,Zinc measurement by ICP-MS,numeric,-545.4,83.33
+75As,,microgramsPerLiter,real,,Arsenic measurement by ICP-MS,numeric,1.93,18.35
+82Se,,microgramsPerLiter,real,,Selenium measurement by ICP-MS,numeric,-2.522,178.6
+88Sr,,microgramsPerLiter,real,,Strontium measurement by ICP-MS,numeric,293.7,1428
+95Mo,,microgramsPerLiter,real,,Molybdenum measurement by ICP-MS,numeric,0.648,8.292
+107Ag,,microgramsPerLiter,real,,Silver measurement by ICP-MS,numeric,-0.088,2.709
+111Cd,,microgramsPerLiter,real,,Cadmium measurement by ICP-MS,numeric,-0.029,2.597
+121Sb,,microgramsPerLiter,real,,Antimony measurement by ICP-MS,numeric,0.034,1.564
+138Ba,,microgramsPerLiter,real,,Barium measurement by ICP-MS,numeric,32.44,296.6
+202Hg,,microgramsPerLiter,real,,Mercury measurement by ICP-MS,numeric,-0.045,3.431
+208Pb,,microgramsPerLiter,real,,Lead measurement by ICP-MS,numeric,-0.793,2.073
+238U,,microgramsPerLiter,real,,Uranium measurement by ICP-MS,numeric,0.218,5.798
+Field37,,,,,,logical,,
+Field38,,,,,,logical,,
+Field39,,,,,,logical,,
+Field40,,,,,,logical,,
+Field41,,,,,,logical,,
+Field42,,,,,,logical,,
+Field43,,,,,,logical,,
+Field44,,,,,,logical,,
+F43,,,,,,logical,,

@@ -3,7 +3,7 @@ site number,,,,"site number or name (A designates epilimnion, B hypolimnion)","s
 site location,,,,site location description,site location description,character,,
 cluster,,,,,source water,factor,,
 site acronym,,,,,site number or name,factor,,
-arsenic (ug/L),,microgramsPerLiter,real,,arsenic concentration as determined by graphite furnace,numeric,0,32.6
-perchlorate (ug/L),,microgramsPerLiter,real,,perchlorate concentration as determined by ion chromatography,numeric,0,3.77
-date,YYYY-MM-DD,,,,sample collection date,Date,,
-BDL,,,,,1 = sample with arsenic concentration below detectable limit,factor,,
+date,YYYY-MM-DD,,,,GPS collection date,Date,,
+longitude,,degree,real,,longitude,numeric,111.09375,112.286233
+latitude,,degree,real,,latitude,numeric,0,34
+altitude (ft),,meter,natural,,altitude,numeric,1493,2000

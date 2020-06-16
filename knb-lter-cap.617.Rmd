@@ -209,6 +209,9 @@ microbial <- read_csv("data/Microbial.csv") %>%
          cluster = as.factor(cluster),
          `site number` = as.factor(`site number`), 
          `site acronym` = as.factor(`site acronym`),
+         `E coli(colonies per 100mL)` = as.numeric(`E coli(colonies per 100mL)`),
+         `Coliform(colonies per 100mL)` = as.numeric(`Coliform(colonies per 100mL)`),
+         `Mycobacterium(colonies per 100mL)` = as.numeric(`Mycobacterium(colonies per 100mL)`),
          date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
          date = as.Date(date)  ) %>%
   select(-`ID`) %>%
@@ -218,7 +221,7 @@ microbial <- read_csv("data/Microbial.csv") %>%
 write_attributes(microbial)
 write_factors(microbial)
 
-microbial_desc <- "water quality parameters as measured in the field in canals and reservoirs"
+microbial_desc <- "E. coli, Coliform, and Mycobacterium colony counts in canals and reservoirs"
 
 microbial_DT <- create_dataTable(dfname = microbial,
                                description = microbial_DT)
@@ -244,7 +247,7 @@ nutrients <- read_csv("data/nutrients.csv", col_types = list(col_double(), col_c
 write_attributes(nutrients)
 write_factors(nutrients)
 
-nutrients_desc <- "water quality parameters as measured in the field in canals and reservoirs"
+nutrients_desc <- "concentration of algal by-products in canals and reservoirs"
 
 nutrients_DT <- create_dataTable(dfname = nutrients,
                                description = nutrients_desc)
@@ -310,10 +313,49 @@ quarterly_metals <- read_csv("data/Quarterly Metals.csv") %>%
 write_attributes(quarterly_metals)
 write_factors(quarterly_metals)
 
-quarterly_metals_desc <- "concentration of nutrients and algal by-products, and other water quality parameters measured in central-Arizona area lakes"
+quarterly_metals_desc <- "concentration of dissolved metals measured in central-Arizona area lakes and canals"
 
 quarterly_metals_DT <- create_dataTable(dfname = quarterly_metals,
                                description = quarterly_metals_desc)
+
+```
+
+```{r sampling_locations, eval=TRUE}
+
+# tabularDataEntity <- import / generate...process...
+
+sampling_locations <- read_csv("data/gpscoord.csv") %>%
+  rename(`cluster` = `cluster name`,
+         `latitude` = `laditude`) %>%
+  mutate(cluster = tolower(cluster),
+         cluster = as.factor(cluster),
+         `site number` = as.factor(`site number`), 
+         `site acronym` = as.factor(`site acronym`),
+         date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
+         date = as.Date(date)
+         ) %>%
+  select(-`ID`) %>%
+  arrange(date, `site number`) %>% 
+  filter(!is.na(date))
+
+sampling_locations$longitude = gsub('W', '', sampling_locations$longitude)
+sampling_locations$longitude = gsub('o', ' ', sampling_locations$longitude)
+sampling_locations$latitude = gsub('N', '', sampling_locations$latitude)
+sampling_locations$latitude = gsub('o', ' ', sampling_locations$latitude)
+
+sampling_locations$longitude = measurements::conv_unit(sampling_locations$longitude, from = 'deg_dec_min', to = 'dec_deg')
+sampling_locations$latitude = measurements::conv_unit(sampling_locations$latitude, from = 'deg_dec_min', to = 'dec_deg')
+
+sampling_locations$longitude <- as.numeric(as.character(sampling_locations$longitude))
+sampling_locations$latitude <- as.numeric(as.character(sampling_locations$latitude))
+
+write_attributes(sampling_locations)
+write_factors(sampling_locations)
+
+sampling_locations_desc <- "latitude, longitude, and elevation of select canal, lake, and river water-quality sampling locations"
+
+sampling_locations_DT <- create_dataTable(dfname = sampling_locations,
+                               description = sampling_locations_desc)
 
 ```
 

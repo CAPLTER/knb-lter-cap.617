@@ -1,14 +1,14 @@
-"attributeName","formatString","unit","numberType","definition","attributeDefinition","columnClasses","minimum","maximum"
-"site number","","","","","","factor","",""
-"site location","","","","","","character","",""
-"cluster","","","","","","factor","",""
-"site acronym","","","","","","factor","",""
-"date","","","","","","Date","",""
-"sample type","","","","","","character","",""
-"MIB (ng/L) ASU","","","real","","","numeric","-2.393036","476.800000"
-"geosmin (ng/L) ASU","","","real","","","numeric","-5.427595","445.588261"
-"beta-cyclocitral (ng/L)","","","real","","","numeric","-4.081179","87.500000"
-"IPMP recovery (%)","","","real","","","numeric","56.200000","147.000000"
-"MIB (ng/L) Phoenix","","","whole","","","numeric","0.000000","52.000000"
-"geosmin (ng/L) Phoenix","","","whole","","","numeric","0.000000","50.000000"
-"comments","","","","","","character","",""
+attributeName,formatString,unit,numberType,definition,attributeDefinition,columnClasses,minimum,maximum
+site number,,,,"site number or name (A designates epilimnion, B hypolimnion)","site number or name (A designates epilimnion, B hypolimnion)",factor,,
+site location,,,,site location description,site location description,character,,
+cluster,,,,,source water,factor,,
+site acronym,,,,,site number or name,factor,,
+date,YYYY-MM-DD,,,,sample collection date,Date,,
+sample type,,,,,type of water sample collected (if not a field sample),character,,
+MIB (ng/L) ASU,,nanogramsPerLiter,real,,2-methylisoborneol,numeric,-2.393036,476.8
+geosmin (ng/L) ASU,,nanogramsPerLiter,real,,geosmin,numeric,-5.427595,445.588261
+beta-cyclocitral (ng/L),,nanogramsPerLiter,real,,beta-Cyclocitral,numeric,-4.081179,87.5
+IPMP recovery (%),,percent,real,,recovery of 2-isopropyl-3-methoxy pyrazine (IPMP used as an internal standard),numeric,56.2,147
+MIB (ng/L) Phoenix,,nanogramsPerLiter,whole,,MIB as measured by City of Phoenix officials for methods comparison,numeric,0,52
+geosmin (ng/L) Phoenix,,nanogramsPerLiter,whole,,geosmin as measured by City of Phoenix officials for methods comparison,numeric,0,50
+comments,,,,comment(s) about site conditions or sampling details,comment(s) about site conditions or sampling details,character,,

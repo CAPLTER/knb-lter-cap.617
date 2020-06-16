@@ -1,14 +1,14 @@
-"attributeName","formatString","unit","numberType","definition","attributeDefinition","columnClasses","minimum","maximum"
-"site number","","","","","","factor","",""
-"site location","","","","","","character","",""
-"cluster","","","","","","factor","",""
-"site acronym","","","","","","factor","",""
-"date","","","","","","Date","",""
-"MIB (ng/L)","","","real","","","numeric","-0.852675","56.800000"
-"geosmin (ng/L)","","","real","","","numeric","-2.380167","73.793062"
-"TP (ug/L)","","","real","","","numeric","-0.100000","150.000000"
-"DOC (mg/L)","","","real","","","numeric","2.359000","14.270000"
-"UVA (cm-1)","","","real","","","numeric","0.030000","0.800000"
-"Suva(L/mg-m)","","","real","","","numeric","0.500000","3.980000"
-"Conductance (us/cm)","","","natural","","","numeric","930.000000","2300.000000"
-"TDN (mg/L)","","","real","","","numeric","0.000000","1.381000"
+attributeName,formatString,unit,numberType,definition,attributeDefinition,columnClasses,minimum,maximum
+site number,,,,"site number or name (A designates epilimnion, B hypolimnion)","site number or name (A designates epilimnion, B hypolimnion)",factor,,
+site location,,,,site location description,site location description,character,,
+cluster,,,,,source water,factor,,
+site acronym,,,,,site number or name,factor,,
+date,YYYY-MM-DD,,,,sample collection,Date,,
+MIB (ng/L),,nanogramsPerLiter,real,,2-methylisoborneol,numeric,-0.852675,56.8
+geosmin (ng/L),,nanogramsPerLiter,real,,Geosmin,numeric,-2.380167,73.793062
+TP (ug/L),,microgramsPerLiter,real,,total phosphorus,numeric,-0.1,150
+DOC (mg/L),,milligramsPerLiter,real,,dissolved organic carbon,numeric,2.359,14.27
+UVA (cm-1),,perCentimeter,real,,UV absorbance measured at 254 nanometers,numeric,0.03,0.8
+Suva(L/mg-m),,literPerMilligramMeter,real,,specific ultraviolet absorbance,numeric,0.5,3.98
+Conductance (us/cm),,microsiemensPerCentimeter,natural,,specific conductance,numeric,930,2300
+TDN (mg/L),,milligramsPerLiter,real,,total dissolved nitrogen,numeric,0,1.381

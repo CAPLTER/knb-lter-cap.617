@@ -1,14 +1,14 @@
-"attributeName","formatString","unit","numberType","definition","attributeDefinition","columnClasses","minimum","maximum"
-"site number","","","","","","factor","",""
-"site location","","","","","","character","",""
-"cluster","","","","","","factor","",""
-"site acronym","","","","","","factor","",""
-"date","","","","","","Date","",""
-"depth (m)","","","real","","","numeric","-0.100000","161.900000"
-"T (C)","","","real","","","numeric","1.700000","232.200000"
-"DO (mg/l)","","","real","","","numeric","0.000000","922.000000"
-"pH","","","real","","","numeric","1.000000","805.000000"
-"Secchi disk (m)","","","real","","","numeric","0.150000","8.625000"
-"samples collected","","","","","","character","",""
-"sample type","","","","","","factor","",""
-"comments","","","","","","character","",""
+attributeName,formatString,unit,numberType,definition,attributeDefinition,columnClasses,minimum,maximum
+site number,,,,"site number or name (A designates epilimnion, B hypolimnion)","site number or name (A designates epilimnion, B hypolimnion)",factor,,
+site location,,,,site location description,site location description,character,,
+cluster,,,,,source water,factor,,
+site acronym,,,,,site number or name,factor,,
+date,YYYY-MM-DD,,,,sample collection date,Date,,
+depth (m),,meter,real,,water depth where measurement was taken (0 designates just below surface),numeric,-0.1,161.9
+T (C),,celsius,real,,water temperature,numeric,1.7,232.2
+DO (mg/l),,milligramsPerLiter,real,,dissolved oxygen,numeric,0,922
+pH,,dimensionless,real,,pH,numeric,1,805
+Secchi disk (m),,meter,real,,water transparency measurement as measured from side of boat,numeric,0.15,8.625
+samples collected,,,,,types of analyses for which samples were collected,character,,
+sample type,,,,,type of water sample collected (if not a field sample),factor,,
+comments,,,,,comment(s) about site conditions or sampling details,character,,

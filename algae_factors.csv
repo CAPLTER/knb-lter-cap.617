@@ -1,8 +1,8 @@
 attributeName,code,definition
 site number,16th St.,metadata_not_provided
 site number,19th Av.,metadata_not_provided
-site number,AN IN,metadata_not_provided
-site number,CH IN,metadata_not_provided
+site number,AN IN,Anthem WTP Inlet
+site number,CH IN,Chandler WTP Inlet
 site number,Cons,metadata_not_provided
 site number,field_blank,metadata_not_provided
 site number,Glendale In,metadata_not_provided
@@ -56,23 +56,23 @@ site number,Roosvelt,metadata_not_provided
 site number,Salt Gila,metadata_not_provided
 site number,Scotts,metadata_not_provided
 site number,SOCA,South Canal below CAP Cross-connect
-site number,SPT In,metadata_not_provided
-site number,SPT Out,metadata_not_provided
-site number,UH In,metadata_not_provided
-site number,UH Out,metadata_not_provided
-Cluster,az canal,Arizona canal
-Cluster,cap,Central Arizona Project canal
-Cluster,salt,Salt River
-Cluster,srp,Salt River Project canal
-Cluster,tempe,"Tempe, AZ area canal"
-Cluster,verde,Verde River
+site number,SPT In,Tempe South WTP Inlet
+site number,SPT Out,Tempe South WP Treated
+site number,UH In,Union Hills WTP Inlet
+site number,UH Out,Union Hills WTP Treated
+cluster,az canal,Arizona canal
+cluster,cap,Central Arizona Project canal
+cluster,salt,Salt River
+cluster,srp,Salt River Project canal
+cluster,tempe,"Tempe, AZ area canal"
+cluster,verde,Verde River
 site acronym,Above Roosevelt,metadata_not_provided
 site acronym,az canal,metadata_not_provided
-site acronym,az canal @ 16th st.,metadata_not_provided
-site acronym,az canal @ 19 ave.,metadata_not_provided
-site acronym,az canal @ 19th av.,metadata_not_provided
-site acronym,az canal @ 56th st.,AZ Canal at 56th
-site acronym,az canal @ central ave.,metadata_not_provided
+site acronym,az canal @ 16th st.,AZ Canal at 16th Street
+site acronym,az canal @ 19 ave.,AZ Canal at 19th Avenue
+site acronym,az canal @ 19th av.,AZ Canal at 19th Avenue
+site acronym,az canal @ 56th st.,AZ Canal at 56th Street
+site acronym,az canal @ central ave.,AZ Canal at Central Avenue
 site acronym,az canal @ deer valley,AZ Canal - Inlet to Deer Valley WTP
 site acronym,az canal @ hwy 87,metadata_not_provided
 site acronym,az canal @ Mesa,metadata_not_provided
@@ -88,15 +88,15 @@ site acronym,cap @ 7th st dup,metadata_not_provided
 site acronym,cap @ x con,CAP Canal at Cross-connect
 site acronym,cap-siphon,metadata_not_provided
 site acronym,deer valley-treated,Deer Valley WTP treated water
-site acronym,Glen In,metadata_not_provided
-site acronym,Glen Out,metadata_not_provided
-site acronym,Green In,metadata_not_provided
-site acronym,Green Out,metadata_not_provided
+site acronym,Glen In,Glendale WTP Inlet
+site acronym,Glen Out,Glendale WTP Treated
+site acronym,Green In,Greenway WTP Inlet
+site acronym,Green Out,Greenway WTP Treated
 site acronym,Havasu 1,metadata_not_provided
 site acronym,Havasu 2,metadata_not_provided
 site acronym,head of tempe canal,metadata_not_provided
-site acronym,HOC,metadata_not_provided
-site acronym,MOC,metadata_not_provided
+site acronym,HOC,Head of the Consolidated canal
+site acronym,MOC,Middle of the Consolidated canal
 site acronym,MTO,metadata_not_provided
 site acronym,North plant inlet,metadata_not_provided
 site acronym,north plant outlet,metadata_not_provided
