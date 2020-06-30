@@ -1,31 +1,31 @@
 attributeName,code,definition
-site number,HOC,metadata_not_provided
-site number,HTC,metadata_not_provided
-site number,Hwy 87,metadata_not_provided
-site number,MOC,metadata_not_provided
-site number,Pima,metadata_not_provided
-site number,R11,metadata_not_provided
-site number,R12,metadata_not_provided
-site number,R13,metadata_not_provided
-site number,R21,metadata_not_provided
-site number,R22,metadata_not_provided
-site number,R25,metadata_not_provided
-site number,R3,metadata_not_provided
-site number,SOCA,metadata_not_provided
-cluster,cap,metadata_not_provided
-cluster,srp,metadata_not_provided
-cluster,tempe,metadata_not_provided
-cluster,verde,metadata_not_provided
-site acronym,az canal @ 56th st.,metadata_not_provided
-site acronym,az canal @ central ave.,metadata_not_provided
-site acronym,az canal @ hwy 87,metadata_not_provided
-site acronym,az canal @ pima,metadata_not_provided
-site acronym,az canal blw cap,metadata_not_provided
-site acronym,az canal inflow,metadata_not_provided
-site acronym,cap @ x con,metadata_not_provided
-site acronym,head of tempe canal,metadata_not_provided
-site acronym,Head of the Consolidated Canal,metadata_not_provided
-site acronym,Middle of the Consolidated Canal,metadata_not_provided
-site acronym,South canal below CAP,metadata_not_provided
-site acronym,verde @ beeline,metadata_not_provided
-site acronym,waddell canal,metadata_not_provided
+site number,HOC,Head of the Consolidated canal
+site number,HTC,Head of the Tempe Canal
+site number,Hwy 87,AZ Canal at Highway 87
+site number,MOC,Middle of the Consolidated canal
+site number,Pima,AZ Canal at Pima Rd
+site number,R11,CAP Canal at Cross-connect
+site number,R12,AZ Canal above CAP Cross-connect
+site number,R13,AZ Canal below CAP Cross-connect
+site number,R21,AZ Canal - Central Avenue
+site number,R22,AZ Canal at 56th
+site number,R25,Verde River at Beeline
+site number,R3,Waddell Canal
+site number,SOCA,South Canal below CAP Cross-connect
+cluster,cap,Central Arizona Project canal
+cluster,srp,Salt River Project canal
+cluster,tempe,"Tempe, AZ area canal"
+cluster,verde,Verde River
+site acronym,az canal @ 56th st.,AZ Canal at 56th Street
+site acronym,az canal @ central ave.,AZ Canal at Central Avenue
+site acronym,az canal @ hwy 87,AZ Canal at Highway 87
+site acronym,az canal @ pima,AZ Canal at Pima Rd
+site acronym,az canal blw cap,AZ Canal below CAP Cross-connect
+site acronym,az canal inflow,AZ Canal above CAP Cross-connect
+site acronym,cap @ x con,CAP Canal at Cross-connect
+site acronym,head of tempe canal,Head of Tempe Canal
+site acronym,Head of the Consolidated Canal,Head of the Consolidated canal
+site acronym,Middle of the Consolidated Canal,Middle of the Consolidated canal
+site acronym,South canal below CAP,South Canal below CAP Cross-connect
+site acronym,verde @ beeline,verde river at beeline highway
+site acronym,waddell canal,Waddell Canal

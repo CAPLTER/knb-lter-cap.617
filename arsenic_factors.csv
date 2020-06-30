@@ -1,86 +1,86 @@
-attributeName,code,definition
-site number,Glen In,metadata_not_provided
-site number,Glen Out,metadata_not_provided
-site number,Green In,metadata_not_provided
-site number,Green Out,metadata_not_provided
-site number,Havasu 1,metadata_not_provided
-site number,Havasu 2,metadata_not_provided
-site number,HTC,metadata_not_provided
-site number,Hwy 87,metadata_not_provided
-site number,NP In,metadata_not_provided
-site number,NP Out,metadata_not_provided
-site number,Pima,metadata_not_provided
-site number,R10,metadata_not_provided
-site number,R11,metadata_not_provided
-site number,R12,metadata_not_provided
-site number,R13,metadata_not_provided
-site number,R14,metadata_not_provided
-site number,R15,metadata_not_provided
-site number,R16,metadata_not_provided
-site number,R17,metadata_not_provided
-site number,R18,metadata_not_provided
-site number,R19,metadata_not_provided
-site number,R20,metadata_not_provided
-site number,R21,metadata_not_provided
-site number,R22,metadata_not_provided
-site number,R25,metadata_not_provided
-site number,R2A,metadata_not_provided
-site number,R2B,metadata_not_provided
-site number,R3,metadata_not_provided
-site number,R6A,metadata_not_provided
-site number,R6B,metadata_not_provided
-site number,R9A,metadata_not_provided
-site number,R9A-Dup,metadata_not_provided
-site number,R9B,metadata_not_provided
-site number,SOCA,metadata_not_provided
-site number,SPT In,metadata_not_provided
-site number,SPT Out,metadata_not_provided
-site number,UH In,metadata_not_provided
-site number,UH Out,metadata_not_provided
-cluster,cap,metadata_not_provided
-cluster,salt,metadata_not_provided
-cluster,srp,metadata_not_provided
-cluster,tempe,metadata_not_provided
-cluster,verde,metadata_not_provided
-site acronym,az canal @ 56th st.,metadata_not_provided
-site acronym,az canal @ central ave.,metadata_not_provided
-site acronym,az canal @ deer valley,metadata_not_provided
-site acronym,az canal @ hwy 87,metadata_not_provided
-site acronym,az canal @ pima,metadata_not_provided
-site acronym,az canal @ squaw peak,metadata_not_provided
-site acronym,az canal blw cap,metadata_not_provided
-site acronym,az canal inflow,metadata_not_provided
-site acronym,bartlett-epi,metadata_not_provided
-site acronym,bartlett-hypo,metadata_not_provided
-site acronym,cap @ x con,metadata_not_provided
-site acronym,deer valley-treated,metadata_not_provided
-site acronym,Glen In,metadata_not_provided
-site acronym,Glen Out,metadata_not_provided
-site acronym,Green In,metadata_not_provided
-site acronym,Green Out,metadata_not_provided
-site acronym,Havasu 1,metadata_not_provided
-site acronym,Havasu 2,metadata_not_provided
-site acronym,head of tempe canal,metadata_not_provided
-site acronym,North plant inlet,metadata_not_provided
-site acronym,north plant outlet,metadata_not_provided
-site acronym,pleasant-epi,metadata_not_provided
-site acronym,pleasant-hypo,metadata_not_provided
-site acronym,s canal @ val vista,metadata_not_provided
-site acronym,saguaro-epi,metadata_not_provided
-site acronym,saguaro-epi dup,metadata_not_provided
-site acronym,saguaro-hypo,metadata_not_provided
-site acronym,salt blw saguaro,metadata_not_provided
-site acronym,South canal below CAP,metadata_not_provided
-site acronym,SPT In,metadata_not_provided
-site acronym,SPT Out,metadata_not_provided
-site acronym,squaw peak-treated,metadata_not_provided
-site acronym,STP In,metadata_not_provided
-site acronym,STP Out,metadata_not_provided
-site acronym,Union Hills Inlet,metadata_not_provided
-site acronym,Union Hills Outlet,metadata_not_provided
-site acronym,val vista-treated,metadata_not_provided
-site acronym,val vista-treated-West,metadata_not_provided
-site acronym,verde @ beeline,metadata_not_provided
-site acronym,verde abv horseshoe,metadata_not_provided
-site acronym,waddell canal,metadata_not_provided
-BDL,1,metadata_not_provided
+vb nmnbnm   nbnm bnm,code,definition
+site number,Glen In,Glendale WTP Inlet
+site number,Glen Out,Glendale WTP Treated
+site number,Green In,Greenway WTP Inlet
+site number,Green Out,Greenway WTP Treated
+site number,Havasu 1,Lake Havasu Site 1
+site number,Havasu 2,Lake Havasu Site 2
+site number,HTC,Head of the Tempe Canal
+site number,Hwy 87,AZ Canal at Highway 87
+site number,NP In,Tempe North WTP Inlet
+site number,NP Out,Tempe North WTP Treated
+site number,Pima,AZ Canal at Pima Rd
+site number,R10,Salt River below Saguaro (Blue Point Bridge)
+site number,R11,CAP Canal at Cross-connect
+site number,R12,AZ Canal above CAP Cross-connect
+site number,R13,AZ Canal below CAP Cross-connect
+site number,R14,AZ Canal - Inlet to Squaw Peak WTP
+site number,R15,Squaw Peak WTP treated water
+site number,R16,AZ Canal - Inlet to Deer Valley WTP
+site number,R17,Deer Valley WTP treated water
+site number,R18,South Canal at Val Vista WTP
+site number,R19,Val Vista WTP treated water
+site number,R20,Verde River at Tangle
+site number,R21,AZ Canal - Central Avenue
+site number,R22,AZ Canal at 56th
+site number,R25,Verde River at Beeline
+site number,R2A,Lake Pleasant integrated sample
+site number,R2B,Lake Pleasant integrated sample
+site number,R3,Waddell Canal
+site number,R6A,Bartlett Reservoir near outlet
+site number,R6B,Bartlett Reservoir near outlet
+site number,R9A,Saguaro Lake near inlet
+site number,R9A-Dup,Saguaro Lake near inlet
+site number,R9B,Saguaro Lake near inlet
+site number,SOCA,South Canal below CAP Cross-connect
+site number,SPT In,Tempe South WTP Inlet
+site number,SPT Out,Tempe South WP Treated
+site number,UH In,Union Hills WTP Inlet
+site number,UH Out,Union Hills WTP Treated
+cluster,cap,Central Arizona Project canal
+cluster,salt,Salt River
+cluster,srp,Salt River Project canal
+cluster,tempe,"Tempe, AZ area canal"
+cluster,verde,Verde River
+site acronym,az canal @ 56th st.,AZ Canal at 56th Street
+site acronym,az canal @ central ave.,AZ Canal at Central Avenue
+site acronym,az canal @ deer valley,AZ Canal - Inlet to Deer Valley WTP
+site acronym,az canal @ hwy 87,AZ Canal at Highway 87
+site acronym,az canal @ pima,AZ Canal at Pima Rd
+site acronym,az canal @ squaw peak,AZ Canal - Inlet to Squaw Peak WTP
+site acronym,az canal blw cap,AZ Canal below CAP Cross-connect
+site acronym,az canal inflow,AZ Canal above CAP Cross-connect
+site acronym,bartlett-epi,Bartlett Reservoir near outlet
+site acronym,bartlett-hypo,Bartlett Reservoir near outlet
+site acronym,cap @ x con,CAP Canal at Cross-connect
+site acronym,deer valley-treated,Deer Valley WTP treated water
+site acronym,Glen In,Glendale WTP Inlet
+site acronym,Glen Out,Glendale WTP Treated
+site acronym,Green In,Greenway WTP Inlet
+site acronym,Green Out,Greenway WTP Treated
+site acronym,Havasu 1,Lake Havasu Site 1
+site acronym,Havasu 2,Lake Havasu Site 2
+site acronym,head of tempe canal,Head of Tempe Canal
+site acronym,North plant inlet,Tempe North WTP Inlet
+site acronym,north plant outlet,Tempe North WTP Treated
+site acronym,pleasant-epi,Lake Pleasant integrated sample
+site acronym,pleasant-hypo,Lake Pleasant integrated sample
+site acronym,s canal @ val vista,South Canal at Val Vista WTP
+site acronym,saguaro-epi,Saguaro Lake Epilimnion
+site acronym,saguaro-epi dup,Saguaro Lake Epilimnion Duplicate Sample
+site acronym,saguaro-hypo,Saguaro Lake Hypolimnion
+site acronym,salt blw saguaro,Salt River below Saguaro (Blue Point Bridge)
+site acronym,South canal below CAP,South Canal below CAP Cross-connect
+site acronym,SPT In,Tempe South WTP Inlet
+site acronym,SPT Out,Tempe South WTP Treated
+site acronym,squaw peak-treated,Squaw Peak WTP treated water
+site acronym,STP In,Tempe Canal - Inlet to Tempe's South Plant
+site acronym,STP Out,Tempe's South Plant treated water
+site acronym,Union Hills Inlet,Union Hills WTP Inlet
+site acronym,Union Hills Outlet,Union Hills WTP Treated
+site acronym,val vista-treated,Val Vista WTP treated water
+site acronym,val vista-treated-West,Val Vista WTP treated water - west
+site acronym,verde @ beeline,verde river at beeline highway
+site acronym,verde abv horseshoe,Verde River at Tangle
+site acronym,waddell canal,Waddell Canal
+BDL,1,1 = below detectable limits

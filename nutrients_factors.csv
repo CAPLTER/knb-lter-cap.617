@@ -1,183 +1,183 @@
 attributeName,code,definition
-site number,16th St.,metadata_not_provided
-site number,19th Av.,metadata_not_provided
-site number,An in,metadata_not_provided
-site number,AN IN,metadata_not_provided
-site number,An out,metadata_not_provided
-site number,AN OUT,metadata_not_provided
-site number,Anthem in,metadata_not_provided
-site number,Anthem out,metadata_not_provided
-site number,Ch in,metadata_not_provided
-site number,CH IN,metadata_not_provided
-site number,Ch out,metadata_not_provided
-site number,CH OUT,metadata_not_provided
-site number,Chandler in,metadata_not_provided
-site number,Chandler out,metadata_not_provided
-site number,DV-WR,metadata_not_provided
-site number,field_blank,metadata_not_provided
-site number,Gila Salt,metadata_not_provided
-site number,GL IN,metadata_not_provided
-site number,GL OUT,metadata_not_provided
-site number,Glen In,metadata_not_provided
-site number,Glen Out,metadata_not_provided
-site number,Glendale In,metadata_not_provided
-site number,Glendale Out,metadata_not_provided
-site number,GR IN,metadata_not_provided
-site number,GR OUT,metadata_not_provided
-site number,Green In,metadata_not_provided
-site number,Green Out,metadata_not_provided
-site number,HAV,metadata_not_provided
-site number,Havasu 1,metadata_not_provided
-site number,Havasu 2,metadata_not_provided
-site number,HOC,metadata_not_provided
-site number,HTC,metadata_not_provided
-site number,Hwy 87,metadata_not_provided
-site number,HWY 87,metadata_not_provided
-site number,lab_blank,metadata_not_provided
-site number,Mesa,metadata_not_provided
-site number,Mesa Turnout,metadata_not_provided
-site number,MOC,metadata_not_provided
-site number,MTO,metadata_not_provided
-site number,NP In,metadata_not_provided
-site number,NP IN,metadata_not_provided
-site number,NP Out,metadata_not_provided
-site number,NP OUT,metadata_not_provided
-site number,Pima,metadata_not_provided
-site number,PIMA,metadata_not_provided
-site number,R1,metadata_not_provided
-site number,R10,metadata_not_provided
-site number,R10rain,metadata_not_provided
-site number,R11,metadata_not_provided
-site number,R11rain,metadata_not_provided
-site number,R12,metadata_not_provided
-site number,R13,metadata_not_provided
-site number,R14,metadata_not_provided
-site number,R15,metadata_not_provided
-site number,R16,metadata_not_provided
-site number,R17,metadata_not_provided
-site number,R18,metadata_not_provided
-site number,R19,metadata_not_provided
-site number,R20,metadata_not_provided
-site number,R21,metadata_not_provided
-site number,R21br,metadata_not_provided
-site number,R22,metadata_not_provided
-site number,R25,metadata_not_provided
-site number,R25rain,metadata_not_provided
-site number,R26,metadata_not_provided
-site number,R26br,metadata_not_provided
-site number,R27br,metadata_not_provided
-site number,R2A,metadata_not_provided
-site number,R2B,metadata_not_provided
-site number,R3,metadata_not_provided
-site number,R4,metadata_not_provided
-site number,R4-Dup,metadata_not_provided
-site number,R5,metadata_not_provided
-site number,R5dup,metadata_not_provided
-site number,R6A,metadata_not_provided
-site number,R6B,metadata_not_provided
-site number,R6C,metadata_not_provided
-site number,R7,metadata_not_provided
-site number,R8,metadata_not_provided
-site number,R9A,metadata_not_provided
-site number,R9A-Dup,metadata_not_provided
-site number,R9A-DUP,metadata_not_provided
-site number,R9B,metadata_not_provided
-site number,R9Bturbid,metadata_not_provided
-site number,R9C,metadata_not_provided
-site number,Roos In,metadata_not_provided
-site number,Roosvelt,metadata_not_provided
-site number,Salt Gila,metadata_not_provided
-site number,Scotts,metadata_not_provided
-site number,SGPS,metadata_not_provided
-site number,SOCA,metadata_not_provided
-site number,SP-WR,metadata_not_provided
-site number,SPT In,metadata_not_provided
-site number,SPT IN,metadata_not_provided
-site number,SPT Out,metadata_not_provided
-site number,SPT OUT,metadata_not_provided
-site number,SRNR,metadata_not_provided
-site number,UH In,metadata_not_provided
-site number,UH IN,metadata_not_provided
-site number,UH Out,metadata_not_provided
-site number,UH OUT,metadata_not_provided
-site number,VV West,metadata_not_provided
-cluster,az canal,metadata_not_provided
-cluster,cap,metadata_not_provided
-cluster,salt,metadata_not_provided
-cluster,srp,metadata_not_provided
-cluster,tempe,metadata_not_provided
-cluster,verde,metadata_not_provided
-site acronym,24th In,metadata_not_provided
-site acronym,24th Out,metadata_not_provided
-site acronym,Above Roosevelt,metadata_not_provided
-site acronym,anthem,metadata_not_provided
-site acronym,Anthem,metadata_not_provided
-site acronym,az canal,metadata_not_provided
-site acronym,az canal @ 16th st.,metadata_not_provided
-site acronym,az canal @ 19 ave.,metadata_not_provided
-site acronym,az canal @ 19th av.,metadata_not_provided
-site acronym,az canal @ 29 ave.,metadata_not_provided
-site acronym,az canal @ 56th st.,metadata_not_provided
-site acronym,az canal @ central ave.,metadata_not_provided
-site acronym,az canal @ deer valley,metadata_not_provided
-site acronym,az canal @ hwy 87,metadata_not_provided
-site acronym,az canal @ Mesa,metadata_not_provided
-site acronym,az canal @ pima,metadata_not_provided
-site acronym,az canal @ scotts.,metadata_not_provided
-site acronym,az canal @ squaw peak,metadata_not_provided
-site acronym,az canal blw cap,metadata_not_provided
-site acronym,az canal inflow,metadata_not_provided
-site acronym,bartlett-dock,metadata_not_provided
-site acronym,bartlett-epi,metadata_not_provided
-site acronym,bartlett-hypo,metadata_not_provided
+site number,16th St.,AZ Canal at 16th Street
+site number,19th Av.,AZ Canal at 19th Avenue
+site number,An in,Anthem WTP Inlet
+site number,AN IN,Anthem WTP Inlet
+site number,An out,Anthem WTP Treated
+site number,AN OUT,Anthem WTP Treated
+site number,Anthem in,Anthem WTP Inlet
+site number,Anthem out,Anthem WTP Treated
+site number,Ch in,Chandler WTP Inlet
+site number,CH IN,Chandler WTP Inlet
+site number,Ch out,Chandler WTP Treated
+site number,CH OUT,Chandler WTP Treated
+site number,Chandler in,Chandler WTP Inlet
+site number,Chandler out,Chandler WTP Treated
+site number,DV-WR,Deer Valley WTP wash return
+site number,field_blank,Field blank
+site number,Gila Salt,Salt-Gila Pump Station
+site number,GL IN,Glendale WTP Inlet
+site number,GL OUT,Glendale WTP Treated
+site number,Glen In,Glendale WTP Inlet
+site number,Glen Out,Glendale WTP Treated
+site number,Glendale In,Glendale WTP Inlet
+site number,Glendale Out,Glendale WTP Treated
+site number,GR IN,Greenway WTP Inlet
+site number,GR OUT,Greenway WTP Treated
+site number,Green In,Greenway WTP Inlet
+site number,Green Out,Greenway WTP Treated
+site number,HAV,Lake Havasu
+site number,Havasu 1,Lake Havasu Site 1
+site number,Havasu 2,Lake Havasu Site 2
+site number,HOC,Head of the Consolidated canal
+site number,HTC,Head of the Tempe Canal
+site number,Hwy 87,AZ Canal at Highway 87
+site number,HWY 87,AZ Canal at Highway 87
+site number,lab_blank,Laboratory blank
+site number,Mesa,AZ Canal at Mesa Dr.
+site number,Mesa Turnout,Mesa Canal Turnout
+site number,MOC,Middle of the Consolidated canal
+site number,MTO,Mesa Canal Turnout
+site number,NP In,Tempe North WTP Inlet
+site number,NP IN,Tempe North WTP Inlet
+site number,NP Out,Tempe North WTP Treated
+site number,NP OUT,Tempe North WTP Treated
+site number,Pima,AZ Canal at Pima Rd
+site number,PIMA,AZ Canal at Pima Rd
+site number,R1,CAP canal above Waddell Canal
+site number,R10,Salt River below Saguaro (Blue Point Bridge)
+site number,R10rain,Salt River below Saguaro (Blue Point Bridge) rain sample
+site number,R11,CAP Canal at Cross-connect
+site number,R11rain,CAP Canal at Cross-connect rain sample
+site number,R12,AZ Canal above CAP Cross-connect
+site number,R13,AZ Canal below CAP Cross-connect
+site number,R14,AZ Canal - Inlet to Squaw Peak WTP
+site number,R15,Squaw Peak WTP treated water
+site number,R16,AZ Canal - Inlet to Deer Valley WTP
+site number,R17,Deer Valley WTP treated water
+site number,R18,South Canal at Val Vista WTP
+site number,R19,Val Vista WTP treated water
+site number,R20,Verde River at Tangle
+site number,R21,AZ Canal - Central Avenue
+site number,R21br,AZ Canal - Central Ave (N. of Northern) brush exp
+site number,R22,AZ Canal at 56th
+site number,R25,Verde River at Beeline
+site number,R25rain,Verde River at Beeline rain sample
+site number,R26,AZ Canal at 19th Avenue
+site number,R26br,AZ Canal - 19th avenue brush exp
+site number,R27br,AZ Canal - 29th Avenue brush exp
+site number,R2A,Lake Pleasant integrated sample
+site number,R2B,Lake Pleasant integrated sample
+site number,R3,Waddell Canal
+site number,R4,Cap Canal at 7th St.
+site number,R4-Dup,Cap Canal at 7th St. duplicate sample
+site number,R5,Verde River btwn Horseshoe and Bartlett
+site number,R5dup,Verde River btwn Horseshoe and Bartlett duplicate sample
+site number,R6A,Bartlett Reservoir near outlet
+site number,R6B,Bartlett Reservoir near outlet
+site number,R6C,Bartlett Lake near dock
+site number,R7,Verde River below Bartlett Reservoir
+site number,R8,Salt River inlet to Saguaro Lake
+site number,R9A,Saguaro Lake near inlet
+site number,R9A-Dup,Saguaro Lake near inlet duplicate sample
+site number,R9A-DUP,Saguaro Lake near inlet duplicate sample
+site number,R9B,Saguaro Lake near inlet
+site number,R9Bturbid,Saguaro Lake hypolimnion turbidity sample
+site number,R9C,Saguaro Lake near dock
+site number,Roos In,Salt River Inlet Near Roosevelt Lake
+site number,Roosvelt,SRP above Roosevelt Lake
+site number,Salt Gila,Salt-Gila Pump Station
+site number,Scotts,AZ Canal at Scottsdale Rd.
+site number,SGPS,Salt-Gila Pump Station
+site number,SOCA,South Canal below CAP Cross-connect
+site number,SP-WR,Squaw Peak WTP wash return extra sample
+site number,SPT In,Tempe South WTP Inlet
+site number,SPT IN,Tempe South WTP Inlet
+site number,SPT Out,Tempe South WP Treated
+site number,SPT OUT,Tempe South WP Treated
+site number,SRNR,Salt River Inlet Near Roosevelt Lake
+site number,UH In,Union Hills WTP Inlet
+site number,UH IN,Union Hills WTP Inlet
+site number,UH Out,Union Hills WTP Treated
+site number,UH OUT,Union Hills WTP Treated
+site number,VV West,Val Vista West Water Treatment Plant treated water
+cluster,az canal,Arizona canal
+cluster,cap,Central Arizona Project canal
+cluster,salt,Salt River
+cluster,srp,Salt River Project canal
+cluster,tempe,"Tempe, AZ area canal"
+cluster,verde,Verde River
+site acronym,24th In,AZ Canal - Inlet to 24th St Water Treatment Plant
+site acronym,24th Out,24th St Water Treatment Plant treated water
+site acronym,Above Roosevelt,SRP above Roosevelt Lake
+site acronym,anthem,Anthem Water Treatment Plant
+site acronym,Anthem,Anthem Water Treatment Plant
+site acronym,az canal,AZ Canal
+site acronym,az canal @ 16th st.,AZ Canal at 16th Street
+site acronym,az canal @ 19 ave.,AZ Canal at 19th Avenue
+site acronym,az canal @ 19th av.,AZ Canal at 19th Avenue
+site acronym,az canal @ 29 ave.,AZ Canal at 29th Avenue
+site acronym,az canal @ 56th st.,AZ Canal at 56th Street
+site acronym,az canal @ central ave.,AZ Canal at Central Avenue
+site acronym,az canal @ deer valley,AZ Canal - Inlet to Deer Valley WTP
+site acronym,az canal @ hwy 87,AZ Canal at Highway 87
+site acronym,az canal @ Mesa,AZ Canal at Mesa Dr.
+site acronym,az canal @ pima,AZ Canal at Pima Rd
+site acronym,az canal @ scotts.,AZ Canal at Scottsdale Rd.
+site acronym,az canal @ squaw peak,AZ Canal - Inlet to Squaw Peak WTP
+site acronym,az canal blw cap,AZ Canal below CAP Cross-connect
+site acronym,az canal inflow,AZ Canal above CAP Cross-connect
+site acronym,bartlett-dock,Bartlett Lake dock sample
+site acronym,bartlett-epi,Bartlett Reservoir near outlet
+site acronym,bartlett-hypo,Bartlett Reservoir near outlet
 site acronym,cap-siphon,metadata_not_provided
-site acronym,cap @ 7th st,metadata_not_provided
-site acronym,cap @ 7th st dup,metadata_not_provided
-site acronym,cap @ x con,metadata_not_provided
-site acronym,chandler,metadata_not_provided
-site acronym,Chandler,metadata_not_provided
-site acronym,deer valley-treated,metadata_not_provided
-site acronym,field,metadata_not_provided
-site acronym,field blank,metadata_not_provided
-site acronym,Glen In,metadata_not_provided
-site acronym,Glen Out,metadata_not_provided
-site acronym,Glendale WTP Inlet,metadata_not_provided
-site acronym,Glendale WTP Outlet,metadata_not_provided
-site acronym,Green In,metadata_not_provided
-site acronym,Green Out,metadata_not_provided
-site acronym,Greenway WTP Inlet,metadata_not_provided
-site acronym,Greenway WTP Outlet,metadata_not_provided
-site acronym,Havasu,metadata_not_provided
-site acronym,Havasu 1,metadata_not_provided
-site acronym,Havasu 2,metadata_not_provided
-site acronym,head of tempe canal,metadata_not_provided
-site acronym,lab,metadata_not_provided
-site acronym,Mesa Turnout,metadata_not_provided
-site acronym,North plant inlet,metadata_not_provided
-site acronym,north plant outlet,metadata_not_provided
-site acronym,pleasant-epi,metadata_not_provided
-site acronym,pleasant-hypo,metadata_not_provided
-site acronym,Roos In,metadata_not_provided
-site acronym,s canal @ val vista,metadata_not_provided
-site acronym,saguaro-dock,metadata_not_provided
-site acronym,saguaro-epi,metadata_not_provided
-site acronym,saguaro-epi dup,metadata_not_provided
-site acronym,saguaro-hypo,metadata_not_provided
-site acronym,salt abv saguaro,metadata_not_provided
-site acronym,salt blw saguaro,metadata_not_provided
-site acronym,Salt Gila,metadata_not_provided
-site acronym,saugaro-dock,metadata_not_provided
-site acronym,South canal below CAP,metadata_not_provided
-site acronym,squaw peak-treated,metadata_not_provided
-site acronym,SRNR,metadata_not_provided
-site acronym,STP In,metadata_not_provided
-site acronym,STP Out,metadata_not_provided
-site acronym,Union Hills Inlet,metadata_not_provided
-site acronym,Union Hills Outlet,metadata_not_provided
-site acronym,val vista-treated,metadata_not_provided
-site acronym,val vista WEST-treated,metadata_not_provided
-site acronym,verde @ beeline,metadata_not_provided
-site acronym,verde abv bartlett,metadata_not_provided
-site acronym,verde abv horseshoe,metadata_not_provided
-site acronym,verde blw barlett,metadata_not_provided
-site acronym,waddell canal,metadata_not_provided
+site acronym,cap @ 7th st,Cap Canal at 7th St.
+site acronym,cap @ 7th st dup,Cap Canal at 7th St. duplicate sample
+site acronym,cap @ x con,CAP Canal at Cross-connect
+site acronym,chandler,Chandler Water Treatment Plant
+site acronym,Chandler,Chandler Water Treatment Plant
+site acronym,deer valley-treated,Deer Valley WTP treated water
+site acronym,field,Field Blank
+site acronym,field blank,Field Blank
+site acronym,Glen In,Glendale WTP Inlet
+site acronym,Glen Out,Glendale WTP Treated
+site acronym,Glendale WTP Inlet,Glendale WTP Inlet
+site acronym,Glendale WTP Outlet,Glendale WTP Treated
+site acronym,Green In,Greenway WTP Inlet
+site acronym,Green Out,Greenway WTP Treated
+site acronym,Greenway WTP Inlet,Greenway WTP Inlet
+site acronym,Greenway WTP Outlet,Greenway WTP Treated
+site acronym,Havasu,Lake Havasu
+site acronym,Havasu 1,Lake Havasu Site 1
+site acronym,Havasu 2,Lake Havasu Site 2
+site acronym,head of tempe canal,Head of Tempe Canal
+site acronym,lab,Laboratory blank
+site acronym,Mesa Turnout,Mesa Canal Turnout
+site acronym,North plant inlet,Tempe North WTP Inlet
+site acronym,north plant outlet,Tempe North WTP Treated
+site acronym,pleasant-epi,Lake Pleasant integrated sample
+site acronym,pleasant-hypo,Lake Pleasant integrated sample
+site acronym,Roos In,Salt River Inlet Near Roosevelt Lake
+site acronym,s canal @ val vista,South Canal at Val Vista Water Treatment Plant
+site acronym,saguaro-dock,Saguaro Lake dock sample
+site acronym,saguaro-epi,Saguaro Lake Epilimnion
+site acronym,saguaro-epi dup,Saguaro Lake Epilimnion duplicate sample
+site acronym,saguaro-hypo,Saguaro Lake Hypolimnion
+site acronym,salt abv saguaro,Salt River inlet to Saguaro Lake
+site acronym,salt blw saguaro,Salt River below Saguaro (Blue Point Bridge)
+site acronym,Salt Gila,Salt-Gila Pump Station
+site acronym,saugaro-dock,Saguaro Lake dock sample
+site acronym,South canal below CAP,South Canal below CAP Cross-connect
+site acronym,squaw peak-treated,Squaw Peak WTP treated water
+site acronym,SRNR,Salt River Inlet Near Roosevelt Lake
+site acronym,STP In,Tempe Canal - Inlet to Tempe's South Plant
+site acronym,STP Out,Tempe's South Plant treated water
+site acronym,Union Hills Inlet,Union Hills WTP Inlet
+site acronym,Union Hills Outlet,Union Hills WTP Treated
+site acronym,val vista-treated,Val Vista WTP treated water
+site acronym,val vista WEST-treated,Val Vista Water Treatment Plant Treated Water - West
+site acronym,verde @ beeline,verde river at beeline highway
+site acronym,verde abv bartlett,Verde River btwn Horseshoe and Bartlett
+site acronym,verde abv horseshoe,Verde River at Tangle
+site acronym,verde blw barlett,Verde River below Bartlett Reservoir
+site acronym,waddell canal,Waddell Canal
