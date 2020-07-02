@@ -1,0 +1,42 @@
+attributeName,formatString,unit,numberType,definition,attributeDefinition,columnClasses,minimum,maximum
+site number,,,,"site number or name (A designates epilimnion, B hypolimnion)","site number or name (A designates epilimnion, B hypolimnion)",factor,,
+site location,,,,site location description,site location description,character,,
+cluster,,,,,source water,factor,,
+site acronym,,,,,site number or name,factor,,
+date,YYYY-MM-DD,,,,sample collection date,Date,,
+units,,,,,,character,,
+7Li,,microgramsPerLiter,real,,Lithium measurement by ICP-MS,numeric,9.909,196.8
+9Be,,microgramsPerLiter,real,,Beryllium measurement by ICP-MS,numeric,-0.051,0.398
+23Na,,microgramsPerLiter,natural,,Sodium measurement by ICP-MS,numeric,12440,278900
+24Mg,,microgramsPerLiter,natural,,Magnesium measurement by ICP-MS,numeric,8994,29900
+27Al,,microgramsPerLiter,real,,Aluminum measurement by ICP-MS,numeric,-3.141,1385
+39K,,microgramsPerLiter,natural,,Potassium measurement by ICP-MS,numeric,1811,14420
+44Ca,,microgramsPerLiter,natural,,Calcium measurement by ICP-MS,numeric,21180,104600
+51V,,microgramsPerLiter,real,,Vanadium measurement by ICP-MS,numeric,1.091,8.879
+52Cr,,microgramsPerLiter,real,,Chromium measurement by ICP-MS,numeric,-0.214,5.566
+55Mn,,microgramsPerLiter,real,,Manganese measurement by ICP-MS,numeric,0.013,443.1
+56Fe,,microgramsPerLiter,real,,Iron measurement by ICP-MS,numeric,-1.916,1217
+59Co,,microgramsPerLiter,real,,Cobalt measurement by ICP-MS,numeric,-0.059,1.068
+60Ni,,microgramsPerLiter,real,,Nickel measurement by ICP-MS,numeric,-9.656,3.676
+65Cu,,microgramsPerLiter,real,,Copper measurement by ICP-MS,numeric,-2.519,84.52
+66Zn,,microgramsPerLiter,real,,Zinc measurement by ICP-MS,numeric,-545.4,83.33
+75As,,microgramsPerLiter,real,,Arsenic measurement by ICP-MS,numeric,1.93,18.35
+82Se,,microgramsPerLiter,real,,Selenium measurement by ICP-MS,numeric,-2.522,178.6
+88Sr,,microgramsPerLiter,real,,Strontium measurement by ICP-MS,numeric,293.7,1428
+95Mo,,microgramsPerLiter,real,,Molybdenum measurement by ICP-MS,numeric,0.648,8.292
+107Ag,,microgramsPerLiter,real,,Silver measurement by ICP-MS,numeric,-0.088,2.709
+111Cd,,microgramsPerLiter,real,,Cadmium measurement by ICP-MS,numeric,-0.029,2.597
+121Sb,,microgramsPerLiter,real,,Antimony measurement by ICP-MS,numeric,0.034,1.564
+138Ba,,microgramsPerLiter,real,,Barium measurement by ICP-MS,numeric,32.44,296.6
+202Hg,,microgramsPerLiter,real,,Mercury measurement by ICP-MS,numeric,-0.045,3.431
+208Pb,,microgramsPerLiter,real,,Lead measurement by ICP-MS,numeric,-0.793,2.073
+238U,,microgramsPerLiter,real,,Uranium measurement by ICP-MS,numeric,0.218,5.798
+Field37,,,,,,logical,,
+Field38,,,,,,logical,,
+Field39,,,,,,logical,,
+Field40,,,,,,logical,,
+Field41,,,,,,logical,,
+Field42,,,,,,logical,,
+Field43,,,,,,logical,,
+Field44,,,,,,logical,,
+F43,,,,,,logical,,

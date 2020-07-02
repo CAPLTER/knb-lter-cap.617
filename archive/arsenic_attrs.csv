@@ -1,0 +1,8 @@
+attributeName,formatString,unit,numberType,definition,attributeDefinition,columnClasses,minimum,maximum
+Site Number,,,,site number or name,site number or name,character,,
+Site location,,,,site location description,site location description,character,,
+Cluster,,,,,source water,factor,,
+Site Acronym,,,,site number or name,site number or name,character,,
+Arsenic (ug/L),,microgramsPerLiter,real,,arsenic concentration as determined by graphite furnace,numeric,,
+Perchlorate (ug/L),,microgramsPerLiter,real,,perchlorate concentration as determined by ion chromatography,numeric,,
+date,YYYY-MM-DD,,,,sample collection date,Date,,

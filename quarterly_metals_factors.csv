@@ -1,0 +1,39 @@
+attributeName,code,definition
+site number,APA1A,Apache Lake Site 1 Epilimnion
+site number,APA1B,Apache Lake Site 1 Hypolimnion
+site number,APA2A,Apache Lake Site 2 Epilimnion
+site number,APA2B,Apache Lake Site 2 Hypolimnion
+site number,Can1A,Canyon Lake Site 1 Epilimnion
+site number,Can1B,Canyon Lake Site 1 Hypolimnion
+site number,Can2A,Canyon Lake Site 2 Epilimnion
+site number,Can2B,Canyon Lake Site 2 Hypolimnion
+site number,Hav,Lake Havasu
+site number,R10,Salt River below Saguaro (Blue Point Bridge)
+site number,R25,Verde River at Beeline
+site number,R2A,Lake Pleasant integrated sample
+site number,R3,Waddell Canal
+site number,Roos1A,Roosevelt Lake Site 1 Epilimnion
+site number,Roos1B,Roosevelt Lake Site 1 Hypolimnion
+site number,Roos2A,Roosevelt Lake Site 2 Epilimnion
+site number,Roos2B,Roosevelt Lake Site 2 Hypolimnion
+cluster,cap,Central Arizona Project canal
+cluster,salt,Salt River
+cluster,srp,Salt River Project canal
+cluster,verde,Verde River
+site acronym,"Apache, eppi, lower",Apache Lake Site 2 Epilimnion
+site acronym,"Apache, eppi, upper",Apache Lake Site 1 Epilimnion
+site acronym,"Apache, hypo, lower",Apache Lake Site 2 Hypolimnion
+site acronym,"Apache, hypo, upper",Apache Lake Site 1 Hypolimnion
+site acronym,"Canyon, eppi, lower",Canyon Lake Site 2 Epilimnion
+site acronym,"Canyon, eppi, upper",Canyon Lake Site 1 Epilimnion
+site acronym,"Canyon, hypo, lower",Canyon Lake Site 2 Hypolimnion
+site acronym,"Canyon, hypo, upper",Canyon Lake Site 1 Hypolimnion
+site acronym,Havasu,Lake Havasu
+site acronym,pleasant-epi,Lake Pleasant integrated sample
+site acronym,"Roosevelt, eppi, lower",Roosevelt Lake Site 2 Epilimnion
+site acronym,"Roosevelt, eppi, upper",Roosevelt Lake Site 1 Epilimnion
+site acronym,"Roosevelt, hypo, lower",Roosevelt Lake Site 2 Hypolimnion
+site acronym,"Roosevelt, hypo, upper",Roosevelt Lake Site 1 Hypolimnion
+site acronym,salt blw saguaro,Salt River below Saguaro (Blue Point Bridge)
+site acronym,verde @ beeline,verde river at beeline highway
+site acronym,waddell canal,Waddell Canal

@@ -1,0 +1,130 @@
+attributeName,code,definition
+site number,16th St.,AZ Canal at 16th Street
+site number,19th Av.,AZ Canal at 19th Avenue
+site number,AN IN,Anthem WTP Inlet
+site number,CH IN,Chandler WTP Inlet
+site number,Cons,Consolidated canal
+site number,field_blank,Field blank
+site number,Glendale In,Glendale WTP Inlet
+site number,Glendale Out,Glendale WTP Treated
+site number,Green In,Greenway WTP Inlet
+site number,Green Out,Greenway WTP Treated
+site number,Havasu 1,Lake Havasu Site 1
+site number,Havasu 2,Lake Havasu Site 2
+site number,HOC,Head of the Consolidated canal
+site number,HTC,Head of the Tempe Canal
+site number,Hwy 87,AZ Canal at Highway 87
+site number,lab_blank,Laboratory blank
+site number,Mesa,AZ Canal at Mesa Dr.
+site number,Mesa Turnout,Mesa Canal Turnout
+site number,MOC,Middle of the Consolidated canal
+site number,NP In,Tempe North WTP Inlet
+site number,NP Out,Tempe North WTP Treated
+site number,Pima,AZ Canal at Pima Rd
+site number,R1,CAP canal above Waddell Canal
+site number,R10,Salt River below Saguaro (Blue Point Bridge)
+site number,R11,CAP Canal at Cross-connect
+site number,R12,AZ Canal above CAP Cross-connect
+site number,R13,AZ Canal below CAP Cross-connect
+site number,R14,AZ Canal - Inlet to Squaw Peak WTP
+site number,R15,Squaw Peak WTP treated water
+site number,R16,AZ Canal - Inlet to Deer Valley WTP
+site number,R17,Deer Valley WTP treated water
+site number,R18,South Canal at Val Vista WTP
+site number,R19,Val Vista WTP treated water
+site number,R20,Verde River at Tangle
+site number,R21,AZ Canal - Central Avenue
+site number,R22,AZ Canal at 56th
+site number,R25,Verde River at Beeline
+site number,R26,Arizona Canal at 19th Ave.
+site number,R2A,Lake Pleasant integrated sample
+site number,R2B,Lake Pleasant integrated sample
+site number,R3,Waddell Canal
+site number,R4,Cap Canal at 7th St.
+site number,R4-Dup,Cap Canal at 7th St. Duplicate Sample
+site number,R5,Verde River btwn Horseshoe and Bartlett
+site number,R5dup,Verde River btwn Horseshoe and Bartlett Duplicate Sample
+site number,R6A,Bartlett Reservoir near outlet
+site number,R6B,Bartlett Reservoir near outlet
+site number,R7,Verde River below Bartlett Reservoir
+site number,R8,Salt River inlet to Saguaro Lake
+site number,R9A,Saguaro Lake near inlet
+site number,R9A-Dup,Saguaro Lake near inlet Duplicate Sample
+site number,R9B,Saguaro Lake near inlet
+site number,Roos In,Salt River Inlet Near Roosevelt Lake
+site number,Roosvelt,SRP above Roosevelt Lake
+site number,Salt Gila,Salt-Gila Pump Station
+site number,Scotts,AZ Canal at Scottsdale Rd.
+site number,SOCA,South Canal below CAP Cross-connect
+site number,SPT In,Tempe South WTP Inlet
+site number,SPT Out,Tempe South WP Treated
+site number,UH In,Union Hills WTP Inlet
+site number,UH Out,Union Hills WTP Treated
+cluster,az canal,Arizona canal
+cluster,cap,Central Arizona Project canal
+cluster,salt,Salt River
+cluster,srp,Salt River Project canal
+cluster,tempe,"Tempe, AZ area canal"
+cluster,verde,Verde River
+site acronym,Above Roosevelt,metadata_not_provided
+site acronym,az canal,metadata_not_provided
+site acronym,az canal @ 16th st.,AZ Canal at 16th Street
+site acronym,az canal @ 19 ave.,AZ Canal at 19th Avenue
+site acronym,az canal @ 19th av.,AZ Canal at 19th Avenue
+site acronym,az canal @ 56th st.,AZ Canal at 56th Street
+site acronym,az canal @ central ave.,AZ Canal at Central Avenue
+site acronym,az canal @ deer valley,AZ Canal - Inlet to Deer Valley WTP
+site acronym,az canal @ hwy 87,AZ Canal at Highway 87
+site acronym,az canal @ Mesa,AZ Canal at Mesa Dr.
+site acronym,az canal @ pima,AZ Canal at Pima Rd
+site acronym,az canal @ scotts.,AZ Canal at Scottsdale Rd.
+site acronym,az canal @ squaw peak,AZ Canal - Inlet to Squaw Peak WTP
+site acronym,az canal blw cap,AZ Canal below CAP Cross-connect
+site acronym,az canal inflow,AZ Canal above CAP Cross-connect
+site acronym,bartlett-epi,Bartlett Reservoir near outlet
+site acronym,bartlett-hypo,Bartlett Reservoir near outlet
+site acronym,cap @ 7th st,Cap Canal at 7th St.
+site acronym,cap @ 7th st dup,Cap Canal at 7th St. Duplicate Sample
+site acronym,cap @ x con,CAP Canal at Cross-connect
+site acronym,cap-siphon,metadata_not_provided
+site acronym,deer valley-treated,Deer Valley WTP treated water
+site acronym,Glen In,Glendale WTP Inlet
+site acronym,Glen Out,Glendale WTP Treated
+site acronym,Green In,Greenway WTP Inlet
+site acronym,Green Out,Greenway WTP Treated
+site acronym,Havasu 1,Lake Havasu Site 1
+site acronym,Havasu 2,Lake Havasu Site 2
+site acronym,head of tempe canal,Head of Tempe Canal
+site acronym,HOC,Head of the Consolidated canal
+site acronym,MOC,Middle of the Consolidated canal
+site acronym,MTO,Mesa Canal Turnout
+site acronym,North plant inlet,Tempe North WTP Inlet
+site acronym,north plant outlet,Tempe North WTP Treated
+site acronym,pleasant-epi,Lake Pleasant integrated sample
+site acronym,pleasant-hypo,Lake Pleasant integrated sample
+site acronym,s canal @ val vista,South Canal at Val Vista WTP
+site acronym,saguaro-epi,Saguaro Lake Epilimnion
+site acronym,saguaro-epi dup,Saguaro Lake Epilimnion Duplicate Sample
+site acronym,saguaro-hypo,Saguaro Lake Hypolimnion
+site acronym,salt abv saguaro,Salt River inlet to Saguaro Lake
+site acronym,salt blw saguaro,Salt River below Saguaro (Blue Point Bridge)
+site acronym,SGPS,Salt Gila Pump Station
+site acronym,South canal below CAP,South Canal below CAP Cross-connect
+site acronym,squaw peak-treated,Squaw Peak WTP treated water
+site acronym,SRNR,Salt River Inlet Near Roosevelt Lake
+site acronym,STP In,Tempe Canal - Inlet to Tempe's South Plant
+site acronym,STP Out,Tempe's South Plant treated water
+site acronym,Union Hills Inlet,Union Hills WTP Inlet
+site acronym,Union Hills Outlet,Union Hills WTP Treated
+site acronym,val vista-treated,Val Vista WTP treated water
+site acronym,verde @ beeline,verde river at beeline highway
+site acronym,verde abv bartlett,Verde River btwn Horseshoe and Bartlett
+site acronym,verde abv horseshoe,Verde River at Tangle
+site acronym,verde blw barlett,Verde River below Bartlett Reservoir
+site acronym,waddell canal,Waddell Canal
+sample type,field blank,Field blank
+sample type,field duplicate,Field duplicate sample
+sample type,had white ppt,metadata_not_provided
+sample type,has white ppt,metadata_not_provided
+sample type,lab blank,Laboratory blank
+sample type,only field duplicate,metadata_not_provided
