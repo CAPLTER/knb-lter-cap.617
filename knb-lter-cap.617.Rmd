@@ -3,55 +3,37 @@ title: "remlTemplate"
 author: "SRE"
 date: Sys.Date()
 output: html_document
-editor_options: 
+editor_options:
   chunk_output_type: console
 ---
 
+## libraries
+
 ```{r libraries}
 library(EML)
-library(RPostgreSQL)
-library(RMySQL)
 library(tidyverse)
 library(tools)
-library(readxl)
 library(aws.s3)
 library(capeml)
 library(gioseml)
 ```
 
-```{r dataset_details}
-projectid <- 617
-packageIdent <- 'knb-lter-cap.617.3'
-pubDate <- as.character(Sys.Date())
-```
+# README
 
-```{r helper_functions}
-source('~/localRepos/reml-helper-tools/amazon_file_upload.R')
-```
+see project README for extracting data from Access database.
 
-```{r connections::amazon}
-source('~/Documents/localSettings/aws.s3')
-```
 
-```{r connections::postgres::local, eval=FALSE}
-source('~/Documents/localSettings/pg_local.R')
-pg <- pg_local
-```
+## project details
 
-```{r connections::postgres::prod, eval=T }
-source('~/Documents/localSettings/pg_prod.R')
-pg <- pg_prod
-```
+see config.yaml
 
-```{r connections::mysql::prod, eval=T }
-source('~/Documents/localSettings/mysql_prod.R')
-mysql_prod <- mysql_prod_connect()
-```
 
-```{r algae, eval=TRUE}
+## algae
 
-algae <- read_csv("data/Conductivity.csv") %>% 
-  rename(cluster = `cluster name`) %>% 
+```{r algae, eval=TRUE, error=TRUE}
+
+algae <- read_csv("data/Conductivity.csv") %>%
+  rename(cluster = `cluster name`) %>%
   mutate(
     `site number` = as.factor(`site number`),
     cluster = tolower(cluster),
@@ -61,377 +43,488 @@ algae <- read_csv("data/Conductivity.csv") %>%
     date = format(as.POSIXct(date, format = "%m/%d/%y %H:%M:%S"), "%Y-%m-%d"),
     date = as.Date(date)
   ) %>%
-  select(-ID, -month) %>% 
-  arrange(date, `site number`) %>% 
+  select(-ID, -month) %>%
+  arrange(date, `site number`) %>%
   filter(!is.na(date))
 
-write_attributes(algae)
-write_factors(algae)
+# write_attributes(algae)
+# write_factors(algae)
 
 algae_desc <- "algal characteristics (chlorophyll concentration, cell counts) and specific conductance in canals and reservoirs"
 
-algae_DT <- create_dataTable(dfname = algae,
-                             description = algae_desc)
+algae_DT <- create_dataTable(
+  dfname = algae,
+  description = algae_desc)
 
 ```
+
+
+## algal_byproducts
 
 ```{r algal_byproducts, eval=TRUE}
 
-# tabularDataEntity <- import / generate...process...
+algal_byproducts <- read_csv("data/mib and geosmin.csv") %>%
+  rename(
+    `cluster` = `cluster name`,
+    `geosmin (ng/L) ASU`= `Geosmin  (ng/L) ASU`,
+    `beta-cyclocitral (ng/L)` = `Beta-cyclocitral (ng/L)`,
+    `IPMP recovery (%)` = `IPMP Recovery (%)`,
+    `geosmin (ng/L) Phoenix` = `Geosmin  (ng/L) Phoenix`
+    ) %>%
+mutate(
+  cluster = tolower(cluster),
+  cluster = as.factor(cluster),
+  `site number` = as.factor(`site number`),
+  `site acronym` = as.factor(`site acronym`),
+  date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
+  date = as.Date(date)
+  ) %>%
+select(-`ID`, -`month`) %>%
+arrange(date, `site number`) %>%
+filter(!is.na(date))
 
-algal_byproducts <- read_csv("data/AlgalByproducts_mib_geosmin.csv") %>%
-  rename(`cluster` = `cluster name`, 
-         `geosmin (ng/L) ASU`= `Geosmin  (ng/L) ASU`,
-         `beta-cyclocitral (ng/L)` = `Beta-cyclocitral (ng/L)`,
-         `IPMP recovery (%)` = `IPMP Recovery (%)`,
-         `geosmin (ng/L) Phoenix` = `Geosmin  (ng/L) Phoenix`) %>%
-  mutate(cluster = tolower(cluster),
-         cluster = as.factor(cluster),
-         `site number` = as.factor(`site number`), 
-         `site acronym` = as.factor(`site acronym`), 
-         date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
-         date = as.Date(date)  ) %>%
-  select(-`ID`, -`month`) %>%
-  arrange(date, `site number`) %>% 
-  filter(!is.na(date))
-
-write_attributes(algal_byproducts)
-write_factors(algal_byproducts)
+# write_attributes(algal_byproducts)
+# write_factors(algal_byproducts)
 
 algal_byproducts_desc <- "concentration of algal by-products in canals and reservoirs"
 
-algal_byproducts_DT <- create_dataTable(dfname = algal_byproducts,
-                               description = algal_byproducts_desc)
+algal_byproducts_DT <- create_dataTable(
+  dfname = algal_byproducts,
+  description = algal_byproducts_desc)
 
 ```
+
+## arsenic
 
 ```{r arsenic, eval=TRUE}
 
-# tabularDataEntity <- import / generate...process...
+# complicated import and mutate actions to accomodate text (<2.0) in the
+# arsenic concentration column
 
-arsenic <- read_csv("data/Arsenic.csv", col_types = list(col_double(), col_character(), col_character(), col_character(), col_character(), col_character(), col_character(), col_double()  )) %>%
-  rename(`cluster` = `Cluster`, 
-         `site number` = `Site Number`,
-         `site location` = `Site location`,
-         `site acronym` = `Site Acronym`,
-         `arsenic (ug/L)`= `Arsenic (ug/L)`,
-         `perchlorate (ug/L)` = `Perchlorate (ug/L)`) %>%
-  mutate(cluster = tolower(cluster),
-         cluster = as.factor(cluster),
-         `site number` = as.factor(`site number`), 
-         `site acronym` = as.factor(`site acronym`), 
-         date = format(as.POSIXct(`month/date`, format = "%m/%d/%y"), "%Y-%m-%d"),
-         date = as.Date(date)  ) %>%
-  mutate(BDL = case_when(
-         grepl('<2.0', `arsenic (ug/L)`, ignore.case = T) ~ 1), # close case_when
-         BDL = as.factor(BDL)) %>% # close mutate BDL
-  mutate(`arsenic (ug/L)` = as.numeric(`arsenic (ug/L)`)) %>% 
-  select(-`ID`, -`month/date`) %>%
-  arrange(date, `site number`) %>% 
+arsenic <- read_csv(
+  file = "data/Arsenic.csv",
+  col_types = list(
+    col_double(),
+    col_character(),
+    col_character(),
+    col_character(),
+    col_character(),
+    col_character(),
+    col_character(),
+    col_double()
+  )
+  ) %>%
+rename(
+  `cluster` = `Cluster`,
+  `site number` = `Site Number`,
+  `site location` = `Site location`,
+  `site acronym` = `Site Acronym`,
+  `arsenic (ug/L)` = `Arsenic (ug/L)`,
+  `perchlorate (ug/L)` = `Perchlorate (ug/L)`
+  ) %>%
+mutate(
+  cluster = tolower(cluster),
+  cluster = as.factor(cluster),
+  `site number` = as.factor(`site number`),
+  `site acronym` = as.factor(`site acronym`),
+  date = format(as.POSIXct(`month/date`, format = "%m/%d/%y"), "%Y-%m-%d"),
+  date = as.Date(date)
+  ) %>%
+mutate(
+  BDL = case_when(
+    grepl("<2.0", `arsenic (ug/L)`, ignore.case = T) ~ 1
+  )
+  ) %>% # close mutate BDL
+mutate(
+  `arsenic (ug/L)` = as.numeric(`arsenic (ug/L)`),
+  BDL = case_when(
+    `arsenic (ug/L)` < 2 ~ 1,
+    TRUE ~ BDL
+    ), # close case_when
+  BDL = as.factor(BDL)
+  ) %>% # close mutate BDL
+select(-`ID`, -`month/date`) %>%
+  arrange(date, `site number`) %>%
   filter(!is.na(date))
 
-write_attributes(arsenic)
-write_factors(arsenic)
+# write_attributes(arsenic)
+# write_factors(arsenic)
 
 arsenic_desc <- "arsenic and perchlorate concentrations in canals and reservoirs"
 
-arsenic_DT <- create_dataTable(dfname = arsenic,
-                               description = arsenic_desc)
+arsenic_DT <- create_dataTable(
+  dfname = arsenic,
+  description = arsenic_desc)
 
 ```
+
+## carbon
 
 ```{r carbon, eval=TRUE}
 
-# tabularDataEntity <- import / generate...process...
-
-carbon <- read_csv("data/Carbon_doc_month.csv") %>%
+# carbon <- read_csv("data/Carbon_doc_month.csv") %>%
+carbon <- read_csv("data/doc_month.csv") %>%
   rename(`cluster` = `cluster name`) %>%
-  mutate(cluster = tolower(cluster),
-         cluster = as.factor(cluster),
-         `site number` = as.factor(`site number`), 
-         `site acronym` = as.factor(`site acronym`),
-         `sample type` = as.factor(`sample type`),
-         date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
-         date = as.Date(date)  ) %>%
-  select(-`ID`, -`month`) %>%
-  arrange(date, `site number`) %>% 
+  mutate(
+    cluster = tolower(cluster),
+    cluster = as.factor(cluster),
+    `site number` = as.factor(`site number`),
+    `site acronym` = as.factor(`site acronym`),
+    `sample type` = as.factor(`sample type`),
+    date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
+    date = as.Date(date)
+    ) %>%
+  select(-`ID`, -`month`, -Field1) %>%
+  arrange(date, `site number`) %>%
   filter(!is.na(date))
 
-write_attributes(carbon)
-write_factors(carbon)
+# write_attributes(carbon)
+# write_factors(carbon)
 
-carbon_desc <- "approximately monthly water carbon data in canals and reservoirs"
+carbon_desc <- "approximately monthly water carbon data in Phoenix-area canals and reservoirs"
 
-carbon_DT <- create_dataTable(dfname = carbon,
-                               description = carbon_desc)
+carbon_DT <- create_dataTable(
+  dfname = carbon,
+  description = carbon_desc)
 
 ```
+
+## field_measurements
 
 ```{r field_measurements, eval=TRUE}
 
-# tabularDataEntity <- import / generate...process...
+system("sed -i 's/Secchi Disk, m/Secchi Disk (m)/' data/field_measurements.csv")
 
 field_measurements <- read_csv("data/field_measurements.csv") %>%
-  rename(`cluster` = `cluster name`,
-         `Secchi disk (m)` = `Secchi Disk, m`) %>%
-  mutate(cluster = tolower(cluster),
-         cluster = as.factor(cluster),
-         `site number` = as.factor(`site number`), 
-         `site acronym` = as.factor(`site acronym`),
-         `sample type` = as.factor(`sample type`),
-         date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
-         date = as.Date(date)  ) %>%
+  # drop empty cols
+  select_if(function(x) { !all(is.na(x)) }) %>%
+  rename(
+    `cluster` = `cluster name` #,
+    #     `Secchi disk (m)` = `Secchi Disk, m`
+    ) %>%
+  mutate(
+    cluster = tolower(cluster),
+    cluster = as.factor(cluster),
+    `site number` = as.factor(`site number`),
+    `site acronym` = as.factor(`site acronym`),
+    # `sample type` = as.factor(`sample type`),
+    date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
+    date = as.Date(date)
+    ) %>%
   select(-`ID`, -`month`) %>%
-  arrange(date, `site number`) %>% 
+  arrange(date, `site number`) %>%
   filter(!is.na(date))
 
-write_attributes(field_measurements)
-write_factors(field_measurements)
+# write_attributes(field_measurements)
+# write_factors(field_measurements)
 
 field_measurements_desc <- "water quality parameters as measured in the field in canals and reservoirs"
 
-field_measurements_DT <- create_dataTable(dfname = field_measurements,
-                               description = field_measurements_desc)
+field_measurements_DT <- create_dataTable(
+  dfname = field_measurements,
+  description = field_measurements_desc)
 
 ```
+
+## microbial
+
+Update 2020-07-06 v3: discovered an error in an earlier version where I changed
+character na to flags in the Coliform and Mycobaterium columns. Fixed for
+version 3. Note that with this update, there are only flags for Mycobacterium.
+
+Marisa has flags in the Mycobacterium count fields. This information is lost if
+converted to numeric. So, I have pulled those text flags out of the count
+fields and put them in new flag fields as factors. Note other things here too
+like changing some N/A entries to NA, and since I was doing so much
+manipulating anyway, I went ahead and made the field names a bit more pleasant.
 
 ```{r microbial, eval=TRUE}
 
-# tabularDataEntity <- import / generate...process...
-
 microbial <- read_csv("data/Microbial.csv") %>%
-  rename(`site number` = `Site Number`,
-         `site location` = `Site Location`,
-         `cluster` = `Cluster Name`,
-         `site acronym` = `Site Acronym`,
-         `date` = `Date`) %>%
-  mutate(cluster = tolower(cluster),
-         cluster = as.factor(cluster),
-         `site number` = as.factor(`site number`), 
-         `site acronym` = as.factor(`site acronym`),
-         `E coli(colonies per 100mL)` = as.numeric(`E coli(colonies per 100mL)`),
-         `Coliform(colonies per 100mL)` = as.numeric(`Coliform(colonies per 100mL)`),
-         `Mycobacterium(colonies per 100mL)` = as.numeric(`Mycobacterium(colonies per 100mL)`),
-         date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
-         date = as.Date(date)  ) %>%
-  select(-`ID`) %>%
-  arrange(date, `site number`) %>% 
-  filter(!is.na(date))
+  # drop empty cols
+  select_if(function(x) { !all(is.na(x)) }) %>%
+  rename(
+    `site number` = `Site Number`,
+    `site location` = `Site Location`,
+    `cluster` = `Cluster Name`,
+    `site acronym` = `Site Acronym`,
+    `date` = `Date`,
+    coliform = `Coliform(colonies per 100mL)`,
+    mycobacterium = `Mycobacterium(colonies per 100mL)`,
+    e_coli = `E coli(colonies per 100mL)`
+    ) %>%
+  mutate(
+    cluster = tolower(cluster),
+    cluster = as.factor(cluster),
+    `site number` = as.factor(`site number`),
+    `site acronym` = as.factor(`site acronym`),
+    e_coli = case_when(
+      grepl("n/a", e_coli, ignore.case = TRUE) ~ NA_character_,
+      TRUE ~ e_coli
+      ),
+    e_coli = as.numeric(e_coli),
+    coliform = case_when(
+      grepl("n/a", coliform, ignore.case = TRUE) ~ NA_character_,
+      TRUE ~ coliform
+      ),
+    coliform = as.numeric(coliform),
+    mycobacterium = case_when(
+      grepl("n/a", mycobacterium, ignore.case = TRUE) ~ NA_character_,
+      TRUE ~ mycobacterium
+      ),
+    mycobacterium_flag = case_when(
+      grepl("[A-z]+", mycobacterium) ~ str_extract(mycobacterium, "[A-z]+")
+      ),
+    mycobacterium = as.numeric(mycobacterium),
+    mycobacterium_flag = as.factor(mycobacterium_flag),
+    date = format(as.POSIXct(date, format = "%m/%d/%Y"), "%Y-%m-%d"),
+    date = as.Date(date)
+    ) %>%
+  select(
+    "site number",
+    "site location",
+    "cluster",
+    "site acronym",
+    "date",
+    "e_coli",
+    "coliform",
+    "mycobacterium",
+    "mycobacterium_flag",
+    "Comments"
+    ) %>%
+  filter(!is.na(date)) %>%
+  arrange(date, `site number`)
 
-write_attributes(microbial)
-write_factors(microbial)
+# write_attributes(microbial)
+# write_factors(microbial)
 
 microbial_desc <- "E. coli, Coliform, and Mycobacterium colony counts in canals and reservoirs"
 
-microbial_DT <- create_dataTable(dfname = microbial,
-                               description = microbial_DT)
+microbial_DT <- create_dataTable(
+  dfname = microbial,
+  description = microbial_desc)
 
 ```
+
+## nutrients
 
 ```{r nutrients, eval=TRUE}
 
-# tabularDataEntity <- import / generate...process...
+system("sed -i 's/NO3-N, mg\\/l/nitrate_nitrogen/' data/nutrients.csv")
+system("sed -i 's/NH4-N, ppm/ammonium_nitrogen/' data/nutrients.csv")
+system("sed -i 's/DON, ppm/dissolved_organic_nitrogen/' data/nutrients.csv")
 
-nutrients <- read_csv("data/nutrients.csv", col_types = list(col_double(), col_character(), col_character(), col_character(), col_character(), col_character(), col_character(), col_character(), col_double(), col_double(), col_double(), col_double(), col_double(), col_double(), col_double(), col_character()  )) %>%
-  rename(`cluster` = `cluster name`) %>%
-  mutate(cluster = tolower(cluster),
-         cluster = as.factor(cluster),
-         `site number` = as.factor(`site number`), 
-         `site acronym` = as.factor(`site acronym`),
-         date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
-         date = as.Date(date)  ) %>%
-  select(-`ID`, -`month`) %>%
-  arrange(date, `site number`) %>% 
-  filter(!is.na(date))
+# need to force col types owing to big chunks of no data
+nutrients <- read_csv(
+  file = "data/nutrients.csv",
+  col_types = list(
+    col_double(),
+    col_character(),
+    col_character(),
+    col_character(),
+    col_character(),
+    col_character(),
+    col_character(),
+    col_character(),
+    col_double(),
+    col_double(),
+    col_double(),
+    col_double(),
+    col_double(),
+    col_double(),
+    col_double(),
+    col_character()
+  )
+  ) %>%
+rename(
+  `cluster` = `cluster name`,
+  total_nitrogen = `Tot N (mg/L (0<mdl))`,
+  total_dissolved_nitrogen = `Diss N (mg/L (0<mdl))`,
+  total_phosphorus = `Tot P (ug/L (0<mdl))`,
+  total_dissolved_phosphorus = `Diss P (ug/L (0<mdl))` #,
+  #   nitrate_nitrogen = `NO3-N, mg/l`,
+  #   ammonium_nitrogen = `NH4-N, ppm`,
+  #   dissolved_organic_nitrogen = `DON, ppm`,
+  ) %>%
+mutate(
+  cluster = tolower(cluster),
+  cluster = as.factor(cluster),
+  `site number` = as.factor(`site number`),
+  `site acronym` = as.factor(`site acronym`),
+  date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
+  date = as.Date(date)
+  ) %>%
+select(-`ID`, -`month`) %>%
+arrange(date, `site number`) %>%
+filter(!is.na(date))
 
-write_attributes(nutrients)
-write_factors(nutrients)
+# write_attributes(nutrients)
+# write_factors(nutrients)
 
 nutrients_desc <- "concentration of algal by-products in canals and reservoirs"
 
-nutrients_DT <- create_dataTable(dfname = nutrients,
-                               description = nutrients_desc)
+nutrients_DT <- create_dataTable(
+  dfname = nutrients,
+  description = nutrients_desc)
 
 ```
+
+## quarterly_lake_sampling
 
 ```{r quarterly_lake_sampling, eval=TRUE}
 
-# tabularDataEntity <- import / generate...process...
-
 quarterly_lake_sampling <- read_csv("data/Quarterly Lake Sampling.csv") %>%
-  rename(`cluster` = `Cluster Name`,
-         `site number` = `Site Name`,
-         `site location` = `Site Location`,
-         `site acronym` = `Site Acronym`,
-         `date` = `Date`,
-         `MIB (ng/L)` = `Mib(ng/L)`,
-         `geosmin (ng/L)` = `Geosmin(ng/L)`,
-         `UVA (cm-1)` = `UVA(cm-1)`,
-         `Suva(L/mg-m)` = `Suva(L/mg-m)`,
-         `Conductance (us/cm)` = `Conductance(us/cm)`) %>%
-  mutate(cluster = tolower(cluster),
-         cluster = as.factor(cluster),
-         `site number` = as.factor(`site number`), 
-         `site acronym` = as.factor(`site acronym`),
-         date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
-         date = as.Date(date)  ) %>%
-  select(-`ID`) %>%
-  arrange(date, `site number`) %>% 
-  filter(!is.na(date))
+  rename(
+    `cluster` = `Cluster Name`,
+    `site number` = `Site Name`,
+    `site location` = `Site Location`,
+    `site acronym` = `Site Acronym`,
+    `date` = `Date`,
+    `MIB (ng/L)` = `Mib(ng/L)`,
+    `geosmin (ng/L)` = `Geosmin(ng/L)`,
+    `UVA (cm-1)` = `UVA(cm-1)`,
+    `Suva(L/mg-m)` = `Suva(L/mg-m)`,
+    `Conductance (us/cm)` = `Conductance(us/cm)`
+    ) %>%
+mutate(
+  cluster = tolower(cluster),
+  cluster = as.factor(cluster),
+  `site number` = as.factor(`site number`),
+  `site acronym` = as.factor(`site acronym`),
+  date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
+  date = as.Date(date)
+  ) %>%
+select(-`ID`) %>%
+arrange(date, `site number`) %>%
+filter(!is.na(date))
 
-write_attributes(quarterly_lake_sampling)
-write_factors(quarterly_lake_sampling)
+# write_attributes(quarterly_lake_sampling)
+# write_factors(quarterly_lake_sampling)
 
 quarterly_lake_sampling_desc <- "concentration of nutrients and algal by-products, and other water quality parameters measured in central-Arizona area lakes"
 
-quarterly_lake_sampling_DT <- create_dataTable(dfname = quarterly_lake_sampling,
-                               description = quarterly_lake_sampling_desc)
+quarterly_lake_sampling_DT <- create_dataTable(
+  dfname = quarterly_lake_sampling,
+  description = quarterly_lake_sampling_desc)
 
 ```
+
+### quarterly_metals
 
 ```{r quarterly_metals, eval=TRUE}
 
-# tabularDataEntity <- import / generate...process...
-
 quarterly_metals <- read_csv("data/Quarterly Metals.csv") %>%
-  rename(`cluster` = `Cluster Name`,
-         `site number` = `Site Name`,
-         `site location` = `Site Location`,
-         `site acronym` = `Site Acronym`,
-         `date` = `Date`,
-         `units` = `Units`) %>%
-  mutate(cluster = tolower(cluster),
-         cluster = as.factor(cluster),
-         `site number` = as.factor(`site number`), 
-         `site acronym` = as.factor(`site acronym`),
-         date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
-         date = as.Date(date)  ) %>%
-  select(-`ID`) %>%
-  arrange(date, `site number`) %>% 
+  # drop empty cols
+  select_if(function(x) { !all(is.na(x)) }) %>%
+  rename(
+    `cluster` = `Cluster Name`,
+    `site number` = `Site Name`,
+    `site location` = `Site Location`,
+    `site acronym` = `Site Acronym`,
+    `date` = `Date`,
+    `units` = `Units`
+    ) %>%
+  mutate(
+    cluster = tolower(cluster),
+    cluster = as.factor(cluster),
+    `site number` = as.factor(`site number`),
+    `site acronym` = as.factor(`site acronym`),
+    date = format(as.POSIXct(`date`, format = "%m/%d/%Y"), "%Y-%m-%d"),
+    date = as.Date(date)
+    ) %>%
+  select(-`ID`, -units) %>%
+  arrange(date, `site number`) %>%
   filter(!is.na(date))
 
-write_attributes(quarterly_metals)
-write_factors(quarterly_metals)
+# write_attributes(quarterly_metals)
+# write_factors(quarterly_metals)
 
 quarterly_metals_desc <- "concentration of dissolved metals measured in central-Arizona area lakes and canals"
 
-quarterly_metals_DT <- create_dataTable(dfname = quarterly_metals,
-                               description = quarterly_metals_desc)
+quarterly_metals_DT <- create_dataTable(
+  dfname = quarterly_metals,
+  description = quarterly_metals_desc)
 
 ```
+
+## sampling_locations
 
 ```{r sampling_locations, eval=TRUE}
 
-# tabularDataEntity <- import / generate...process...
-
 sampling_locations <- read_csv("data/gpscoord.csv") %>%
-  rename(`cluster` = `cluster name`,
-         `latitude` = `laditude`) %>%
-  mutate(cluster = tolower(cluster),
-         cluster = as.factor(cluster),
-         `site number` = as.factor(`site number`), 
-         `site acronym` = as.factor(`site acronym`),
-         date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
-         date = as.Date(date)
-         ) %>%
-  select(-`ID`) %>%
-  arrange(date, `site number`) %>% 
-  filter(!is.na(date))
+  rename(
+    `cluster` = `cluster name`,
+    `latitude` = `laditude`
+    ) %>%
+mutate(
+  cluster = tolower(cluster),
+  cluster = as.factor(cluster),
+  `site number` = as.factor(`site number`),
+  `site acronym` = as.factor(`site acronym`),
+  date = format(as.POSIXct(`date`, format = "%m/%d/%y"), "%Y-%m-%d"),
+  date = as.Date(date),
+  latitude = case_when(
+    `site number` %in% c("R9A", "R9B") ~ "N33o34.053",
+    TRUE ~ latitude
+  )
+  ) %>%
+select(-`ID`) %>%
+arrange(date, `site number`) %>%
+filter(!is.na(date))
 
-sampling_locations$longitude = gsub('W', '', sampling_locations$longitude)
-sampling_locations$longitude = gsub('o', ' ', sampling_locations$longitude)
-sampling_locations$latitude = gsub('N', '', sampling_locations$latitude)
-sampling_locations$latitude = gsub('o', ' ', sampling_locations$latitude)
+sampling_locations$longitude = gsub("W", "", sampling_locations$longitude)
+sampling_locations$longitude = gsub("o", " ", sampling_locations$longitude)
+sampling_locations$latitude = gsub("N", "", sampling_locations$latitude)
+sampling_locations$latitude = gsub("o", " ", sampling_locations$latitude)
 
-sampling_locations$longitude = measurements::conv_unit(sampling_locations$longitude, from = 'deg_dec_min', to = 'dec_deg')
-sampling_locations$latitude = measurements::conv_unit(sampling_locations$latitude, from = 'deg_dec_min', to = 'dec_deg')
+sampling_locations$longitude = measurements::conv_unit(sampling_locations$longitude, from = "deg_dec_min", to = "dec_deg")
+sampling_locations$latitude = measurements::conv_unit(sampling_locations$latitude, from = "deg_dec_min", to = "dec_deg")
 
-sampling_locations$longitude <- as.numeric(as.character(sampling_locations$longitude))
+sampling_locations$longitude <- as.numeric(as.character(sampling_locations$longitude)) * -1
 sampling_locations$latitude <- as.numeric(as.character(sampling_locations$latitude))
 
-write_attributes(sampling_locations)
-write_factors(sampling_locations)
+# write_attributes(sampling_locations)
+# write_factors(sampling_locations)
 
 sampling_locations_desc <- "latitude, longitude, and elevation of select canal, lake, and river water-quality sampling locations"
 
-sampling_locations_DT <- create_dataTable(dfname = sampling_locations,
-                               description = sampling_locations_desc)
+sampling_locations_DT <- create_dataTable(
+  dfname = sampling_locations,
+  description = sampling_locations_desc)
 
 ```
 
-```{r compiled_data, eval=TRUE}
 
-# tabularDataEntity <- import / generate...process...
+```{r title, eval=FALSE}
 
-write_attributes(tabularDataEntity)
-write_factors(tabularDataEntity)
-
-tabularDataEntity_desc <- "desc"
-
-tabularDataEntity_DT <- create_dataTable(dfname = tabularDataEntity,
-                                              description = tabularDataEntity_desc)
-
+title <- "Regional drinking water quality monitoring program: long-term monitoring of water quality in select canals, reservoirs, and treatment plants of the greater Phoenix, Arizona metropolitan area drinking water system, ongoing since 1998"
 ```
 
-```{r otherEntity, eval=TRUE}
-
-otherEntityObject_OE <- create_otherEntity(targetFile = 'kml_pdf_etc',
-                                  description = 'desc')
-
-```
-
-```{r spatialVector, eval=TRUE}
-
-# call this library as needed
-library(sf)
-
-# note layer name is sans file extention
-spatialVectorEntity <- read_sf(dsn = "directory/", layer = "layer name")
-
-# assign Name to the column that is the site identifier
-spatialVectorEntity <- spatialVectorEntity %>% 
-  mutate(Name = site identifier)
-
-write_attributes(spatialVectorEntity)
-
-spatialVectorEntity_desc <- "desc"
-
-spatialVector_SV <- create_spatialVector(targetFile = spatialVectorEntity,
-                                         description = spatialVectorEntityDesc )
-
-```
-
-```{r title}
-
-title <- ''
-```
-
-```{r abstract}
-
-abstract <- set_TextType("abstract.md")
-```
-
-```{r connections::mysql::prod redux, eval=T }
-source('~/Documents/localSettings/mysql_prod.R')
-mysql_prod <- mysql_prod_connect()
-```
+## people
 
 ```{r people}
 
 # see gioseml for examples of creating people resources from scratch
 
+source("~/Documents/localSettings/mysql_prod.R")
 mysql_prod <- mysql_prod_connect()
 
-cameron <- create_role(firstName = "cameron", lastName = "boehme", roleType = "creator")
-chelsea <- create_role(firstName = "chelsea", lastName = "stratton", roleType = "creator")
-fabio <- create_role(giosPersonId = 23857, roleType = "creator")
+peter <- create_role(firstName = "peter", lastName = "fox", roleType = "creator")
+morteza <- create_role(firstName = "m", lastName = "abbaszadegan", roleType = "creator")
 
-creators <- list(cameron, chelsea, fabio)
+creators <- list(peter, morteza)
 
-cameron <- create_role(firstName = "cameron", lastName = "boehme", roleType = "metadata")
-metadataProvider <- list(cameron)
+marisa <- create_role(firstName = "m", lastName = "masles", roleType = "metadata")
+metadataProvider <- list(marisa)
+
+paul <- create_role(firstName = "p", lastName = "westerhoff", roleType = "associated")
+milt <- create_role(firstName = "m", lastName = "sommerfeld", roleType = "associated")
+
+associatedParty <- list(paul, milt)
 
 ```
+
+# keywords
 
 ```{r keywords}
 
@@ -439,101 +532,55 @@ metadataProvider <- list(cameron)
 # https://sustainability.asu.edu/caplter/research/
 
 write_keywords()
-keywords <- create_keywordSet('keywords.csv')
-
 ```
 
-```{r methods}
+# methods
 
-methods <- set_methods("methods.md")
-```
+Methods are automatically read from a `methods.md` file in the project
+directory. If more elaborate methods are required, e.g., to incorporate
+provenance, use the enhancedMethods approach outlined in the capeml package.
+
 
 ```{r coverages}
 
-# begindate <- format(min(runoff_chemistry$runoff_datetime), "%Y-%m-%d")
-# enddate <- format(max(runoff_chemistry$runoff_datetime), "%Y-%m-%d")
-geographicDescription <- "CAP LTER study area"
-coverage <- set_coverage(begin = "2014-09-01",
-                         end = "2015-03-30",
-                         geographicDescription = geographicDescription,
-                         west = -112.100, east = -111.877,
-                         north = +33.608, south = +33.328)
+allDates <- rbind(
+  algae[, "date"],
+  nutrients[, "date"],
+  quarterly_lake_sampling[, "date"],
+  quarterly_metals[, "date"],
+  algal_byproducts[, "date"],
+  arsenic[, "date"],
+  carbon[, "date"],
+  field_measurements[, "date"],
+  microbial[, "date"]
+)
+
+begindate <- as.character(min(allDates$date))
+enddate <- as.character(max(allDates$date))
+
+geographicDescription <- "canals, water treatment plants, and reservoirs in the greater phoenix metropolitan area"
+
+coverage <- set_coverage(
+  begin = begindate,
+  end = enddate,
+  geographicDescription = geographicDescription,
+  west = -111.1250, east = -111.1235,
+  north = +33.4900, south = +33.2917)
 
 ```
 
-New approach for taxonomy is to use taxonomyCleanr to build the
-taxonomicCoverage. Note that at the time of this writing and building,
-taxonomyCleanr had not been ported to rOpenSci EML v2. Using
-caplter::taxonomyCleanr/taxonomy-rEML2 until Colin adapts taxonmyCleanr to
-ropensci EML v2.
 
-*Note* that the `taxa_map.csv` built with the `create_taxa_map()` function and
-resolving taxonomic IDs (i.e., `resolve_comm_taxa()`) only needs to be run once
-per version/session -- the taxonomicCoverage can be built as many times as
-needed with `resolve_comm_taxa()` once the `taxa_map.csv` has been generated and
-the taxonomic IDs resolved.
+# dataset
 
-```{r taxonomyCleanr, eval=TRUE}
-
-devtools::load_all('~/localRepos/taxonomyCleanr/')
-library(taxonomyCleanr)
-
-my_path <- getwd() # taxonomyCleanr requires a path (to build the taxa_map)
-
-# plant taxa listed in the om_transpiration_factors file
-plantTaxa <- read_csv('om_transpiration_factors.csv') %>% 
-  filter(attributeName == "species") %>% 
-  as.data.frame()
-
-# create or update map. A taxa_map.csv is the heart of taxonomyCleanr. This
-# function will build the taxa_map.csv and put it in the path identified with
-# my_path.
-create_taxa_map(path = my_path, x = plantTaxa, col = "definition") 
-
-# resolve taxa by attempting to match the taxon's In this case, data.source 3 is
-# ITIS (which, by the way, is the only authority taxonomyCleanr will allow for
-# common names).
-# resolve_comm_taxa(path = my_path, data.sources = 3) # in this case, 3 is ITIS
-resolve_sci_taxa(path = my_path, data.sources = 3) # in this case, 3 is ITIS
-
-# build the EML taxonomomic coverage
-taxaCoverage <- make_taxonomicCoverage(path = my_path)
-
-# add taxonomic to other coverages
-coverage$taxonomicCoverage <- taxaCoverage
-```
+Optionally, provide: scope, abstract, methods, keywords, publication date.
+Projects scopes include lter (default), urex, and som.
 
 ```{r construct-dataset}
 
-# from capeml package:
-# address
-# publisher
-# contact
-# rights
-# distribution
-
-# DATASET
-dataset <- EML::eml$dataset(
-  title = title,
-  creator = creators,
-  pubDate = pubDate,
-  metadataProvider = metadataProvider,
-  intellectualRights = capRights,
-  abstract = abstract,
-  keywordSet = keywords,
-  coverage = coverage,
-  contact = capContact, # cap contact
-  publisher = capPublisher, # cap pub
-  # contact = giosContact, # gios contact
-  # publisher = giosPublisher, # gios pub
-  methods = methods,
-  # project = capProject, # cap project
-  distribution = create_distribution(packageIdent))
-
-# add associatedParty if relevant
-# dataset$associatedParty <- list() 
-
+dataset <- create_dataset()
 ```
+
+# add dataTable
 
 ```{r dataSet$dataTable}
 
@@ -550,123 +597,103 @@ if (length(ls(pattern = "_DT")) > 0) {
 }
 
 # or add manually
-# dataset$dataTable <- list(dataTableOne, dataTableTwo)
+# dataset$dataTable <- list(algae_DT)
 
 ```
 
-```{r dataSet$otherEntity}
 
-# add other entities if relevant
+# customUnits
 
-print(ls(pattern = "_OE"))
-
-if (length(ls(pattern = "_OE")) > 0) {
-  
-  listOfOtherEntities <- lapply(ls(pattern = "_OE"), function(OE) { get(OE) } )
-  
-  dataset$otherEntity <- listOfOtherEntities 
-  
-}
-
-# or add manually
-# dataset$otherEntity <- list(otherEntityOne, otherEntityTwo)
-
-```
-
-```{r dataSet$spatialVector}
-
-# add spatial vectors if relevant
-
-print(ls(pattern = "_SV"))
-
-if (length(ls(pattern = "_SV")) > 0) {
-  
-  listOfSpatialVectors <- lapply(ls(pattern = "_SV"), function(SV) { get(SV) } )
-  
-  dataset$spatialVector  <- listOfSpatialVectors  
-  
-}
-
-# or add manually
-# dataset$spatialVector <- list(spatialVectorOne, spatialVectorTwo)
-
-```
-
-```{r custom-units, eval=FALSE}
+```{r custom-units, eval=TRUE}
 
 custom_units <- rbind(
-  data.frame(id = "milligramPerKilogram",
-             unitType = "massPerMass",
-             parentSI = "gramsPerGram",
+  data.frame(id = "microsiemenPerCentimeter",
+             unitType = "conductance",
+             parentSI = "siemen",
              multiplierToSI = 0.000001,
-             description = "millgram of element per kilogram of material"))
+             description = "electric conductance of lake water in the units of microsiemenPerCentimeter"),
+  data.frame(id = "perCentimeter",
+             unitType = "unknown",
+             parentSI = "unknown",
+             multiplierToSI = "unknown",
+             description = "absorbance per centimeter of path length at 254 nm"),
+  data.frame(id = "literPerMilligramMeter",
+             unitType = "unknown",
+             parentSI = "unknown",
+             multiplierToSI = "unknown",
+             description = "the UV absorbance at 254 nanometers measured in inverse meters divided by the DOC concentration measured in milligrams per liter"),
+  data.frame(id = "nanogramsPerLiter",
+             unitType = "amountOfSubstanceConcentration",
+             parentSI = "kilogram/cubic meter",
+             multiplierToSI = 0.000001,
+             description = "nanograms of material per liter of solute"),
+  data.frame(id = "coloniesPer100milliliter",
+             unitType = "unknown",
+             parentSI = "unknown",
+             multiplierToSI = "unknown",
+             description = "number of bacterial colonies formed per 100 millileters of water"))
 
 unitList <- set_unitList(custom_units,
                          as_metadata = TRUE)
 
 ```
 
-```{r literature cited, eval=TRUE}
 
-# add literature cited if relevant
-
-dataset$literatureCited <- citationsAll 
-
-```
+# eml
 
 ```{r construct_eml, eval=TRUE}
 
-if(exists('unitList')) {
-  
-  eml <- EML::eml$eml(
-    access = lterAccess,
-    dataset = dataset,
-    additionalMetadata = unitList,
-    packageId = packageIdent,
-    system = "knb",
-    scope = "system"
-  )
-  
-} else {
-  
-  eml <- EML::eml$eml(
-    access = lterAccess,
-    dataset = dataset,
-    packageId = packageIdent,
-    system = "knb",
-    scope = "system"
-  )
-}
-
+eml <- create_eml()
 ```
 
-```{r write_eml}
+```{r package-details, eval=TRUE}
+
+# retrieve package details from config.yaml
+if (!file.exists("config.yaml")) {
+  stop("config.yaml not found")
+}
+packageIdent <- yaml::yaml.load_file("config.yaml")$packageIdent
+packageNum <- yaml::yaml.load_file("config.yaml")$packageNum
+```
+
+```{r write_eml, eval=TRUE}
 
 # write the eml to file
 write_eml(eml, paste0(packageIdent, ".xml"))
 ```
 
+# file placement
+
 ```{r preview_data_file_to_upload}
 
 # preview data set files that will be uploaded to S3
-list.files(pattern = paste0(projectid, "_"))
+list.files(pattern = paste0(packageNum, "_"))
+```
+
+Move data and final xml files to respective ASU locations.
+
+```{r S3_helper_functions}
+
+# functions and setting for uploading to S3
+library(aws.s3)
+source('~/Documents/localSettings/aws.s3')
 ```
 
 ```{r upload_data_S3}
 
 # upload files to S3
-lapply(list.files(pattern = paste0(projectid, "_")), dataToAmz)
+lapply(list.files(pattern = paste0(packageNum, "_")), data_to_amz)
 ```
 
 ```{r clean_up}
 
 # remove data files
-dataFilesToRemove <- dir(pattern = paste0(projectid, "_"))
+dataFilesToRemove <- dir(pattern = paste0(packageNum, "_"))
 file.remove(dataFilesToRemove)
 
 # EML to S3
 if(length(list.files(pattern = "*.xml")) == 1) {
-  emlToAmz(list.files(pattern = "*.xml")) } else {
+  eml_to_amz(list.files(pattern = "*.xml")) } else {
     print("more than one xml file found")
   }
 

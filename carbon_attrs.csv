@@ -9,11 +9,10 @@ TOC (mg/L),,milligramsPerLiter,real,,total organic carbon,numeric,0,26.17
 DOC (mg/L),,milligramsPerLiter,real,,dissolved organic carbon,numeric,0,34.5
 UVA (cm-1),,perCentimeter,real,,UV absorbance measured at 254 nanometers,numeric,0.0011,4.8
 suva (L/mg-m),,literPerMilligramMeter,real,,specific ultraviolet absorbance,numeric,0,24.126984
-Field1,,,,,,logical,,
 peak int,,dimensionless,real,,intensity of peak,numeric,1.52,255.17
 peak int WL,,nanometer,real,,wavelength at the highest peak intensity,numeric,432.78,4448.21
 int at 450,,dimensionless,real,,intensity at 450 nanometers,numeric,0.44,254.12
 int at 460,,dimensionless,real,,intensity at 460 nanometers,numeric,0.24,245.32
 int at 500,,dimensionless,real,,intensity at 500 nanometers,numeric,0.05,156.65
 FI (450/500),,dimensionless,real,,fluorescence ratio of 450/500,numeric,0,2.86
-docm comments,,,,,comment(s) about site conditions or sampling details,character,,
+docm comments,,,,comment(s) about site conditions or sampling details,comment(s) about site conditions or sampling details,character,,

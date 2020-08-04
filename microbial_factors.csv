@@ -29,3 +29,8 @@ site acronym,Middle of the Consolidated Canal,Middle of the Consolidated canal
 site acronym,South canal below CAP,South Canal below CAP Cross-connect
 site acronym,verde @ beeline,verde river at beeline highway
 site acronym,waddell canal,Waddell Canal
+mycobacterium_flag,CONT,Not Countable Due to Contamination
+mycobacterium_flag,NCDC,Not Countable Due to Contamination
+mycobacterium_flag,ND,absent/too few to count
+mycobacterium_flag,TFTC,Too Few to Count
+mycobacterium_flag,TNTC,Too Numerous to Count

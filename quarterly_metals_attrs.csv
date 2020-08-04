@@ -4,7 +4,6 @@ site location,,,,site location description,site location description,character,,
 cluster,,,,,source water,factor,,
 site acronym,,,,,site number or name,factor,,
 date,YYYY-MM-DD,,,,sample collection date,Date,,
-units,,,,,,character,,
 7Li,,microgramsPerLiter,real,,Lithium measurement by ICP-MS,numeric,9.909,196.8
 9Be,,microgramsPerLiter,real,,Beryllium measurement by ICP-MS,numeric,-0.051,0.398
 23Na,,microgramsPerLiter,natural,,Sodium measurement by ICP-MS,numeric,12440,278900
@@ -31,12 +30,3 @@ units,,,,,,character,,
 202Hg,,microgramsPerLiter,real,,Mercury measurement by ICP-MS,numeric,-0.045,3.431
 208Pb,,microgramsPerLiter,real,,Lead measurement by ICP-MS,numeric,-0.793,2.073
 238U,,microgramsPerLiter,real,,Uranium measurement by ICP-MS,numeric,0.218,5.798
-Field37,,,,,,logical,,
-Field38,,,,,,logical,,
-Field39,,,,,,logical,,
-Field40,,,,,,logical,,
-Field41,,,,,,logical,,
-Field42,,,,,,logical,,
-Field43,,,,,,logical,,
-Field44,,,,,,logical,,
-F43,,,,,,logical,,
