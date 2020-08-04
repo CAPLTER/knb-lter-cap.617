@@ -4,11 +4,11 @@ site location,,,,site location description,site location description,character,,
 cluster,,,,,source water,factor,,
 site acronym,,,,,site number or name,factor,,
 date,YYYY-MM-DD,,,,sample collection date,Date,,
-sample type,,,,,type of water sample collected (if not a field sample),character,,
+sample type,,,,type of water sample collected (if not a field sample),type of water sample collected (if not a field sample),character,,
 MIB (ng/L) ASU,,nanogramsPerLiter,real,,2-methylisoborneol,numeric,-2.393036,476.8
 geosmin (ng/L) ASU,,nanogramsPerLiter,real,,geosmin,numeric,-5.427595,445.588261
 beta-cyclocitral (ng/L),,nanogramsPerLiter,real,,beta-Cyclocitral,numeric,-4.081179,87.5
-IPMP recovery (%),,percent,real,,recovery of 2-isopropyl-3-methoxy pyrazine (IPMP used as an internal standard),numeric,56.2,147
+IPMP recovery (%),,dimensionless,real,,recovery of 2-isopropyl-3-methoxy pyrazine (IPMP used as an internal standard),numeric,56.2,147
 MIB (ng/L) Phoenix,,nanogramsPerLiter,whole,,MIB as measured by City of Phoenix officials for methods comparison,numeric,0,52
 geosmin (ng/L) Phoenix,,nanogramsPerLiter,whole,,geosmin as measured by City of Phoenix officials for methods comparison,numeric,0,50
 comments,,,,comment(s) about site conditions or sampling details,comment(s) about site conditions or sampling details,character,,
