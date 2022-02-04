@@ -1,0 +1,56 @@
+|
+  site number:
+    attributeName: site number
+    attributeDefinition: ''
+    columnClasses: factor
+  site location:
+    attributeName: site location
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''
+  cluster:
+    attributeName: cluster
+    attributeDefinition: ''
+    columnClasses: factor
+  site acronym:
+    attributeName: site acronym
+    attributeDefinition: ''
+    columnClasses: factor
+  date:
+    attributeName: date
+    attributeDefinition: ''
+    columnClasses: Date
+    formatString: YYYY-MM-DD
+  e_coli:
+    attributeName: e_coli
+    attributeDefinition: ''
+    unit: ''
+    numberType: whole
+    minimum: 0.0
+    maximum: 2580.0
+    columnClasses: numeric
+  coliform:
+    attributeName: coliform
+    attributeDefinition: ''
+    unit: ''
+    numberType: natural
+    minimum: 23.0
+    maximum: 2560.0
+    columnClasses: numeric
+  mycobacterium:
+    attributeName: mycobacterium
+    attributeDefinition: ''
+    unit: ''
+    numberType: whole
+    minimum: 0.0
+    maximum: 408.0
+    columnClasses: numeric
+  mycobacterium_flag:
+    attributeName: mycobacterium_flag
+    attributeDefinition: ''
+    columnClasses: factor
+  Comments:
+    attributeName: Comments
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''

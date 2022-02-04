@@ -7,8 +7,8 @@ date,YYYY-MM-DD,,,,sample collection date,Date,,
 sample type,,,,type of water sample collected (if not a field sample),type of water sample collected (if not a field sample),character,,
 total_nitrogen,,milligramsPerLiter,real,,total nitrogen (<=0 are below MDL),numeric,-0.00357,2.484
 total_dissolved_nitrogen,,milligramsPerLiter,real,,total dissolved nitrogen (<=0 are below MDL),numeric,-0.9267,45.7
-total_phosphorus,,nanogramsPerLiter,real,,total phosphorus (<=0 are below MDL),numeric,0,1173.7
-total_dissolved_phosphorus,,nanogramsPerLiter,real,,total dissolved phosphorus (<=0 are below MDL),numeric,0,161
+total_phosphorus,,microgramPerLiter,real,,total phosphorus (<=0 are below MDL),numeric,0,1173.7
+total_dissolved_phosphorus,,microgramPerLiter,real,,total dissolved phosphorus (<=0 are below MDL),numeric,0,161
 nitrate_nitrogen,,milligramsPerLiter,real,,nitrate-nitrogen,numeric,0,142
 ammonium_nitrogen,,milligramsPerLiter,real,,ammonium-nitrogen,numeric,0,3.9
 dissolved_organic_nitrogen,,milligramsPerLiter,real,,dissolved organic nitrogen,numeric,-0.287,3.715

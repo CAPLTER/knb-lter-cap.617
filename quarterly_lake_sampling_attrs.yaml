@@ -1,0 +1,87 @@
+|
+  site number:
+    attributeName: site number
+    attributeDefinition: 'site number or name: A designates epilimnion; B hypolimnion'
+    columnClasses: factor
+  site location:
+    attributeName: site location
+    attributeDefinition: 'site location description'
+    columnClasses: character
+    definition: ''
+  cluster:
+    attributeName: cluster
+    attributeDefinition: 'source water'
+    columnClasses: factor
+  site acronym:
+    attributeName: site acronym
+    attributeDefinition: 'site number or name'
+    columnClasses: factor
+  date:
+    attributeName: date
+    attributeDefinition: 'sample collection date'
+    columnClasses: Date
+    formatString: YYYY-MM-DD
+  geosmin (ng/L):
+    attributeName: geosmin (ng/L)
+    attributeDefinition: 'geosmin'
+    unit: 'nanogramsPerLiter'
+    numberType: real
+    minimum: -2.3801673
+    maximum: 73.7930616
+    columnClasses: numeric
+  Conductance (us/cm):
+    attributeName: Conductance (us/cm)
+    attributeDefinition: specific conductance''
+    unit: 'microsiemensPerCentimeter'
+    numberType: natural
+    minimum: 844.0
+    maximum: 2300.0
+    columnClasses: numeric
+  TP (ug/L):
+    attributeName: TP (ug/L)
+    attributeDefinition: 'total phosphorus'
+    unit: 'microgramsPerLiter'
+    numberType: real
+    minimum: -0.1
+    maximum: 246.0
+    columnClasses: numeric
+  DOC (mg/L):
+    attributeName: DOC (mg/L)
+    attributeDefinition: 'dissolved organic carbon'
+    unit: 'milligramsPerLiter'
+    numberType: real
+    minimum: 2.359
+    maximum: 14.27
+    columnClasses: numeric
+  UVA (cm-1):
+    attributeName: UVA (cm-1)
+    attributeDefinition: 'UV absorbance measured at 254 nanometers'
+    unit: 'perCentimeter'
+    numberType: real
+    minimum: 0.03
+    maximum: 0.8
+    columnClasses: numeric
+  Suva(L/mg-m):
+    attributeName: Suva(L/mg-m)
+    attributeDefinition: 'specific ultraviolet absorbance'
+    unit: 'literPerMilligramMeter'
+    numberType: real
+    minimum: 0.5
+    maximum: 4.0
+    columnClasses: numeric
+  TDN (mg/L):
+    attributeName: TDN (mg/L)
+    attributeDefinition: 'total dissolved nitrogen'
+    unit: 'milligramsPerLiter'
+    numberType: real
+    minimum: 0.0
+    maximum: 1.433
+    columnClasses: numeric
+  MIB (ng/L):
+    attributeName: MIB (ng/L)
+    attributeDefinition: '2-methylisoborneol'
+    unit: 'nanogramsPerLiter'
+    numberType: real
+    minimum: -1.2753928
+    maximum: 56.8
+    columnClasses: numeric

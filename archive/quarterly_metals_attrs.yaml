@@ -1,0 +1,231 @@
+|
+  site number:
+    attributeName: site number
+    attributeDefinition: ''
+    columnClasses: factor
+  site location:
+    attributeName: site location
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''
+  cluster:
+    attributeName: cluster
+    attributeDefinition: ''
+    columnClasses: factor
+  site acronym:
+    attributeName: site acronym
+    attributeDefinition: ''
+    columnClasses: factor
+  date:
+    attributeName: date
+    attributeDefinition: ''
+    columnClasses: Date
+    formatString: YYYY-MM-DD
+  7Li:
+    attributeName: 7Li
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 9.909
+    maximum: 196.8
+    columnClasses: numeric
+  9Be:
+    attributeName: 9Be
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -0.051
+    maximum: 0.398
+    columnClasses: numeric
+  23Na:
+    attributeName: 23Na
+    attributeDefinition: ''
+    unit: ''
+    numberType: natural
+    minimum: 12440.0
+    maximum: 278900.0
+    columnClasses: numeric
+  24Mg:
+    attributeName: 24Mg
+    attributeDefinition: ''
+    unit: ''
+    numberType: natural
+    minimum: 8994.0
+    maximum: 29900.0
+    columnClasses: numeric
+  27Al:
+    attributeName: 27Al
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -3.141
+    maximum: 1385.0
+    columnClasses: numeric
+  39K:
+    attributeName: 39K
+    attributeDefinition: ''
+    unit: ''
+    numberType: natural
+    minimum: 1811.0
+    maximum: 14420.0
+    columnClasses: numeric
+  44Ca:
+    attributeName: 44Ca
+    attributeDefinition: ''
+    unit: ''
+    numberType: natural
+    minimum: 21180.0
+    maximum: 104600.0
+    columnClasses: numeric
+  51V:
+    attributeName: 51V
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 1.091
+    maximum: 8.879
+    columnClasses: numeric
+  52Cr:
+    attributeName: 52Cr
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -0.214
+    maximum: 5.566
+    columnClasses: numeric
+  55Mn:
+    attributeName: 55Mn
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.013
+    maximum: 443.1
+    columnClasses: numeric
+  56Fe:
+    attributeName: 56Fe
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -1.916
+    maximum: 1217.0
+    columnClasses: numeric
+  59Co:
+    attributeName: 59Co
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -0.059
+    maximum: 1.068
+    columnClasses: numeric
+  60Ni:
+    attributeName: 60Ni
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -9.656
+    maximum: 3.676
+    columnClasses: numeric
+  65Cu:
+    attributeName: 65Cu
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -2.519
+    maximum: 84.52
+    columnClasses: numeric
+  66Zn:
+    attributeName: 66Zn
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -545.4
+    maximum: 83.33
+    columnClasses: numeric
+  75As:
+    attributeName: 75As
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 1.93
+    maximum: 18.35
+    columnClasses: numeric
+  82Se:
+    attributeName: 82Se
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -2.522
+    maximum: 178.6
+    columnClasses: numeric
+  88Sr:
+    attributeName: 88Sr
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 293.7
+    maximum: 1428.0
+    columnClasses: numeric
+  95Mo:
+    attributeName: 95Mo
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.648
+    maximum: 8.292
+    columnClasses: numeric
+  107Ag:
+    attributeName: 107Ag
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -0.088
+    maximum: 2.709
+    columnClasses: numeric
+  111Cd:
+    attributeName: 111Cd
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -0.029
+    maximum: 2.597
+    columnClasses: numeric
+  121Sb:
+    attributeName: 121Sb
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.034
+    maximum: 1.564
+    columnClasses: numeric
+  138Ba:
+    attributeName: 138Ba
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 32.44
+    maximum: 296.6
+    columnClasses: numeric
+  202Hg:
+    attributeName: 202Hg
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -0.045
+    maximum: 3.431
+    columnClasses: numeric
+  208Pb:
+    attributeName: 208Pb
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -0.793
+    maximum: 2.073
+    columnClasses: numeric
+  238U:
+    attributeName: 238U
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.218
+    maximum: 5.798
+    columnClasses: numeric

@@ -1,0 +1,96 @@
+|
+  site number:
+    attributeName: site number
+    attributeDefinition: ''
+    columnClasses: factor
+  site location:
+    attributeName: site location
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''
+  cluster:
+    attributeName: cluster
+    attributeDefinition: ''
+    columnClasses: factor
+  site acronym:
+    attributeName: site acronym
+    attributeDefinition: ''
+    columnClasses: factor
+  date:
+    attributeName: date
+    attributeDefinition: ''
+    columnClasses: Date
+    formatString: YYYY-MM-DD
+  sample type:
+    attributeName: sample type
+    attributeDefinition: ''
+    columnClasses: factor
+  conductance (uS/cm):
+    attributeName: conductance (uS/cm)
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.0
+    maximum: 9009.0
+    columnClasses: numeric
+  chl A (ug/L):
+    attributeName: chl A (ug/L)
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.0
+    maximum: 66.9
+    columnClasses: numeric
+  phaeophytin (ug/L):
+    attributeName: phaeophytin (ug/L)
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.0
+    maximum: 14.35125
+    columnClasses: numeric
+  phaeophytin chl A (ug/L):
+    attributeName: phaeophytin chl A (ug/L)
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.0
+    maximum: 71.423
+    columnClasses: numeric
+  chlorophyta (organisms/ml):
+    attributeName: chlorophyta (organisms/ml)
+    attributeDefinition: ''
+    unit: ''
+    numberType: whole
+    minimum: 0.0
+    maximum: 5818.0
+    columnClasses: numeric
+  cyanophyta (organisms/ml):
+    attributeName: cyanophyta (organisms/ml)
+    attributeDefinition: ''
+    unit: ''
+    numberType: whole
+    minimum: 0.0
+    maximum: 439.0
+    columnClasses: numeric
+  bacillariophyta (organisms/ml):
+    attributeName: bacillariophyta (organisms/ml)
+    attributeDefinition: ''
+    unit: ''
+    numberType: whole
+    minimum: 0.0
+    maximum: 5030.0
+    columnClasses: numeric
+  total (organisms/ml):
+    attributeName: total (organisms/ml)
+    attributeDefinition: ''
+    unit: ''
+    numberType: whole
+    minimum: 0.0
+    maximum: 5919.0
+    columnClasses: numeric
+  algae comments:
+    attributeName: algae comments
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''

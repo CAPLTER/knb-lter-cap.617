@@ -1,0 +1,112 @@
+|
+  site number:
+    attributeName: site number
+    attributeDefinition: ''
+    columnClasses: factor
+  site location:
+    attributeName: site location
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''
+  cluster:
+    attributeName: cluster
+    attributeDefinition: ''
+    columnClasses: factor
+  site acronym:
+    attributeName: site acronym
+    attributeDefinition: ''
+    columnClasses: factor
+  date:
+    attributeName: date
+    attributeDefinition: ''
+    columnClasses: Date
+    formatString: YYYY-MM-DD
+  sample type:
+    attributeName: sample type
+    attributeDefinition: ''
+    columnClasses: factor
+  TOC (mg/L):
+    attributeName: TOC (mg/L)
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.0
+    maximum: 26.17
+    columnClasses: numeric
+  DOC (mg/L):
+    attributeName: DOC (mg/L)
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.0
+    maximum: 34.5
+    columnClasses: numeric
+  UVA (cm-1):
+    attributeName: UVA (cm-1)
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.0011
+    maximum: 4.8
+    columnClasses: numeric
+  suva (L/mg-m):
+    attributeName: suva (L/mg-m)
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.0
+    maximum: 24.1269841
+    columnClasses: numeric
+  peak int:
+    attributeName: peak int
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 1.52
+    maximum: 255.17
+    columnClasses: numeric
+  peak int WL:
+    attributeName: peak int WL
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 432.78
+    maximum: 4448.21
+    columnClasses: numeric
+  int at 450:
+    attributeName: int at 450
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.44
+    maximum: 254.12
+    columnClasses: numeric
+  int at 460:
+    attributeName: int at 460
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.24
+    maximum: 245.32
+    columnClasses: numeric
+  int at 500:
+    attributeName: int at 500
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.05
+    maximum: 156.65
+    columnClasses: numeric
+  FI (450/500):
+    attributeName: FI (450/500)
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.0
+    maximum: 2.86
+    columnClasses: numeric
+  docm comments:
+    attributeName: docm comments
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''

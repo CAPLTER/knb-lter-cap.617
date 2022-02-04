@@ -1,0 +1,81 @@
+|
+  site number:
+    attributeName: site number
+    attributeDefinition: ''
+    columnClasses: factor
+  site location:
+    attributeName: site location
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''
+  cluster:
+    attributeName: cluster
+    attributeDefinition: ''
+    columnClasses: factor
+  site acronym:
+    attributeName: site acronym
+    attributeDefinition: ''
+    columnClasses: factor
+  date:
+    attributeName: date
+    attributeDefinition: ''
+    columnClasses: Date
+    formatString: YYYY-MM-DD
+  sample type:
+    attributeName: sample type
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''
+  MIB (ng/L) ASU:
+    attributeName: MIB (ng/L) ASU
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -2.393036
+    maximum: 476.8
+    columnClasses: numeric
+  geosmin (ng/L) ASU:
+    attributeName: geosmin (ng/L) ASU
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -5.4275948
+    maximum: 445.588261
+    columnClasses: numeric
+  beta-cyclocitral (ng/L):
+    attributeName: beta-cyclocitral (ng/L)
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -4.0811791
+    maximum: 87.5
+    columnClasses: numeric
+  IPMP recovery (%):
+    attributeName: IPMP recovery (%)
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 56.2
+    maximum: 147.0
+    columnClasses: numeric
+  MIB (ng/L) Phoenix:
+    attributeName: MIB (ng/L) Phoenix
+    attributeDefinition: ''
+    unit: ''
+    numberType: whole
+    minimum: 0.0
+    maximum: 52.0
+    columnClasses: numeric
+  geosmin (ng/L) Phoenix:
+    attributeName: geosmin (ng/L) Phoenix
+    attributeDefinition: ''
+    unit: ''
+    numberType: whole
+    minimum: 0.0
+    maximum: 50.0
+    columnClasses: numeric
+  comments:
+    attributeName: comments
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''

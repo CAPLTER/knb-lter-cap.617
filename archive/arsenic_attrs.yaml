@@ -1,0 +1,43 @@
+|
+  site number:
+    attributeName: site number
+    attributeDefinition: ''
+    columnClasses: factor
+  site location:
+    attributeName: site location
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''
+  cluster:
+    attributeName: cluster
+    attributeDefinition: ''
+    columnClasses: factor
+  site acronym:
+    attributeName: site acronym
+    attributeDefinition: ''
+    columnClasses: factor
+  arsenic (ug/L):
+    attributeName: arsenic (ug/L)
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.0
+    maximum: 32.6
+    columnClasses: numeric
+  perchlorate (ug/L):
+    attributeName: perchlorate (ug/L)
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.0
+    maximum: 3.77
+    columnClasses: numeric
+  date:
+    attributeName: date
+    attributeDefinition: ''
+    columnClasses: Date
+    formatString: YYYY-MM-DD
+  BDL:
+    attributeName: BDL
+    attributeDefinition: ''
+    columnClasses: factor

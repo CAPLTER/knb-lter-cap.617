@@ -1,0 +1,271 @@
+|
+  - attribute:
+      attributeName: site number
+      levels:
+      - code: 16th St.
+        definition: metadata_not_provided
+      - code: 19th Av.
+        definition: metadata_not_provided
+      - code: AN IN
+        definition: metadata_not_provided
+      - code: CH IN
+        definition: metadata_not_provided
+      - code: Cons
+        definition: metadata_not_provided
+      - code: field_blank
+        definition: metadata_not_provided
+      - code: Glendale In
+        definition: metadata_not_provided
+      - code: Glendale Out
+        definition: metadata_not_provided
+      - code: Green In
+        definition: metadata_not_provided
+      - code: Green Out
+        definition: metadata_not_provided
+      - code: Havasu 1
+        definition: metadata_not_provided
+      - code: Havasu 2
+        definition: metadata_not_provided
+      - code: HOC
+        definition: metadata_not_provided
+      - code: HTC
+        definition: metadata_not_provided
+      - code: Hwy 87
+        definition: metadata_not_provided
+      - code: lab_blank
+        definition: metadata_not_provided
+      - code: Mesa
+        definition: metadata_not_provided
+      - code: Mesa Turnout
+        definition: metadata_not_provided
+      - code: MOC
+        definition: metadata_not_provided
+      - code: NP In
+        definition: metadata_not_provided
+      - code: NP Out
+        definition: metadata_not_provided
+      - code: Pima
+        definition: metadata_not_provided
+      - code: R1
+        definition: metadata_not_provided
+      - code: R10
+        definition: metadata_not_provided
+      - code: R11
+        definition: metadata_not_provided
+      - code: R12
+        definition: metadata_not_provided
+      - code: R13
+        definition: metadata_not_provided
+      - code: R14
+        definition: metadata_not_provided
+      - code: R15
+        definition: metadata_not_provided
+      - code: R16
+        definition: metadata_not_provided
+      - code: R17
+        definition: metadata_not_provided
+      - code: R18
+        definition: metadata_not_provided
+      - code: R19
+        definition: metadata_not_provided
+      - code: R20
+        definition: metadata_not_provided
+      - code: R21
+        definition: metadata_not_provided
+      - code: R22
+        definition: metadata_not_provided
+      - code: R25
+        definition: metadata_not_provided
+      - code: R26
+        definition: metadata_not_provided
+      - code: R2A
+        definition: metadata_not_provided
+      - code: R2B
+        definition: metadata_not_provided
+      - code: R3
+        definition: metadata_not_provided
+      - code: R4
+        definition: metadata_not_provided
+      - code: R4-Dup
+        definition: metadata_not_provided
+      - code: R5
+        definition: metadata_not_provided
+      - code: R5dup
+        definition: metadata_not_provided
+      - code: R6A
+        definition: metadata_not_provided
+      - code: R6B
+        definition: metadata_not_provided
+      - code: R7
+        definition: metadata_not_provided
+      - code: R8
+        definition: metadata_not_provided
+      - code: R9A
+        definition: metadata_not_provided
+      - code: R9A-Dup
+        definition: metadata_not_provided
+      - code: R9B
+        definition: metadata_not_provided
+      - code: Roos In
+        definition: metadata_not_provided
+      - code: Roosvelt
+        definition: metadata_not_provided
+      - code: Salt Gila
+        definition: metadata_not_provided
+      - code: Scotts
+        definition: metadata_not_provided
+      - code: SOCA
+        definition: metadata_not_provided
+      - code: SPT In
+        definition: metadata_not_provided
+      - code: SPT Out
+        definition: metadata_not_provided
+      - code: UH In
+        definition: metadata_not_provided
+      - code: UH Out
+        definition: metadata_not_provided
+  - attribute:
+      attributeName: cluster
+      levels:
+      - code: az canal
+        definition: metadata_not_provided
+      - code: cap
+        definition: metadata_not_provided
+      - code: salt
+        definition: metadata_not_provided
+      - code: srp
+        definition: metadata_not_provided
+      - code: tempe
+        definition: metadata_not_provided
+      - code: verde
+        definition: metadata_not_provided
+  - attribute:
+      attributeName: site acronym
+      levels:
+      - code: Above Roosevelt
+        definition: metadata_not_provided
+      - code: az canal
+        definition: metadata_not_provided
+      - code: az canal @ 16th st.
+        definition: metadata_not_provided
+      - code: az canal @ 19 ave.
+        definition: metadata_not_provided
+      - code: az canal @ 19th av.
+        definition: metadata_not_provided
+      - code: az canal @ 56th st.
+        definition: metadata_not_provided
+      - code: az canal @ central ave.
+        definition: metadata_not_provided
+      - code: az canal @ deer valley
+        definition: metadata_not_provided
+      - code: az canal @ hwy 87
+        definition: metadata_not_provided
+      - code: az canal @ Mesa
+        definition: metadata_not_provided
+      - code: az canal @ pima
+        definition: metadata_not_provided
+      - code: az canal @ scotts.
+        definition: metadata_not_provided
+      - code: az canal @ squaw peak
+        definition: metadata_not_provided
+      - code: az canal blw cap
+        definition: metadata_not_provided
+      - code: az canal inflow
+        definition: metadata_not_provided
+      - code: bartlett-epi
+        definition: metadata_not_provided
+      - code: bartlett-hypo
+        definition: metadata_not_provided
+      - code: cap @ 7th st
+        definition: metadata_not_provided
+      - code: cap @ 7th st dup
+        definition: metadata_not_provided
+      - code: cap @ x con
+        definition: metadata_not_provided
+      - code: cap-siphon
+        definition: metadata_not_provided
+      - code: deer valley-treated
+        definition: metadata_not_provided
+      - code: Glen In
+        definition: metadata_not_provided
+      - code: Glen Out
+        definition: metadata_not_provided
+      - code: Green In
+        definition: metadata_not_provided
+      - code: Green Out
+        definition: metadata_not_provided
+      - code: Havasu 1
+        definition: metadata_not_provided
+      - code: Havasu 2
+        definition: metadata_not_provided
+      - code: head of tempe canal
+        definition: metadata_not_provided
+      - code: HOC
+        definition: metadata_not_provided
+      - code: MOC
+        definition: metadata_not_provided
+      - code: MTO
+        definition: metadata_not_provided
+      - code: North plant inlet
+        definition: metadata_not_provided
+      - code: north plant outlet
+        definition: metadata_not_provided
+      - code: pleasant-epi
+        definition: metadata_not_provided
+      - code: pleasant-hypo
+        definition: metadata_not_provided
+      - code: s canal @ val vista
+        definition: metadata_not_provided
+      - code: saguaro-epi
+        definition: metadata_not_provided
+      - code: saguaro-epi dup
+        definition: metadata_not_provided
+      - code: saguaro-hypo
+        definition: metadata_not_provided
+      - code: salt abv saguaro
+        definition: metadata_not_provided
+      - code: salt blw saguaro
+        definition: metadata_not_provided
+      - code: SGPS
+        definition: metadata_not_provided
+      - code: South canal below CAP
+        definition: metadata_not_provided
+      - code: squaw peak-treated
+        definition: metadata_not_provided
+      - code: SRNR
+        definition: metadata_not_provided
+      - code: STP In
+        definition: metadata_not_provided
+      - code: STP Out
+        definition: metadata_not_provided
+      - code: Union Hills Inlet
+        definition: metadata_not_provided
+      - code: Union Hills Outlet
+        definition: metadata_not_provided
+      - code: val vista-treated
+        definition: metadata_not_provided
+      - code: verde @ beeline
+        definition: metadata_not_provided
+      - code: verde abv bartlett
+        definition: metadata_not_provided
+      - code: verde abv horseshoe
+        definition: metadata_not_provided
+      - code: verde blw barlett
+        definition: metadata_not_provided
+      - code: waddell canal
+        definition: metadata_not_provided
+  - attribute:
+      attributeName: sample type
+      levels:
+      - code: field blank
+        definition: metadata_not_provided
+      - code: field duplicate
+        definition: metadata_not_provided
+      - code: had white ppt
+        definition: metadata_not_provided
+      - code: has white ppt
+        definition: metadata_not_provided
+      - code: lab blank
+        definition: metadata_not_provided
+      - code: only field duplicate
+        definition: metadata_not_provided

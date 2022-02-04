@@ -1,0 +1,89 @@
+|
+  site number:
+    attributeName: site number
+    attributeDefinition: ''
+    columnClasses: factor
+  site location:
+    attributeName: site location
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''
+  cluster:
+    attributeName: cluster
+    attributeDefinition: ''
+    columnClasses: factor
+  site acronym:
+    attributeName: site acronym
+    attributeDefinition: ''
+    columnClasses: factor
+  date:
+    attributeName: date
+    attributeDefinition: ''
+    columnClasses: Date
+    formatString: YYYY-MM-DD
+  sample type:
+    attributeName: sample type
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''
+  total_nitrogen:
+    attributeName: total_nitrogen
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -0.016
+    maximum: 2.484
+    columnClasses: numeric
+  total_dissolved_nitrogen:
+    attributeName: total_dissolved_nitrogen
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -0.9267
+    maximum: 45.7
+    columnClasses: numeric
+  total_phosphorus:
+    attributeName: total_phosphorus
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.0
+    maximum: 1173.7
+    columnClasses: numeric
+  total_dissolved_phosphorus:
+    attributeName: total_dissolved_phosphorus
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.0
+    maximum: 161.0
+    columnClasses: numeric
+  nitrate_nitrogen:
+    attributeName: nitrate_nitrogen
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.0
+    maximum: 142.0
+    columnClasses: numeric
+  ammonium_nitrogen:
+    attributeName: ammonium_nitrogen
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.0
+    maximum: 3.9
+    columnClasses: numeric
+  dissolved_organic_nitrogen:
+    attributeName: dissolved_organic_nitrogen
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -0.287
+    maximum: 3.715
+    columnClasses: numeric
+  nutrient comments:
+    attributeName: nutrient comments
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''

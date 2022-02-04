@@ -1,0 +1,73 @@
+|
+  site number:
+    attributeName: site number
+    attributeDefinition: ''
+    columnClasses: factor
+  site location:
+    attributeName: site location
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''
+  cluster:
+    attributeName: cluster
+    attributeDefinition: ''
+    columnClasses: factor
+  site acronym:
+    attributeName: site acronym
+    attributeDefinition: ''
+    columnClasses: factor
+  date:
+    attributeName: date
+    attributeDefinition: ''
+    columnClasses: Date
+    formatString: YYYY-MM-DD
+  depth (m):
+    attributeName: depth (m)
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: -0.1
+    maximum: 161.9
+    columnClasses: numeric
+  T (C):
+    attributeName: T (C)
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 1.7
+    maximum: 232.2
+    columnClasses: numeric
+  DO (mg/l):
+    attributeName: DO (mg/l)
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.0
+    maximum: 922.0
+    columnClasses: numeric
+  pH:
+    attributeName: pH
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 1.0
+    maximum: 805.0
+    columnClasses: numeric
+  Secchi Disk (m):
+    attributeName: Secchi Disk (m)
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.15
+    maximum: 14.26
+    columnClasses: numeric
+  samples collected:
+    attributeName: samples collected
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''
+  comments:
+    attributeName: comments
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''
