@@ -1,18 +1,18 @@
 ID,site number,site location,cluster name,site acronym,date,sample at lab?,pre-chlorination?,conc CL2 (mg/L),duration CL2,add CuSO4?,conc CuSO4 (mg/L),duration CuSO4,Alum in pre-sed?,conc Alum (mg/L),duration Alum,Alum dose - floc (mg/L),pH in floc,pH adjuster?,PAC added?,conc PAC (mg/L),duration PAC,wtp comments
-1,"R15","Squaw Peak WTP treated water","srp","squaw peak-treated","10/13/99 00:00:00","yes","no",,,"no",,,"no",,,1.6000000000000000e+01,7.1799999999999997e+00,"sulfuric acid","yes",1.3000000000000000e+01,"starting","PAC was added in morning"
-2,"R17","Deer Valley WTP treated water","srp","deer valley-treated","10/13/99 00:00:00","yes","no",,,"no",,,"yes",1.7000000000000000e+01,,5.0000000000000000e+00,7.5499999999999998e+00,,"no",,,"smell mib/geo at sample location in lab"
+1,"R15","Squaw Peak WTP treated water","srp","squaw peak-treated","10/13/99 00:00:00","yes","no",,,"no",,,"no",,,16,7.18,"sulfuric acid","yes",13,"starting","PAC was added in morning"
+2,"R17","Deer Valley WTP treated water","srp","deer valley-treated","10/13/99 00:00:00","yes","no",,,"no",,,"yes",17,,5,7.55,,"no",,,"smell mib/geo at sample location in lab"
 3,"R19","Val Vista WTP treated water","srp","val vista-treated","10/13/99 00:00:00","outlet from sed basin, ICR3",,,,,,,,,,,,,,,,
-5,"R17","Deer Valley WTP treated water","srp","deer valley-treated","11/17/99 00:00:00",,"no",,,"no",,,,,,7.0000000000000000e+00,7.8499999999999996e+00,"no","no",,,
+5,"R17","Deer Valley WTP treated water","srp","deer valley-treated","11/17/99 00:00:00",,"no",,,"no",,,,,,7,7.85,"no","no",,,
 6,"R19","Val Vista WTP treated water","srp","val vista-treated","11/17/99 00:00:00",,,,,,,,,,,,,,,,,"south canal shut-down"
-7,"R15","Squaw Peak WTP treated water","srp","squaw peak-treated","12/16/99 00:00:00",,"yes",,,"no",,,"yes",,,,7.7599999999999998e+00,"yes","no",,,
-8,"R17","Deer Valley WTP treated water","srp","deer valley-treated","12/16/99 00:00:00",,"yes",,,"no",,,"yes",1.8000000000000000e+01,,1.0000000000000000e+01,7.7999999999999998e+00,"no","no",,,
+7,"R15","Squaw Peak WTP treated water","srp","squaw peak-treated","12/16/99 00:00:00",,"yes",,,"no",,,"yes",,,,7.76,"yes","no",,,
+8,"R17","Deer Valley WTP treated water","srp","deer valley-treated","12/16/99 00:00:00",,"yes",,,"no",,,"yes",18,,10,7.8,"no","no",,,
 9,"R19","Val Vista WTP treated water","srp","val vista-treated","12/16/99 00:00:00",,,,,,,,,,,,,,,,,"south canal shut-down"
 10,"R15","Squaw Peak WTP treated water","srp","squaw peak-treated","01/11/00 00:00:00",,,,,,,,,,,,,,,,,"az canal shut-down"
 11,"R17","Deer Valley WTP treated water","srp","deer valley-treated","01/11/00 00:00:00",,,,,,,,,,,,,,,,,"az canal shut-down"
-12,"R19","Val Vista WTP treated water","srp","val vista-treated","01/11/00 00:00:00",,,,,"no",,,,,,2.0000000000000000e+01,8.5000000000000000e+00,"no","no",,,"mostly verde river rather than salt river"
+12,"R19","Val Vista WTP treated water","srp","val vista-treated","01/11/00 00:00:00",,,,,"no",,,,,,20,8.5,"no","no",,,"mostly verde river rather than salt river"
 13,"R15","Squaw Peak WTP treated water","srp","squaw peak-treated","02/16/00 00:00:00",,,,,,,,,,,,,,,,,"wtp off-line, no samples taken"
 14,"R17","Deer Valley WTP treated water","srp","deer valley-treated","02/16/00 00:00:00",,,,,,,,,,,,,,,,,"wtp off-line, no samples taken"
-15,"R19","Val Vista WTP treated water","srp","val vista-treated","02/16/00 00:00:00","doc, mib, geo","no",,,"no",,,"no",,,2.2000000000000000e+01,,"no","no",,,"alum and polymer in floc basins"
+15,"R19","Val Vista WTP treated water","srp","val vista-treated","02/16/00 00:00:00","doc, mib, geo","no",,,"no",,,"no",,,22,,"no","no",,,"alum and polymer in floc basins"
 16,"R15","Squaw Peak WTP treated water","srp","squaw peak-treated","03/15/00 00:00:00","no, sedimentation basin",,,,,,,,,,,,,,,,
 17,"R17","Deer Valley WTP treated water","srp","deer valley-treated","03/15/00 00:00:00","no, sedimentation basin",,,,,,,,,,,,,,,,
 18,"R19","Val Vista WTP treated water","srp","val vista-treated","03/15/00 00:00:00","no, sedimentation basin east",,,,,,,,,,,,,,,,
@@ -22,4 +22,4 @@ ID,site number,site location,cluster name,site acronym,date,sample at lab?,pre-c
 22,"R15","Squaw Peak WTP treated water","srp","squaw peak-treated","05/17/00 00:00:00","no, sedimentation basin",,,,,,,,,,,,,,,,
 23,"R17","Deer Valley WTP treated water","srp","deer valley-treated","05/17/00 00:00:00","no, sedimentation basin",,,,,,,,,,,,,,,,
 24,"R19","Val Vista WTP treated water","srp","val vista-treated","05/17/00 00:00:00","no, sedimentation basin east",,,,,,,,,,,,,,,,
-4,"R15","Squaw Peak WTP treated water","srp","squaw peak-treated","11/17/99 00:00:00",,"yes",,,"no",,,"no",,,1.6000000000000000e+01,7.2999999999999998e+00,"H2SO4","no",,,
+4,"R15","Squaw Peak WTP treated water","srp","squaw peak-treated","11/17/99 00:00:00",,"yes",,,"no",,,"no",,,16,7.3,"H2SO4","no",,,

@@ -37,8 +37,6 @@ algae <- readr::read_csv("data/Conductivity.csv") |>
   dplyr::arrange(date, `site number`) |>
   dplyr::filter(!is.na(date))
 
-dplyr::glimpse(algae)
-
 # try({
 #   capeml::write_attributes(algae, overwrite = FALSE)
 #   capeml::write_factors(algae, overwrite = FALSE)
@@ -84,8 +82,6 @@ algal_byproducts <- readr::read_csv(
   dplyr::arrange(date, `site number`) |>
   dplyr::filter(!is.na(date))
 
-dplyr::glimpse(algal_byproducts)
-
 # try({
 #   capeml::write_attributes(algal_byproducts, overwrite = FALSE)
 #   capeml::write_factors(algal_byproducts, overwrite = FALSE)
@@ -105,7 +101,7 @@ algal_byproducts_DT <- capeml::create_dataTable(
 
 ```{r arsenic, eval=TRUE}
 
-# complicated import and mutate actions to accomodate text (<2.0) in the
+# complicated import and mutate actions to accommodate text (<2.0) in the
 # arsenic concentration column
 
 arsenic <- readr::read_csv(
@@ -154,8 +150,6 @@ dplyr::select(-`ID`, -`month/date`) |>
 dplyr::arrange(date, `site number`) |>
 dplyr::filter(!is.na(date))
 
-dplyr::glimpse(arsenic)
-
 # try({
 #   capeml::write_attributes(arsenic, overwrite = FALSE)
 #   capeml::write_factors(arsenic, overwrite = FALSE)
@@ -190,8 +184,6 @@ carbon <- readr::read_csv("data/doc_month.csv") |>
   dplyr::select(-`ID`, -`month`, -Field1) |>
   dplyr::arrange(date, `site number`) |>
   dplyr::filter(!is.na(date))
-
-dplyr::glimpse(carbon)
 
 # try({
 #   capeml::write_attributes(carbon, overwrite = FALSE)
@@ -319,8 +311,6 @@ microbial <- readr::read_csv("data/Microbial.csv") |>
   dplyr::filter(!is.na(date)) |>
   dplyr::arrange(date, `site number`)
 
-dplyr::glimpse(microbial)
-
 # try({
 #   capeml::write_attributes(microbial, overwrite = FALSE)
 #   capeml::write_factors(microbial, overwrite = FALSE)
@@ -388,8 +378,6 @@ dplyr::select(-`ID`, -`month`) |>
 dplyr::arrange(date, `site number`) |>
 dplyr::filter(!is.na(date))
 
-dplyr::glimpse(nutrients)
-
 # try({
 #   capeml::write_attributes(nutrients, overwrite = FALSE)
 #   capeml::write_factors(nutrients, overwrite = FALSE)
@@ -434,8 +422,6 @@ quarterly_lake_sampling <- readr::read_csv("data/Quarterly Lake Sampling.csv") |
   dplyr::arrange(date, `site number`) |>
   dplyr::filter(!is.na(date))
 
-dplyr::glimpse(quarterly_lake_sampling)
-
 # try({
 #   capeml::write_attributes(quarterly_lake_sampling, overwrite = FALSE)
 #   capeml::write_factors(quarterly_lake_sampling, overwrite = FALSE)
@@ -478,8 +464,6 @@ quarterly_metals <- readr::read_csv("data/Quarterly Metals.csv") |>
   dplyr::select(-`ID`, -units) |>
   dplyr::arrange(date, `site number`) |>
   dplyr::filter(!is.na(date))
-
-dplyr::glimpse(quarterly_metals)
 
 # try({
 #   capeml::write_attributes(quarterly_metals, overwrite = FALSE)
@@ -532,8 +516,6 @@ sampling_locations$latitude  = measurements::conv_unit(sampling_locations$latitu
 
 sampling_locations$longitude <- as.numeric(as.character(sampling_locations$longitude)) * -1
 sampling_locations$latitude  <- as.numeric(as.character(sampling_locations$latitude))
-
-dplyr::glimpse(sampling_locations)
 
 # try({
 #   capeml::write_attributes(sampling_locations, overwrite = FALSE)
@@ -613,12 +595,10 @@ allDates <- rbind(
 begindate <- as.character(min(allDates$date))
 enddate   <- as.character(max(allDates$date))
 
-geo_desc  <- yaml::yaml.load_file("config.yaml")$geographicCoverage$geographicDescription
-
 coverage <- EML::set_coverage(
   begin                 = begindate,
   end                   = enddate,
-  geographicDescription = geo_desc,
+  geographicDescription = yaml::yaml.load_file("config.yaml")$geographic_description,
   west                  = min(sampling_locations[["longitude"]], na.rm = TRUE),
   east                  = max(sampling_locations[["longitude"]], na.rm = TRUE),
   north                 = max(sampling_locations[["latitude"]], na.rm = TRUE),

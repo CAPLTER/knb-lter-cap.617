@@ -1,8 +1,7 @@
-packageNum: 617
-packageIdent: knb-lter-cap.617.4
+scope: knb-lter-cap
+identifier: 617
 baseURL: https://data.gios.asu.edu/datasets/cap/
 project: lter
 title: 'Regional drinking water quality monitoring program: long-term monitoring of water quality in select canals, reservoirs, and treatment plants of the greater Phoenix, Arizona metropolitan area drinking water system, ongoing since 1998'
 maintenance: regular
-geographicCoverage:
-  geographicDescription: 'canals, water treatment plants, and reservoirs in and near the greater Phoenix, Arizona, USA metropolitan area'
+geographic_description: 'canals, water treatment plants, and reservoirs in and near the greater Phoenix, Arizona, USA metropolitan area'
