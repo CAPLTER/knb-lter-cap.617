@@ -1,0 +1,47 @@
+|
+  site number:
+    attributeName: site number
+    attributeDefinition: site number or name (A designates epilimnion, B hypolimnion)
+    columnClasses: factor
+  site location:
+    attributeName: site location
+    attributeDefinition: site location description
+    definition: site location description
+    columnClasses: character
+  cluster:
+    attributeName: cluster
+    attributeDefinition: source water
+    columnClasses: factor
+  site acronym:
+    attributeName: site acronym
+    attributeDefinition: site number or name
+    columnClasses: factor
+  date:
+    attributeName: date
+    attributeDefinition: GPS collection date
+    formatString: YYYY-MM-DD
+    columnClasses: Date
+  longitude:
+    attributeName: longitude
+    attributeDefinition: longitude
+    unit: degree
+    numberType: real
+    minimum: -112.2862333
+    maximum: -111.09375
+    columnClasses: numeric
+  latitude:
+    attributeName: latitude
+    attributeDefinition: latitude
+    unit: degree
+    numberType: real
+    minimum: 33.5143
+    maximum: 34.0
+    columnClasses: numeric
+  altitude (ft):
+    attributeName: altitude (ft)
+    attributeDefinition: altitude
+    unit: meter
+    numberType: natural
+    minimum: 1493.0
+    maximum: 2000.0
+    columnClasses: numeric

@@ -1,0 +1,56 @@
+|
+  site number:
+    attributeName: site number
+    attributeDefinition: site number or name (A designates epilimnion, B hypolimnion)
+    columnClasses: factor
+  site location:
+    attributeName: site location
+    attributeDefinition: site location description
+    definition: site location description
+    columnClasses: character
+  cluster:
+    attributeName: cluster
+    attributeDefinition: source water
+    columnClasses: factor
+  site acronym:
+    attributeName: site acronym
+    attributeDefinition: site number or name (A designates epilimnion, B hypolimnion)
+    columnClasses: factor
+  date:
+    attributeName: date
+    attributeDefinition: sample collection date
+    formatString: YYYY-MM-DD
+    columnClasses: Date
+  e_coli:
+    attributeName: e_coli
+    attributeDefinition: number of E coli colonies per 100mL of sample
+    unit: coloniesPer100milliliter
+    numberType: whole
+    minimum: 0.0
+    maximum: 2580.0
+    columnClasses: numeric
+  coliform:
+    attributeName: coliform
+    attributeDefinition: number of Coliform colonies per 100mL of sample
+    unit: coloniesPer100milliliter
+    numberType: natural
+    minimum: 23.0
+    maximum: 2560.0
+    columnClasses: numeric
+  mycobacterium:
+    attributeName: mycobacterium
+    attributeDefinition: number of Mycobacterium colonies per 100mL of sample
+    unit: coloniesPer100milliliter
+    numberType: whole
+    minimum: 0.0
+    maximum: 408.0
+    columnClasses: numeric
+  mycobacterium_flag:
+    attributeName: mycobacterium_flag
+    attributeDefinition: sampling, analysis, or processing flag for Mycobacterium sample
+    columnClasses: factor
+  Comments:
+    attributeName: Comments
+    attributeDefinition: comment(s) about site conditions or sampling details
+    definition: comment(s) about site conditions or sampling details
+    columnClasses: character

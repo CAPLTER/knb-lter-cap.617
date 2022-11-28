@@ -1,4 +1,4 @@
-ID,site number,site location,cluster name,site acronym,date,month,sample type,Tot N (mg/L (0<mdl)),Diss N (mg/L (0<mdl)),Tot P (ug/L (0<mdl)),Diss P (ug/L (0<mdl)),NO3-N, mg/l,NH4-N, ppm,DON, ppm,nutrient comments
+ID,site number,site location,cluster name,site acronym,date,month,sample type,Tot N (mg/L (0<mdl)),Diss N (mg/L (0<mdl)),Tot P (ug/L (0<mdl)),Diss P (ug/L (0<mdl)),nitrate_nitrogen,ammonium_nitrogen,dissolved_organic_nitrogen,nutrient comments
 4440,"UH In","Union Hills Inlet","cap","Union Hills Inlet","09/12/06 00:00:00","09/12/06 00:00:00",,,,4.6,,,,,
 4441,"UH Out","Union Hills Treated Water","cap","Union Hills Outlet","09/12/06 00:00:00","09/12/06 00:00:00",,,,,,,,,
 4442,"R11","CAP Canal at Cross-connect","cap","cap @ x con","09/12/06 00:00:00","09/12/06 00:00:00",,,,13.5,,,,,

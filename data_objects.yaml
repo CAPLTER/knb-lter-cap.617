@@ -1,0 +1,90 @@
+algae:
+  type: table
+  dfname: algae
+  description: "algal characteristics (chlorophyll concentration, cell counts) and specific conductance in canals and reservoirs"
+  dateRangeField: "date"
+  overwrite: TRUE
+  projectNaming: TRUE
+  missingValueCode: NULL
+  additional_information: NULL
+algal_byproducts:
+  type: table
+  dfname: algal_byproducts
+  description: "concentration of algal by-products in canals and reservoirs"
+  dateRangeField: "date"
+  overwrite: TRUE
+  projectNaming: TRUE
+  missingValueCode: NULL
+  additional_information: NULL
+arsenic:
+  type: table
+  dfname: arsenic
+  description: "arsenic and perchlorate concentrations in canals and reservoirs"
+  dateRangeField: "date"
+  overwrite: TRUE
+  projectNaming: TRUE
+  missingValueCode: NULL
+  additional_information: NULL
+carbon:
+  type: table
+  dfname: carbon
+  description: "approximately monthly water carbon data in Phoenix-area canals and reservoirs"
+  dateRangeField: "date"
+  overwrite: TRUE
+  projectNaming: TRUE
+  missingValueCode: NULL
+  additional_information: NULL
+field_measurements:
+  type: table
+  dfname: field_measurements
+  description: "water quality parameters as measured in the field in canals and reservoirs"
+  dateRangeField: "date"
+  overwrite: TRUE
+  projectNaming: TRUE
+  missingValueCode: NULL
+  additional_information: NULL
+microbial:
+  type: table
+  dfname: microbial
+  description: "E. coli, Coliform, and Mycobacterium colony counts in canals and reservoirs"
+  dateRangeField: "date"
+  overwrite: TRUE
+  projectNaming: TRUE
+  missingValueCode: NULL
+  additional_information: NULL
+nutrients:
+  type: table
+  dfname: nutrients
+  description: "concentration of algal by-products in canals and reservoirs"
+  dateRangeField: "date"
+  overwrite: TRUE
+  projectNaming: TRUE
+  missingValueCode: NULL
+  additional_information: NULL
+quarterly_lake_sampling:
+  type: table
+  dfname: quarterly_lake_sampling
+  description: "concentration of nutrients and algal by-products, and other water quality parameters measured in central-Arizona area lakes"
+  dateRangeField: "date"
+  overwrite: TRUE
+  projectNaming: TRUE
+  missingValueCode: NULL
+  additional_information: NULL
+quarterly_metals:
+  type: table
+  dfname: quarterly_metals
+  description: "concentration of dissolved metals measured in central-Arizona area lakes and canals"
+  dateRangeField: NULL
+  overwrite: TRUE
+  projectNaming: TRUE
+  missingValueCode: NULL
+  additional_information: NULL
+sampling_locations:
+  type: table
+  dfname: sampling_locations
+  description: "latitude, longitude, and elevation of select canal, lake, and river water-quality sampling locations"
+  dateRangeField: NULL
+  overwrite: TRUE
+  projectNaming: TRUE
+  missingValueCode: NULL
+  additional_information: NULL

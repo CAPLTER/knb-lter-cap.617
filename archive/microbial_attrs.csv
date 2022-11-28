@@ -1,12 +1,11 @@
 attributeName,formatString,unit,numberType,definition,attributeDefinition,columnClasses,minimum,maximum
-Site Number,,,,"site number or name (A designates epilimnion, B hypolimnion)","site number or name (A designates epilimnion, B hypolimnion)",character,,
-Site Location,,,,site location description,site location description,character,,
-Cluster,,,,,source water,factor,,
-Site Acronym,,,,site number or name,site number or name,character,,
+site number,,,,"site number or name (A designates epilimnion, B hypolimnion)","site number or name (A designates epilimnion, B hypolimnion)",factor,,
+site location,,,,site location description,site location description,character,,
+cluster,,,,source water,source water,factor,,
+site acronym,,,,"site number or name (A designates epilimnion, B hypolimnion)","site number or name (A designates epilimnion, B hypolimnion)",factor,,
 date,YYYY-MM-DD,,,,sample collection date,Date,,
-E_coli,,coloniesPer100milliliter,real,,number of E coli colonies per 100mL of sample,numeric,,
-Coliform,,coloniesPer100milliliter,real,,number of Coliform colonies per 100mL of sample,numeric,,
-Coliform_flag,,,,,"sampling, analysis, or processing flag for Coliform sample",factor,,
-Mycobacterium,,coloniesPer100milliliter,real,,number of Mycobacterium colonies per 100mL of sample,numeric,,
-Mycobacterium_flag,,,,,"sampling, analysis, or processing flag for Mycobacterium sample",factor,,
+e_coli,,coloniesPer100milliliter,whole,,number of E coli colonies per 100mL of sample,numeric,0,2580
+coliform,,coloniesPer100milliliter,natural,,number of Coliform colonies per 100mL of sample,numeric,23,2560
+mycobacterium,,coloniesPer100milliliter,whole,,number of Mycobacterium colonies per 100mL of sample,numeric,0,408
+mycobacterium_flag,,,,,"sampling, analysis, or processing flag for Mycobacterium sample",factor,,
 Comments,,,,comment(s) about site conditions or sampling details,comment(s) about site conditions or sampling details,character,,

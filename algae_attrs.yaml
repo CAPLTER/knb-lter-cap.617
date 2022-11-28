@@ -1,0 +1,96 @@
+|
+  site number:
+    attributeName: site number
+    attributeDefinition: site number or name (A designates epilimnion, B hypolimnion)
+    columnClasses: factor
+  site location:
+    attributeName: site location
+    attributeDefinition: site location description
+    definition: site location description
+    columnClasses: character
+  cluster:
+    attributeName: cluster
+    attributeDefinition: source water
+    columnClasses: factor
+  site acronym:
+    attributeName: site acronym
+    attributeDefinition: site number or name
+    columnClasses: factor
+  date:
+    attributeName: date
+    attributeDefinition: sample collection date
+    formatString: YYYY-MM-DD
+    columnClasses: Date
+  sample type:
+    attributeName: sample type
+    attributeDefinition: type of water sample collected (if not a field sample)
+    columnClasses: factor
+  conductance (uS/cm):
+    attributeName: conductance (uS/cm)
+    attributeDefinition: specific conductance
+    unit: microsiemensPerCentimeter
+    numberType: real
+    minimum: 0.0
+    maximum: 9009.0
+    columnClasses: numeric
+  chl A (ug/L):
+    attributeName: chl A (ug/L)
+    attributeDefinition: chlorophyll A concentration
+    unit: microgramsPerLiter
+    numberType: real
+    minimum: 0.0
+    maximum: 66.9
+    columnClasses: numeric
+  phaeophytin (ug/L):
+    attributeName: phaeophytin (ug/L)
+    attributeDefinition: phaeophytin concentration
+    unit: microgramsPerLiter
+    numberType: real
+    minimum: 0.0
+    maximum: 14.35125
+    columnClasses: numeric
+  phaeophytin chl A (ug/L):
+    attributeName: phaeophytin chl A (ug/L)
+    attributeDefinition: chlorophyll A concentration corrected for phaeophytin
+    unit: microgramsPerLiter
+    numberType: real
+    minimum: 0.0
+    maximum: 71.423
+    columnClasses: numeric
+  chlorophyta (organisms/ml):
+    attributeName: chlorophyta (organisms/ml)
+    attributeDefinition: Chlorophyta concentration
+    unit: numberPerMilliliter
+    numberType: whole
+    minimum: 0.0
+    maximum: 5818.0
+    columnClasses: numeric
+  cyanophyta (organisms/ml):
+    attributeName: cyanophyta (organisms/ml)
+    attributeDefinition: Cyanophyta concentation
+    unit: numberPerMilliliter
+    numberType: whole
+    minimum: 0.0
+    maximum: 439.0
+    columnClasses: numeric
+  bacillariophyta (organisms/ml):
+    attributeName: bacillariophyta (organisms/ml)
+    attributeDefinition: Bacillariophyta concentration
+    unit: numberPerMilliliter
+    numberType: whole
+    minimum: 0.0
+    maximum: 5030.0
+    columnClasses: numeric
+  total (organisms/ml):
+    attributeName: total (organisms/ml)
+    attributeDefinition: combined concentration of Chlorophyta, Cyanophyta, and Bacillariophyta
+    unit: numberPerMilliliter
+    numberType: whole
+    minimum: 0.0
+    maximum: 5919.0
+    columnClasses: numeric
+  algae comments:
+    attributeName: algae comments
+    attributeDefinition: comment(s) about site conditions or sampling details
+    definition: comment(s) about site conditions or sampling details
+    columnClasses: character

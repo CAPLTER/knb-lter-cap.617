@@ -1,0 +1,74 @@
+|
+  site number:
+    attributeName: site number
+    attributeDefinition: site number or name (A designates epilimnion, B hypolimnion)
+    columnClasses: factor
+  site location:
+    attributeName: site location
+    definition: site location description
+    attributeDefinition: site location description
+    columnClasses: character
+  cluster:
+    attributeName: cluster
+    attributeDefinition: source water
+    columnClasses: factor
+  site acronym:
+    attributeName: site acronym
+    attributeDefinition: site number or name
+    columnClasses: factor
+  date:
+    attributeName: date
+    formatString: YYYY-MM-DD
+    attributeDefinition: sample collection date
+    columnClasses: Date
+  depth (m):
+    attributeName: depth (m)
+    unit: meter
+    numberType: real
+    attributeDefinition: water depth where measurement was taken (0 designates just
+      below surface)
+    minimum: -0.1
+    maximum: 161.9
+    columnClasses: numeric
+  T (C):
+    attributeName: T (C)
+    unit: celsius
+    numberType: real
+    attributeDefinition: water temperature
+    minimum: 1.7
+    maximum: 232.2
+    columnClasses: numeric
+  DO (mg/l):
+    attributeName: DO (mg/l)
+    unit: milligramsPerLiter
+    numberType: real
+    attributeDefinition: dissolved oxygen
+    minimum: 0.0
+    maximum: 922.0
+    columnClasses: numeric
+  pH:
+    attributeName: pH
+    unit: dimensionless
+    numberType: real
+    attributeDefinition: pH
+    minimum: 1.0
+    maximum: 805.0
+    columnClasses: numeric
+  Secchi Disk (m):
+    attributeName: Secchi Disk (m)
+    unit: meter
+    numberType: real
+    attributeDefinition: water transparency measurement as measured from side of boat
+    minimum: 0.15
+    maximum: 14.26
+    columnClasses: numeric
+  samples collected:
+    attributeName: samples collected
+    definition: types of analyses for which samples were collected
+    attributeDefinition: types of analyses for which samples were collected
+    columnClasses: character
+  comments:
+    attributeName: comments
+    definition: comment(s) about site conditions or sampling details
+    attributeDefinition: comment(s) about site conditions or sampling details
+    columnClasses: character

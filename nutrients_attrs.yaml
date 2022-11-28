@@ -1,0 +1,89 @@
+|
+  site number:
+    attributeName: site number
+    attributeDefinition: site number or name (A designates epilimnion, B hypolimnion)
+    columnClasses: factor
+  site location:
+    attributeName: site location
+    definition: site location description
+    attributeDefinition: site location description
+    columnClasses: character
+  cluster:
+    attributeName: cluster
+    attributeDefinition: source water
+    columnClasses: factor
+  site acronym:
+    attributeName: site acronym
+    attributeDefinition: site number or name
+    columnClasses: factor
+  date:
+    attributeName: date
+    formatString: YYYY-MM-DD
+    attributeDefinition: sample collection date
+    columnClasses: Date
+  sample type:
+    attributeName: sample type
+    definition: type of water sample collected (if not a field sample)
+    attributeDefinition: type of water sample collected (if not a field sample)
+    columnClasses: character
+  total_nitrogen:
+    attributeName: total_nitrogen
+    unit: milligramsPerLiter
+    numberType: real
+    attributeDefinition: total nitrogen (<=0 are below MDL)
+    minimum: -0.016
+    maximum: 2.484
+    columnClasses: numeric
+  total_dissolved_nitrogen:
+    attributeName: total_dissolved_nitrogen
+    unit: milligramsPerLiter
+    numberType: real
+    attributeDefinition: total dissolved nitrogen (<=0 are below MDL)
+    minimum: -0.9267
+    maximum: 45.7
+    columnClasses: numeric
+  total_phosphorus:
+    attributeName: total_phosphorus
+    unit: microgramPerLiter
+    numberType: real
+    attributeDefinition: total phosphorus (<=0 are below MDL)
+    minimum: 0.0
+    maximum: 1173.7
+    columnClasses: numeric
+  total_dissolved_phosphorus:
+    attributeName: total_dissolved_phosphorus
+    unit: microgramPerLiter
+    numberType: real
+    attributeDefinition: total dissolved phosphorus (<=0 are below MDL)
+    minimum: 0.0
+    maximum: 161.0
+    columnClasses: numeric
+  nitrate_nitrogen:
+    attributeName: nitrate_nitrogen
+    unit: milligramsPerLiter
+    numberType: real
+    attributeDefinition: nitrate-nitrogen
+    minimum: 0.0
+    maximum: 142.0
+    columnClasses: numeric
+  ammonium_nitrogen:
+    attributeName: ammonium_nitrogen
+    unit: milligramsPerLiter
+    numberType: real
+    attributeDefinition: ammonium-nitrogen
+    minimum: 0.0
+    maximum: 3.9
+    columnClasses: numeric
+  dissolved_organic_nitrogen:
+    attributeName: dissolved_organic_nitrogen
+    unit: milligramsPerLiter
+    numberType: real
+    attributeDefinition: dissolved organic nitrogen
+    minimum: -0.287
+    maximum: 3.715
+    columnClasses: numeric
+  nutrient comments:
+    attributeName: nutrient comments
+    definition: comment(s) about site conditions or sampling details
+    attributeDefinition: comment(s) about site conditions or sampling details
+    columnClasses: character

@@ -1,0 +1,43 @@
+|
+  site number:
+    attributeName: site number
+    attributeDefinition: site number or name (A designates epilimnion, B hypolimnion)
+    columnClasses: factor
+  site location:
+    attributeName: site location
+    attributeDefinition: site location description
+    definition: site location description
+    columnClasses: character
+  cluster:
+    attributeName: cluster
+    attributeDefinition: source water
+    columnClasses: factor
+  site acronym:
+    attributeName: site acronym
+    attributeDefinition: site number or name
+    columnClasses: factor
+  arsenic (ug/L):
+    attributeName: arsenic (ug/L)
+    attributeDefinition: arsenic concentration as determined by graphite furnace
+    unit: microgramsPerLiter
+    numberType: real
+    minimum: 0.0
+    maximum: 32.6
+    columnClasses: numeric
+  perchlorate (ug/L):
+    attributeName: perchlorate (ug/L)
+    attributeDefinition: perchlorate concentration as determined by ion chromatography
+    unit: microgramsPerLiter
+    numberType: real
+    minimum: 0.0
+    maximum: 3.77
+    columnClasses: numeric
+  date:
+    attributeName: date
+    attributeDefinition: sample collection date
+    formatString: YYYY-MM-DD
+    columnClasses: Date
+  BDL:
+    attributeName: BDL
+    attributeDefinition: 1 = sample with arsenic concentration below detectable limit
+    columnClasses: factor

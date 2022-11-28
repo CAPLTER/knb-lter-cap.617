@@ -1,0 +1,83 @@
+|
+  site number:
+    attributeName: site number
+    attributeDefinition: site number or name (A designates epilimnion, B hypolimnion)
+    columnClasses: factor
+  site location:
+    attributeName: site location
+    attributeDefinition: site location description
+    definition: site location description
+    columnClasses: character
+  cluster:
+    attributeName: cluster
+    attributeDefinition: source water
+    columnClasses: factor
+  site acronym:
+    attributeName: site acronym
+    attributeDefinition: site number or name
+    columnClasses: factor
+  date:
+    attributeName: date
+    attributeDefinition: sample collection date
+    formatString: YYYY-MM-DD
+    columnClasses: Date
+  sample type:
+    attributeName: sample type
+    attributeDefinition: type of water sample collected (if not a field sample)
+    definition: type of water sample collected (if not a field sample)
+    columnClasses: character
+  MIB (ng/L) ASU:
+    attributeName: MIB (ng/L) ASU
+    attributeDefinition: 2-methylisoborneol
+    unit: nanogramsPerLiter
+    numberType: real
+    minimum: -2.393036
+    maximum: 476.8
+    columnClasses: numeric
+  geosmin (ng/L) ASU:
+    attributeName: geosmin (ng/L) ASU
+    attributeDefinition: geosmin
+    unit: nanogramsPerLiter
+    numberType: real
+    minimum: -5.4275948
+    maximum: 445.588261
+    columnClasses: numeric
+  beta-cyclocitral (ng/L):
+    attributeName: beta-cyclocitral (ng/L)
+    attributeDefinition: beta-Cyclocitral
+    unit: nanogramsPerLiter
+    numberType: real
+    minimum: -4.0811791
+    maximum: 87.5
+    columnClasses: numeric
+  IPMP recovery (%):
+    attributeName: IPMP recovery (%)
+    attributeDefinition: recovery of 2-isopropyl-3-methoxy pyrazine (IPMP used as an
+      internal standard)
+    unit: dimensionless
+    numberType: real
+    minimum: 56.2
+    maximum: 147.0
+    columnClasses: numeric
+  MIB (ng/L) Phoenix:
+    attributeName: MIB (ng/L) Phoenix
+    attributeDefinition: MIB as measured by City of Phoenix officials for methods comparison
+    unit: nanogramsPerLiter
+    numberType: whole
+    minimum: 0.0
+    maximum: 52.0
+    columnClasses: numeric
+  geosmin (ng/L) Phoenix:
+    attributeName: geosmin (ng/L) Phoenix
+    attributeDefinition: geosmin as measured by City of Phoenix officials for methods
+      comparison
+    unit: nanogramsPerLiter
+    numberType: whole
+    minimum: 0.0
+    maximum: 50.0
+    columnClasses: numeric
+  comments:
+    attributeName: comments
+    attributeDefinition: comment(s) about site conditions or sampling details
+    definition: comment(s) about site conditions or sampling details
+    columnClasses: character

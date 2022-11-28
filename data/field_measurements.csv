@@ -1,4 +1,4 @@
-ID,site number,site location,cluster name,site acronym,date,month,depth (m),T (C),DO (mg/l),pH,Secchi Disk, m,samples collected,sample type,comments
+ID,site number,site location,cluster name,site acronym,date,month,depth (m),T (C),DO (mg/l),pH,Secchi Disk (m),samples collected,sample type,comments
 6802,"R2","Lake Pleasant integrated sample","cap","pleasant","12/06/05 00:00:00","12/06/05 00:00:00",45.6,15,8.699999999999999,,,,,
 6803,"R2","Lake Pleasant integrated sample","cap","pleasant","12/06/05 00:00:00","12/06/05 00:00:00",47.6,15,8.699999999999999,,,,,
 6804,"R2","Lake Pleasant integrated sample","cap","pleasant","12/06/05 00:00:00","12/06/05 00:00:00",49.3,15,8.699999999999999,,,,,

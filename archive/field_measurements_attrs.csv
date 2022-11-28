@@ -8,6 +8,6 @@ depth (m),,meter,real,,water depth where measurement was taken (0 designates jus
 T (C),,celsius,real,,water temperature,numeric,1.7,232.2
 DO (mg/l),,milligramsPerLiter,real,,dissolved oxygen,numeric,0,922
 pH,,dimensionless,real,,pH,numeric,1,805
-Secchi disk (m),,meter,real,,water transparency measurement as measured from side of boat,numeric,0.15,14.26
+Secchi Disk (m),,meter,real,,water transparency measurement as measured from side of boat,numeric,0.15,14.26
 samples collected,,,,types of analyses for which samples were collected,types of analyses for which samples were collected,character,,
 comments,,,,comment(s) about site conditions or sampling details,comment(s) about site conditions or sampling details,character,,
