@@ -864,18 +864,67 @@ EDIutils::logout()
 ```
 
 
+# file placement: data files
+
+## read package details
+
+```{r package-details, eval=TRUE}
+
+# retrieve package details from config.yaml
+if (!file.exists("config.yaml")) {
+  stop("config.yaml not found")
+}
+package_configs <- capeml::read_package_configuration()
+identifier      <- package_configs$identifier
+scope           <- package_configs$scope
+
+version <- capeml::get_next_version(
+  provided_scope      = scope,
+  provided_identifier = identifier
+)
+```
+
+## preview data files upload
+
+```{r preview-data-file-to-upload}
+
+list.files(pattern = paste0(identifier, "_"))
+```
+
+## source AWS S3 settings
+
+```{r S3-helper-functions}
+
+# library(aws.s3)
+source("~/Documents/localSettings/aws.s3")
+```
+
+## upload data files to S3
+
+```{r upload-data-S3}
+
+lapply(list.files(pattern = paste0(identifier, "_")), capeml::data_to_amz)
+```
+
+
 # post processing
 
-```{r clean-up}
+remove data files (if desired)
 
-# remove data files
-dataFilesToRemove <- dir(pattern = paste0(packageNum, "_"))
+```{r delete-data-files}
+
+dataFilesToRemove <- dir(pattern = paste0(identifier, "_"))
 file.remove(dataFilesToRemove)
 
-# EML to S3
-gioseml::eml_to_amz(list.files(pattern = "knb.+xml"))
+```
 
-# EML to cap-data-eml and remove file from project
+XML/EML file to Amazon and cap-metadata
+
+```{r delete-data-files}
+
+capeml::eml_to_amz(list.files(pattern = "knb.+xml"))
+
 file.copy(list.files(pattern = "knb.+xml"), "/home/srearl/localRepos/cap-metadata/cap-data-eml/")
+
 file.remove(list.files(pattern = "knb.+xml"))
 ```
