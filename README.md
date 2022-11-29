@@ -22,6 +22,13 @@ Source data reside in an Access database. Use [mdbtools](https://askubuntu.com/q
 
 ## versioning
 
+### knb-lter-cap.617.5 *2022-11-29*
+
+- data refresh
+- update attributes metadata files to yaml format
+- update config.yaml to reflect updates to capeml
+- pared repository of old data (and adding data directory to ignore)
+
 ### knb-lter-cap.617.4 *2022-02-30*
 
 - data refresh
