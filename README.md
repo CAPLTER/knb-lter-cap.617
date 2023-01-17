@@ -22,6 +22,11 @@ Source data reside in an Access database. Use [mdbtools](https://askubuntu.com/q
 
 ## versioning
 
+### knb-lter-cap.617.6 *2023-01-17*
+
+- data refresh
+- expanded .gitignore to ignore files within data directory
+
 ### knb-lter-cap.617.5 *2022-11-29*
 
 - data refresh

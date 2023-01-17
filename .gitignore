@@ -1,4 +1,6 @@
+# data directory
 data/
+data/*
 
 # History files
 .Rhistory

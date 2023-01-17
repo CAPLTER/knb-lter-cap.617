@@ -836,10 +836,10 @@ if (eval_status) {
 
 # evaluation detailed
 
-EDIutils::read_evaluate_report(
-  transaction = evaluation,
-  env         = "staging"
-)
+# EDIutils::read_evaluate_report(
+#   transaction = evaluation,
+#   env         = "staging"
+# )
 
 ```
 
@@ -850,7 +850,7 @@ EDIutils::read_evaluate_report(
 EDIutils::update_data_package(
   eml         = paste(scope, identifier, version, "xml", sep = "."),
   useChecksum = TRUE,
-  env         = "staging"
+  env         = "production"
 )
 
 ```

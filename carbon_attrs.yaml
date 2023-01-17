@@ -55,7 +55,7 @@
     unit: literPerMilligramMeter
     numberType: real
     minimum: 0.0
-    maximum: 24.1269841
+    maximum: 95.2821462
     columnClasses: numeric
   peak int:
     attributeName: peak int
