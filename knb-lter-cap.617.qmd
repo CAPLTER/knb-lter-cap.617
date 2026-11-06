@@ -118,7 +118,7 @@ dplyr::mutate(
   ) |>
 dplyr::mutate(
   BDL = dplyr::case_when(
-    grepl("<2.0", `arsenic (ug/L)`, ignore.case = T) ~ 1
+    grepl("<2.0", `arsenic (ug/L)`, ignore.case = TRUE) ~ 1
   )
   ) |> # close dplyr::mutate BDL
 dplyr::mutate(
@@ -245,46 +245,69 @@ documented as `metadata_not_provided`.
 
 microbial <- readr::read_csv("data/Microbial.csv") |>
   # drop empty cols
-  dplyr::select_if(function(x) { !all(is.na(x)) }) |>
+  dplyr::select_if(function(x) {
+    !all(is.na(x))
+  }) |>
   dplyr::rename(
-    `site number`   = `Site Number`,
+    `site number` = `Site Number`,
     `site location` = `Site Location`,
-    `cluster`       = `Cluster Name`,
-    `site acronym`  = `Site Acronym`,
-    `date`          = `Date`,
-    coliform        = `Coliform(colonies per 100mL)`,
-    mycobacterium   = `Mycobacterium(colonies per 100mL)`,
-    e_coli          = `E coli(colonies per 100mL)`
-    ) |>
+    `cluster` = `Cluster Name`,
+    `site acronym` = `Site Acronym`,
+    `date` = `Date`,
+    coliform = `Coliform(colonies per 100mL)`,
+    mycobacterium = `Mycobacterium(colonies per 100mL)`,
+    e_coli = `E coli(colonies per 100mL)`
+  ) |>
   dplyr::mutate(
     cluster = tolower(cluster),
     cluster = as.factor(cluster),
     `site number` = as.factor(`site number`),
-    # ISTB3 is a mislabel of the ISTB4 cold-tap sample (see note above)
-    `site acronym` = dplyr::if_else(`site acronym` == "ISTB3", "ISTB4", `site acronym`),
+    # ISTB3 is a presumed mislabel of the ISTB4 cold-tap sample (see note above)
+    `site acronym` = dplyr::if_else(
+      `site acronym` == "ISTB3",
+      "ISTB4",
+      `site acronym`
+    ),
     `site acronym` = as.factor(`site acronym`),
     e_coli = dplyr::case_when(
       grepl("n/a", e_coli, ignore.case = TRUE) ~ NA_character_,
       TRUE ~ e_coli
-      ),
+    ),
     e_coli = as.numeric(e_coli),
     coliform = dplyr::case_when(
       grepl("n/a", coliform, ignore.case = TRUE) ~ NA_character_,
       TRUE ~ coliform
-      ),
+    ),
     coliform = as.numeric(coliform),
     mycobacterium = dplyr::case_when(
       grepl("n/a", mycobacterium, ignore.case = TRUE) ~ NA_character_,
       TRUE ~ mycobacterium
-      ),
+    ),
     mycobacterium_flag = dplyr::case_when(
-      grepl("[A-z]+", mycobacterium) ~ stringr::str_extract(mycobacterium, "[A-z]+")
-      ),
+      grepl("[A-z]+", mycobacterium) ~ stringr::str_extract(
+        mycobacterium,
+        "[A-z]+"
+      )
+    ),
     mycobacterium = as.numeric(mycobacterium),
     mycobacterium_flag = as.factor(mycobacterium_flag),
     date = format(as.POSIXct(date, format = "%m/%d/%Y"), "%Y-%m-%d"),
     date = as.Date(date)
-    ) |>
+  ) |>
+  # remove commas from character columns
+  dplyr::mutate(
+    dplyr::across(
+      .cols = tidyselect::where(base::is.character),
+      .fns = ~ base::gsub(",", ";", .x, fixed = TRUE)
+    )
+  ) |>
+  # replace newlines in character columns with semicolons
+  dplyr::mutate(
+    dplyr::across(
+      .cols = tidyselect::where(base::is.character),
+      .fns = ~ stringr::str_replace_all(.x, "[\r\n]+", "; ")
+    )
+  ) |>
   dplyr::select(
     "site number",
     "site location",
@@ -296,7 +319,7 @@ microbial <- readr::read_csv("data/Microbial.csv") |>
     "mycobacterium",
     "mycobacterium_flag",
     "Comments"
-    ) |>
+  ) |>
   dplyr::filter(!is.na(date)) |>
   dplyr::arrange(date, `site number`)
 
@@ -552,7 +575,6 @@ EDIutils::logout()
 #| label: clean
 
 file.remove(c(list.files(pattern = "^617")))
-capeml::eml_to_amz(list.files(pattern = "knb.+xml"))
 # file.copy(list.files(pattern = "knb.+xml"), "/home/srearl/localRepos/cap-metadata/cap-data-eml/")
 
 ```
