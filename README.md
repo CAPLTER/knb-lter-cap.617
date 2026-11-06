@@ -80,7 +80,7 @@ to extract tables as csv files:
 
 ## versioning
 
-### knb-lter-cap.617.7 2026-11-xx
+### knb-lter-cap.617.7 2026-11-26
 
 - data refresh
 - workflow converted from Rmd to qmd

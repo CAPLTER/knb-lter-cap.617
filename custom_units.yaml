@@ -1,4 +1,36 @@
 - name: coloniesPer100milliliter
   description: number of bacterial colonies formed per 100 milliliters of water
 - name: literPerMilligramMeter
-  description: specific UV absorbance (SUVA); the UV absorbance at 254 nanometers measured in inverse meters divided by the DOC concentration measured in milligrams per liter
+  description: specific UV absorbance (SUVA); the UV absorbance at 254 nanometers
+    measured in inverse meters divided by the DOC concentration measured in milligrams
+    per liter
+- name: NUM-PER-MilliL
+  description: ''
+- name: MicroGM-PER-L
+  description: Microgram Per Liter
+- name: MicroS-PER-CentiM
+  description: Microsiemens Per Centimeter
+- name: PERCENT
+  description: Percent
+- name: NanoGM-PER-L
+  description: Nanograms per litre
+- name: UNITLESS
+  description: Unitless
+- name: NanoM
+  description: Nanometer
+- name: MilliGM-PER-L
+  description: Milligram Per Liter
+- name: PER-CentiM
+  description: Reciprocal Centimeter
+- name: PH
+  description: Acidity
+- name: M
+  description: Meter
+- name: DEG_C
+  description: degree Celsius
+- name: NTU
+  description: Nephelometry Turbidity Unit
+- name: DEG
+  description: Degree
+- name: FT
+  description: Foot
