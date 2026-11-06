@@ -1,0 +1,163 @@
+|
+  - attribute:
+      attributeName: site number
+      levels:
+      - code: 24th In
+        definition: 24th Street WTP Inlet
+      - code: 24th Out
+        definition: 24th Street WTP Treated
+      - code: AN IN
+        definition: Anthem WTP Inlet
+      - code: AN OUT
+        definition: Anthem WTP Treated
+      - code: Blank
+        definition: blank (quality control) sample
+      - code: CH IN
+        definition: Chandler WTP Inlet
+      - code: CH OUT
+        definition: Chandler WTP Treated
+      - code: GL IN
+        definition: Glendale WTP Inlet
+      - code: GL OUT
+        definition: Glendale WTP Treated
+      - code: GR IN
+        definition: Greenway WTP Inlet
+      - code: GR OUT
+        definition: Greenway WTP Treated
+      - code: HOC
+        definition: Head of the Consolidated canal
+      - code: HTC
+        definition: Head of the Tempe Canal
+      - code: Hwy 87
+        definition: AZ Canal at Highway 87
+      - code: ISTB4
+        definition: ISTB4 building drinking water
+      - code: ISTB4 Cold
+        definition: Tap water cold @ ISTB4 building ASU
+      - code: ISTB4 Hot
+        definition: Tap water hot @ ISTB4 building ASU
+      - code: LPP
+        definition: CAP canal at Lake Pleasant Parkway near Loop 303
+      - code: MOC
+        definition: Middle of the Consolidated canal
+      - code: NP IN
+        definition: Tempe North WTP Inlet
+      - code: NP OUT
+        definition: Tempe North WTP Treated
+      - code: Pima
+        definition: AZ Canal at Pima Rd
+      - code: R10
+        definition: Salt River below Saguaro (Blue Point Bridge)
+      - code: R11
+        definition: CAP Canal at Cross-connect
+      - code: R12
+        definition: AZ Canal above CAP Cross-connect
+      - code: R13
+        definition: AZ Canal below CAP Cross-connect
+      - code: R21
+        definition: AZ Canal - Central Avenue
+      - code: R22
+        definition: AZ Canal at 56th
+      - code: R25
+        definition: Verde River at Beeline
+      - code: R3
+        definition: Waddell Canal
+      - code: SOCA
+        definition: South Canal below CAP Cross-connect
+      - code: SPT IN
+        definition: Tempe South WTP Inlet
+      - code: SPT OUT
+        definition: Tempe South WTP Treated
+      - code: UH IN
+        definition: Union Hills WTP Inlet
+      - code: UH OUT
+        definition: Union Hills WTP Treated
+  - attribute:
+      attributeName: cluster
+      levels:
+      - code: cap
+        definition: Central Arizona Project canal
+      - code: srp
+        definition: Salt River Project canal
+      - code: tempe
+        definition: Tempe, AZ area canal
+      - code: verde
+        definition: Verde River
+  - attribute:
+      attributeName: site acronym
+      levels:
+      - code: 24th St -treated
+        definition: 24th St. Water Treatment Plant treated water
+      - code: Anthem
+        definition: Anthem Water Treatment Plant
+      - code: AZ canal @ 24th St
+        definition: AZ Canal at 24th Street
+      - code: az canal @ 56th st.
+        definition: AZ Canal at 56th Street
+      - code: az canal @ central ave.
+        definition: AZ Canal at Central Avenue
+      - code: az canal @ hwy 87
+        definition: AZ Canal at Highway 87
+      - code: az canal @ pima
+        definition: AZ Canal at Pima Rd
+      - code: az canal blw cap
+        definition: AZ Canal below CAP Cross-connect
+      - code: az canal inflow
+        definition: AZ Canal above CAP Cross-connect
+      - code: cap @ x con
+        definition: CAP Canal at Cross-connect
+      - code: Chandler
+        definition: Chandler Water Treatment Plant
+      - code: Glen In
+        definition: Glendale WTP Inlet
+      - code: Glen Out
+        definition: Glendale WTP Treated
+      - code: Green In
+        definition: Greenway WTP Inlet
+      - code: Green Out
+        definition: Greenway WTP Treated
+      - code: head of tempe canal
+        definition: Head of Tempe Canal
+      - code: Head of the Consolidated Canal
+        definition: Head of the Consolidated canal
+      - code: ISTB4
+        definition: Tap water @ ISTB4 building ASU
+      - code: LPP
+        definition: CAP canal at Lake Pleasant Parkway near Loop 303
+      - code: Middle of the Consolidated Canal
+        definition: Middle of the Consolidated canal
+      - code: North plant inlet
+        definition: Tempe North WTP Inlet
+      - code: North plant outlet
+        definition: Tempe North WTP Treated
+      - code: Salt River @ Blue pt. Bridge
+        definition: Salt River below Saguaro (Blue Point Bridge)
+      - code: South canal below CAP
+        definition: South Canal below CAP Cross-connect
+      - code: STP In
+        definition: Tempe Canal - Inlet to Tempe's South Plant
+      - code: STP Out
+        definition: Tempe's South Plant treated water
+      - code: Union Hills Inlet
+        definition: Union Hills WTP Inlet
+      - code: Union Hills Outlet
+        definition: Union Hills WTP Treated
+      - code: verde @ beeline
+        definition: verde river at beeline highway
+      - code: waddell canal
+        definition: Waddell Canal
+  - attribute:
+      attributeName: mycobacterium_flag
+      levels:
+      - code: CONT
+        definition: Not Countable Due to Contamination
+      - code: NCDC
+        definition: Not Countable Due to Contamination
+      - code: ND
+        definition: absent/too few to count
+      - code: NR
+        definition: metadata_not_provided
+      - code: TFTC
+        definition: Too Few to Count
+      - code: TNTC
+        definition: Too Numerous to Count

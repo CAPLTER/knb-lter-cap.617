@@ -1,0 +1,183 @@
+|
+  - attribute:
+      attributeName: site number
+      levels:
+      - code: Glen In
+        definition: Glendale WTP Inlet
+      - code: Glen Out
+        definition: Glendale WTP Treated
+      - code: Green In
+        definition: Greenway WTP Inlet
+      - code: Green Out
+        definition: Greenway WTP Treated
+      - code: Havasu 1
+        definition: Lake Havasu Site 1
+      - code: Havasu 2
+        definition: Lake Havasu Site 2
+      - code: HTC
+        definition: Head of the Tempe Canal
+      - code: Hwy 87
+        definition: AZ Canal at Highway 87
+      - code: NP In
+        definition: Tempe North WTP Inlet
+      - code: NP Out
+        definition: Tempe North WTP Treated
+      - code: Pima
+        definition: AZ Canal at Pima Rd
+      - code: R10
+        definition: Salt River below Saguaro (Blue Point Bridge)
+      - code: R11
+        definition: CAP Canal at Cross-connect
+      - code: R12
+        definition: AZ Canal above CAP Cross-connect
+      - code: R13
+        definition: AZ Canal below CAP Cross-connect
+      - code: R14
+        definition: AZ Canal - Inlet to Squaw Peak WTP
+      - code: R15
+        definition: Squaw Peak WTP treated water
+      - code: R16
+        definition: AZ Canal - Inlet to Deer Valley WTP
+      - code: R17
+        definition: Deer Valley WTP treated water
+      - code: R18
+        definition: South Canal at Val Vista WTP
+      - code: R19
+        definition: Val Vista WTP treated water
+      - code: R20
+        definition: Verde River at Tangle
+      - code: R21
+        definition: AZ Canal - Central Avenue
+      - code: R22
+        definition: AZ Canal at 56th
+      - code: R25
+        definition: Verde River at Beeline
+      - code: R2A
+        definition: Lake Pleasant integrated sample
+      - code: R2B
+        definition: Lake Pleasant integrated sample
+      - code: R3
+        definition: Waddell Canal
+      - code: R6A
+        definition: Bartlett Reservoir near outlet
+      - code: R6B
+        definition: Bartlett Reservoir near outlet
+      - code: R9A
+        definition: Saguaro Lake near inlet
+      - code: R9A-Dup
+        definition: Saguaro Lake near inlet
+      - code: R9B
+        definition: Saguaro Lake near inlet
+      - code: SOCA
+        definition: South Canal below CAP Cross-connect
+      - code: SPT In
+        definition: Tempe South WTP Inlet
+      - code: SPT Out
+        definition: Tempe South WTP Treated
+      - code: UH In
+        definition: Union Hills WTP Inlet
+      - code: UH Out
+        definition: Union Hills WTP Treated
+  - attribute:
+      attributeName: cluster
+      levels:
+      - code: cap
+        definition: Central Arizona Project canal
+      - code: salt
+        definition: Salt River
+      - code: srp
+        definition: Salt River Project canal
+      - code: tempe
+        definition: Tempe, AZ area canal
+      - code: verde
+        definition: Verde River
+  - attribute:
+      attributeName: site acronym
+      levels:
+      - code: az canal @ 56th st.
+        definition: AZ Canal at 56th Street
+      - code: az canal @ central ave.
+        definition: AZ Canal at Central Avenue
+      - code: az canal @ deer valley
+        definition: AZ Canal - Inlet to Deer Valley WTP
+      - code: az canal @ hwy 87
+        definition: AZ Canal at Highway 87
+      - code: az canal @ pima
+        definition: AZ Canal at Pima Rd
+      - code: az canal @ squaw peak
+        definition: AZ Canal - Inlet to Squaw Peak WTP
+      - code: az canal blw cap
+        definition: AZ Canal below CAP Cross-connect
+      - code: az canal inflow
+        definition: AZ Canal above CAP Cross-connect
+      - code: bartlett-epi
+        definition: Bartlett Reservoir near outlet
+      - code: bartlett-hypo
+        definition: Bartlett Reservoir near outlet
+      - code: cap @ x con
+        definition: CAP Canal at Cross-connect
+      - code: deer valley-treated
+        definition: Deer Valley WTP treated water
+      - code: Glen In
+        definition: Glendale WTP Inlet
+      - code: Glen Out
+        definition: Glendale WTP Treated
+      - code: Green In
+        definition: Greenway WTP Inlet
+      - code: Green Out
+        definition: Greenway WTP Treated
+      - code: Havasu 1
+        definition: Lake Havasu Site 1
+      - code: Havasu 2
+        definition: Lake Havasu Site 2
+      - code: head of tempe canal
+        definition: Head of Tempe Canal
+      - code: North plant inlet
+        definition: Tempe North WTP Inlet
+      - code: north plant outlet
+        definition: Tempe North WTP Treated
+      - code: pleasant-epi
+        definition: Lake Pleasant integrated sample
+      - code: pleasant-hypo
+        definition: Lake Pleasant integrated sample
+      - code: s canal @ val vista
+        definition: South Canal at Val Vista WTP
+      - code: saguaro-epi
+        definition: Saguaro Lake Epilimnion
+      - code: saguaro-epi dup
+        definition: Saguaro Lake Epilimnion Duplicate Sample
+      - code: saguaro-hypo
+        definition: Saguaro Lake Hypolimnion
+      - code: salt blw saguaro
+        definition: Salt River below Saguaro (Blue Point Bridge)
+      - code: South canal below CAP
+        definition: South Canal below CAP Cross-connect
+      - code: SPT In
+        definition: Tempe South WTP Inlet
+      - code: SPT Out
+        definition: Tempe South WTP Treated
+      - code: squaw peak-treated
+        definition: Squaw Peak WTP treated water
+      - code: STP In
+        definition: Tempe Canal - Inlet to Tempe's South Plant
+      - code: STP Out
+        definition: Tempe's South Plant treated water
+      - code: Union Hills Inlet
+        definition: Union Hills WTP Inlet
+      - code: Union Hills Outlet
+        definition: Union Hills WTP Treated
+      - code: val vista-treated
+        definition: Val Vista WTP treated water
+      - code: val vista-treated-West
+        definition: Val Vista WTP treated water - west
+      - code: verde @ beeline
+        definition: verde river at beeline highway
+      - code: verde abv horseshoe
+        definition: Verde River at Tangle
+      - code: waddell canal
+        definition: Waddell Canal
+  - attribute:
+      attributeName: BDL
+      levels:
+      - code: '1'
+        definition: 1 = below detectable limits

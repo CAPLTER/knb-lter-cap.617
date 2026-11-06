@@ -2,24 +2,44 @@
   site number:
     attributeName: site number
     attributeDefinition: site number or name (A designates epilimnion, B hypolimnion)
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   site location:
     attributeName: site location
     attributeDefinition: site location description
-    definition: site location description
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: character
+    definition: site location description
   cluster:
     attributeName: cluster
     attributeDefinition: source water
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   site acronym:
     attributeName: site acronym
     attributeDefinition: site number or name
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   arsenic (ug/L):
     attributeName: arsenic (ug/L)
     attributeDefinition: arsenic concentration as determined by graphite furnace
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: 0.0
     maximum: 32.6
@@ -27,7 +47,11 @@
   perchlorate (ug/L):
     attributeName: perchlorate (ug/L)
     attributeDefinition: perchlorate concentration as determined by ion chromatography
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: 0.0
     maximum: 3.77
@@ -35,9 +59,17 @@
   date:
     attributeName: date
     attributeDefinition: sample collection date
-    formatString: YYYY-MM-DD
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: Date
+    formatString: YYYY-MM-DD
   BDL:
     attributeName: BDL
     attributeDefinition: 1 = sample with arsenic concentration below detectable limit
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor

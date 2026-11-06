@@ -2,34 +2,62 @@
   site number:
     attributeName: site number
     attributeDefinition: site number or name (A designates epilimnion, B hypolimnion)
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   site location:
     attributeName: site location
     attributeDefinition: site location description
-    definition: site location description
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: character
+    definition: site location description
   cluster:
     attributeName: cluster
     attributeDefinition: source water
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   site acronym:
     attributeName: site acronym
     attributeDefinition: site number or name
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   date:
     attributeName: date
     attributeDefinition: sample collection date
-    formatString: YYYY-MM-DD
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: Date
+    formatString: YYYY-MM-DD
   sample type:
     attributeName: sample type
     attributeDefinition: type of water sample collected (if not a field sample)
-    definition: type of water sample collected (if not a field sample)
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: character
+    definition: type of water sample collected (if not a field sample)
   total_nitrogen:
     attributeName: total_nitrogen
     attributeDefinition: total nitrogen (<=0 are below MDL)
-    unit: milligramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MilliGM-PER-L
     numberType: real
     minimum: -0.016
     maximum: 2.484
@@ -37,7 +65,11 @@
   total_dissolved_nitrogen:
     attributeName: total_dissolved_nitrogen
     attributeDefinition: total dissolved nitrogen (<=0 are below MDL)
-    unit: milligramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MilliGM-PER-L
     numberType: real
     minimum: -0.9267
     maximum: 45.7
@@ -45,7 +77,11 @@
   total_phosphorus:
     attributeName: total_phosphorus
     attributeDefinition: total phosphorus (<=0 are below MDL)
-    unit: microgramPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: 0.0
     maximum: 1173.7
@@ -53,7 +89,11 @@
   total_dissolved_phosphorus:
     attributeName: total_dissolved_phosphorus
     attributeDefinition: total dissolved phosphorus (<=0 are below MDL)
-    unit: microgramPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: 0.0
     maximum: 161.0
@@ -61,7 +101,11 @@
   nitrate_nitrogen:
     attributeName: nitrate_nitrogen
     attributeDefinition: nitrate-nitrogen
-    unit: milligramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MilliGM-PER-L
     numberType: real
     minimum: 0.0
     maximum: 142.0
@@ -69,7 +113,11 @@
   ammonium_nitrogen:
     attributeName: ammonium_nitrogen
     attributeDefinition: ammonium-nitrogen
-    unit: milligramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MilliGM-PER-L
     numberType: real
     minimum: 0.0
     maximum: 3.9
@@ -77,7 +125,11 @@
   dissolved_organic_nitrogen:
     attributeName: dissolved_organic_nitrogen
     attributeDefinition: dissolved organic nitrogen
-    unit: milligramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MilliGM-PER-L
     numberType: real
     minimum: -0.287
     maximum: 3.715
@@ -85,5 +137,9 @@
   nutrient comments:
     attributeName: nutrient comments
     attributeDefinition: comment(s) about site conditions or sampling details
-    definition: comment(s) about site conditions or sampling details
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: character
+    definition: comment(s) about site conditions or sampling details

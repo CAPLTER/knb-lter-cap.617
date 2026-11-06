@@ -2,37 +2,65 @@
   site number:
     attributeName: site number
     attributeDefinition: site number or name (A designates epilimnion, B hypolimnion)
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   site location:
     attributeName: site location
     attributeDefinition: site location description
-    definition: site location description
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: character
+    definition: site location description
   cluster:
     attributeName: cluster
     attributeDefinition: source water
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   site acronym:
     attributeName: site acronym
     attributeDefinition: site number or name
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   date:
     attributeName: date
     attributeDefinition: GPS collection date
-    formatString: YYYY-MM-DD
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: Date
+    formatString: YYYY-MM-DD
   longitude:
     attributeName: longitude
     attributeDefinition: longitude
-    unit: degree
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: DEG
     numberType: real
-    minimum: -112.2862333
+    minimum: -112.286233333333
     maximum: -111.09375
     columnClasses: numeric
   latitude:
     attributeName: latitude
     attributeDefinition: latitude
-    unit: degree
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: DEG
     numberType: real
     minimum: 33.5143
     maximum: 34.0
@@ -40,7 +68,11 @@
   altitude (ft):
     attributeName: altitude (ft)
     attributeDefinition: altitude
-    unit: meter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: FT
     numberType: natural
     minimum: 1493.0
     maximum: 2000.0

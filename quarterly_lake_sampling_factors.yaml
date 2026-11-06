@@ -1,0 +1,60 @@
+|
+  - attribute:
+      attributeName: site number
+      levels:
+      - code: APA1A
+        definition: Apache Lake Site 1 Epilimnion
+      - code: APA1B
+        definition: Apache Lake Site 1 Hypolimnion
+      - code: APA2A
+        definition: Apache Lake Site 2 Epilimnion
+      - code: APA2B
+        definition: Apache Lake Site 2 Hypolimnion
+      - code: Can1A
+        definition: Canyon Lake Site 1 Epilimnion
+      - code: Can1B
+        definition: Canyon Lake Site 1 Hypolimnion
+      - code: Can2A
+        definition: Canyon Lake Site 2 Epilimnion
+      - code: Can2B
+        definition: Canyon Lake Site 2 Hypolimnion
+      - code: Roos1A
+        definition: Roosevelt Lake Site 1 Epilimnion
+      - code: Roos1B
+        definition: Roosevelt Lake Site 1 Hypolimnion
+      - code: Roos2A
+        definition: Roosevelt Lake Site 2 Epilimnion
+      - code: Roos2B
+        definition: Roosevelt Lake Site 2 Hypolimnion
+  - attribute:
+      attributeName: cluster
+      levels:
+      - code: srp
+        definition: Salt River Project canal
+  - attribute:
+      attributeName: site acronym
+      levels:
+      - code: Apache, eppi, lower
+        definition: Apache Lake Site 2 Epilimnion
+      - code: Apache, eppi, upper
+        definition: Apache Lake Site 1 Epilimnion
+      - code: Apache, hypo, lower
+        definition: Apache Lake Site 2 Hypolimnion
+      - code: Apache, hypo, upper
+        definition: Apache Lake Site 1 Hypolimnion
+      - code: Canyon, eppi, lower
+        definition: Canyon Lake Site 2 Epilimnion
+      - code: Canyon, eppi, upper
+        definition: Canyon Lake Site 1 Epilimnion
+      - code: Canyon, hypo, lower
+        definition: Canyon Lake Site 2 Hypolimnion
+      - code: Canyon, hypo, upper
+        definition: Canyon Lake Site 1 Hypolimnion
+      - code: Roosevelt, eppi, lower
+        definition: Roosevelt Lake Site 2 Epilimnion
+      - code: Roosevelt, eppi, upper
+        definition: Roosevelt Lake Site 1 Epilimnion
+      - code: Roosevelt, hypo, lower
+        definition: Roosevelt Lake Site 2 Hypolimnion
+      - code: Roosevelt, hypo, upper
+        definition: Roosevelt Lake Site 1 Hypolimnion

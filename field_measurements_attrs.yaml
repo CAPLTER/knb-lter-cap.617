@@ -2,30 +2,54 @@
   site number:
     attributeName: site number
     attributeDefinition: site number or name (A designates epilimnion, B hypolimnion)
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   site location:
     attributeName: site location
     attributeDefinition: site location description
-    definition: site location description
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: character
+    definition: site location description
   cluster:
     attributeName: cluster
     attributeDefinition: source water
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   site acronym:
     attributeName: site acronym
     attributeDefinition: site number or name
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   date:
     attributeName: date
     attributeDefinition: sample collection date
-    formatString: YYYY-MM-DD
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: Date
+    formatString: YYYY-MM-DD
   depth (m):
     attributeName: depth (m)
     attributeDefinition: water depth where measurement was taken (0 designates just
       below surface)
-    unit: meter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: M
     numberType: real
     minimum: -0.1
     maximum: 161.9
@@ -33,15 +57,36 @@
   T (C):
     attributeName: T (C)
     attributeDefinition: water temperature
-    unit: celsius
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: DEG_C
     numberType: real
     minimum: 1.7
     maximum: 232.2
     columnClasses: numeric
+  Turbidity (NTU):
+    attributeName: Turbidity (NTU)
+    attributeDefinition: turbidity (nephelometric) measured in the field during reservoir
+      sampling
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: NTU
+    numberType: real
+    minimum: 0.18
+    maximum: 11.58
+    columnClasses: numeric
   DO (mg/l):
     attributeName: DO (mg/l)
     attributeDefinition: dissolved oxygen
-    unit: milligramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MilliGM-PER-L
     numberType: real
     minimum: 0.0
     maximum: 922.0
@@ -49,7 +94,11 @@
   pH:
     attributeName: pH
     attributeDefinition: pH
-    unit: dimensionless
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: PH
     numberType: real
     minimum: 1.0
     maximum: 805.0
@@ -57,7 +106,11 @@
   Secchi Disk (m):
     attributeName: Secchi Disk (m)
     attributeDefinition: water transparency measurement as measured from side of boat
-    unit: meter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: M
     numberType: real
     minimum: 0.15
     maximum: 14.26
@@ -65,10 +118,18 @@
   samples collected:
     attributeName: samples collected
     attributeDefinition: types of analyses for which samples were collected
-    definition: types of analyses for which samples were collected
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: character
+    definition: types of analyses for which samples were collected
   comments:
     attributeName: comments
     attributeDefinition: comment(s) about site conditions or sampling details
-    definition: comment(s) about site conditions or sampling details
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: character
+    definition: comment(s) about site conditions or sampling details

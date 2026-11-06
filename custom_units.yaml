@@ -1,0 +1,4 @@
+- name: coloniesPer100milliliter
+  description: number of bacterial colonies formed per 100 milliliters of water
+- name: literPerMilligramMeter
+  description: specific UV absorbance (SUVA); the UV absorbance at 254 nanometers measured in inverse meters divided by the DOC concentration measured in milligrams per liter

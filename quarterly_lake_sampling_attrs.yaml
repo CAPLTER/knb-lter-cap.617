@@ -2,45 +2,77 @@
   site number:
     attributeName: site number
     attributeDefinition: 'site number or name: A designates epilimnion; B hypolimnion'
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   site location:
     attributeName: site location
     attributeDefinition: site location description
-    definition: site location description
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: character
+    definition: site location description
   cluster:
     attributeName: cluster
     attributeDefinition: source water
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   site acronym:
     attributeName: site acronym
     attributeDefinition: site number or name
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   date:
     attributeName: date
     attributeDefinition: sample collection date
-    formatString: YYYY-MM-DD
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: Date
+    formatString: YYYY-MM-DD
+  MIB (ng/L):
+    attributeName: MIB (ng/L)
+    attributeDefinition: 2-methylisoborneol
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: NanoGM-PER-L
+    numberType: real
+    minimum: -1.27539284465762
+    maximum: 56.8
+    columnClasses: numeric
   geosmin (ng/L):
     attributeName: geosmin (ng/L)
     attributeDefinition: geosmin
-    unit: nanogramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: NanoGM-PER-L
     numberType: real
-    minimum: -2.3801673
-    maximum: 73.7930616
-    columnClasses: numeric
-  Conductance (us/cm):
-    attributeName: Conductance (us/cm)
-    attributeDefinition: specific conductance''
-    unit: microsiemensPerCentimeter
-    numberType: natural
-    minimum: 844.0
-    maximum: 2300.0
+    minimum: -2.38016732976395
+    maximum: 73.7930615845739
     columnClasses: numeric
   TP (ug/L):
     attributeName: TP (ug/L)
     attributeDefinition: total phosphorus
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: -0.1
     maximum: 246.0
@@ -48,7 +80,11 @@
   DOC (mg/L):
     attributeName: DOC (mg/L)
     attributeDefinition: dissolved organic carbon
-    unit: milligramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MilliGM-PER-L
     numberType: real
     minimum: 2.359
     maximum: 14.27
@@ -56,7 +92,11 @@
   UVA (cm-1):
     attributeName: UVA (cm-1)
     attributeDefinition: UV absorbance measured at 254 nanometers
-    unit: perCentimeter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: PER-CentiM
     numberType: real
     minimum: 0.03
     maximum: 0.8
@@ -64,24 +104,36 @@
   Suva(L/mg-m):
     attributeName: Suva(L/mg-m)
     attributeDefinition: specific ultraviolet absorbance
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     unit: literPerMilligramMeter
     numberType: real
     minimum: 0.5
     maximum: 4.0
     columnClasses: numeric
+  Conductance (us/cm):
+    attributeName: Conductance (us/cm)
+    attributeDefinition: specific conductance''
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroS-PER-CentiM
+    numberType: natural
+    minimum: 844.0
+    maximum: 2300.0
+    columnClasses: numeric
   TDN (mg/L):
     attributeName: TDN (mg/L)
     attributeDefinition: total dissolved nitrogen
-    unit: milligramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MilliGM-PER-L
     numberType: real
     minimum: 0.0
     maximum: 1.433
-    columnClasses: numeric
-  MIB (ng/L):
-    attributeName: MIB (ng/L)
-    attributeDefinition: 2-methylisoborneol
-    unit: nanogramsPerLiter
-    numberType: real
-    minimum: -1.2753928
-    maximum: 56.8
     columnClasses: numeric

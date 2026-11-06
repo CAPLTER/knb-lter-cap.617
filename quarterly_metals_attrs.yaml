@@ -2,29 +2,53 @@
   site number:
     attributeName: site number
     attributeDefinition: site number or name (A designates epilimnion, B hypolimnion)
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   site location:
     attributeName: site location
     attributeDefinition: site location description
-    definition: site location description
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: character
+    definition: site location description
   cluster:
     attributeName: cluster
     attributeDefinition: source water
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   site acronym:
     attributeName: site acronym
     attributeDefinition: site number or name
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   date:
     attributeName: date
     attributeDefinition: sample collection date
-    formatString: YYYY-MM-DD
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: Date
+    formatString: YYYY-MM-DD
   7Li:
     attributeName: 7Li
     attributeDefinition: Lithium measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: 9.909
     maximum: 196.8
@@ -32,7 +56,11 @@
   9Be:
     attributeName: 9Be
     attributeDefinition: Beryllium measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: -0.051
     maximum: 0.398
@@ -40,7 +68,11 @@
   23Na:
     attributeName: 23Na
     attributeDefinition: Sodium measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: natural
     minimum: 12440.0
     maximum: 278900.0
@@ -48,7 +80,11 @@
   24Mg:
     attributeName: 24Mg
     attributeDefinition: Magnesium measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: natural
     minimum: 8994.0
     maximum: 29900.0
@@ -56,7 +92,11 @@
   27Al:
     attributeName: 27Al
     attributeDefinition: Aluminum measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: -3.141
     maximum: 1385.0
@@ -64,7 +104,11 @@
   39K:
     attributeName: 39K
     attributeDefinition: Potassium measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: natural
     minimum: 1811.0
     maximum: 14420.0
@@ -72,7 +116,11 @@
   44Ca:
     attributeName: 44Ca
     attributeDefinition: Calcium measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: natural
     minimum: 21180.0
     maximum: 104600.0
@@ -80,7 +128,11 @@
   51V:
     attributeName: 51V
     attributeDefinition: Vanadium measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: 1.091
     maximum: 8.879
@@ -88,7 +140,11 @@
   52Cr:
     attributeName: 52Cr
     attributeDefinition: Chromium measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: -0.214
     maximum: 5.566
@@ -96,7 +152,11 @@
   55Mn:
     attributeName: 55Mn
     attributeDefinition: Manganese measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: 0.013
     maximum: 443.1
@@ -104,7 +164,11 @@
   56Fe:
     attributeName: 56Fe
     attributeDefinition: Iron measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: -1.916
     maximum: 1217.0
@@ -112,7 +176,11 @@
   59Co:
     attributeName: 59Co
     attributeDefinition: Cobalt measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: -0.059
     maximum: 1.068
@@ -120,7 +188,11 @@
   60Ni:
     attributeName: 60Ni
     attributeDefinition: Nickel measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: -9.656
     maximum: 3.676
@@ -128,7 +200,11 @@
   65Cu:
     attributeName: 65Cu
     attributeDefinition: Copper measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: -2.519
     maximum: 84.52
@@ -136,7 +212,11 @@
   66Zn:
     attributeName: 66Zn
     attributeDefinition: Zinc measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: -545.4
     maximum: 83.33
@@ -144,7 +224,11 @@
   75As:
     attributeName: 75As
     attributeDefinition: Arsenic measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: 1.93
     maximum: 18.35
@@ -152,7 +236,11 @@
   82Se:
     attributeName: 82Se
     attributeDefinition: Selenium measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: -2.522
     maximum: 178.6
@@ -160,7 +248,11 @@
   88Sr:
     attributeName: 88Sr
     attributeDefinition: Strontium measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: 293.7
     maximum: 1428.0
@@ -168,7 +260,11 @@
   95Mo:
     attributeName: 95Mo
     attributeDefinition: Molybdenum measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: 0.648
     maximum: 8.292
@@ -176,7 +272,11 @@
   107Ag:
     attributeName: 107Ag
     attributeDefinition: Silver measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: -0.088
     maximum: 2.709
@@ -184,7 +284,11 @@
   111Cd:
     attributeName: 111Cd
     attributeDefinition: Cadmium measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: -0.029
     maximum: 2.597
@@ -192,7 +296,11 @@
   121Sb:
     attributeName: 121Sb
     attributeDefinition: Antimony measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: 0.034
     maximum: 1.564
@@ -200,7 +308,11 @@
   138Ba:
     attributeName: 138Ba
     attributeDefinition: Barium measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: 32.44
     maximum: 296.6
@@ -208,7 +320,11 @@
   202Hg:
     attributeName: 202Hg
     attributeDefinition: Mercury measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: -0.045
     maximum: 3.431
@@ -216,7 +332,11 @@
   208Pb:
     attributeName: 208Pb
     attributeDefinition: Lead measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: -0.793
     maximum: 2.073
@@ -224,7 +344,11 @@
   238U:
     attributeName: 238U
     attributeDefinition: Uranium measurement by ICP-MS
-    unit: microgramsPerLiter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MicroGM-PER-L
     numberType: real
     minimum: 0.218
     maximum: 5.798

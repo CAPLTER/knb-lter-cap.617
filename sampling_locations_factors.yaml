@@ -1,0 +1,152 @@
+|
+  - attribute:
+      attributeName: site number
+      levels:
+      - code: Hav
+        definition: Lake Havasu
+      - code: HOC
+        definition: Head of the Consolidated canal
+      - code: HTC
+        definition: Head of the Tempe Canal
+      - code: MOC
+        definition: Middle of the Consolidated canal
+      - code: Pima
+        definition: AZ Canal at Pima Rd
+      - code: R1
+        definition: CAP canal above Waddell Canal
+      - code: R10
+        definition: Salt River below Saguaro (Blue Point Bridge)
+      - code: R11
+        definition: CAP Canal at Cross-connect
+      - code: R12
+        definition: AZ Canal above CAP Cross-connect
+      - code: R13
+        definition: AZ Canal below CAP Cross-connect
+      - code: R14
+        definition: AZ Canal - Inlet to Squaw Peak WTP
+      - code: R15
+        definition: Squaw Peak WTP treated water
+      - code: R16
+        definition: AZ Canal - Inlet to Deer Valley WTP
+      - code: R17
+        definition: Deer Valley WTP treated water
+      - code: R18
+        definition: South Canal at Val Vista WTP
+      - code: R19
+        definition: Val Vista WTP treated water
+      - code: R20
+        definition: Verde River at Tangle
+      - code: R21
+        definition: AZ Canal - Central Avenue
+      - code: R22
+        definition: AZ Canal at 56th
+      - code: R25
+        definition: Verde River at Beeline
+      - code: R2A
+        definition: Lake Pleasant integrated sample
+      - code: R2B
+        definition: Lake Pleasant integrated sample
+      - code: R3
+        definition: Waddell Canal
+      - code: R4
+        definition: Cap Canal at 7th St.
+      - code: R5
+        definition: Verde River btwn Horseshoe and Bartlett
+      - code: R6A
+        definition: Bartlett Reservoir near outlet
+      - code: R6B
+        definition: Bartlett Reservoir near outlet
+      - code: R7
+        definition: Verde River below Bartlett Reservoir
+      - code: R8
+        definition: Salt River inlet to Saguaro Lake
+      - code: R9A
+        definition: Saguaro Lake near inlet
+      - code: R9B
+        definition: Saguaro Lake near inlet
+      - code: SOCA
+        definition: South Canal below CAP Cross-connect
+  - attribute:
+      attributeName: cluster
+      levels:
+      - code: az canal
+        definition: Arizona canal
+      - code: cap
+        definition: Central Arizona Project canal
+      - code: reservoir
+        definition: reservoir (Lake Havasu)
+      - code: salt
+        definition: Salt River
+      - code: srp
+        definition: Salt River Project canal
+      - code: tempe
+        definition: Tempe, AZ area canal
+      - code: verde
+        definition: Verde River
+  - attribute:
+      attributeName: site acronym
+      levels:
+      - code: az canal - 56th st
+        definition: AZ Canal at 56th Street
+      - code: az canal - cent
+        definition: AZ Canal at Central Avenue
+      - code: az canal - middle of the consolidated canal
+        definition: Middle of the Consolidated canal
+      - code: az canal - pima
+        definition: AZ Canal at Pima Rd
+      - code: az canal - verde river @ beeline
+        definition: verde river at beeline highway
+      - code: az canal @ deer valley
+        definition: AZ Canal - Inlet to Deer Valley WTP
+      - code: az canal @ squaw peak
+        definition: AZ Canal - Inlet to Squaw Peak WTP
+      - code: az canal blw cap
+        definition: AZ Canal below CAP Cross-connect
+      - code: az canal inflow
+        definition: AZ Canal above CAP Cross-connect
+      - code: az canal- head of the consolidated canal
+        definition: Head of the Consolidated canal
+      - code: bartlett-epi
+        definition: Bartlett Reservoir near outlet
+      - code: bartlett-hypo
+        definition: Bartlett Reservoir near outlet
+      - code: cap @ 7th st
+        definition: Cap Canal at 7th St.
+      - code: cap @ x con
+        definition: CAP Canal at Cross-connect
+      - code: cap-siphon
+        definition: CAP canal above Waddell Canal
+      - code: deer valley-treated
+        definition: Deer Valley WTP treated water
+      - code: lake havasu
+        definition: Lake Havasu
+      - code: pleasant-epi
+        definition: Lake Pleasant integrated sample
+      - code: pleasant-hypo
+        definition: Lake Pleasant integrated sample
+      - code: s canal @ val vista
+        definition: South Canal at Val Vista WTP
+      - code: saguaro-epi
+        definition: Saguaro Lake Epilimnion
+      - code: saguaro-hypo
+        definition: Saguaro Lake Hypolimnion
+      - code: salt abv saguaro
+        definition: Salt River inlet to Saguaro Lake
+      - code: salt blw saguaro
+        definition: Salt River below Saguaro (Blue Point Bridge)
+      - code: south tempe canals - below CAP Cross-connect
+        definition: South Canal below CAP Cross-connect
+      - code: south tempe canals - head of the tempe canal
+        definition: Head of the Tempe Canal
+      - code: squaw peak-treated
+        definition: Squaw Peak WTP treated water
+      - code: val vista-treated
+        definition: Val Vista WTP treated water
+      - code: verde abv bartlett
+        definition: Verde River btwn Horseshoe and Bartlett
+      - code: verde abv horseshoe
+        definition: Verde River at Tangle
+      - code: verde blw barlett
+        definition: Verde River below Bartlett Reservoir
+      - code: waddell canal
+        definition: Waddell Canal

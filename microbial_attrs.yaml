@@ -2,28 +2,52 @@
   site number:
     attributeName: site number
     attributeDefinition: site number or name (A designates epilimnion, B hypolimnion)
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   site location:
     attributeName: site location
     attributeDefinition: site location description
-    definition: site location description
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: character
+    definition: site location description
   cluster:
     attributeName: cluster
     attributeDefinition: source water
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   site acronym:
     attributeName: site acronym
     attributeDefinition: site number or name (A designates epilimnion, B hypolimnion)
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   date:
     attributeName: date
     attributeDefinition: sample collection date
-    formatString: YYYY-MM-DD
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: Date
+    formatString: YYYY-MM-DD
   e_coli:
     attributeName: e_coli
     attributeDefinition: number of E coli colonies per 100mL of sample
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     unit: coloniesPer100milliliter
     numberType: whole
     minimum: 0.0
@@ -32,14 +56,22 @@
   coliform:
     attributeName: coliform
     attributeDefinition: number of Coliform colonies per 100mL of sample
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     unit: coloniesPer100milliliter
-    numberType: natural
-    minimum: 23.0
+    numberType: whole
+    minimum: 0.0
     maximum: 2560.0
     columnClasses: numeric
   mycobacterium:
     attributeName: mycobacterium
     attributeDefinition: number of Mycobacterium colonies per 100mL of sample
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     unit: coloniesPer100milliliter
     numberType: whole
     minimum: 0.0
@@ -48,9 +80,17 @@
   mycobacterium_flag:
     attributeName: mycobacterium_flag
     attributeDefinition: sampling, analysis, or processing flag for Mycobacterium sample
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   Comments:
     attributeName: Comments
     attributeDefinition: comment(s) about site conditions or sampling details
-    definition: comment(s) about site conditions or sampling details
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: character
+    definition: comment(s) about site conditions or sampling details

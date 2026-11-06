@@ -1,0 +1,576 @@
+|
+  - attribute:
+      attributeName: site number
+      levels:
+      - code: 16th St.
+        definition: AZ Canal at 16th Street
+      - code: 19th Av.
+        definition: AZ Canal at 19th Avenue
+      - code: 24th In
+        definition: 24th Street WTP Inlet
+      - code: Apa-0
+        definition: Apache Lake at surface
+      - code: Apa-10
+        definition: Apache Lake at 10m depth
+      - code: Apa-15
+        definition: Apache Lake at 15m depth
+      - code: Apa-20
+        definition: Apache Lake at 20m depth
+      - code: Apa-25
+        definition: Apache Lake at 25m depth
+      - code: Apa-30
+        definition: Apache Lake at 30m depth
+      - code: Apa-35
+        definition: Apache Lake at 35m depth
+      - code: Apa-40
+        definition: Apache Lake at 40m depth
+      - code: Apa-45
+        definition: Apache Lake at 45m depth
+      - code: Apa-5
+        definition: Apache Lake at 5m depth
+      - code: Apa-50
+        definition: Apache Lake at 50m depth
+      - code: Apa-55
+        definition: Apache Lake at 55m depth
+      - code: Can-0
+        definition: Canyon Lake at surface
+      - code: Can-10
+        definition: Canyon Lake at 10m depth
+      - code: Can-15
+        definition: Canyon Lake at 15m depth
+      - code: Can-20
+        definition: Canyon Lake at 20m depth
+      - code: Can-25
+        definition: Canyon Lake at 25m depth
+      - code: Can-30
+        definition: Canyon Lake at 30m depth
+      - code: Can-35
+        definition: Canyon Lake at 35m depth
+      - code: Can-40
+        definition: Canyon Lake at 40m depth
+      - code: Can-45
+        definition: Canyon Lake at 45m depth
+      - code: Can-5
+        definition: Canyon Lake at 5m depth
+      - code: Can-50
+        definition: Canyon Lake at 50m depth
+      - code: CH IN
+        definition: Chandler WTP Inlet
+      - code: Cons
+        definition: Consolidated Canal
+      - code: Glen In
+        definition: Glendale WTP Inlet
+      - code: Glen Out
+        definition: Glendale WTP Treated
+      - code: GR IN
+        definition: Greenway WTP Inlet
+      - code: Green In
+        definition: Greenway WTP Inlet
+      - code: Green Out
+        definition: Greenway WTP Treated
+      - code: Havasu 1
+        definition: Lake Havasu Site 1
+      - code: Havasu 2
+        definition: Lake Havasu Site 2
+      - code: HTC
+        definition: Head of Tempe Canal
+      - code: Hwy 87
+        definition: AZ Canal at Highway 87
+      - code: HWY 87
+        definition: AZ Canal at Highway 87
+      - code: LPP
+        definition: CAP canal at Lake Pleasant Parkway near Loop 303
+      - code: Mesa
+        definition: AZ Canal at Mesa Dr.
+      - code: MOC
+        definition: Middle of the Consolidated canal
+      - code: NP In
+        definition: Tempe North WTP Inlet
+      - code: NP IN
+        definition: Tempe North WTP Inlet
+      - code: NP Out
+        definition: Tempe North WTP Treated
+      - code: Pima
+        definition: AZ Canal at Pima Rd
+      - code: PIMA
+        definition: AZ Canal at Pima Rd
+      - code: R1
+        definition: CAP canal above Waddell Canal
+      - code: R10
+        definition: Salt River below Saguaro (Blue Point Bridge)
+      - code: R11
+        definition: CAP Canal at Cross-connect
+      - code: R12
+        definition: AZ Canal above CAP Cross-connect
+      - code: R13
+        definition: AZ Canal below CAP Cross-connect
+      - code: R14
+        definition: AZ Canal - Inlet to Squaw Peak WTP
+      - code: R15
+        definition: Squaw Peak WTP treated water
+      - code: R16
+        definition: AZ Canal - Inlet to Deer Valley WTP
+      - code: R17
+        definition: Deer Valley WTP treated water
+      - code: R18
+        definition: South Canal at Val Vista WTP
+      - code: R19
+        definition: Val Vista WTP treated water
+      - code: R2
+        definition: Lake Pleasant at surface
+      - code: R2-10
+        definition: Lake Pleasant at 10m depth
+      - code: R2-15
+        definition: Lake Pleasant at 15m depth
+      - code: R2-20
+        definition: Lake Pleasant at 20m depth
+      - code: R2-25
+        definition: Lake Pleasant at 25m depth
+      - code: R2-30
+        definition: Lake Pleasant at 30m depth
+      - code: R2-35
+        definition: Lake Pleasant at 35m depth
+      - code: R2-40
+        definition: Lake Pleasant at 40m depth
+      - code: R2-45
+        definition: Lake Pleasant at 45m depth
+      - code: R2-5
+        definition: Lake Pleasant at 5m depth
+      - code: R2-50
+        definition: Lake Pleasant at 50m depth
+      - code: R2-55
+        definition: Lake Pleasant at 55m depth
+      - code: R20
+        definition: Verde River at Tangle
+      - code: R21
+        definition: AZ Canal - Central Avenue
+      - code: R22
+        definition: AZ Canal at 56th
+      - code: R25
+        definition: Verde River at Beeline
+      - code: R26
+        definition: Arizona Canal at 19th Ave.
+      - code: R2A
+        definition: Lake Pleasant integrated sample
+      - code: R3
+        definition: Waddell Canal
+      - code: R4
+        definition: Cap Canal at 7th St.
+      - code: R4-Dup
+        definition: Cap Canal at 7th St. duplicate sample
+      - code: R5
+        definition: Verde River btwn Horseshoe and Bartlett
+      - code: R6-10
+        definition: Bartlett Lake at 10m depth
+      - code: R6-15
+        definition: Bartlett Lake at 15m depth
+      - code: R6-20
+        definition: Bartlett Lake at 20m depth
+      - code: R6-25
+        definition: Bartlett Lake at 25m depth
+      - code: R6-30
+        definition: Bartlett Lake at 30m depth
+      - code: R6-35
+        definition: Bartlett Lake at 35m depth
+      - code: R6-40
+        definition: Bartlett Lake at 40m depth
+      - code: R6-45
+        definition: Bartlett Lake at 45m depth
+      - code: R6-5
+        definition: Bartlett Lake at 5m depth
+      - code: R6-50
+        definition: Bartlett Lake at 50m depth
+      - code: R6-55
+        definition: Bartlett Lake at 55m depth
+      - code: R6A
+        definition: Bartlett Reservoir near outlet
+      - code: R7
+        definition: Verde River below Bartlett Reservoir
+      - code: R8
+        definition: Salt River inlet to Saguaro Lake
+      - code: R9-10
+        definition: Saguaro Lake at 10m depth
+      - code: R9-15
+        definition: Saguaro Lake at 15m depth
+      - code: R9-20
+        definition: Saguaro Lake at 20m depth
+      - code: R9-25
+        definition: Saguaro Lake at 25m depth
+      - code: R9-30
+        definition: Saguaro Lake at 30m depth
+      - code: R9-35
+        definition: Saguaro Lake at 35m depth
+      - code: R9-40
+        definition: Saguaro Lake at 40m depth
+      - code: R9-45
+        definition: Saguaro Lake at 45m depth
+      - code: R9-5
+        definition: Saguaro Lake at 5m depth
+      - code: R9-50
+        definition: Saguaro Lake at 50m depth
+      - code: R9-55
+        definition: Saguaro Lake at 55m depth
+      - code: R9A
+        definition: Saguaro Lake near inlet
+      - code: Roos-0
+        definition: Roosevelt Lake at surface
+      - code: Roos-10
+        definition: Roosevelt Lake at 10m depth
+      - code: Roos-15
+        definition: Roosevelt Lake at 15m depth
+      - code: Roos-20
+        definition: Roosevelt Lake at 20m depth
+      - code: Roos-25
+        definition: Roosevelt Lake at 25m depth
+      - code: Roos-30
+        definition: Roosevelt Lake at 30m depth
+      - code: Roos-35
+        definition: Roosevelt Lake at 35m depth
+      - code: Roos-40
+        definition: Roosevelt Lake at 40m depth
+      - code: Roos-45
+        definition: Roosevelt Lake at 45m depth
+      - code: Roos-5
+        definition: Roosevelt Lake at 5m depth
+      - code: Roos-50
+        definition: Roosevelt Lake at 50m depth
+      - code: Roosvelt
+        definition: SRP above Roosevelt Lake
+      - code: Scotts
+        definition: AZ Canal at Scottsdale Rd.
+      - code: SOCA
+        definition: South Canal below CAP Cross-connect
+      - code: SPT In
+        definition: Tempe South WTP Inlet
+      - code: SPT IN
+        definition: Tempe South WTP Inlet
+      - code: SPT Out
+        definition: Tempe South WTP Treated
+      - code: UH In
+        definition: Union Hills WTP Inlet
+      - code: UH IN
+        definition: Union Hills WTP Inlet
+      - code: UH Out
+        definition: Union Hills WTP Treated
+  - attribute:
+      attributeName: cluster
+      levels:
+      - code: az canal
+        definition: Arizona canal
+      - code: cap
+        definition: Central Arizona Project canal
+      - code: salt
+        definition: Salt River
+      - code: srp
+        definition: Salt River Project canal
+      - code: tempe
+        definition: Tempe, AZ area canal
+      - code: verde
+        definition: Verde River
+  - attribute:
+      attributeName: site acronym
+      levels:
+      - code: Above Roosevelt
+        definition: SRP above Roosevelt Lake
+      - code: Apa-0m
+        definition: Apache Lake at surface
+      - code: Apa-10m
+        definition: Apache Lake at 10m depth
+      - code: Apa-15m
+        definition: Apache Lake at 15m depth
+      - code: Apa-20m
+        definition: Apache Lake at 20m depth
+      - code: Apa-25m
+        definition: Apache Lake at 25m depth
+      - code: Apa-30m
+        definition: Apache Lake at 30m depth
+      - code: Apa-35m
+        definition: Apache Lake at 35m depth
+      - code: Apa-40m
+        definition: Apache Lake at 40m depth
+      - code: Apa-45m
+        definition: Apache Lake at 45m depth
+      - code: Apa-50m
+        definition: Apache Lake at 50m depth
+      - code: Apa-55m
+        definition: Apache Lake at 55m depth
+      - code: Apa-5m
+        definition: Apache Lake at 5m depth
+      - code: Apache-0m
+        definition: Apache Lake at surface
+      - code: Apache-10m
+        definition: Apache Lake at 10m depth
+      - code: Apache-15m
+        definition: Apache Lake at 15m depth
+      - code: Apache-20m
+        definition: Apache Lake at 20m depth
+      - code: Apache-25m
+        definition: Apache Lake at 25m depth
+      - code: Apache-30m
+        definition: Apache Lake at 30m depth
+      - code: Apache-35m
+        definition: Apache Lake at 35m depth
+      - code: Apache-40m
+        definition: Apache Lake at 40m depth
+      - code: Apache-45m
+        definition: Apache Lake at 45m depth
+      - code: Apache-50m
+        definition: Apache Lake at 50m depth
+      - code: Apache-5m
+        definition: Apache Lake at 5m depth
+      - code: az canal @ 16th st.
+        definition: AZ Canal at 16th Street
+      - code: az canal @ 19 ave.
+        definition: AZ Canal at 19th Avenue
+      - code: az canal @ 19th av.
+        definition: AZ Canal at 19th Avenue
+      - code: AZ canal @ 24th St
+        definition: AZ Canal at 24th Street
+      - code: az canal @ 56th st.
+        definition: AZ Canal at 56th Street
+      - code: az canal @ central ave.
+        definition: AZ Canal at Central Avenue
+      - code: az canal @ deer valley
+        definition: AZ Canal - Inlet to Deer Valley WTP
+      - code: az canal @ hwy 87
+        definition: AZ Canal at Highway 87
+      - code: az canal @ Mesa
+        definition: AZ Canal at Mesa Dr.
+      - code: az canal @ pima
+        definition: AZ Canal at Pima Rd
+      - code: az canal @ scotts.
+        definition: AZ Canal at Scottsdale Rd.
+      - code: az canal @ squaw peak
+        definition: AZ Canal - Inlet to Squaw Peak WTP
+      - code: az canal blw cap
+        definition: AZ Canal below CAP Cross-connect
+      - code: az canal inflow
+        definition: AZ Canal above CAP Cross-connect
+      - code: bartlett-0m
+        definition: Bartlett Lake at surface
+      - code: bartlett-10m
+        definition: Bartlett Lake at 10m depth
+      - code: bartlett-15m
+        definition: Bartlett Lake at 15m depth
+      - code: bartlett-20m
+        definition: Bartlett Lake at 20m depth
+      - code: bartlett-25m
+        definition: Bartlett Lake at 25m depth
+      - code: bartlett-30m
+        definition: Bartlett Lake at 30m depth
+      - code: bartlett-35m
+        definition: Bartlett Lake at 35m depth
+      - code: bartlett-40m
+        definition: Bartlett Lake at 40m depth
+      - code: bartlett-45m
+        definition: Bartlett Lake at 45m depth
+      - code: bartlett-50m
+        definition: Bartlett Lake at 50m depth
+      - code: bartlett-55m
+        definition: Bartlett Lake at 55m depth
+      - code: bartlett-5m
+        definition: Bartlett Lake at 5m depth
+      - code: Can-0m
+        definition: Canyon Lake at surface
+      - code: Can-10m
+        definition: Canyon Lake at 10m depth
+      - code: Can-15m
+        definition: Canyon Lake at 15m depth
+      - code: Can-20m
+        definition: Canyon Lake at 20m depth
+      - code: Can-25m
+        definition: Canyon Lake at 25m depth
+      - code: Can-30m
+        definition: Canyon Lake at 30m depth
+      - code: Can-35m
+        definition: Canyon Lake at 35m depth
+      - code: Can-40m
+        definition: Canyon Lake at 40m depth
+      - code: Can-45m
+        definition: Canyon Lake at 45m depth
+      - code: Can-50m
+        definition: Canyon Lake at 50m depth
+      - code: Can-5m
+        definition: Canyon Lake at 5m depth
+      - code: Canyon-0m
+        definition: Canyon Lake at surface
+      - code: Canyon-10m
+        definition: Canyon Lake at 10m depth
+      - code: Canyon-15m
+        definition: Canyon Lake at 15m depth
+      - code: Canyon-20m
+        definition: Canyon Lake at 20m depth
+      - code: Canyon-25m
+        definition: Canyon Lake at 25m depth
+      - code: Canyon-30m
+        definition: Canyon Lake at 30m depth
+      - code: Canyon-35m
+        definition: Canyon Lake at 35m depth
+      - code: Canyon-40m
+        definition: Canyon Lake at 40m depth
+      - code: Canyon-45m
+        definition: Canyon Lake at 45m depth
+      - code: Canyon-50m
+        definition: Canyon Lake at 50m depth
+      - code: Canyon-5m
+        definition: Canyon Lake at 5m depth
+      - code: cap @ 7th st
+        definition: Cap Canal at 7th St.
+      - code: cap @ 7th st dup
+        definition: Cap Canal at 7th St. duplicate sample
+      - code: cap @ x con
+        definition: CAP Canal at Cross-connect
+      - code: cap-siphon
+        definition: CAP canal above Waddell Canal
+      - code: Chandler
+        definition: Chandler Water Treatment Plant
+      - code: deer valley-treated
+        definition: Deer Valley WTP treated water
+      - code: Glen In
+        definition: Glendale WTP Inlet
+      - code: Glen Out
+        definition: Glendale WTP Treated
+      - code: Green In
+        definition: Greenway WTP Inlet
+      - code: Green Out
+        definition: Greenway WTP Treated
+      - code: Havasu 1
+        definition: Lake Havasu Site 1
+      - code: Havasu 2
+        definition: Lake Havasu Site 2
+      - code: head of tempe canal
+        definition: Head of Tempe Canal
+      - code: LPP
+        definition: CAP canal at Lake Pleasant Parkway near Loop 303
+      - code: Mesa Turnout
+        definition: Mesa Canal Turnout
+      - code: North plant inlet
+        definition: Tempe North WTP Inlet
+      - code: north plant outlet
+        definition: Tempe North WTP Treated
+      - code: pleasant
+        definition: Lake Pleasant
+      - code: pleasant-0m
+        definition: Lake Pleasant at surface
+      - code: pleasant-10m
+        definition: Lake Pleasant at 10m depth
+      - code: pleasant-15m
+        definition: Lake Pleasant at 15m depth
+      - code: pleasant-20m
+        definition: Lake Pleasant at 20m depth
+      - code: pleasant-25m
+        definition: Lake Pleasant at 25m depth
+      - code: pleasant-30m
+        definition: Lake Pleasant at 30m depth
+      - code: pleasant-35m
+        definition: Lake Pleasant at 35m depth
+      - code: pleasant-40m
+        definition: Lake Pleasant at 40m depth
+      - code: pleasant-45m
+        definition: Lake Pleasant at 45m depth
+      - code: pleasant-50m
+        definition: Lake Pleasant at 50m depth
+      - code: pleasant-55m
+        definition: Lake Pleasant at 55m depth
+      - code: pleasant-5m
+        definition: Lake Pleasant at 5m depth
+      - code: Roos-0m
+        definition: Roosevelt Lake at surface
+      - code: Roos-10m
+        definition: Roosevelt Lake at 10m depth
+      - code: Roos-15m
+        definition: Roosevelt Lake at 15m depth
+      - code: Roos-20m
+        definition: Roosevelt Lake at 20m depth
+      - code: Roos-25m
+        definition: Roosevelt Lake at 25m depth
+      - code: Roos-30m
+        definition: Roosevelt Lake at 30m depth
+      - code: Roos-35m
+        definition: Roosevelt Lake at 35m depth
+      - code: Roos-40m
+        definition: Roosevelt Lake at 40m depth
+      - code: Roos-45m
+        definition: Roosevelt Lake at 45m depth
+      - code: Roos-50m
+        definition: Roosevelt Lake at 50m depth
+      - code: Roos-55m
+        definition: Roosevelt Lake at 55m depth
+      - code: Roos-5m
+        definition: Roosevelt Lake at 5m depth
+      - code: Roosevelt-0m
+        definition: Roosevelt Lake at surface
+      - code: Roosevelt-10m
+        definition: Roosevelt Lake at 10m depth
+      - code: Roosevelt-15m
+        definition: Roosevelt Lake at 15m depth
+      - code: Roosevelt-20m
+        definition: Roosevelt Lake at 20m depth
+      - code: Roosevelt-25m
+        definition: Roosevelt Lake at 25m depth
+      - code: Roosevelt-30m
+        definition: Roosevelt Lake at 30m depth
+      - code: Roosevelt-35m
+        definition: Roosevelt Lake at 35m depth
+      - code: Roosevelt-40m
+        definition: Roosevelt Lake at 40m depth
+      - code: Roosevelt-45m
+        definition: Roosevelt Lake at 45m depth
+      - code: Roosevelt-50m
+        definition: Roosevelt Lake at 50m depth
+      - code: Roosevelt-5m
+        definition: Roosevelt Lake at 5m depth
+      - code: s canal @ val vista
+        definition: South Canal at Val Vista WTP
+      - code: saguaro-0m
+        definition: Saguaro Lake at surface
+      - code: saguaro-10m
+        definition: Saguaro Lake at 10m depth
+      - code: saguaro-15m
+        definition: Saguaro Lake at 15m depth
+      - code: saguaro-20m
+        definition: Saguaro Lake at 20m depth
+      - code: saguaro-25m
+        definition: Saguaro Lake at 25m depth
+      - code: saguaro-30m
+        definition: Saguaro Lake at 30m depth
+      - code: saguaro-35m
+        definition: Saguaro Lake at 35m depth
+      - code: saguaro-40m
+        definition: Saguaro Lake at 40m depth
+      - code: saguaro-45m
+        definition: Saguaro Lake at 45m depth
+      - code: saguaro-50m
+        definition: Saguaro Lake at 50m depth
+      - code: saguaro-55m
+        definition: Saguaro Lake at 55m depth
+      - code: saguaro-5m
+        definition: Saguaro Lake at 5m depth
+      - code: salt abv saguaro
+        definition: Salt River inlet to Saguaro Lake
+      - code: salt blw saguaro
+        definition: Salt River below Saguaro (Blue Point Bridge)
+      - code: South canal below CAP
+        definition: South Canal below CAP Cross-connect
+      - code: squaw peak-treated
+        definition: Squaw Peak WTP treated water
+      - code: STP In
+        definition: Tempe Canal - Inlet to Tempe's South Plant
+      - code: STP Out
+        definition: Tempe's South Plant treated water
+      - code: Union Hills Inlet
+        definition: Union Hills WTP Inlet
+      - code: Union Hills Outlet
+        definition: Union Hills WTP Treated
+      - code: val vista-treated
+        definition: Val Vista WTP treated water
+      - code: verde @ beeline
+        definition: verde river at beeline highway
+      - code: verde abv bartlett
+        definition: Verde River btwn Horseshoe and Bartlett
+      - code: verde abv horseshoe
+        definition: Verde River at Tangle
+      - code: verde blw barlett
+        definition: Verde River below Bartlett Reservoir
+      - code: waddell canal
+        definition: Waddell Canal
